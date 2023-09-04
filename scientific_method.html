@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 2&nbsp; Tudományos módszer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-tudomány-célja" id="toc-a-tudomány-célja" class="nav-link active" data-scroll-target="#a-tudomány-célja"><span class="toc-section-number">2.1</span>  A tudomány célja</a></li>
+  <li><a href="#az-empirikus-tudományos-folyamat-lépései" id="toc-az-empirikus-tudományos-folyamat-lépései" class="nav-link" data-scroll-target="#az-empirikus-tudományos-folyamat-lépései"><span class="toc-section-number">2.2</span>  Az empirikus tudományos folyamat lépései</a></li>
+  <li><a href="#a-statisztika-szerepe-a-tudományban" id="toc-a-statisztika-szerepe-a-tudományban" class="nav-link" data-scroll-target="#a-statisztika-szerepe-a-tudományban"><span class="toc-section-number">2.3</span>  A statisztika szerepe a tudományban</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="a-tudomány-célja" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="a-tudomány-célja"><span class="header-section-number">2.1</span> A tudomány célja</h2>
+<ul>
+<li><p>A tudomány célja, hogy általános magyarázotokkal szolgáljon a minket körülvevő világról</p></li>
+<li><p>A tudományos magyarázatok leegyszerüsített formában <strong>írják le</strong> a valóságot</p></li>
+<li><p>A tudományos magyarázatok segítségével így képesek vagyunk</p>
+<ul>
+<li><p>jól informált <strong>döntéseket</strong> hozni</p></li>
+<li><p><strong>predikciókat</strong> alkotni új helyzetekre a már meglévő tudásunk alapján</p></li>
+</ul></li>
+<li><p>Később majd látni fogjuk, hogy a kutatási folyamat sok pontján félrecsúszhat az, hogy a kutatásunk alapján megbízható döntéseket hozzunk vagy predikciókat alkossunk</p></li>
+<li><p>A tudományos megközelítés azonban nem az egyetlen mód, amelyen keresztül a valóságot magyarázzuk</p></li>
+<li><p>Miben más, mint egyéb megismerési módok?</p>
+<ul>
+<li><p>Pl: vallás: autoritás alapú</p></li>
+<li><p>Kritikai megközelítés</p></li>
+<li><p>Tesztelhető (falszifikálható hipotézisek</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="az-empirikus-tudományos-folyamat-lépései" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="az-empirikus-tudományos-folyamat-lépései"><span class="header-section-number">2.2</span> Az empirikus tudományos folyamat lépései</h2>
+<ol type="1">
+<li><p>Általános kérdésfelvetés</p>
+<ul>
+<li>Ez talán a legegyszerűbb lépés, az ember kíváncsi természetű, szeretné érteni az őt körülvevő valóságot</li>
+</ul></li>
+<li><p>Elmélet alkotás</p>
+<ul>
+<li><p>Ahhoz, hogy egy kérdést meg tudjunk válaszolni empirikus módon egy elméletet kell alkotnunk a kérdés mögött álló lehetséges hatásmechanizmusról</p></li>
+<li><p>Az elmélet falszifikálható kell legyen</p>
+<ul>
+<li>Tudunk olyan megfigyeléseket tenni amelyek fényében az elméletet elvetjük</li>
+</ul></li>
+<li><p>A jó elméletek</p>
+<ul>
+<li><p>Elérés (reach): minél több jelenséget magyaráz meg egy elmélet annál jobb</p></li>
+<li><p>Parszimónia: két versenyző elmélet közül az a jobb, ami kevesebb elemből áll</p>
+<ul>
+<li>Lásd Occam borotvája</li>
+</ul></li>
+<li><p>Konzervatívizmus: Mennyire illeszkedik már meglévő tesztelt és elfogadott elméletekhez</p></li>
+</ul></li>
+</ul></li>
+<li><p>Hipotézis alkotás</p>
+<ul>
+<li><p>A hipotézis az elméletünknek egy konkrétan tesztelhető operacionalizált része</p></li>
+<li><p>Egy elmélet alapján többféle hipotézist fel lehet állítani</p></li>
+<li><p>A hipotézis alapján predikciókat alkotunk, amelyeket tesztelünk</p></li>
+<li><p>Egy hipotézis bizonyításával nem bizonyítjuk az elméletet is!</p></li>
+<li><p>De tudjuk a teszt eredményei által tovább finomítani az elméletet</p></li>
+<li><p>Vagy elvetjük azt</p></li>
+<li><p>Fontos, hogy a hipotézis valóban illeszkedjen az adott elmélethez</p></li>
+</ul></li>
+<li><p>Kutatási elrendezés</p>
+<ul>
+<li><p>A hipotézis tesztelésére annak feltételezései alapján egy kutatást tervezünk</p></li>
+<li><p>A kutatás megtervezésénél számos különböző módszertan közül tudunk választani</p></li>
+<li><p>Mindegyiknek vannak előnyei és hátránya, a hipotézis és az elérhető erőforrások fényében választunk közülük</p>
+<ul>
+<li><p>Kérdőíves</p></li>
+<li><p>Megfigyeléses</p></li>
+<li><p>Kísérleti</p></li>
+</ul></li>
+<li><p>Van pár általános szempont, amelyeket módszertantól függetlenül figyelembe kell vennünk és amelyek befolyásolják az eredményekből levontható következtetéseket</p>
+<ul>
+<li><p>Minta felépítése és mintaméret</p></li>
+<li><p>Mérőeszköz és annak pontossága, megbízhatósága, és granularitása</p></li>
+</ul></li>
+<li><p>Ahhoz hogy oksági viszonyt feltételezzünk két jelenség közt nem feletkezhetünk meg az adatgyűjtés módjáról</p></li>
+<li><p>Megfigyeléses vizsgálatoknál nem tudjuk biztosan kijelenteni hogy két változó között oksági viszony van</p>
+<ul>
+<li><p>Lehetséges hogy egyébb faktorok befolyásolják a kapott együttjárást</p></li>
+<li><p><a href="https://www.tylervigen.com/spurious-correlations" class="uri">https://www.tylervigen.com/spurious-correlations</a></p></li>
+</ul></li>
+<li><p>Ezért a kutatók általában az oksági viszony meghatározásához kísérleti kutatási elrendezést használnak (pl: randomized control trial)</p>
+<ul>
+<li>A lehetséges, de nem viszgált befolyásoló faktorokat random mintavételezés útján zárják ki az adatgyűjtés során</li>
+</ul></li>
+<li><p>Vannak statisztikai módszerek amivel utólag is kontrollálni tudjuk ezeket a változókat, de sokkal nehezebb ezt utólag megtenni</p></li>
+<li><p>Ez is kiemeli a jól megtervezett kutatások és részletesen kidolgozott elméletek fontosságát!</p></li>
+<li><p>Mintavételezés</p>
+<ul>
+<li><p>Az esetek kis részében tudjuk az egész populációt vizsgálni</p></li>
+<li><p>Minták tesztelésén keresztül vonunk le általános következtetéseket</p></li>
+<li><p>De mekkora mintára van szükség ahhoz, hogy a populációra tudjunk következtetni?</p></li>
+</ul></li>
+</ul></li>
+<li><p>Adatok feldolgozása</p>
+<ul>
+<li><p>Általában nem szokták külön lépésként kezelni, de az óra témaja és az eredményekre gyakorolt lehetséges hatása miatt fontos megemlíteni</p></li>
+<li><p>A kapott adatokat befolyásolja az általunk választott kutatási elrendezés és az adatgyűjtés során fellépő váratlan torzító tényezők</p></li>
+<li><p>Nagyon ritka esetben készek az adatgyűjtés után az adatok az elemzésre</p></li>
+<li><p>Általában először adat rendezést és adattisztítást kell elvégeznünk</p></li>
+</ul></li>
+<li><p>Statisztikai elemzés</p>
+<ul>
+<li><p>Az elemzés során használhatunk</p>
+<ul>
+<li><p>Leíró statisztikai eljárásokat</p></li>
+<li><p>Következtetéses statisztikai eljárásokat</p></li>
+</ul></li>
+<li><p>Rengeteg statisztikai eljárás van, a statisztikusok most is dolgoznak újak kifejlesztésén és validációján</p></li>
+<li><p>Az, hogy milyen eljárást választunk függ a hipotézisünktől, a kutatási elrendezésünktől, és az adatgyűjtés során kapott adatoktól</p></li>
+<li><p>Többféle lehetséges valid elemzési út is létezik</p>
+<ul>
+<li>Lást: multi-analyst study</li>
+</ul></li>
+</ul></li>
+<li><p>Eredmények értelmezése</p>
+<ul>
+<li><p>A statisztikai elemzés eredményeinek értelmezésére a tudományos folyamat összes eddigi lépése kihat</p></li>
+<li><p>Kutatóként szeretnénk egyértelmű válaszokat kapni az általunk feltett kérdésekre</p>
+<ul>
+<li><p>Sajnos nagyon kevés esetben ez a helyzet</p></li>
+<li><p>Ez részben a tudományos folyamat összetettségének az eredménye</p></li>
+<li><p>Részben ennek a vágynak is szerepe van a p-értékek abuzálásában</p></li>
+<li><p>Egy kutatásból nagyon ritkán kapunk egyértelmű válaszokat</p>
+<ul>
+<li>Lásd: metaanalízis, szisztematikus összefoglaló (systematic review)</li>
+</ul></li>
+</ul></li>
+<li><p>Pár példa helyzet arra, amikor a tudományos módszer összetettsége árnyalja a statisztikai elemzés eredményeinek értelmezését:</p>
+<ul>
+<li><p>A választott mérőeszközök valójában nem a vizsgált konstruktumot mérik</p></li>
+<li><p>A minta milyensége vagy mérete nem indokolja az eredmények általánosítását</p></li>
+<li><p>Az adattisztítás során olyan megfigyelések is bent maradtak, amelyek szisztematikusan torzítják az eredményeket</p></li>
+</ul></li>
+<li><p>Az értelmezést korlázotó tényezőkről általában a tudományos publikáció limitációk szakaszában számolunk be</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="a-statisztika-szerepe-a-tudományban" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="a-statisztika-szerepe-a-tudományban"><span class="header-section-number">2.3</span> A statisztika szerepe a tudományban</h2>
+<ul>
+<li><p>A komplex valóság egyszerüsített leírása, ami egyúttal azt is elmondja mennyire lehetünk bizonytalanok ebben a tudásban</p></li>
+<li><p>Miért van szükség a statisztikára?</p>
+<ul>
+<li><p>Heurisztikák veszélye</p>
+<ul>
+<li><p>Példa: USA bűnelkövetések gyakorisága</p>
+<ul>
+<li><p>Sokkal gyakoribbnak gondoljuk a bűnelkövetések számát, mint amilyen gyakoriak a valóságban</p></li>
+<li><p>Elérhetőségi torzítás (kognitív torzítás egyik fajtája)</p></li>
+<li><p>Média szerepe?</p></li>
+</ul></li>
+</ul></li>
+<li><p>Statisztika segít abban hogy tanuljunk az adatokból</p>
+<ul>
+<li>Hogyan frissítsük előzetes tudásunk az új adatok fényében</li>
+</ul></li>
+</ul></li>
+<li><p>A statisztika az adatösszesítésről szól</p>
+<ul>
+<li>Hogyan tudunk úgy leegyszerüsíteni befogadhatatlan mennyiségű megfigyelést, hogy azok segítségével hipotézisünk tesztelni tudjuk, de fontos információ ne vesszen el</li>
+</ul></li>
+<li><p>A statisztika a bizonytalanság kezeléséről szól</p>
+<ul>
+<li><p>A világ összetett</p></li>
+<li><p>A legtöbb összetett jelenséget nehéz determinisztikus módon megmagyarázni</p></li>
+<li><p>Bár tudunk ok-okozati kapcsolatot felállítani bizonyos összefüggések között általában ezek nem determinisztikus, hanem probabilisztikus predikciókhoz vezetnek</p>
+<ul>
+<li>Lásd: dohányzás és tüdőrák
+<ul>
+<li>Tudjuk, hogy a dohányzás növeli a tüdőrák esélyét, azonban nem lehet biztosra mondani, hogyha valaki dohányzik, akkor mindenképp tüdőrákos is lesz</li>
+</ul></li>
+</ul></li>
+<li><p>A statisztika nem tud bizonyítani (úgy ahogy a matematika tud)</p>
+<ul>
+<li>Hanem evidenciát tud felmutatni egy hipotézis mellett az eddigi megfigyelések fényében, de a bizonytalanságot nem tudjuk nullára csökkenteni</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>A statisztika a kompromisszomkról szól</p>
+<ul>
+<li><p>Nincs egyetlen objektív módszer a statisztikában</p></li>
+<li><p>Mindig a vizsgált kérdés, az adatgyűjtést és elemzést korlátozó tényezők függvényében kell megtalálnunk a legmeggyőzőbb elemzési utat</p>
+<ul>
+<li><p>Ahhoz, hogy a választott elemzési út ténylegesen meggyőző legyen transzparensen közölnünk kell analitikus döntéséinket és a mellette szóló érveket</p></li>
+<li><p>Ez az alapfeltétele az analitikus megismételhetőségnek: más kutató ugyanazokat az adatokat vizsgálva megegyező analatikus úton ugyanarra az eredményre érkezik</p>
+<ul>
+<li>Ez sajnos ma a tudományban nem magától értetődő!</li>
+</ul></li>
+</ul></li>
+<li><p>Több valid elemzési út is lehet ugyanannak a kérdésnek a vizsgálatára</p>
+<ul>
+<li><p>A szakmai közösség feladata ezeknek a felülbírálata</p></li>
+<li><p>Lásd: multi analyst kutatások</p></li>
+</ul></li>
+<li><p>A tudomány iteratív módon lépésenként épül fel</p>
+<ul>
+<li><p>Lehetséges, hogy a ma még megbízhatónak számító elemzési utat új eredmények fényében elvetjük</p></li>
+<li><p>És ezzel nincs baj!</p></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

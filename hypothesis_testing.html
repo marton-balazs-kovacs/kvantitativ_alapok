@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 7&nbsp; Null szignifikancia hipotézis tesztelés</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./correlation.html" rel="next">
+<link href="./inferential_statistics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#null-hipotézis-szignifikancia-tesztelés" id="toc-null-hipotézis-szignifikancia-tesztelés" class="nav-link active" data-scroll-target="#null-hipotézis-szignifikancia-tesztelés"><span class="toc-section-number">7.1</span>  Null hipotézis szignifikancia tesztelés</a>
+  <ul class="collapse">
+  <li><a href="#lépései" id="toc-lépései" class="nav-link" data-scroll-target="#lépései"><span class="toc-section-number">7.1.1</span>  Lépései</a></li>
+  <li><a href="#szignifikancia-küszöb" id="toc-szignifikancia-küszöb" class="nav-link" data-scroll-target="#szignifikancia-küszöb"><span class="toc-section-number">7.1.2</span>  Szignifikancia küszöb</a></li>
+  <li><a href="#mit-értünk-helyes-döntés-alatt" id="toc-mit-értünk-helyes-döntés-alatt" class="nav-link" data-scroll-target="#mit-értünk-helyes-döntés-alatt"><span class="toc-section-number">7.1.3</span>  Mit értünk helyes döntés alatt?</a></li>
+  <li><a href="#többszörös-tesztelés" id="toc-többszörös-tesztelés" class="nav-link" data-scroll-target="#többszörös-tesztelés"><span class="toc-section-number">7.1.4</span>  Többszörös tesztelés</a></li>
+  </ul></li>
+  <li><a href="#hatásnagyságok" id="toc-hatásnagyságok" class="nav-link" data-scroll-target="#hatásnagyságok"><span class="toc-section-number">7.2</span>  Hatásnagyságok</a></li>
+  <li><a href="#mintaméret-és-annak-becslése" id="toc-mintaméret-és-annak-becslése" class="nav-link" data-scroll-target="#mintaméret-és-annak-becslése"><span class="toc-section-number">7.3</span>  Mintaméret és annak becslése</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<ul>
+<li><p>Következtetéses statisztika célja a populációra való következtetés a minta alapján</p></li>
+<li><p>Több statisztikai hipotézis tesztelő keretrendszer is létezik</p>
+<ul>
+<li><p><strong>frekventista:</strong></p>
+<ul>
+<li><p>A hipotézis állandó (vagy igaz vagy nem) és az adatok véletlenszerűek</p></li>
+<li><p>Frekventista inferencia az adatok előfordulásának valószínűségére fókuszál a hipotézis fényében</p></li>
+<li><p>A frekventista módszerek közül legtöbbször a <strong>null hipotézis szignifikancia tesztelést (NHST)</strong> használják a kutatók</p></li>
+</ul></li>
+<li><p><strong>Bayesiánus:</strong></p>
+<ul>
+<li><p>a hipotézis valószínűségéről is el tud mondani valamit az előzetes tudásunk és az adatok fényében</p></li>
+<li><p>gyakran használt hipotézis tesztelő módszere a <strong>Bayes factor</strong></p>
+<ul>
+<li><p>két hipotézis valószínűségének az arányát fejezi ki az adatok fényében</p></li>
+<li><p>az érdeklődőknek további olvasmányok:</p>
+<ul>
+<li><p><a href="https://alexanderetz.com/2015/08/09/understanding-bayes-visualization-of-bf/" class="uri">https://alexanderetz.com/2015/08/09/understanding-bayes-visualization-of-bf/</a></p></li>
+<li><p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0022249615000607" class="uri">https://www.sciencedirect.com/science/article/abs/pii/S0022249615000607</a></p></li>
+<li><p><a href="https://link.springer.com/article/10.3758/s13423-017-1343-3" class="uri">https://link.springer.com/article/10.3758/s13423-017-1343-3</a></p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="null-hipotézis-szignifikancia-tesztelés" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="null-hipotézis-szignifikancia-tesztelés"><span class="header-section-number">7.1</span> Null hipotézis szignifikancia tesztelés</h2>
+<section id="lépései" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="lépései"><span class="header-section-number">7.1.1</span> Lépései</h3>
+<ul>
+<li><p>Megfogalmazunk egy <strong>alternatív hipotézist</strong></p>
+<ul>
+<li><p>A hipotézisünknek lehet iránya <strong>(egyoldalú hipotézis tesztelés)</strong></p>
+<ul>
+<li><p>Pozitív vagy negatív kapcsolatot várunk el</p></li>
+<li><p>Egy oldalú hipotézis tesztelésnek is nevezik</p></li>
+</ul></li>
+<li><p>Vagy lehet <strong>kétoldalú hipotézis teszt</strong></p>
+<ul>
+<li>Ebben az esetben az alternatív hipotézisünk csak azt várja el, hogy a lesz lesz különbség a vizsgált változók között, de az nem mondjuk meg milyen irányú különbséget várunk el</li>
+</ul></li>
+<li><p>Azt, hogy melyik hipotézist alkalmazzuk az elmélet (előzetes tudásunk) határozza meg</p></li>
+</ul></li>
+<li><p>Megfogalmazzuk a <strong>null hipotézist</strong></p>
+<ul>
+<li>Egyoldalú hipotézis esetén a null hipotézis feltételezi, hogy az alternatív által prediktált iránnyal ellenkező előjelű különbséget kapunk vagy nem lesz különbség</li>
+<li>Feltételezzük, hog a null hipotézis igaz!</li>
+</ul></li>
+<li><p>A hipotézis tesztelésére alkalmas adatokat gyűjtünk</p></li>
+<li><p>Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az adatokra</p>
+<ul>
+<li><p>Célunk: az alternatív hipotézis mellett szóló evidencia számszerüsítése az adatokban található variancia ellenében</p></li>
+<li><p>A modell illesztése során kiszámoljuk a teszt statisztikát</p></li>
+</ul></li>
+<li><p>Kiszámoljuk a <strong>teszt statisztikát</strong></p>
+<ul>
+<li>A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás mértetének mutatója az adatokban található variancia fényében</li>
+</ul></li>
+<li><p>Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél extrémebb teszt statisztikát, ha a null hipotézis igaz</p>
+<ul>
+<li><p>Ehhez egy valószínűségi eloszlást használunk, ami megmutatja, hogy a null hipotézis alatt, milyen valószínűségeket várnánk el az egyes teszt statisztika értékekhez</p></li>
+<li><p>Ehhez általában egy elméleti eloszlást használnuk, ami illik a vizsgált teszt statisztikához</p>
+<ul>
+<li>Például t tesztnél a teszt statisztika a t érték, és t-eloszlást használnuk</li>
+</ul></li>
+<li><p>Az így kiszámolt valószínűség a <strong>p-érték</strong></p></li>
+</ul></li>
+<li><p>Értelmezzük az eredmények <strong>statisztikai szignifikanciáját</strong></p>
+<ul>
+<li><p>A p-értéket fogjuk használni arra, hogy eldöntsük elég meglepőek-e az adataink ahhoz, hogy elvessük a null hipotézist</p></li>
+<li><p>Ehhez egy <strong>döntési kritériumot</strong> kell használnunk, amit a <strong>szignifikancia küszöbérték</strong>, azaz <strong>alpha</strong> fog számszerűsíteni</p></li>
+<li><p>Fontos megjegyezni, hogy nem tudhatjuk, hogy a döntés, hogy elvetjük a null hipozétist helyes vagy helytelen döntés-e egy adott esetben!</p>
+<ul>
+<li>Vagy egyik vagy a másik nem rendelhetünk mellé valószínűséget!</li>
+</ul></li>
+<li><p>Így egyedül azt tudjuk megmondani, hogyha ilyen vagy ennél extrémebb adatokat kaptunk hosszútávon, ha végtelenszer megismételjük a kísérletet és ugyanezt a döntési kritériumot (alphat) használjuk, akkor az esetek hány százalékában fogunk hibásan dönteni</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="szignifikancia-küszöb" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="szignifikancia-küszöb"><span class="header-section-number">7.1.2</span> Szignifikancia küszöb</h3>
+<ul>
+<li><p>Nincs objektíven helyes küszöbérték!</p></li>
+<li><p>Hagyományosan a szignifikancia küszöb 0.05</p>
+<ul>
+<li><p>Az alpha = 0.05 azt mondja meg, hogyha végtelenszer megismételjük a kutatást hosszútávon 5% az esélye annak, hogy egyes fajú hibát követünk el</p></li>
+<li><p>Ez azonban csak tradíció kérdése</p></li>
+<li><p>Pár éve megjelent két cikk is, ami a szignifikancia küszöb újragondolására bíztat</p>
+<ul>
+<li><p>Az egyik amellett érvel, hogy hozzunk érveket amellett, hogy melyik szignifikancia küszöböt választjuk</p>
+<ul>
+<li>Ez azonban nehéz feladat</li>
+</ul></li>
+<li><p>A másik amellett érvel, hogy használjunk egy konzervatívabb küszöbértéket alapértelmezettként, ami legyen 0.005</p>
+<ul>
+<li>Emögött az a feltételezés áll, hogy a 0.05-ös küszöbérték mellett a nullhipotézissel szembeni evidencia gyenge</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="mit-értünk-helyes-döntés-alatt" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="mit-értünk-helyes-döntés-alatt"><span class="header-section-number">7.1.3</span> Mit értünk helyes döntés alatt?</h3>
+<ul>
+<li><p>Négy lehetséges kimenetel létezik:</p>
+<ul>
+<li><p>Elvetjük a nullhipotézist, amikor az valóban hamis</p></li>
+<li><p>Nem vetjük el a nullhipotézist, amikor valójában igaz</p></li>
+<li><p>Elvetjük a nullhipotézist, pedig az valójában igaz <strong>(egyes fajú hiba)</strong></p></li>
+<li><p>Nem vetjük el a nullhipotézist, amikor az valójában hamis (<strong>kettes fajú hiba)</strong></p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>A kettes fajú hiba előfordulásának gyakoriságát a béta küszöbértékkel tudjuk kontrollálni</p>
+<ul>
+<li>Általában 0.2 azaz 20%</li>
+</ul></li>
+<li><p>Ha az adataink kellő mértékben valószínűtlenek a null hipotézis fényében, akkor elvetjük azt és az alternatív hipotézist megtartjuk</p></li>
+<li><p>Ha nem elég valószínűtlenek az adatok, akkor nem tudjuk elvetni a nullhipotézist</p>
+<ul>
+<li>Ebben az esetben nem tudhatjuk, hogy a populációban valóban nem létezik a hatás vagy csak nem volt elég érzékeny a mérőeszközünk a detektálására!</li>
+</ul></li>
+</ul>
+</section>
+<section id="többszörös-tesztelés" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="többszörös-tesztelés"><span class="header-section-number">7.1.4</span> Többszörös tesztelés</h3>
+<ul>
+<li><p>Ha többször teszteljük ugyanazokat az adatokat a p érték devalválódik</p></li>
+<li><p>Nem az egyes tesztekre kell kontrollálni a hibát, hanem a tesztek egész családjára</p>
+<ul>
+<li>Ezt nevezzük family wise error rate-nek</li>
+</ul></li>
+<li><p>Ezt különböző statisztikai módszerekkel tudjuk kontrollálni</p>
+<ul>
+<li>A legalapvetőbb a Bonferroni korrekció ahol elosztjuk az alphát a tesztek számával</li>
+</ul></li>
+<li><p>Részben ez magyarázza, hogy miért nem lehet az NHST alatt többszörösen tesztelni: azaz megnézni az eredményt újabb adatokat gyűjteni majd megint tesztelni</p></li>
+<li><p>Hosszutávon a p érték biztosan szignifikáns lesz</p>
+<ul>
+<li>Mert a nagy elemszám miatt a szórás annyira kicsire csökken, hogy kis különbséget is szignifikánsnak fogunk találni</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="hatásnagyságok" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="hatásnagyságok"><span class="header-section-number">7.2</span> Hatásnagyságok</h2>
+<ul>
+<li><p>A statisztikai szignifikancia nem feltétlenül jelent valós szignifikanciát</p>
+<ul>
+<li><p>Példa: egy szívritmus szabályozó gyógyszer hatékonyságának vizsgálatánál kaphatunk szignifikáns különbséget, amikor összehasonlítjuk azon résztvevők szívritmusát akik kaptak az új gyógyszerből azokéval, akik csak placebót kaptak</p>
+<ul>
+<li>ettől függetlenül, ha a gyógyszer klinikailag nem értelmezhető módon csökkenti a szívritmus gyakoriságát (mondjuk egy gyógynövényből készült tea hatékonyságával ér fel) a gyógyszercég nem fog pénzt költeni az új gyógyszer piacra dobására</li>
+</ul></li>
+</ul></li>
+<li><p>A <strong>hatásméret (effect size)</strong> annak a számszerűsített mutatója, mennyire erős egy összefüggés, vagy mennyire nagy a különbség két csoport között</p></li>
+<li><p>Vannak <strong>nyers hatásméret mutatók</strong></p>
+<ul>
+<li><p>Amik ugyanazt a skálát használják, mint az adatok</p></li>
+<li><p>Különböző skálákon mért hatásméretek így nem összehasonlíthatók</p></li>
+<li><p>Azonban a hatás valós szignifikanciájának értelmezése könnyebb velük!</p></li>
+</ul></li>
+<li><p>És <strong>standardizált hatásméret mutatók</strong></p>
+<ul>
+<li><p>Lehetővé teszi az összehasonlítást!</p>
+<ul>
+<li>Lásd: metaanalízis</li>
+</ul></li>
+<li><p>Két család:</p>
+<ul>
+<li><p>Csoportok közötti különbségekre</p>
+<ul>
+<li>Cohen’s d</li>
+</ul></li>
+<li><p>Változók közötti összefüggésre</p>
+<ul>
+<li>Korreláció, odds ratio, risk ratio</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="mintaméret-és-annak-becslése" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="mintaméret-és-annak-becslése"><span class="header-section-number">7.3</span> Mintaméret és annak becslése</h2>
+<ul>
+<li><p><strong>Mintaméret:</strong> az egymástól független megfigyelések száma</p></li>
+<li><p>Befolyásolja a statisztikai erőt: annak valószínűsége, hogy megtaláljuk a hatást, amennyiben az a valóságban is létezik</p>
+<ul>
+<li>A kettes fajú hiba inverze</li>
+</ul></li>
+<li><p>Negatív eredmények esetében fontos a <strong>statisztikai erő</strong></p>
+<ul>
+<li>Különben nem tudjuk megmondani hogy valóban nem létezik a hatás vagy csak nem volt elég nagy a mintánk, hogy egy ekkora hatást észleljünk (nem volt elég érzékeny a mérésünk)</li>
+</ul></li>
+<li><p>A szükséges <strong>mintaméret becslést</strong> az NHST alatt a priori mintaméret becsléssel végezzük</p>
+<ul>
+<li><p>Az a priori azt jelenti, hogy csak akkor van értelme a mintaméret becslésnek, ha az az adatok gyűjtése és a statisztikai teszt elvégzése előtt történt</p>
+<ul>
+<li><p>Ezután vagy megtaláltuk a hatást vagy nem, a kérdés el van döntve</p></li>
+<li><p>Olyan a post hoc mintaméret becslés mintha azután próbálnánk meg kiszámolni, hogy mennyi üzemanyag kell egy repülőbe ahhoz, hogy átrepüljünk vele az óceán felett, miután már megtörtént a repülés. A gép vagy lezuhant vagy nem</p></li>
+</ul></li>
+<li><p>Ehhez kell az elvárt hatásméret, a kívánt statisztikai erő, a szignifikancia küszöb, a kutatási elrendezés</p></li>
+<li><p>Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk, hogy észleljük</p></li>
+<li><p>Az elvárt hatásméret megbecslésére számos módszer van</p>
+<ul>
+<li><p>Használhatunk pilot kutatást</p></li>
+<li><p>Támaszkodhatunk a szakirodalomban előzetesen talált hatásméretekre</p>
+<ul>
+<li>Azonban itt lehetséges, hogy a publikált hatásméretek torzítanak!</li>
+</ul></li>
+<li><p>Elméleti alapon is meghatározhatjuk a számunkra releváns legkisebb hatást</p>
+<ul>
+<li><strong>smallest effect size of interest (SESOI)</strong></li>
+<li>melyik az a legkisebb hatás, ami számunkra még érdekes lehet</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./inferential_statistics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./correlation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
