@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 9&nbsp; Lineáris regresszió</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./comparing_means.html" rel="next">
+<link href="./correlation.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#egyszerű-lineáris-regresszió" id="toc-egyszerű-lineáris-regresszió" class="nav-link active" data-scroll-target="#egyszerű-lineáris-regresszió"><span class="toc-section-number">9.1</span>  Egyszerű lineáris regresszió</a>
+  <ul class="collapse">
+  <li><a href="#lineáris-modell-paraméterei" id="toc-lineáris-modell-paraméterei" class="nav-link" data-scroll-target="#lineáris-modell-paraméterei"><span class="toc-section-number">9.1.1</span>  Lineáris modell paraméterei</a></li>
+  <li><a href="#lineáris-modell-illeszkedésének-a-vizsgálata" id="toc-lineáris-modell-illeszkedésének-a-vizsgálata" class="nav-link" data-scroll-target="#lineáris-modell-illeszkedésének-a-vizsgálata"><span class="toc-section-number">9.1.2</span>  Lineáris modell illeszkedésének a vizsgálata</a></li>
+  <li><a href="#prediktor-változók-szignifikanciájának-vizsgálata" id="toc-prediktor-változók-szignifikanciájának-vizsgálata" class="nav-link" data-scroll-target="#prediktor-változók-szignifikanciájának-vizsgálata"><span class="toc-section-number">9.1.3</span>  Prediktor változók szignifikanciájának vizsgálata</a></li>
+  </ul></li>
+  <li><a href="#lineáris-regresszió-előfeltételei" id="toc-lineáris-regresszió-előfeltételei" class="nav-link" data-scroll-target="#lineáris-regresszió-előfeltételei"><span class="toc-section-number">9.2</span>  Lineáris regresszió előfeltételei</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="egyszerű-lineáris-regresszió" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="egyszerű-lineáris-regresszió"><span class="header-section-number">9.1</span> Egyszerű lineáris regresszió</h2>
+<ul>
+<li><p>Legsokrétűbb statisztikai próba</p></li>
+<li><p>A legtöbb más statisztikai próbát regresszióként is lehet értelmezni</p></li>
+<li><p>Célja: a kimeneti változó értékeinek predikciója egy vagy több prediktor változó által</p></li>
+<li><p>Adat = model + error</p>
+<ul>
+<li>Lineáris regresszió esetében a modellünk egy egyenes vonal</li>
+</ul></li>
+<li><p>Azt a lineáris modellt akarjuk megtalálni, ami legjobban illeszkedik az adatokra, ahol legkisebb a hiba</p></li>
+</ul>
+<section id="lineáris-modell-paraméterei" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="lineáris-modell-paraméterei"><span class="header-section-number">9.1.1</span> Lineáris modell paraméterei</h3>
+<ul>
+<li><p>Másnéven regressziós <strong>együtthatók (regression coefficients)</strong></p></li>
+<li><p><strong>Meredekség (slope):</strong> egy egységnyi változás a prediktor változóban (x tengely) mekkora változást okoz a kimeneti változóban (y tengely)</p>
+<ul>
+<li><p>Ha pozitív érték, akkor pozitív kapcsolat van a két változó között</p>
+<ul>
+<li>Ha a prediktor változónk értéke nő a kimeneti változó értéke is nő</li>
+</ul></li>
+<li><p>Ha negatív érték, akkor negatív kapcsolat</p>
+<ul>
+<li>Ha a prediktor változónk értéke nő, a kimeneti változónk értéke csökken</li>
+</ul></li>
+<li><p>Jele: b1</p></li>
+</ul></li>
+<li><p><strong>Intercept:</strong> ha a prediktor változó értéke 0, mekkora a kimeneti változó értéke, azaz milyen y értéknél metszi a vonal az y tengelyt</p>
+<ul>
+<li>Jele: b0</li>
+</ul></li>
+</ul>
+</section>
+<section id="lineáris-modell-illeszkedésének-a-vizsgálata" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="lineáris-modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">9.1.2</span> Lineáris modell illeszkedésének a vizsgálata</h3>
+<ul>
+<li><p>Hogyan találjuk meg azt a lineáris modellt, ami legjobban illeszkedik az adatokra?</p>
+<ul>
+<li><p>A <strong>legkisebb négyzetek módszere (method of least squares)</strong></p>
+<ul>
+<li><p>Meghatározásához ugyanazt a módszert használhatjuk, mint amikor az átlagot használtuk, mint modellt</p></li>
+<li><p>Megnézzük a modell által prediktált értékek és a valós értékek közötti különbséget: a reziduálisokat (residuals)</p></li>
+<li><p>Itt is négyzetre emeljük a reziduálisok majd összeadjuk őket (sum of squared differences, SS)</p></li>
+<li><p>Ezután minden lehetséges vonalra (lineáris regressziós modellre) kiszámíthatnánk őket és ahol az SS a legkisebb az a modell illeszkedik a legjobban az adatokra</p></li>
+<li><p>Azonban még a legjobban illeszkedő modell is magyarázhatja rosszul az adatokat!</p></li>
+</ul></li>
+<li><p>Ahhoz, hogy ezt megvizsgálájuk a legegyszerűbb modell illeszkedéséhez hasonlítjuk a regressziós modellunk illeszkedését: az átlaghoz</p>
+<ul>
+<li><p>Az átlag azonban minden adatpontra ugyanazt az értéket fogja prediktálni</p>
+<ul>
+<li><p>Például: mennyire számít a marketingre szánt összeg egy film összbevételénél?</p>
+<ul>
+<li>Ha 1 dollárt költünk a marketingre akkor is ugyanazt a bevétlet prediktálja, mintha 200000$ költüttünk volna rá</li>
+</ul></li>
+</ul></li>
+<li><p>Az átlag modellnél a hibát összesítve megkapjuk a <strong>teljes négyzetösszeget (total sum of squares, SS<sub>T</sub>)</strong></p>
+<ul>
+<li>Ez a teljes, mert ez a legegyszerűbb modell</li>
+</ul></li>
+<li><p>Kiszámítjuk a <strong>négyzetre emelt reziduálisok összegét</strong> a regressziós modellnél is <strong>(residual sum of squares, SS<sub>R</sub>)</strong></p></li>
+<li><p>Ahhoz, hogy megtudjuk a regressziós modellünk mennyivel jobban magyarázza az adatokat, mint az átlag modellunk a kettőt kivonjuk egymásból: SS<sub>T</sub> - SS<sub>R</sub> = <strong>SS<sub>M</sub> (model sum of squares)</strong></p>
+<ul>
+<li>Ha az SS<sub>M</sub> nagy, a regressziós modell sokkal jobban magyarázza az adatokat, mint az átlag</li>
+</ul></li>
+<li><p>Megnézhetjük, hogy arányosan mennyivel javul a modellünk az átlaghoz képest, ha egy prediktor változót is belerakunk</p>
+<ul>
+<li><p>A kettőt elosztva egymással megkapjuk a <strong>determinisztikus együtthatót R<sup>2</sup></strong></p>
+<ul>
+<li>SS<sub>M</sub> / SS<sub>T</sub></li>
+</ul></li>
+<li><p>Megmutatja a regressziós modellünk által megmagyarázott variancia arányát a kimeneti változónkban, a teljes varianciához képest</p></li>
+<li><p>Ha megszorozzuk 100-al százalékot kapunk</p></li>
+<li><p>A kimeneti változóban lévő varianciának hány százalékát magyarázza meg a modell</p></li>
+<li><p>Ha ennek a négyzetgyökét vesszük, akkor megkapjuk a Pearson korrelációs együtthatót!</p></li>
+</ul></li>
+<li><p>Az F-teszttel is megvizsgálhatjuk a modellünk illeszkedését</p>
+<ul>
+<li><p><strong>F teszt statisztika</strong>: szisztematikus variancia / nem szisztematikus variancia</p>
+<ul>
+<li>A modell okozta javulás (SS<sub>M</sub>) / a modell és a megfigyel adatok között lévő különbség (SS<sub>R</sub>)</li>
+</ul></li>
+<li><p>Másszóval az F teszt statisztika megmondja, hogy a modell mennyire javítja a becslésünk pontosságát a modellben található pontatlansághoz képest</p></li>
+<li><p>Itt nem a négyzetes különbségek összegével, hanem átlagával dolgozunk</p>
+<ul>
+<li>Így nem függ a megfigyelések számától</li>
+</ul></li>
+<li><p>Mean squares for the model (MSS)</p>
+<ul>
+<li>Szabadságfok: prediktor változók száma</li>
+</ul></li>
+<li><p>Residuals mean square (MS<sub>R</sub>)</p>
+<ul>
+<li>Szabadságfok: megfigyelések száma - béta együtthatók száma (meredség + intercept = 2)</li>
+</ul></li>
+<li><p>Jó modellnél 1-nél nagyobb az F arány</p></li>
+<li><p>p-értéket vagy konfidencia intervallumot is ki tudunk hozzá számolni</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="prediktor-változók-szignifikanciájának-vizsgálata" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="prediktor-változók-szignifikanciájának-vizsgálata"><span class="header-section-number">9.1.3</span> Prediktor változók szignifikanciájának vizsgálata</h3>
+<ul>
+<li><p>Nemcsak a teljes modell teljesítményét kell megvizsgálnunk, hanem az egyes paramétereknek a szignifikanciáját is</p></li>
+<li><p>A béta megmutatja, hogy a prediktorban való egy egységnyi változás mekkora változást okoz a kimeneti változóban</p>
+<ul>
+<li><p>Ha a modell rossz, azt várjuk el, hogy ez nulla legyen</p>
+<ul>
+<li>Pont, mint az átlagnál!</li>
+</ul></li>
+</ul></li>
+<li><p>A nullhipotézis a paraméterek esetén az lesz, h a paraméter nem különbözik a nullától</p></li>
+<li><p>A kritikus érték pedig a paraméter tényleges értéke</p></li>
+<li><p>Ezekre gyakorlatilag egy egymintás t-próbát fogunk végezni</p>
+<ul>
+<li>t = béta / SE</li>
+</ul></li>
+<li><p>Az intercept esetén, hogy különbözik-e a nullától az érték.</p></li>
+<li><p>A slope esetén, hogy a dőlésszöge különbözik-e a nullától.</p></li>
+</ul>
+</section>
+</section>
+<section id="lineáris-regresszió-előfeltételei" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="lineáris-regresszió-előfeltételei"><span class="header-section-number">9.2</span> Lineáris regresszió előfeltételei</h2>
+<ul>
+<li><p>A kimeneti változó folytonos azaz legalább intervallum mérési szintű</p></li>
+<li><p>Prediktor típusok: folytonos vagy kategorikus is lehet</p></li>
+<li><p>Nem zéró variancia: a kimeneti változó és prediktor értékeiben van variabilitás</p></li>
+<li><p>A megfigyelések egymástól függetlenek</p></li>
+<li><p>A reziduálisok eloszlása normális (a prediktor eloszlásának nem kell normálisnak lennie!)</p>
+<ul>
+<li><p>Vizuálisan:&nbsp;</p>
+<ul>
+<li><p><strong>QQ plot</strong></p>
+<ul>
+<li><p>A pontok maradjanak az átló közelében</p>
+<ul>
+<li><p>Az esetek 5%-a lehet 2 szóráson kívül</p></li>
+<li><p>Az esetek 1%-a lehet 2.5 szóráson kívül</p></li>
+<li><p>Az esetek 0.1%-a lehet 3 szóráson kívül</p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Residual vs fitted values</strong></p>
+<ul>
+<li><p>Residuális értékek vannak az y tengelyen</p></li>
+<li><p>Modell értékek az x tengelyen</p></li>
+<li><p>Ha a vonal görbül, nem lineáris kapcsolat</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Az értékek</p>
+<ul>
+<li><p>68%-a egy szóráson belül van</p></li>
+<li><p>95%-a két szóráson belül van</p></li>
+<li><p>99.7%-a három szóráson belül van</p></li>
+</ul></li>
+<li><p>Ehhez kapcsolódik, hogy a modellben nincsen sok jelentős kiugró érték (outlier), ami torzítja a modellünket</p></li>
+<li><p>Azt várjuk, hogy a lineáris regresszió minden mérési szinten ugyanannyira jó predikciót tudjon adni. Azaz, ugyanolyan hatékony legyen akkor, ha a buszmegállóban 3 ember van, mint akkor, ha 20</p></li>
+<li><p>Ezt a reziduálisok elemzésével tudjuk ellenőrizni</p></li>
+<li><p>Ekkor azt mondjuk, hogy a modellünk homoszkedasztikus, azaz a reziduálisok mértéke független a prediktor értékétől.</p></li>
+<li><p>Ellentéte a heteroszkedaszticitás, ami azt jelenti, hogy pl. a kisebb prediktált értékekhez tartozó reziduálisok kisebbek, mint a nagyobb prediktált értékekhez tartozó reziduálisok</p></li>
+<li><p>Vizsgálata vizuálisan zajlik</p>
+<ul>
+<li>Tölcsér alak azt jelenti hogy sérül a heteroszkedaszticitás feltétle</li>
+</ul></li>
+<li><p>Kiugró értékek szűrése</p>
+<ul>
+<li><p>Vizuálisan</p>
+<ul>
+<li><p>Távol esnek a többi értéktől</p></li>
+<li><p>Magukhoz húzzák a regressziós egyenest</p></li>
+</ul></li>
+<li><p>Statisztikai módszerekkel</p>
+<ul>
+<li><p>Cook’s distance</p></li>
+<li><p>Ha 1-nél nagyobb erős torzító hatása van az adatpontnak</p></li>
+</ul></li>
+<li><p>Mit tegyünk ha vannak outlierek?</p>
+<ul>
+<li><p>Csak akkor zárjuk ki ha adathibából származnak</p></li>
+<li><p>Különben overfitting veszélye fennáll</p></li>
+</ul></li>
+<li><p>Nagy elemszánál nem olyan nagy a hatásuk!</p></li>
+</ul>
+<h2 id="többszörös-lineáris-regresszió" data-number="9.3" class="anchored"><span class="header-section-number">9.3</span> Többszörös lineáris regresszió</h2>
+<ul>
+<li><p>További tényezőkről is gondolhatjuk, hogy javítani fognak a modellünkön</p>
+<ul>
+<li><p>Egy bizonyos pont után, ha ezeket a prediktor változókat hozzáadjuk a modellhez, nem fog a hiba szignifikánsan csökkenni</p></li>
+<li><p>Ez az overfitting</p></li>
+<li><p>Eredménye: a modell nem lesz generalizálható</p></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./correlation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./comparing_means.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

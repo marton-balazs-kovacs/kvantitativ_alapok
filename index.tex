@@ -1,0 +1,3731 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Kvantitatív Alapok},
+  pdfauthor={Kovács Márton},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Kvantitatív Alapok}
+\author{Kovács Márton}
+\date{8/27/23}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, breakable, frame hidden, sharp corners, interior hidden, enhanced]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{elux151szuxf3}{%
+\chapter*{Előszó}\label{elux151szuxf3}}
+\addcontentsline{toc}{chapter}{Előszó}
+
+\markboth{Előszó}{Előszó}
+
+Ez a könyv a Neumann János Egyetem és az MNB Intézet által indított
+Nemzetközi Gazdaság és Gazdálkodás mesterszakának \emph{Kvantitatív
+alapok} nevű tantárgyához készült. Célom a hallgatók felkészülését
+segíteni azzal, hogy egy helyen, átlátható formában közlöm a tantárgyhoz
+készült jegyzeteket, példákat, gyakorlatokat és ábrákat. A Kvantitatív
+alapok tantárgy felépítésénél akárcsak ezen könyv megírásánál nagyban
+merítettem Russ Poldrack Statistical Thinking for the 21st Century című
+munkájából, Nagy Tamás Adatelemzés és statisztikai következtetés nevű
+órai jegyzeteiből és Andy Field statisztika tankönyveiből. Ha az olvasó
+ezen művekből ismerős gondolatokat, példákat vagy magyarázatokat lát,
+akkor azok nagy valószínűséggel onnan is lettek átvéve. Én magam is
+nagyrészt tőlük tanultam azt, amit a kvantitatív elemzésről tudok. Ez a
+három ember nálam sokkal többet gondolkozott azon, hogyan kell hatékony
+módon statisztikát tanítani egyetemista hallgatóknak, így nem láttam
+értelmét, hogy a tantárgy felépítését a nulláról kezdjem. Ezúton is
+szeretném megköszönni a segítségük!
+
+\bookmarksetup{startatroot}
+
+\hypertarget{kuxf6szuxf6netnyuxedlvuxe1nuxedtuxe1s}{%
+\chapter*{Köszönetnyílvánítás}\label{kuxf6szuxf6netnyuxedlvuxe1nuxedtuxe1s}}
+\addcontentsline{toc}{chapter}{Köszönetnyílvánítás}
+
+\markboth{Köszönetnyílvánítás}{Köszönetnyílvánítás}
+
+Szeretnék továbbá köszönetet mondani Ignits Györgyinek, Kapitány
+Balázsnak, Szászi Barnabásnak és Szécsi Péternek, akik példa adatok
+megosztásán keresztül segítették a könyv létrejöttét.
+
+A KÖNYVÖN MOST IS AKTÍVAN DOLGOZOM, EZ NEM A VÉGLEGES VÁLTOZAT!
+
+\bookmarksetup{startatroot}
+
+\hypertarget{bevezetuxe9s}{%
+\chapter{Bevezetés}\label{bevezetuxe9s}}
+
+A kvantitatív elemzés nem az adatoknál kezdődik. Az eddigi oktatói
+tapasztalataim alapján amikor egy hallgató elakad egy önálló elemzési
+feladat során az nem azért van mert helytelenül magolta be az éppen
+alkalmazott statisztikai teszt előfeltételeit, vagy mert nem tudja a
+standard hiba képletét. Ezekre a kérdésekre egy gyors Google kereséssel
+könnyen meg lehet találni a választ.
+
+\begin{itemize}
+\item
+  Hanem mert nem látja át az empirikus tudományos módszer egészét, annak
+  lépéseit és összefüggéseit
+
+  \begin{itemize}
+  \item
+    Nincs jól megfogalmazott hipotézis
+  \item
+    Nem feltett kutatási kérdés megválaszolásához szükséges
+    mérőeszközöket használtak
+  \item
+    Nem látják át a rosszul strukturált adattáblát
+  \item
+    Nem értik a frekventista hipotézis tesztelés működését
+  \item
+    És csak ezután jön, hogy nem értik milyen statisztikai eljárást kell
+    alkalmazni és azt hogyan
+  \item
+    Ezzel a lépéssel kapcsolatban én is gyakran teszek fel kérdéseket
+    kollégáknak és az internetnek (és bíztatok mindenkit, hogy tegyen
+    ugyanígy)
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{tudomuxe1nyos-muxf3dszer}{%
+\chapter{Tudományos módszer}\label{tudomuxe1nyos-muxf3dszer}}
+
+\hypertarget{a-tudomuxe1ny-cuxe9lja}{%
+\section{A tudomány célja}\label{a-tudomuxe1ny-cuxe9lja}}
+
+\begin{itemize}
+\item
+  A tudomány célja, hogy általános magyarázotokkal szolgáljon a minket
+  körülvevő világról
+\item
+  A tudományos magyarázatok leegyszerüsített formában \textbf{írják le}
+  a valóságot
+\item
+  A tudományos magyarázatok segítségével így képesek vagyunk
+
+  \begin{itemize}
+  \item
+    jól informált \textbf{döntéseket} hozni
+  \item
+    \textbf{predikciókat} alkotni új helyzetekre a már meglévő tudásunk
+    alapján
+  \end{itemize}
+\item
+  Később majd látni fogjuk, hogy a kutatási folyamat sok pontján
+  félrecsúszhat az, hogy a kutatásunk alapján megbízható döntéseket
+  hozzunk vagy predikciókat alkossunk
+\item
+  A tudományos megközelítés azonban nem az egyetlen mód, amelyen
+  keresztül a valóságot magyarázzuk
+\item
+  Miben más, mint egyéb megismerési módok?
+
+  \begin{itemize}
+  \item
+    Pl: vallás -\textgreater{} autoritás alapú
+  \item
+    Kritikai megközelítés
+  \item
+    Tesztelhető (falszifikálható hipotézisek
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{az-empirikus-tudomuxe1nyos-folyamat-luxe9puxe9sei}{%
+\section{Az empirikus tudományos folyamat
+lépései}\label{az-empirikus-tudomuxe1nyos-folyamat-luxe9puxe9sei}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Általános kérdésfelvetés
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ez talán a legegyszerűbb lépés, az ember kíváncsi természetű,
+    szeretné érteni az őt körülvevő valóságot
+  \end{itemize}
+\item
+  Elmélet alkotás
+
+  \begin{itemize}
+  \item
+    Ahhoz, hogy egy kérdést meg tudjunk válaszolni empirikus módon egy
+    elméletet kell alkotnunk a kérdés mögött álló lehetséges
+    hatásmechanizmusról
+  \item
+    Az elmélet falszifikálható kell legyen
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Tudunk olyan megfigyeléseket tenni amelyek fényében az elméletet
+      elvetjük
+    \end{itemize}
+  \item
+    A jó elméletek
+
+    \begin{itemize}
+    \item
+      Elérés (reach): minél több jelenséget magyaráz meg egy elmélet
+      annál jobb
+    \item
+      Parszimónia: két versenyző elmélet közül az a jobb, ami kevesebb
+      elemből áll
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Lásd Occam borotvája
+      \end{itemize}
+    \item
+      Konzervatívizmus: Mennyire illeszkedik már meglévő tesztelt és
+      elfogadott elméletekhez
+    \end{itemize}
+  \end{itemize}
+\item
+  Hipotézis alkotás
+
+  \begin{itemize}
+  \item
+    A hipotézis az elméletünknek egy konkrétan tesztelhető
+    operacionalizált része
+  \item
+    Egy elmélet alapján többféle hipotézist fel lehet állítani
+  \item
+    A hipotézis alapján predikciókat alkotunk, amelyeket tesztelünk
+  \item
+    Egy hipotézis bizonyításával nem bizonyítjuk az elméletet is!
+  \item
+    De tudjuk a teszt eredményei által tovább finomítani az elméletet
+  \item
+    Vagy elvetjük azt
+  \item
+    Fontos, hogy a hipotézis valóban illeszkedjen az adott elmélethez
+  \end{itemize}
+\item
+  Kutatási elrendezés
+
+  \begin{itemize}
+  \item
+    A hipotézis tesztelésére annak feltételezései alapján egy kutatást
+    tervezünk
+  \item
+    A kutatás megtervezésénél számos különböző módszertan közül tudunk
+    választani
+  \item
+    Mindegyiknek vannak előnyei és hátránya, a hipotézis és az elérhető
+    erőforrások fényében választunk közülük
+
+    \begin{itemize}
+    \item
+      Kérdőíves
+    \item
+      Megfigyeléses
+    \item
+      Kísérleti
+    \end{itemize}
+  \item
+    Van pár általános szempont, amelyeket módszertantól függetlenül
+    figyelembe kell vennünk és amelyek befolyásolják az eredményekből
+    levontható következtetéseket
+
+    \begin{itemize}
+    \item
+      Minta felépítése és mintaméret
+    \item
+      Mérőeszköz és annak pontossága, megbízhatósága, és granularitása
+    \end{itemize}
+  \item
+    Ahhoz hogy oksági viszonyt feltételezzünk két jelenség közt nem
+    feletkezhetünk meg az adatgyűjtés módjáról
+  \item
+    Megfigyeléses vizsgálatoknál nem tudjuk biztosan kijelenteni hogy
+    két változó között oksági viszony van
+
+    \begin{itemize}
+    \item
+      Lehetséges hogy egyébb faktorok befolyásolják a kapott
+      együttjárást
+    \item
+      \url{https://www.tylervigen.com/spurious-correlations}
+    \end{itemize}
+  \item
+    Ezért a kutatók általában az oksági viszony meghatározásához
+    kísérleti kutatási elrendezést használnak (pl: randomized control
+    trial)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      A lehetséges, de nem viszgált befolyásoló faktorokat random
+      mintavételezés útján zárják ki az adatgyűjtés során
+    \end{itemize}
+  \item
+    Vannak statisztikai módszerek amivel utólag is kontrollálni tudjuk
+    ezeket a változókat, de sokkal nehezebb ezt utólag megtenni
+  \item
+    Ez is kiemeli a jól megtervezett kutatások és részletesen
+    kidolgozott elméletek fontosságát!
+  \item
+    Mintavételezés
+
+    \begin{itemize}
+    \item
+      Az esetek kis részében tudjuk az egész populációt vizsgálni
+    \item
+      Minták tesztelésén keresztül vonunk le általános következtetéseket
+    \item
+      De mekkora mintára van szükség ahhoz, hogy a populációra tudjunk
+      következtetni?
+    \end{itemize}
+  \end{itemize}
+\item
+  Adatok feldolgozása
+
+  \begin{itemize}
+  \item
+    Általában nem szokták külön lépésként kezelni, de az óra témaja és
+    az eredményekre gyakorolt lehetséges hatása miatt fontos megemlíteni
+  \item
+    A kapott adatokat befolyásolja az általunk választott kutatási
+    elrendezés és az adatgyűjtés során fellépő váratlan torzító tényezők
+  \item
+    Nagyon ritka esetben készek az adatgyűjtés után az adatok az
+    elemzésre
+  \item
+    Általában először adat rendezést és adattisztítást kell elvégeznünk
+  \end{itemize}
+\item
+  Statisztikai elemzés
+
+  \begin{itemize}
+  \item
+    Az elemzés során használhatunk
+
+    \begin{itemize}
+    \item
+      Leíró statisztikai eljárásokat
+    \item
+      Következtetéses statisztikai eljárásokat
+    \end{itemize}
+  \item
+    Rengeteg statisztikai eljárás van, a statisztikusok most is
+    dolgoznak újak kifejlesztésén és validációján
+  \item
+    Az, hogy milyen eljárást választunk függ a hipotézisünktől, a
+    kutatási elrendezésünktől, és az adatgyűjtés során kapott adatoktól
+  \item
+    Többféle lehetséges valid elemzési út is létezik
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Lást: multi-analyst study
+    \end{itemize}
+  \end{itemize}
+\item
+  Eredmények értelmezése
+
+  \begin{itemize}
+  \item
+    A statisztikai elemzés eredményeinek értelmezésére a tudományos
+    folyamat összes eddigi lépése kihat
+  \item
+    Kutatóként szeretnénk egyértelmű válaszokat kapni az általunk
+    feltett kérdésekre
+
+    \begin{itemize}
+    \item
+      Sajnos nagyon kevés esetben ez a helyzet
+    \item
+      Ez részben a tudományos folyamat összetettségének az eredménye
+    \item
+      Részben ennek a vágynak is szerepe van a p-értékek abuzálásában
+    \item
+      Egy kutatásból nagyon ritkán kapunk egyértelmű válaszokat
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Lásd: metaanalízis, szisztematikus összefoglaló (systematic
+        review)
+      \end{itemize}
+    \end{itemize}
+  \item
+    Pár példa helyzet arra, amikor a tudományos módszer összetettsége
+    árnyalja a statisztikai elemzés eredményeinek értelmezését:
+
+    \begin{itemize}
+    \item
+      A választott mérőeszközök valójában nem a vizsgált konstruktumot
+      mérik
+    \item
+      A minta milyensége vagy mérete nem indokolja az eredmények
+      általánosítását
+    \item
+      Az adattisztítás során olyan megfigyelések is bent maradtak,
+      amelyek szisztematikusan torzítják az eredményeket
+    \end{itemize}
+  \item
+    Az értelmezést korlázotó tényezőkről általában a tudományos
+    publikáció limitációk szakaszában számolunk be
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{a-statisztika-szerepe-a-tudomuxe1nyban}{%
+\section{A statisztika szerepe a
+tudományban}\label{a-statisztika-szerepe-a-tudomuxe1nyban}}
+
+\begin{itemize}
+\item
+  A komplex valóság egyszerüsített leírása, ami egyúttal azt is elmondja
+  mennyire lehetünk bizonytalanok ebben a tudásban
+\item
+  Miért van szükség a statisztikára?
+
+  \begin{itemize}
+  \item
+    Heurisztikák veszélye
+
+    \begin{itemize}
+    \item
+      Példa: USA bűnelkövetések gyakorisága
+
+      \begin{itemize}
+      \item
+        Sokkal gyakoribbnak gondoljuk a bűnelkövetések számát, mint
+        amilyen gyakoriak a valóságban
+      \item
+        Elérhetőségi torzítás (kognitív torzítás egyik fajtája)
+      \item
+        Média szerepe?
+      \end{itemize}
+    \end{itemize}
+  \item
+    Statisztika segít abban hogy tanuljunk az adatokból
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hogyan frissítsük előzetes tudásunk az új adatok fényében
+    \end{itemize}
+  \end{itemize}
+\item
+  A statisztika az adatösszesítésről szól
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Hogyan tudunk úgy leegyszerüsíteni befogadhatatlan mennyiségű
+    megfigyelést, hogy azok segítségével hipotézisünk tesztelni tudjuk,
+    de fontos információ ne vesszen el
+  \end{itemize}
+\item
+  A statisztika a bizonytalanság kezeléséről szól
+
+  \begin{itemize}
+  \item
+    A világ összetett
+  \item
+    A legtöbb összetett jelenséget nehéz determinisztikus módon
+    megmagyarázni
+  \item
+    Bár tudunk ok-okozati kapcsolatot felállítani bizonyos összefüggések
+    között általában ezek nem determinisztikus, hanem probabilisztikus
+    predikciókhoz vezetnek
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Lásd: dohányzás és tüdőrák
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Tudjuk, hogy a dohányzás növeli a tüdőrák esélyét, azonban nem
+        lehet biztosra mondani, hogyha valaki dohányzik, akkor
+        mindenképp tüdőrákos is lesz
+      \end{itemize}
+    \end{itemize}
+  \item
+    A statisztika nem tud bizonyítani (úgy ahogy a matematika tud)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hanem evidenciát tud felmutatni egy hipotézis mellett az eddigi
+      megfigyelések fényében, de a bizonytalanságot nem tudjuk nullára
+      csökkenteni
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+A statisztika a kompromisszomkról szól
+
+\begin{itemize}
+\item
+  Nincs egyetlen objektív módszer a statisztikában
+\item
+  Mindig a vizsgált kérdés, az adatgyűjtést és elemzést korlátozó
+  tényezők függvényében kell megtalálnunk a legmeggyőzőbb elemzési utat
+
+  \begin{itemize}
+  \item
+    Ahhoz, hogy a választott elemzési út ténylegesen meggyőző legyen
+    transzparensen közölnünk kell analitikus döntéséinket és a mellette
+    szóló érveket
+  \item
+    Ez az alapfeltétele az analitikus megismételhetőségnek: más kutató
+    ugyanazokat az adatokat vizsgálva megegyező analatikus úton
+    ugyanarra az eredményre érkezik
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Ez sajnos ma a tudományban nem magától értetődő!
+    \end{itemize}
+  \end{itemize}
+\item
+  Több valid elemzési út is lehet ugyanannak a kérdésnek a vizsgálatára
+
+  \begin{itemize}
+  \item
+    A szakmai közösség feladata ezeknek a felülbírálata
+  \item
+    Lásd: multi analyst kutatások
+  \end{itemize}
+\item
+  A tudomány iteratív módon lépésenként épül fel
+
+  \begin{itemize}
+  \item
+    Lehetséges, hogy a ma még megbízhatónak számító elemzési utat új
+    eredmények fényében elvetjük
+  \item
+    És ezzel nincs baj!
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{adat}{%
+\chapter{Adat}\label{adat}}
+
+\hypertarget{mi-az-adat}{%
+\section{Mi az adat?}\label{mi-az-adat}}
+
+\begin{itemize}
+\item
+  Az \textbf{adat változók összessége}, amelyek valamilyen
+  \textbf{mérés} eredményét rögzítik
+
+  \begin{itemize}
+  \item
+    \textbf{Az adat, angolul data többesszám, egyesszámban datum}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{Tehát data are és nem data is!}
+    \end{itemize}
+  \end{itemize}
+\item
+  Sokszor gondolunk az adatra, mint egy adott, önmagában létező dologra.
+  Ezzel szemben, az adat egy dolog mérés által létrejött reprezentációja
+
+  \begin{itemize}
+  \item
+    Tehát a mérés módja befolyásolja az adatok jelentését és minőségét
+  \item
+    Illetve a mérés befolyásolja az adatokból levont következtetéseket
+    is
+  \item
+    Ismerhetünk akárhány statisztikai trükköt az adatok tisztítására,
+    transzformálására, összesítésére, ha azok zajos, torzított, hibás
+    mérésből származnak az adatokból statisztika útján levont
+    következtetések is torzítani fognak
+  \item
+    Ezért fontos már a kutatás megtervezésekor nagyon odafigyelni
+    \textbf{mit} mérünk és \textbf{milyen pontosságal} tudjuk mérni.
+  \item
+    Az adatok létrejöttével a kutatásmódszertan foglalkozik
+  \item
+    Példa:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      1999-ben a Mars Climate Orbiter a Mars atmoszférájába lépve
+      darabokra hullott, mert az egyik modulja angolszász
+      mértékegységeket használt, míg a másik metrikusat
+    \end{itemize}
+  \item
+    További olvasmányok:
+
+    \begin{itemize}
+    \item
+      \url{https://www.psychologicalscience.org/observer/measurement-matters}
+    \item
+      \url{https://journals.sagepub.com/doi/full/10.1177/2515245920952393}
+    \end{itemize}
+  \end{itemize}
+\item
+  Minden változónak legalább két különböző értéke kell legyen, hogy
+  változónak nevezzük, különben egy konstans lenne
+\item
+  A változóknak különböző típusai lehetnek, annak fényében milyen mérés
+  eredményeit rögzítik
+\end{itemize}
+
+\hypertarget{hogyan-keletkeznek-az-adatok}{%
+\section{Hogyan keletkeznek az
+adatok?}\label{hogyan-keletkeznek-az-adatok}}
+
+\hypertarget{mit-muxe9ruxfcnk}{%
+\subsection{Mit mérünk?}\label{mit-muxe9ruxfcnk}}
+
+\begin{itemize}
+\item
+  Elméleti konstruktumok vagy valós fizikai tulajdonságok
+
+  \begin{itemize}
+  \item
+    Sok esetben, főleg a viselkedéses közgazdaságtanban nem fizikai
+    tulajdonságokat mérünk, hanem közvetlenül meg nem figyelhető
+    élméleti \textbf{konstruktumokat}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Pl: boldogság
+    \end{itemize}
+  \end{itemize}
+\item
+  Az elméleti konstruktumok mérésénél fontos, hogy hogyan
+  \textbf{operacionalizáljuk} azok mérését
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Boldogság: mosolyok száma egy nap alatt vagy önbevallásos kérdőív
+    1-től 7-ig terjedő skáláján adott pontok
+  \end{itemize}
+\item
+  \textbf{Validitás (érvényesség)}
+
+  \begin{itemize}
+  \item
+    Azt mutatja meg, hogy mennyire mérjük azt, amit valójában mérni
+    akarunk
+  \item
+    Többféle validitás mutató is van
+
+    \begin{itemize}
+    \item
+      \textbf{Látszatérvényesség}
+
+      \begin{itemize}
+      \item
+        Első ránézésre úgy tűnik-e, hogy a mérőeszközünk azt méri, amit
+        mérni akarunk
+      \item
+        Pl: vérnyomást a nyelv pirossága mentén szeretném megmérni
+        valószínűleg a mérőeszközöm nem érvény adatokat fog adni
+      \end{itemize}
+    \item
+      \textbf{Konstruktum validitás}
+
+      \begin{itemize}
+      \item
+        Két része van:
+
+        \begin{itemize}
+        \item
+          \textbf{Konvergens validitás}
+
+          \begin{itemize}
+          \item
+            A mérőeszköz mérései pozitív együttjárást mutatnak ugyanazt
+            a konstruktumot vizsgáló más mérőeszközök méréseivel
+
+            \begin{itemize}
+            \tightlist
+            \item
+              Pl: boldogságot vizsgálom kérdőíves és interjú módszerrel
+              is, az eredmények között pozitív kapcsolatot várok el
+            \end{itemize}
+          \end{itemize}
+        \item
+          \textbf{Divergens validitás}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            A mérőeszköz mérései és más mérőeszközök mérései között
+            valóban nincs kapcsolat, ha elméleti szinten nem
+            feltételezünk kapcsolatot a két vizsgált konstruktum között
+          \end{itemize}
+        \end{itemize}
+      \item
+        Új mérőeszköz fejlesztése esetén általában már validált, a
+        szakmában elfogadott mérőeszközökhöz hasonlítunk
+      \end{itemize}
+    \item
+      \textbf{Prediktív validitás}
+
+      \begin{itemize}
+      \item
+        A mérőeszközünk mérései alapján előre tudunk jelezni más, a mért
+        dologgal összefüggő egyéb kimeneteleket
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Pl: ha feltételezzük, hogy a figyelmetlenség összefügg a
+          pénzszórással, akkor azt várjuk, hogy aki a figyelmetlenségi
+          kérdőíven magas pontszámot ér el, átlagosan jobban fogja
+          szórni a pénzt a hétköznapokban
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{milyen-pontossuxe1ggal-muxe9ruxfcnk}{%
+\subsection{Milyen pontossággal
+mérünk?}\label{milyen-pontossuxe1ggal-muxe9ruxfcnk}}
+
+\begin{itemize}
+\item
+  Minden mérésben van mérési hiba
+\item
+  Általában ezt akarjuk csökkenteni
+\item
+  Megtehetjük:
+
+  \begin{itemize}
+  \item
+    Mérőeszköz minőségének javításával
+  \item
+    Még több méréssel
+  \end{itemize}
+\item
+  \textbf{Megbízhatóság (reliabilitás)}
+
+  \begin{itemize}
+  \item
+    Azt mutatja meg, hogy mennyire pontosan, konzisztensen mér a
+    merőeszközünk
+  \item
+    Teszt-retesz megbízhatóság
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Ha többször megismételjük a mérést, mennyire járnak együtt a
+      mérések eredményei
+    \end{itemize}
+  \item
+    Megbízhatóság fontos, ha össze akarunk több mérést hasonlítani
+
+    \begin{itemize}
+    \item
+      Két változó közötti kapcsolat nem lehet erősebb, mint egy változó
+      és önmaga közötti kapcsolat (másnéven a változó megbízhatósága)
+    \item
+      Nem megbízható mérés nem tud erős statisztikai összefüggésben
+      lenni egy másik méréssel
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{a-vuxe1ltozuxf3k-muxe9ruxe9si-szintjei}{%
+\subsection{A változók mérési
+szintjei}\label{a-vuxe1ltozuxf3k-muxe9ruxe9si-szintjei}}
+
+\begin{itemize}
+\item
+  Hogyan viszonyulnak egymáshoz a változó értékei
+\item
+  Folytonos vagy diszkrét változók
+
+  \begin{itemize}
+  \item
+    \textbf{Folytonos:} bármilyen értéket felvehet egy bizonyos
+    értéktartományban
+  \item
+    \textbf{Diszkrét:} csak bizonyos értékeket vehet fel
+  \end{itemize}
+\item
+  Négy szempont alapján térhetnek el:
+
+  \begin{itemize}
+  \item
+    \textbf{Egyediség:} a változó minden értéke egyedi jelentéssel
+    rendelkezik
+  \item
+    \textbf{Sorbarendezhetőség:} sorba rendezhetők-e a változó értékei
+    valamilyen szempont alapján
+  \item
+    \textbf{Egyenlő távolság:} az egyes értékek közötti távolság a skála
+    minden pontján egyenlő
+
+    \begin{itemize}
+    \tightlist
+    \item
+      1cm és 2cm között ugyanakkora a távolság, mint 12cm és 13cm között
+    \end{itemize}
+  \item
+    \textbf{Abszolút nulla pont:} van-e a skálának abszolút nulla
+    pontja.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Például súly vagy magasság
+    \end{itemize}
+  \end{itemize}
+\item
+  Ezek alapján a következő mérési szintekről beszélhetünk:
+
+  \begin{itemize}
+  \item
+    \textbf{Nominális skála}
+
+    \begin{itemize}
+    \item
+      A skálának minden tagja egy egyedi értéket jelöl
+    \item
+      A skálában lévő számok kvalitatív értékek címkézésére vannak
+    \item
+      Nem rakhatók nagyságrendileg sorrendbe, nincs nulla pontjuk, a
+      köztük lévő távolság értelmezhetetlen
+    \item
+      Matematikai módszerek: összehasonlíthatók
+    \item
+      Statisztikai módszerek: módusz
+    \item
+      Diszkrét
+    \item
+      Legtöbbször az adattáblában egész számokkal vagy szöveggel
+      jelöljük
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Az egész számok csak jelző címkeként szolgálnak, algebrai
+        műveletek nem végezhetők rajtuk
+      \end{itemize}
+    \end{itemize}
+  \item
+    \textbf{Ordinális skála}
+
+    \begin{itemize}
+    \item
+      Értékei egyediek és sorbarendezhetők
+    \item
+      De az értékek közötti távolság értelmezhetetlen
+    \item
+      Pl: fájdalom mérésére szolgáló skála
+
+      \begin{itemize}
+      \tightlist
+      \item
+        A Likert-típusú skálánál például elmondható, hogy a ``Teljesen
+        egyetértek'' pozitívabb, mint az ``Inkább egyetértek'', de a
+        kettő közti távolság nem kvantifikálható. Ezért nem tudunk
+        Likert-típusú skáláknál átlagot számolni.
+      \end{itemize}
+    \item
+      Matematikai módszerek: megnézhetjük, hogy az egyik érték nagyobb-e
+      a másiknál
+    \item
+      Statisztikai módszerek: medián
+    \item
+      Diszkrét
+    \item
+      Az adattáblában általában egész számokkal jelöljük őket
+    \end{itemize}
+  \item
+    \textbf{Intervallum skála}
+
+    \begin{itemize}
+    \item
+      Az ordinális skálánál több, amennyiben a felvehető értékek közötti
+      távolság állandó
+    \item
+      Pl: hőfok Celsiusban
+    \item
+      Matematikai módszerek: összeadhatjuk vagy kivonhatjuk
+    \item
+      Statisztikai módszerek: átlag
+    \item
+      Folytonos
+    \item
+      Az adattáblában egyész számokkal vagy valós számokkal jelöljük
+      őket
+    \end{itemize}
+  \item
+    ~\textbf{Arány skála}
+
+    \begin{itemize}
+    \item
+      Az interval skálán felül van értelmezhető abszolút 0 pontja.
+    \item
+      Pl: Súly és magasság
+    \item
+      Matematikai módszerek: szorozhatjuk vagy oszthatjuk
+    \item
+      Statisztikai módszerek: átlag
+    \item
+      Folytonos
+    \item
+      Az adattáblában egyész számokkal vagy valós számokkal jelöljük
+      őket
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{muxe9ruxe9si-skuxe1luxe1k-hatuxe1sa-a-statisztikai-tesztek-elux151feltuxe9teleire}{%
+\subsection{Mérési skálák hatása a statisztikai tesztek
+előfeltételeire}\label{muxe9ruxe9si-skuxe1luxe1k-hatuxe1sa-a-statisztikai-tesztek-elux151feltuxe9teleire}}
+
+\begin{itemize}
+\item
+  A változók mérési szintjei meghatározzák, hogy milyen
+  matematikai/statisztikai módszereket alkalmazhatunk rajtuk és így
+  végül milyen kérdéseket tudunk általuk megválaszolni
+\item
+  A változók mérési szintjei együtt járnak a mérési skálák
+  \textbf{granularitás}ával
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Granularitás: változó szintjeinek száma, azaz hány lehetséges
+    értéket tud felvenni a változó
+  \end{itemize}
+\item
+  Például a fájdalmat mérhetjük úgy, hogy:
+
+  \begin{itemize}
+  \item
+    Vizuális analóg skálánál a végpontok vannak megadva (nincs fájdalom
+    - legerősebb elképzelhető fájdalom) közte 1-100-ig bejelölhetik a
+    résztvevők az átélt fájdalmuk
+  \item
+    Likert-típusú skálán is mérhetjük, aminek három szintje van és
+    mindegyik szinthez egy leíró címke tartozik (1 - egyáltalán nem fáj,
+    2- közepesen fáj, 3 - nagyon fáj)
+  \item
+    Numerikus skálán is mérhetjük, aminek 11 szintje (0 - 10) van az
+    első ötödik és tizedik szinteken leíró címkével
+  \end{itemize}
+\item
+  Ha egy skála granularitása kicsi (\textless12) vagy minden szintjéhez
+  címke tartozik, nem kezelhetjük intervallum skálaként
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tehát nem számolhatunk átlagot
+  \end{itemize}
+\item
+  Mérési skálák granularitását növelhetjük az itemek számával
+
+  \begin{itemize}
+  \item
+    Pl: Több 7 fokú válasz skálás kérdéssel mérjük ugyanazt a
+    konstruktumot
+
+    \begin{itemize}
+    \tightlist
+    \item
+      A válaszokat összesítjük (például összeadás vagy átlagolás útján)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{hogyan-struktuxfaruxe1ljuk-az-adatokat}{%
+\section{Hogyan struktúráljuk az
+adatokat?}\label{hogyan-struktuxfaruxe1ljuk-az-adatokat}}
+
+\begin{itemize}
+\item
+  Az adatok különböző formátumban léteznek
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Kérdőíves felmérések adatai, orvosi MRI képek, banki tranzakciók
+    lenyomatai, twitter megosztások száma, egy adott időszakban
+    megjelent publicisztikák
+  \end{itemize}
+\item
+  A nyers adatok kinyerése és tisztítása teszi ki általában az
+  adatelemzői munka nagy részét a statisztikai elemzéshez képest
+\item
+  Az egyszerűség kedvéért az órán adattáblákkal fogunk dolgozni
+\item
+  Az \textbf{adattábla} változók és megfigyelések összessége
+
+  \begin{itemize}
+  \item
+    \textbf{Adatpont (data point)}: egy mérésből származó érték, pl. egy
+    ember egy válasza egy kérdésre
+
+    \begin{itemize}
+    \tightlist
+    \item
+      cellák
+    \end{itemize}
+  \item
+    \textbf{Megfigyelés (observation)}: ugyanannak a megfigyelési
+    egységnek (pl. egy ember) az összes adatpontja (pl. összes kérdésre
+    adott válasza)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      sorok
+    \end{itemize}
+  \item
+    \textbf{Változó (variable)}: több megfigyelési egységnek az
+    ugyanarra a mérésre adott értékei
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Oszlopok
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{milyen-egy-juxf3-adattuxe1bla}{%
+\subsection{Milyen egy jó
+adattábla?}\label{milyen-egy-juxf3-adattuxe1bla}}
+
+\begin{itemize}
+\item
+  ``négyzetes'': a sorok és oszlopok következetes módon megfigyeléseket
+  és változókat jelentenek
+\item
+  A változónevek emberi és gépi olvasásra is alkalmasak
+
+  \begin{itemize}
+  \tightlist
+  \item
+    minél rövidebb, a változónevek mindig angolul, ékezetek nélkül,
+    szóközök nélkül legyenek írva, legyen egyértelmű jelentésük, pl.
+    education, bdi\_1, bdi\_sum
+  \end{itemize}
+\item
+  Változónevek egy táblán belül következetesen legyenek használva
+
+  \begin{itemize}
+  \item
+    Lásd: snake\_case vagy camelCase
+  \item
+    Azonos információ egységek azonos helyen legyenek elszeparálva
+
+    \begin{itemize}
+    \item
+      question\_01\_item\_01, question\_01\_item\_02
+    \item
+      És nem: question01\_item\_01, question\_01\_item02
+    \end{itemize}
+  \end{itemize}
+\item
+  A címkék szó szerint szerepelnek, és nem kódolva (pl. a kategorikus
+  adatokhoz)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``férfi'', és nem 1)
+  \end{itemize}
+\item
+  A változó egy információt tartalmaz a megfigyelésről
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Férfi 18-29'' az két információ
+  \end{itemize}
+\item
+  Minden információ explicit adat (és nem formázási mód vagy komment)
+\item
+  A hiányzó adat hiányzó cella, nem pedig pl. -999
+\item
+  Minden megfigyelési egységnek (pl. résztvevő) egyedi azonosítója van
+\item
+  Van hozzá ``kódkönyv'' (code book vagy data dictionary)
+
+  \begin{itemize}
+  \item
+    Ez szintén legyen ember és gépi olvasásra alkalmas
+  \item
+    Információ az adatok formátumáról (pl. adattábla x sorral és y
+    változóval)
+  \item
+    Változók jelentése, mértékegysége, típusa, a változó hogyan lett
+    kiszámítva
+  \item
+    Információ az adatgyűjtés módszeréről
+  \end{itemize}
+\item
+  Változón belül az értékek konzisztensen azonos típusúak és jelölésűek
+  legyenek
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Rossz példa: férfi, Férfi, nő, female
+  \end{itemize}
+\item
+  Figyeljünk a kis és nagybetűkre!
+\item
+  Számozási sorrendnél használjunk vezető 0-át
+
+  \begin{itemize}
+  \item
+    Pl: 01, 02, 03, 11, 12
+  \item
+    És nem: 1, 11, 12, 2, 3
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{hogyan-dolgozzunk-az-adatokkal}{%
+\section{Hogyan dolgozzunk az
+adatokkal?}\label{hogyan-dolgozzunk-az-adatokkal}}
+
+\begin{itemize}
+\item
+  Adatrendezés alapelvei
+
+  \begin{itemize}
+  \item
+    Nem törlünk ki adatokat
+  \item
+    Adatállomány feldolgozottsági szintjei szerinti felosztás
+
+    \begin{itemize}
+    \item
+      \textbf{Source:} forrás adatok, ahogy a mérőeszközünk visszaadja
+      az adatokat bármilyen beavatkozás nélkül, sokszor tartalmaz olyan
+      adatokat, amelyek a résztvevők beazonosítását lehetővé teszik
+
+      \begin{itemize}
+      \tightlist
+      \item
+        a forrás adatok nyílt hozzáférésű megosztása ebben az esetben
+        tilos
+      \end{itemize}
+    \item
+      \textbf{Raw:} nyers adatok, lényeges beavatkozás nem történt az
+      adatfájlon, változó nevek lettek standardizálva, fájl formátuma
+      lett megváltoztatva, a beazonosítást lehetővé tevő változók lettek
+      maszkolva vagy kitörölve
+    \item
+      \textbf{Processed:} feldolgozott adatok, az adatszűrés és
+      szükséges transzformációk után
+    \end{itemize}
+  \item
+    Nem módosítjuk az eredeti állományt, legfeljebb a másolato(ka)t
+  \item
+    Ha lehet, készítsünk adatkezelési tervet (data management plan)
+
+    \begin{itemize}
+    \item
+      Sok pénzügyi támogató elvárja már!
+    \item
+      Biztosíthatjuk vele, hogy nem követünk el adatkezelési hibákat
+    \item
+      Hogyan készítsünk jó adatkezelési tervet?
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \url{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{adatkezeluxe9si-hibuxe1k}{%
+\section{Adatkezelési hibák}\label{adatkezeluxe9si-hibuxe1k}}
+
+\begin{itemize}
+\item
+  Általában arról hallunk a médiában, ha egy kutatót adahamisítással
+  lepleznek le
+\item
+  Kevesebb szó esik az adatkezelési hibákról, pedig feltételezhetően
+  ezek sokkal gyakrabban fordulnak elő
+\item
+  Az adatkezelési hibákat sokszor akaratlanul követik el a kutatók
+\item
+  Az adatkezelési hibáknak lehetnek súlyos következményei
+
+  \begin{itemize}
+  \tightlist
+  \item
+    megváltoztathatják például az adatokből levont köveztetéseket
+  \end{itemize}
+\item
+  Reinhart \& Rogoff (2010) közgazdászok például a kimutatták, hogy egy
+  állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP
+  90\%-át meghaladja
+
+  \begin{itemize}
+  \item
+    Eredményeik az USA költségvetési tervébe is bekerült
+  \item
+    Később kiderült, hogy nem jelölték ki az összes adatsort az elemzés
+    során, így a vizsgált adatoknak csak egy része került elemzésre
+  \item
+    Az újraelemzés az eredeti követeztetéseket invalidálta
+  \end{itemize}
+\item
+  Az adatkezelési hibák nagy része az emberi hibából (human error) fakad
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Kognitív kapacitásaink végesek, elfáradunk, nyomás alatt rosszabbul
+    teljesítünk, stb.
+  \end{itemize}
+\item
+  Ezért fontos olyan adatkezelési rendszert kiépíteni, amely ezen hibák
+  előfordulási valószínűségét csökkenti
+\item
+  További olvasmányok:
+
+  \begin{itemize}
+  \item
+    \url{https://journals.sagepub.com/doi/full/10.1177/25152459211045930}
+  \item
+    \url{https://www.nber.org/papers/w15639}
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{leuxedruxf3-statisztika}{%
+\chapter{Leíró statisztika}\label{leuxedruxf3-statisztika}}
+
+\begin{itemize}
+\item
+  Célja a minta összefoglalása
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Gyakoriságok, százalékok, csoport átlagok és szórások, stb. által
+  \end{itemize}
+\item
+  Az adatokkal való munka során az adatok valamilyen formában történő
+  \textbf{összesítését} végezzük
+\item
+  Erre azért van szükség, mert az emberek nem képesek a nyers adatokból
+  jól következtetéseket levonni
+\item
+  A folyamat során elkerülhetetlenül elveszik valamennyi információ, ám
+  lehetőségünk nyílik átlátni a részletek mögött rejlő összefüggéséket
+  és általánosítani azokból
+\item
+  Az adatösszesítésnek többféle módja lehet
+
+  \begin{itemize}
+  \item
+    Ez függ a vizsgált kérdéstől
+  \item
+    És az adatok milyenségétől (például az egyes változók típusától)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{uxe9rtuxe9kek-eloszluxe1sa}{%
+\section{Értékek eloszlása}\label{uxe9rtuxe9kek-eloszluxe1sa}}
+
+\begin{itemize}
+\item
+  Az adatok leírásának egyik módja az \textbf{eloszlás}uk vizsgálata
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ez alapján meg tudjuk mondani, hogy mely értékek gyakoriak és melyek
+    ritkák az adattáblánkban
+  \end{itemize}
+\item
+  Az eloszlás megmondja, hogyan oszlik meg az adat a különböző
+  lehetséges értékek között
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Például: diszkrét változó esetén hányan választották az egyes
+    lehetséges opciókat
+  \end{itemize}
+\item
+  Az egyik gyakran vizsgált eloszlás fajta a \textbf{gyakorisági
+  eloszlás}
+
+  \begin{itemize}
+  \item
+    A gyakorisági eloszlás megmondja, hogy egy változó lehetséges
+    értékei milyen gyakran fordulnak elő a mintánkban
+  \item
+    Diszkrét változó gyakorisági eloszlása
+
+    \begin{itemize}
+    \item
+      Példa
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Példa\ldots{}
+      \end{itemize}
+    \item
+      Ez a táblázat az adatok abszolút frekvenciáját mutatja meg
+    \item
+      Ahhoz, hogy meg tudjuk mondani a gyakoriságok között különbség
+      valóban lényeges-e hasznos lehet megtekinteni a relatív
+      frekvenciájukat (sűrűségüket)
+    \item
+      Ehhez minden lehetséges értékhez el kell osztani az abszolút
+      gyakoriságot a változóban található összes érték számával
+    \end{itemize}
+  \item
+    Hogyan ábrázoljuk a gyakoriságot?
+
+    \begin{itemize}
+    \item
+      Dotplot
+
+      \begin{itemize}
+      \item
+        Minden értéket egy pötty jelöl
+      \item
+        Az x tengely az értéktartomány
+      \item
+        Az y tengely a gyakoriság
+      \item
+        Folytonos változónál az összesítés során az értéktartományt
+        különböző méretű ``vödrökre'' osztjuk
+      \item
+        Meghatározzuk a vödrök szélességét (binwidth)
+      \item
+        És az ebbe az értéktartományba eső értékek gyakoriságát
+        számoljuk meg és ábrázoljuk
+      \end{itemize}
+    \item
+      A hisztogram hasonló, mint a dotplot
+
+      \begin{itemize}
+      \tightlist
+      \item
+        De az egyes értékek nem jelennek meg külön, így sok adat
+        gyakoriságát egyszerre tudjuk ábrázolni
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Kumulatív gyakorisági eloszlás}
+
+  \begin{itemize}
+  \item
+    Azon értékek gyakorisága amelyek akkor vagy kevesebbek, mint az
+    adott határérték, amit vizsgálunk
+  \item
+    Kiszámolásához összeadjuk a hátárétrék gyakoriságát és az összes
+    nála kisebb érték gyakoriságát
+  \item
+    Értéke soha nem csökkenhet
+  \item
+    példa
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{statisztikai-modellek}{%
+\section{Statisztikai modellek}\label{statisztikai-modellek}}
+
+\begin{itemize}
+\item
+  Leegyszerüsített reprezentációja az adatoknak
+\item
+  Leírja az adatok struktúráját
+\item
+  Mindig van benne hiba faktor, kihagy részleteket
+\item
+  \emph{``All models are wrong but some are useful''} (George Box)
+\item
+  A statisztikai modellre gondolhatunk úgy is, mint egy elméletre, amely
+  leírja hogyan keletkeztek az adatok
+\item
+  Célunk: olyan modellt alkossunk, ami hatékonyan és pontosan írja le az
+  adatok keletkezésének a módját
+
+  \begin{itemize}
+  \item
+    Másszóval, fontos, hogy a modell jól illeszkedjen az adatokra
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Minél jobban illeszkedik a modell az adatokhoz (a valósághoz),
+      annál megbízhatóbbak a modell által létrehozott predikciók
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja
+tökéletesen reprezentálni a valóságot
+
+\begin{itemize}
+\item
+  lesz hiba a modell által prediktált értékek és az egyes megfigyelések
+  között
+\item
+  Adat = modell + hiba
+
+  \begin{itemize}
+  \item
+    \textbf{Modell:} az értékek, amit az elméletünk alapján elvárunk
+  \item
+    \textbf{Hiba:} a modell által prediktált értékek és a valós
+    adatpontok közötti különbség
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{a-legegyszerux171bb-statisztika-modell-az-uxe1tlag}{%
+\subsection{A legegyszerűbb statisztika modell, az
+átlag}\label{a-legegyszerux171bb-statisztika-modell-az-uxe1tlag}}
+
+\begin{itemize}
+\item
+  Minden megfigyelésre ugyanazt az értéket prediktálja
+\item
+  Példa
+
+  \begin{itemize}
+  \item
+    Vizsgálhatjuk például, hogy a statisztika tanároknak hány barátja
+    van
+  \item
+    Tegyük fel, hogy 5 tanárt kérdezünk meg
+  \item
+    Az átlag: (1 + 2 + 3 + 3 + 4)/5 = 2.6
+  \item
+    Ebből is látszik, hogy az átlag egy statisztikai modell, hiszen egy
+    hipotetikus érték, nem megfigyelhető a valóságban
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{modell-illeszkeduxe9suxe9nek-a-vizsguxe1lata}{%
+\subsection{Modell illeszkedésének a
+vizsgálata}\label{modell-illeszkeduxe9suxe9nek-a-vizsguxe1lata}}
+
+\begin{itemize}
+\item
+  Hogyan tudjuk megvizsgálni, hogy mennyire jól illeszkedik az átlag,
+  mint modell, az adatokra?
+
+  \begin{itemize}
+  \item
+    Ahhoz, hogy eldöntsük a modell jól írja-e le az adatokat,
+    megnézhetjük a megfigyelt adatok és a modell értékei közötti
+    különbséget
+  \item
+    Ezen értékek közötti eltérés a modell hibája
+  \item
+    Például annál a kutatónál, akinek egy barátja van, a modell 2.6
+    barátot prediktál (ez volt az átlag), a modell hibája, azaz az
+    eltérés, így megfigyelt értél - prediktált érték = -1.6
+  \item
+    Ebben az esetben a modell felül becsüli a kutató népszerűségét!
+  \item
+    Hogyan összesítsük az egyes eltéréseket, hogy meg tudjuk határozni a
+    modellünk pontosságát?
+
+    \begin{itemize}
+    \item
+      Például \textbf{összeadhatjuk őket (sum of errors)}
+
+      \begin{itemize}
+      \item
+        Ebben az esetben azt látjuk, hogy az eltérések összege 0
+      \item
+        Ez alapján arra következtethetnénk, hogy az átlag tökéletesen
+        reprezentálja az adatokat, azonban az ábrára ránézve láthatjuk,
+        hogy ez nem így van
+
+        \begin{itemize}
+        \item
+          az egyes értékek és a modell által prediktált értékek között
+          van különbség
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Még egy ok az ábrázolás fontossága mellett!
+          \end{itemize}
+        \end{itemize}
+      \item
+        A negatív és a pozitív előjelű eltérések kiegyenlítették egymást
+      \end{itemize}
+    \item
+      Ezt elkerülendő \textbf{négyzetre emelhetjük az eltéréseket az
+      összeadás előtt (sum of squared errors)}
+
+      \begin{itemize}
+      \item
+        Így minden eltérés előjele pozitív lesz
+      \item
+        A példánkban a négyzetes eltérések összege 5.20
+      \item
+        Most azonban abba a problémába ütközünk, hogy a modell
+        pontosságának mérője függ a mintánk méretétől
+      \item
+        Minél több megfigyelésünk van, annál nagyobb lesz a modell hiba
+      \end{itemize}
+    \item
+      Ezt elkerülhetjük úgy, hogy összeadás helyett a \textbf{négyzetes
+      eltérések átlagát vesszük (mean of squared errors)}
+
+      \begin{itemize}
+      \item
+        Ehhez elosztjuk a négyzetes eltérések összegét a megfigyelések
+        számával
+      \item
+        Így azonban csak a mintánkban lévő átlagos hibát számszerüsítjük
+      \item
+        Azonban célunk, hogy a mintában lévő hibából a populációban
+        található hibát becsüljük meg
+      \item
+        Ehhez a minta mérete helyett a szabadságfokkal kell elosztanunk
+        a négyzetes eltérések összegét
+      \item
+        Jelen esetben ez n - 1
+      \end{itemize}
+    \item
+      Ezt nevezzük \textbf{varianciának}
+
+      \begin{itemize}
+      \item
+        Átlagos négyzetes eltérés az átlagtól
+      \item
+        A varianciával a probléma, hogy a mértékegysége az adatok
+        skálájának négyzete
+      \item
+        A példánkban 1.3
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Négyzetes barátok száma nehezen értelmezhető!
+        \end{itemize}
+      \end{itemize}
+    \item
+      Ezt elkerülhetjük úgy, hogy a variancia gyökét vesszük, ez a
+      \textbf{szórás}
+
+      \begin{itemize}
+      \item
+        Így a modell hibájának mérője ugyanazt a skálát használja, mint
+        a megfigyeléseink
+      \item
+        Az átlaghoz képest kis szórás azt mutatja, hogy a modellunk jól
+        illeszkedik az adatokra
+
+        \begin{itemize}
+        \tightlist
+        \item
+          A megfigyelések közel vannak az átlaghoz
+        \end{itemize}
+      \item
+        Példa
+
+        \begin{itemize}
+        \item
+          Megkérhetjük a hallgatókat, hogy egy 5-ös skálán értékeljék az
+          egyes statisztika oktatókat
+        \item
+          A mérést elvégezhetjük 5 egymást követő órán
+        \item
+          Az ábrán két oktatónak öt óráján mért összesített értékelései
+          láthatók
+        \item
+          Ha az átlagot használjuk, mint statisztikai modellt, mind a
+          két oktatónál ugyanazt az átlagot kapjuk
+        \item
+          Mégis látható, hogy az egyik oktatónál a modell jobban
+          illeszkedik az adatokhoz, tehát az átlag pontos
+          reprezentációja az adatoknak
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Ezt mutatja, hogy a szórás 0.55 az átlaghoz mérten kicsi
+          \end{itemize}
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mitux151l-juxf3-egy-statisztikai-modell}{%
+\subsection{Mitől jó egy statisztikai
+modell?}\label{mitux151l-juxf3-egy-statisztikai-modell}}
+
+\begin{itemize}
+\item
+  1) kicsi a hiba
+
+  \begin{itemize}
+  \item
+    Mitől lehet nagy a hiba?
+
+    \begin{itemize}
+    \item
+      Rossz a modell
+
+      \begin{itemize}
+      \item
+        Kimaradt egy fontos prediktor változó
+      \item
+        A prediktor változó hatásának irányát rosszul adtuk meg
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Pl: azt feltételezi a modell minél idősebb valaki annál
+          alacsonyabb gyerekek körében
+        \end{itemize}
+      \item
+        Az adatok vizualizációja fontos, hogy jól specifikált modellt
+        tudjunk építeni
+      \end{itemize}
+    \item
+      Mérés hiba/zaj/adatokban lévő variancia miatt
+
+      \begin{itemize}
+      \item
+        Vagy a mérőeszköz nem elég pontos
+      \item
+        Vagy egyébb faktorok is befolyásolják a megfigyelt mérésekben
+        lévő varianciát, amikről nem tudunk vagy nem tudjuk mérni
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  2) jól generalizálható
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ha új adatokra illesztjük a modellt, azokat is jól fogja prediktálni
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{uxf6sszesuxedtux151-statisztikuxe1k}{%
+\section{Összesítő
+statisztikák}\label{uxf6sszesuxedtux151-statisztikuxe1k}}
+
+\begin{itemize}
+\item
+  \textbf{Gyakoriság (frequency):} a megfigyelések száma (db). Pl. az
+  előadást megnéző hallgatók száma.
+\item
+  \textbf{Összeg (summary):} egy változó összes értékének összeadásával
+  keletkező érték. Pl. covid megbetegedések száma.
+\item
+  \textbf{Arány (proportion):} a megfigyelések száma az összes
+  megfigyeléshez képest (Pl. 54 \% vagy 0.54 vagy .54). pl. biciklisek
+  aránya az összes közlekedőhöz képest az Andrássy úton
+\end{itemize}
+
+\hypertarget{kuxf6zuxe9puxe9rtuxe9kek}{%
+\subsection{Középértékek}\label{kuxf6zuxe9puxe9rtuxe9kek}}
+
+\begin{itemize}
+\item
+  \textbf{Matematikai átlag (mean, average):} Az értékek összege
+  elosztva az értékek számával
+
+  \begin{itemize}
+  \item
+    Általában folytonos változóknál vagy nagy granilaritással rendelkező
+    ordinális változónál használjuk
+  \item
+    Akkor jó használni, ha a változónk eloszlása szimmetrikus
+  \item
+    Ha nagy kiugró értékek vannak az átlag torzíthat
+
+    \begin{itemize}
+    \item
+      Az átlag a négyzetes hibák összegét csökkenti
+    \item
+      A hibák négyzetre emelésénél a kiugró értékeknél exponenciálisan
+      nő a hiba
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Medián (median):} A nagyság szerint sorba rendezett értékek
+  közül a középső. Ha páros számú érték van, akkor általában a középső
+  kettő átlaga
+
+  \begin{itemize}
+  \item
+    Ordinális változónál használjuk
+  \item
+    Akkor jó használni, ha ferde az eloszlás vagy vannak outlierek
+
+    \begin{itemize}
+    \item
+      A hibák abszolút értékének összegét csökkenti
+    \item
+      Ezért kevésbé érzékeny, nincs négyzetre emelés
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Módusz (mode):} A leggyakrabban előforduló érték
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Nominális változónál használjuk
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{szuxe9lsux151uxe9rtuxe9kek}{%
+\subsection{Szélsőértékek}\label{szuxe9lsux151uxe9rtuxe9kek}}
+
+\begin{itemize}
+\item
+  \textbf{Minimum:} a legkisebb érték
+\item
+  \textbf{Maximum:} a legnagyobb érték
+\item
+  \textbf{Kiugró értékek (outlier):} olyan érték, ami a többitől távol
+  esik
+
+  \begin{itemize}
+  \item
+    Azt, hogy milyen vágási ponttól számít egy érték outliernek sokszor
+    nem könnyen határozható meg.
+  \item
+    Függhet az elmélettől vagy az adott szakterületen használt
+    konvenciók is megszabhatják
+  \item
+    Az outlierek nagy torzító hatással vannak az átlagra
+
+    \begin{itemize}
+    \item
+      Érdemes ezért megvizsgálni a változónk eloszlását, mielőtt úgy
+      döntünk, hogy az átlag alapján kívánjuk összesíteni az adatainkat
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Lehet, hogy torzítani fog = nem jól reprezentálja az adatokat
+      \end{itemize}
+    \end{itemize}
+  \item
+    Kevésbé torzítják a mediánt
+  \item
+    Nem torzítják a móduszt
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{helyzetmutatuxf3k}{%
+\subsection{Helyzetmutatók}\label{helyzetmutatuxf3k}}
+
+\begin{itemize}
+\item
+  Kvantilisek: vágási pontok, amelyek mentén a sorba rendezett adatokat
+  meghatározott számú részre bonthatjuk
+\item
+  Pl. kvartilisek: Az adatokat négy egyenlő részre osztó három pont (ld.
+  még decilis, percentilis)
+\item
+  Interkvartilis tartomány (IQR): A felső (75\%) alsó (25\%) kvartilis
+  és az alsó kvartilis különbsége, az adatok középső 50\%-a~
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Általában ordinális adatok összesítésénél szoktuk használni
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{adatvizualizuxe1ciuxf3}{%
+\chapter{Adatvizualizáció}\label{adatvizualizuxe1ciuxf3}}
+
+\begin{itemize}
+\item
+  Példa adatvizualizáció fontosságára: John Snow és a londoni kolera
+  járvány
+\item
+  Szerepe:
+
+  \begin{itemize}
+  \item
+    Az adatok ellenőrzése
+
+    \begin{itemize}
+    \item
+      Hasonló középértékekkel és szórásokkal rendelkező nyers adatok
+      nagyon más értékeket vehetnek fel
+    \item
+      Segít megtalálni hibákat is az adatokban
+    \end{itemize}
+  \item
+    Egy történet elmesélése
+
+    \begin{itemize}
+    \tightlist
+    \item
+      az adatok közti összefüggés feltárása
+    \end{itemize}
+  \end{itemize}
+\item
+  DE a vizualizáció nem szabad megtévesztő legyen!
+\end{itemize}
+
+\hypertarget{a-juxf3-adatvizualizuxe1ciuxf3-ismuxe9rvei}{%
+\section{A jó adatvizualizáció
+ismérvei}\label{a-juxf3-adatvizualizuxe1ciuxf3-ismuxe9rvei}}
+
+\begin{itemize}
+\item
+  Az ábra minden részének legyen információ értéke
+
+  \begin{itemize}
+  \item
+    Felesleges vagy redundáns elemek ne kerüljenek rá, mert elterelik a
+    figyelmet a lényegről és megzavarják az értelmezést
+  \item
+    Olyan elemek jelenjenek meg csak az ábrán, amelyek nem törölhetők
+    információ veszteség nélkül
+  \item
+    Lásd:
+
+    \begin{itemize}
+    \item
+      adat/tinta arány
+    \item
+      Ábra szemét
+    \end{itemize}
+  \end{itemize}
+\item
+  Legjobb megmutatni az egyéni adatpontokat is amennyiben ez lehetséges
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Az összesítés torzíthatja az eredményeket
+  \end{itemize}
+\item
+  Használd ki az ábránál a teret, de figyelj rá, hogy közben ne torzítsd
+  az adatokat
+
+  \begin{itemize}
+  \item
+    Különböző ábrázolási módok nagyon más történetet tudnak elmesélni
+  \item
+    Példa: szerepeljen-e a nulla érték az y tengelyen vagy ne
+  \end{itemize}
+\item
+  Figyelj az emberi percepció limitációira
+
+  \begin{itemize}
+  \item
+    Színvakság
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Használj színvak barát színeket
+    \end{itemize}
+  \item
+    Pie chart
+
+    \begin{itemize}
+    \item
+      Az embereknek ennél a vizualizációs módszernél nagyon nehéz az
+      arányokat helyesen értelmezni!
+    \item
+      Ne használjuk!
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{gyakori-adatvizualizuxe1ciuxf3s-megolduxe1sok}{%
+\section{Gyakori adatvizualizációs
+megoldások}\label{gyakori-adatvizualizuxe1ciuxf3s-megolduxe1sok}}
+
+\hypertarget{doboz-uxe1bra-boxplot}{%
+\subsection{Doboz ábra (boxplot)}\label{doboz-uxe1bra-boxplot}}
+
+\begin{itemize}
+\item
+  A helyzetmutatókat általában egy \textbf{boxplot} segítségével
+  vizualizáljuk
+\item
+  Ahol a doboz felső határsa a 75-ik percentilist, az alsó határa a
+  25-ik percentilist jelöli
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A két vonal közötti rész az IQR
+  \end{itemize}
+\item
+  A kettő közti vonal a doboz felénél az 50-ik percentilist jelöli
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Másnéven medián
+  \end{itemize}
+\item
+  A dobozból kijövő függőleges vonalak a 75-ik és a 25-ik
+  percentileseken kívül eső, de még nem outlier értékeket mutatják
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ezen kívül pöttyökkel tudjuk jelölni azokat az egyes adatpontokat,
+    amelyek outlier értéknek számítanak
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{hogyan-szuxfarjunk-ki-megtuxe9vesztux151-vizualalizuxe1ciuxf3s-elemeket}{%
+\section{Hogyan szúrjunk ki megtévesztő vizualalizációs
+elemeket?}\label{hogyan-szuxfarjunk-ki-megtuxe9vesztux151-vizualalizuxe1ciuxf3s-elemeket}}
+
+\begin{itemize}
+\item
+  Segít-e az ábra megérteni az adatokat, vagy inkább csak összezavar?
+\item
+  Figyelmesen nézd meg az ábrán a tengelyek nevét és léptékét!
+\item
+  Nézd meg, hogy a tengelyek a nulláról indulnak-e!~
+\item
+  Nézd meg, hogy a különböző csoportokat bemutató ábrázolások egyenlő
+  arányban változnak-e egymással
+\item
+  Nem hagytak-e ki adatpontot az ábráról?
+\item
+  Összevontak-e kategóriákat indokolatlanul?
+\item
+  Szerepelnek-e olyan adatcsoportok az ábrán, amelyek önkényesen lettek
+  kiválasztva?
+\item
+  Példák rossz ábrákra
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://venngage.com/blog/misleading-graphs/}
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{kuxf6vetkeztetuxe9ses-statisztika}{%
+\chapter{Következtetéses
+statisztika}\label{kuxf6vetkeztetuxe9ses-statisztika}}
+
+\begin{itemize}
+\item
+  Sokszor amikor egy kérdést vizsgálunk nem tudjuk az egész populációt
+  megmérni
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Populáció:} egy meghatározott csoport összes lehetséges
+    tagja
+  \end{itemize}
+\item
+  A statisztikát használjuk arra, hogy egy minta alapján
+  következtetéseket vonjunk le az egész populációra
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Minta:} a populációból kiválasztott és megfigyelt egyedek
+    részhalmaza
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mintavuxe9telezuxe9s}{%
+\section{Mintavételezés}\label{mintavuxe9telezuxe9s}}
+
+\begin{itemize}
+\item
+  A minta kiválasztásának módja fontos, mert ezzel tudjuk biztosítani,
+  hogy a minta jól reprezentálja a populációnkat
+
+  \begin{itemize}
+  \tightlist
+  \item
+    valószínűségi mintavételezés: minta jól reprezentálja a populációt,
+    ha a populáció minden tagjának egyenlő esélye van a mintánkba való
+    bekerülésre
+  \item
+    kvóta: a populáció néhány ismert jellemzője alapján válogatunk be
+    meghatározott számú résztvevőt~ (pl. 50-50\% nő és férfi)
+  \item
+    kényelmi: az vesz részt a kutatásban, akit éppen elérünk
+  \end{itemize}
+\item
+  A mintavételezés előnyei és nehézségei
+
+  \begin{itemize}
+  \item
+    előnyei
+
+    \begin{itemize}
+    \item
+      máshogy nem tudunk információhoz jutni az egész populációra
+      vonatkozóan
+    \item
+      tudunk becsléseket tenni~ a populáció jellemzőire (``valódi''
+      átlag, szórás, eloszlás, stb.)
+    \item
+      ha ismerjük a hátulütőket, tudjuk kommunikálni a bizonytalanságot
+      is
+    \end{itemize}
+  \item
+    nehézségei
+
+    \begin{itemize}
+    \item
+      a minta soha nem tökéletes reprezentációja a populációnak, azaz
+      mindig valamennyire torzított
+    \item
+      a kisebb minták könnyebben torzítottak, mint a nagyobbak
+    \item
+      nem lehet pontosan tudni, hogy a minta elég jól reprezentálja-e a
+      populációt
+    \item
+      lehet, hogy a minta alapján téves következtetésre jutunk a
+      populációra vonatkozóan
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{standard-hiba}{%
+\subsection{Standard hiba}\label{standard-hiba}}
+
+\begin{itemize}
+\item
+  Attól függetlenül, hogy milyen nagy elővigyázatossággal választottuk
+  ki a mintánkat, a minta különbözni fog a populációtól
+
+  \begin{itemize}
+  \item
+    Ez a \textbf{mintavételezési hiba (sampling variation)}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Abból következik, hogy a populáció összes egyedéből
+      véletlenszerűen választunk ki egyedeket a mintánkba
+    \end{itemize}
+  \end{itemize}
+\item
+  Ha többször veszünk mintát egy adott populációból hosszútávon
+  elvárható, hogy a mintáink átlagai leggyakrabban a populáció átlag
+  körül fognak csoportosulni
+
+  \begin{itemize}
+  \item
+    A minta átlagok eloszlását a \textbf{mintavételi eloszlásnak
+    (sampling distribution)} hívjuk
+
+    \begin{itemize}
+    \item
+      A mintaátlagok gyakorisági eloszlása
+    \item
+      Ha a minta átlagok átlagát vennénk a populáció átlagot kapnánk meg
+    \end{itemize}
+  \item
+    A minta átlagok populáció átlag körüli szóródását a standard hibával
+    írjuk le
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Máshogyan: Azt a bizonytalanságot fejezi ki, amiben a
+      populációátlagtól eltérhet a mintaátlagtól
+    \end{itemize}
+  \item
+    Pontosabb nevén az \textbf{átlag standard hibája (standard error of
+    the mean)}.
+  \item
+    Kiszámolásához a minta szórását elosztjuk az elemszám
+    négyzetgyökével
+  \item
+    A standard hiba alapján a mérésünk minősége a populációban található
+    variabilitástól és a mintánk méretétől függ
+
+    \begin{itemize}
+    \item
+      Mivel csak a minta méretre van ráhatásunk ennek növelésével
+      javíthatjuk a mérőeszközünk pontosságát
+    \item
+      Minél nagyobb a mintaméret, annál biztosabbak lehetünk abban, hogy
+      a populációátlagot jól közelítjük
+
+      \begin{itemize}
+      \item
+        Azonban nem csak a minta mérete számít, hanem a mintavételezés
+        módja is
+
+        \begin{itemize}
+        \item
+          Akármilyen nagy a mintánk, ha annak tagjai nem jól írják le a
+          populációt mert a minta szisztematikusan torzít
+        \item
+          Ezért szoktak kutatók általában random mintavételezésre
+          törekedni
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \item
+    Általában ezt szokták az ábrákon megjeleníteni \textbf{hibasávként
+    (error bar)}
+  \item
+    Ha a hibasávok nem fednek át, akkor arra következtethetünk, hogy a
+    populációban lévő különbség valódi
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{centruxe1lis-hatuxe1reloszluxe1s-elve}{%
+\subsection{Centrális határeloszlás
+elve}\label{centruxe1lis-hatuxe1reloszluxe1s-elve}}
+
+\begin{itemize}
+\item
+  \textbf{Central limit theorem (CHE)}
+\item
+  A mintaméret növekedésével a mintaátlagok eloszlása közelít a normális
+  eloszláshoz.
+\item
+  Ez akkor is igaz, ha az egyes mintákban lévő eloszlások értéke nem
+  normális!
+\item
+  Demonstráció: \url{https://istats.shinyapps.io/sampdist_cont/}
+\item
+  A CHE miatt használhatjuk a legtöbb statisztikai módszert ami normális
+  eloszlást feltételez
+\end{itemize}
+
+\hypertarget{konfidencia-intervallum}{%
+\section{Konfidencia intervallum}\label{konfidencia-intervallum}}
+
+\begin{itemize}
+\item
+  Ahogy már korábban említettük a minta átlagát használjuk arra, hogy
+  megbecsüljük a populáció átlagot
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ezzel az adatokból levont következtetést \textbf{általánosítsuk
+    (generalization)} a mintánkon túlra
+  \end{itemize}
+\item
+  Láttuk, hogy különböző mintavételelezések különböző minta átlagokat
+  adnak és a standard hibát használhatjuk arra, hogy meghatározzuk
+  mekkora a mintaátlagok varianciája a populáció átlag körül
+\item
+  Azt, hogy a minta átlag mennyire jól becsüli meg a populáció értéket
+  úgy is eldönthetjük, hogy kiválasztunk egy értéktartományt, amelybe a
+  populáció átlag feltehetően beleesik
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ezt az értéktartományt nevezzük \textbf{konfidencia intervallum}nak
+  \end{itemize}
+\item
+  Minél szélesebb a konfidencia intervallumunk annál bizonytalanabbak
+  vagyunk abban, hogy a minta átlag jó reprezentációja-e a populáció
+  átlagnak
+\end{itemize}
+
+\hypertarget{helyes-uxe9rtelmezuxe9se}{%
+\subsection{Helyes értelmezése}\label{helyes-uxe9rtelmezuxe9se}}
+
+\begin{itemize}
+\item
+  A konfidencia intervallumot gyakran félreértik a kutatók
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Talán még a p értéknél is gyakrabban!
+  \end{itemize}
+\item
+  Egy 95\%-os konfidencia intervallum nem azt jelenti, hogy 95\% az
+  esélye annak, hogy a populáció átlaga beleesik-e az intervallumba!
+
+  \begin{itemize}
+  \item
+    A populáció átlag egy fix érték, így egyes esetekben vagy beleesik
+    vagy nem
+  \item
+    Nem tudunk valószínűséget rendelni mellé
+  \end{itemize}
+\item
+  A helyes értelmezésnél ugyanazt a logikát kell követnünk, mint a
+  hipotézis tesztelésnél: hosszútávon milyen valószínűséggel fogunk
+  helyes döntést hozni
+
+  \begin{itemize}
+  \item
+    hosszútávon a konfidencia intervallum az esetek 95\%-ában fogja
+    tartalmazni a populáció átlagot~
+  \item
+    ha végtelenszer megismételjük a mintavételt és kiszámoljuk a minta
+    átlagot és a hozzá tartozó konfidencia intervallumot, akkor az
+    esetek 95\%-ában a kapott konfidencia intervallumok magukba fogják
+    foglalni a populáció átlagot
+  \item
+    Azt azonban nem tudhatjuk, hogy az éppen általunk gyűjtött mintához
+    kiszámolt konfidencia intervallum tartalmazza-e a populáció átlagot
+    vagy sem
+  \item
+    Másszóval: 95\%-os konfidencia intervallum mellett az esetek 5\%-ban
+    tévedünk, ha feltételezzük, hogy az adott konfidencia intervallum
+    valóban magába foglalja a populáció átlagot
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{kiszuxe1muxedtuxe1sa}{%
+\subsection{Kiszámítása}\label{kiszuxe1muxedtuxe1sa}}
+
+\begin{itemize}
+\item
+  A konfidencia intervallumot a z értékek segítségével számoljuk ki
+\item
+  Egy normál eloszlásnál ahol az átlag 0 és a szórás 1 a z értékek
+  95\%-a a -1.96 és a +1.96-os z értékek közé fog esni
+\item
+  Alsó határa a konfidencia intervallumnak: minta átlag - (1.96 *
+  standard hiba)
+\item
+  Felső határa a konfidencia intervallumnak: minta átlag + (1.96 *
+  standard hiba)
+\item
+  A mintánk átlaga mindig a konfidencia intervallum közepe
+\item
+  A konfidencia intervallum mérete függ a standard hiba méretétől
+\item
+  Ha kicsi a minta a t eloszlást használva kell kiszámítani a
+  konfidencia intervallumot
+\end{itemize}
+
+\hypertarget{vizuuxe1lis-uxe1bruxe1zoluxe1sa}{%
+\subsection{Vizuális ábrázolása}\label{vizuuxe1lis-uxe1bruxe1zoluxe1sa}}
+
+\begin{itemize}
+\item
+  Konfidencia intervallumok vizuális ábrázolása
+
+  \begin{itemize}
+  \item
+    Általában a konfidencia intervallumot használjuk ábrákon az átlag
+    körüli hiba mértékének vizualizására
+  \item
+    Ha két átlaghoz tartozó konfidencia intervallumok átfednek, akkor
+    feltételezhetjük, hogy a két minta átlaga ugyanabból a populációból
+    származik
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Lásd t-próba
+    \end{itemize}
+  \item
+    Ha nem fednek át
+
+    \begin{itemize}
+    \item
+      1) vagy különböző populációból származnak
+    \item
+      2) vagy ugyanabból a populációból származnak de az egyik
+      konfidencia intervallum nem tartalmazza a populáció átlagot
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Ez az esetek 5\%-ában fordul csak elő 95\%-os konfidencia
+        intervallum mellett, ezért valószínűleg a 1) opció mellett
+        döntünk
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{null-szignifikancia-hipotuxe9zis-teszteluxe9s}{%
+\chapter{Null szignifikancia hipotézis
+tesztelés}\label{null-szignifikancia-hipotuxe9zis-teszteluxe9s}}
+
+\begin{itemize}
+\item
+  Következtetéses statisztika célja a populációra való következtetés a
+  minta alapján
+\item
+  Több statisztikai hipotézis tesztelő keretrendszer is létezik
+
+  \begin{itemize}
+  \item
+    \textbf{frekventista:}
+
+    \begin{itemize}
+    \item
+      A hipotézis állandó (vagy igaz vagy nem) és az adatok
+      véletlenszerűek
+    \item
+      Frekventista inferencia az adatok előfordulásának valószínűségére
+      fókuszál a hipotézis fényében
+    \item
+      A frekventista módszerek közül legtöbbször a \textbf{null
+      hipotézis szignifikancia tesztelést (NHST)} használják a kutatók
+    \end{itemize}
+  \item
+    \textbf{Bayesiánus:}
+
+    \begin{itemize}
+    \item
+      a hipotézis valószínűségéről is el tud mondani valamit az előzetes
+      tudásunk és az adatok fényében
+    \item
+      gyakran használt hipotézis tesztelő módszere a \textbf{Bayes
+      factor}
+
+      \begin{itemize}
+      \item
+        két hipotézis valószínűségének az arányát fejezi ki az adatok
+        fényében
+      \item
+        az érdeklődőknek további olvasmányok:
+
+        \begin{itemize}
+        \item
+          \url{https://alexanderetz.com/2015/08/09/understanding-bayes-visualization-of-bf/}
+        \item
+          \url{https://www.sciencedirect.com/science/article/abs/pii/S0022249615000607}
+        \item
+          \url{https://link.springer.com/article/10.3758/s13423-017-1343-3}
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{null-hipotuxe9zis-szignifikancia-teszteluxe9s}{%
+\section{Null hipotézis szignifikancia
+tesztelés}\label{null-hipotuxe9zis-szignifikancia-teszteluxe9s}}
+
+\hypertarget{luxe9puxe9sei}{%
+\subsection{Lépései}\label{luxe9puxe9sei}}
+
+\begin{itemize}
+\item
+  Megfogalmazunk egy \textbf{alternatív hipotézist}
+
+  \begin{itemize}
+  \item
+    A hipotézisünknek lehet iránya \textbf{(egyoldalú hipotézis
+    tesztelés)}
+
+    \begin{itemize}
+    \item
+      Pozitív vagy negatív kapcsolatot várunk el
+    \item
+      Egy oldalú hipotézis tesztelésnek is nevezik
+    \end{itemize}
+  \item
+    Vagy lehet \textbf{kétoldalú hipotézis teszt}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Ebben az esetben az alternatív hipotézisünk csak azt várja el,
+      hogy a lesz lesz különbség a vizsgált változók között, de az nem
+      mondjuk meg milyen irányú különbséget várunk el
+    \end{itemize}
+  \item
+    Azt, hogy melyik hipotézist alkalmazzuk az elmélet (előzetes
+    tudásunk) határozza meg
+  \end{itemize}
+\item
+  Megfogalmazzuk a \textbf{null hipotézist}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Egyoldalú hipotézis esetén a null hipotézis feltételezi, hogy az
+    alternatív által prediktált iránnyal ellenkező előjelű különbséget
+    kapunk vagy nem lesz különbség
+  \item
+    Feltételezzük, hog a null hipotézis igaz!
+  \end{itemize}
+\item
+  A hipotézis tesztelésére alkalmas adatokat gyűjtünk
+\item
+  Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az
+  adatokra
+
+  \begin{itemize}
+  \item
+    Célunk: az alternatív hipotézis mellett szóló evidencia
+    számszerüsítése az adatokban található variancia ellenében
+  \item
+    A modell illesztése során kiszámoljuk a teszt statisztikát
+  \end{itemize}
+\item
+  Kiszámoljuk a \textbf{teszt statisztikát}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás
+    mértetének mutatója az adatokban található variancia fényében
+  \end{itemize}
+\item
+  Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél
+  extrémebb teszt statisztikát, ha a null hipotézis igaz
+
+  \begin{itemize}
+  \item
+    Ehhez egy valószínűségi eloszlást használunk, ami megmutatja, hogy a
+    null hipotézis alatt, milyen valószínűségeket várnánk el az egyes
+    teszt statisztika értékekhez
+  \item
+    Ehhez általában egy elméleti eloszlást használnuk, ami illik a
+    vizsgált teszt statisztikához
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Például t tesztnél a teszt statisztika a t érték, és t-eloszlást
+      használnuk
+    \end{itemize}
+  \item
+    Az így kiszámolt valószínűség a \textbf{p-érték}
+  \end{itemize}
+\item
+  Értelmezzük az eredmények \textbf{statisztikai szignifikanciáját}
+
+  \begin{itemize}
+  \item
+    A p-értéket fogjuk használni arra, hogy eldöntsük elég meglepőek-e
+    az adataink ahhoz, hogy elvessük a null hipotézist
+  \item
+    Ehhez egy \textbf{döntési kritériumot} kell használnunk, amit a
+    \textbf{szignifikancia küszöbérték}, azaz \textbf{alpha} fog
+    számszerűsíteni
+  \item
+    Fontos megjegyezni, hogy nem tudhatjuk, hogy a döntés, hogy elvetjük
+    a null hipozétist helyes vagy helytelen döntés-e egy adott esetben!
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Vagy egyik vagy a másik nem rendelhetünk mellé valószínűséget!
+    \end{itemize}
+  \item
+    Így egyedül azt tudjuk megmondani, hogyha ilyen vagy ennél extrémebb
+    adatokat kaptunk hosszútávon, ha végtelenszer megismételjük a
+    kísérletet és ugyanezt a döntési kritériumot (alphat) használjuk,
+    akkor az esetek hány százalékában fogunk hibásan dönteni
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{szignifikancia-kuxfcszuxf6b}{%
+\subsection{Szignifikancia küszöb}\label{szignifikancia-kuxfcszuxf6b}}
+
+\begin{itemize}
+\item
+  Nincs objektíven helyes küszöbérték!
+\item
+  Hagyományosan a szignifikancia küszöb 0.05
+
+  \begin{itemize}
+  \item
+    Az alpha = 0.05 azt mondja meg, hogyha végtelenszer megismételjük a
+    kutatást hosszútávon 5\% az esélye annak, hogy egyes fajú hibát
+    követünk el
+  \item
+    Ez azonban csak tradíció kérdése
+  \item
+    Pár éve megjelent két cikk is, ami a szignifikancia küszöb
+    újragondolására bíztat
+
+    \begin{itemize}
+    \item
+      Az egyik amellett érvel, hogy hozzunk érveket amellett, hogy
+      melyik szignifikancia küszöböt választjuk
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Ez azonban nehéz feladat
+      \end{itemize}
+    \item
+      A másik amellett érvel, hogy használjunk egy konzervatívabb
+      küszöbértéket alapértelmezettként, ami legyen 0.005
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Emögött az a feltételezés áll, hogy a 0.05-ös küszöbérték
+        mellett a nullhipotézissel szembeni evidencia gyenge
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mit-uxe9rtuxfcnk-helyes-duxf6ntuxe9s-alatt}{%
+\subsection{Mit értünk helyes döntés
+alatt?}\label{mit-uxe9rtuxfcnk-helyes-duxf6ntuxe9s-alatt}}
+
+\begin{itemize}
+\item
+  Négy lehetséges kimenetel létezik:
+
+  \begin{itemize}
+  \item
+    Elvetjük a nullhipotézist, amikor az valóban hamis
+  \item
+    Nem vetjük el a nullhipotézist, amikor valójában igaz
+  \item
+    Elvetjük a nullhipotézist, pedig az valójában igaz \textbf{(egyes
+    fajú hiba)}
+  \item
+    Nem vetjük el a nullhipotézist, amikor az valójában hamis
+    (\textbf{kettes fajú hiba)}
+  \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item
+  A kettes fajú hiba előfordulásának gyakoriságát a béta küszöbértékkel
+  tudjuk kontrollálni
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Általában 0.2 azaz 20\%
+  \end{itemize}
+\item
+  Ha az adataink kellő mértékben valószínűtlenek a null hipotézis
+  fényében, akkor elvetjük azt és az alternatív hipotézist megtartjuk
+\item
+  Ha nem elég valószínűtlenek az adatok, akkor nem tudjuk elvetni a
+  nullhipotézist
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ebben az esetben nem tudhatjuk, hogy a populációban valóban nem
+    létezik a hatás vagy csak nem volt elég érzékeny a mérőeszközünk a
+    detektálására!
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tuxf6bbszuxf6ruxf6s-teszteluxe9s}{%
+\subsection{Többszörös
+tesztelés}\label{tuxf6bbszuxf6ruxf6s-teszteluxe9s}}
+
+\begin{itemize}
+\item
+  Ha többször teszteljük ugyanazokat az adatokat a p érték devalválódik
+\item
+  Nem az egyes tesztekre kell kontrollálni a hibát, hanem a tesztek
+  egész családjára
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ezt nevezzük family wise error rate-nek
+  \end{itemize}
+\item
+  Ezt különböző statisztikai módszerekkel tudjuk kontrollálni
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A legalapvetőbb a Bonferroni korrekció ahol elosztjuk az alphát a
+    tesztek számával
+  \end{itemize}
+\item
+  Részben ez magyarázza, hogy miért nem lehet az NHST alatt többszörösen
+  tesztelni: azaz megnézni az eredményt újabb adatokat gyűjteni majd
+  megint tesztelni
+\item
+  Hosszutávon a p érték biztosan szignifikáns lesz
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Mert a nagy elemszám miatt a szórás annyira kicsire csökken, hogy
+    kis különbséget is szignifikánsnak fogunk találni
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{hatuxe1snagysuxe1gok}{%
+\section{Hatásnagyságok}\label{hatuxe1snagysuxe1gok}}
+
+\begin{itemize}
+\item
+  A statisztikai szignifikancia nem feltétlenül jelent valós
+  szignifikanciát
+
+  \begin{itemize}
+  \item
+    Példa: egy szívritmus szabályozó gyógyszer hatékonyságának
+    vizsgálatánál kaphatunk szignifikáns különbséget, amikor
+    összehasonlítjuk azon résztvevők szívritmusát akik kaptak az új
+    gyógyszerből azokéval, akik csak placebót kaptak
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ettől függetlenül, ha a gyógyszer klinikailag nem értelmezhető
+      módon csökkenti a szívritmus gyakoriságát (mondjuk egy
+      gyógynövényből készült tea hatékonyságával ér fel) a gyógyszercég
+      nem fog pénzt költeni az új gyógyszer piacra dobására
+    \end{itemize}
+  \end{itemize}
+\item
+  A \textbf{hatásméret (effect size)} annak a számszerűsített mutatója,
+  mennyire erős egy összefüggés, vagy mennyire nagy a különbség két
+  csoport között
+\item
+  Vannak \textbf{nyers hatásméret mutatók}
+
+  \begin{itemize}
+  \item
+    Amik ugyanazt a skálát használják, mint az adatok
+  \item
+    Különböző skálákon mért hatásméretek így nem összehasonlíthatók
+  \item
+    Azonban a hatás valós szignifikanciájának értelmezése könnyebb
+    velük!
+  \end{itemize}
+\item
+  És \textbf{standardizált hatásméret mutatók}
+
+  \begin{itemize}
+  \item
+    Lehetővé teszi az összehasonlítást!
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Lásd: metaanalízis
+    \end{itemize}
+  \item
+    Két család:
+
+    \begin{itemize}
+    \item
+      Csoportok közötti különbségekre
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Cohen's d
+      \end{itemize}
+    \item
+      Változók közötti összefüggésre
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Korreláció, odds ratio, risk ratio
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mintamuxe9ret-uxe9s-annak-becsluxe9se}{%
+\section{Mintaméret és annak
+becslése}\label{mintamuxe9ret-uxe9s-annak-becsluxe9se}}
+
+\begin{itemize}
+\item
+  \textbf{Mintaméret:} az egymástól független megfigyelések száma
+\item
+  Befolyásolja a statisztikai erőt: annak valószínűsége, hogy
+  megtaláljuk a hatást, amennyiben az a valóságban is létezik
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A kettes fajú hiba inverze
+  \end{itemize}
+\item
+  Negatív eredmények esetében fontos a \textbf{statisztikai erő}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Különben nem tudjuk megmondani hogy valóban nem létezik a hatás vagy
+    csak nem volt elég nagy a mintánk, hogy egy ekkora hatást észleljünk
+    (nem volt elég érzékeny a mérésünk)
+  \end{itemize}
+\item
+  A szükséges \textbf{mintaméret becslést} az NHST alatt a priori
+  mintaméret becsléssel végezzük
+
+  \begin{itemize}
+  \item
+    Az a priori azt jelenti, hogy csak akkor van értelme a mintaméret
+    becslésnek, ha az az adatok gyűjtése és a statisztikai teszt
+    elvégzése előtt történt
+
+    \begin{itemize}
+    \item
+      Ezután vagy megtaláltuk a hatást vagy nem, a kérdés el van döntve
+    \item
+      Olyan a post hoc mintaméret becslés mintha azután próbálnánk meg
+      kiszámolni, hogy mennyi üzemanyag kell egy repülőbe ahhoz, hogy
+      átrepüljünk vele az óceán felett, miután már megtörtént a repülés.
+      A gép vagy lezuhant vagy nem
+    \end{itemize}
+  \item
+    Ehhez kell az elvárt hatásméret, a kívánt statisztikai erő, a
+    szignifikancia küszöb, a kutatási elrendezés
+  \item
+    Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk,
+    hogy észleljük
+  \item
+    Az elvárt hatásméret megbecslésére számos módszer van
+
+    \begin{itemize}
+    \item
+      Használhatunk pilot kutatást
+    \item
+      Támaszkodhatunk a szakirodalomban előzetesen talált hatásméretekre
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Azonban itt lehetséges, hogy a publikált hatásméretek
+        torzítanak!
+      \end{itemize}
+    \item
+      Elméleti alapon is meghatározhatjuk a számunkra releváns legkisebb
+      hatást
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \textbf{smallest effect size of interest (SESOI)}
+      \item
+        melyik az a legkisebb hatás, ami számunkra még érdekes lehet
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{kuxe9t-folytonos-vuxe1ltozuxf3-kuxf6zti-uxf6sszefuxfcgguxe9s}{%
+\chapter{Két folytonos változó közti
+összefüggés}\label{kuxe9t-folytonos-vuxe1ltozuxf3-kuxf6zti-uxf6sszefuxfcgguxe9s}}
+
+\begin{itemize}
+\item
+  Statisztikai próbája a \textbf{korreláció}
+\item
+  Teszt értéke a \textbf{korrelációs együttható} \textbf{(r)}
+
+  \begin{itemize}
+  \item
+    skálafüggetlen~
+  \item
+    -1 és 1 közötti értéket vehet fel a korreláció irányának
+    függvényében
+  \end{itemize}
+\item
+  Lineáris összefüggést feltételez a két változó között
+
+  \begin{itemize}
+  \item
+    Pozitív: egyik változó nő a másik is nő
+  \item
+    Negatív: egyik változó nő a másik csökken
+  \end{itemize}
+\item
+  Összefüggés erősségeként lehet értelmezni az r nagyságát
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Minél nagyobb annál erősebb az összefüggés
+  \end{itemize}
+\item
+  3 típusa van
+
+  \begin{itemize}
+  \item
+    \textbf{Pearson korreláció:}
+
+    \begin{itemize}
+    \item
+      Legalább intervallum típusú változók
+    \item
+      Változók eloszlása normál eloszlást követ
+    \end{itemize}
+  \item
+    \textbf{Spearman rang korreláció:}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Legalább ordinális típusú változók
+    \end{itemize}
+  \item
+    \textbf{Kendall tau:}
+
+    \begin{itemize}
+    \item
+      Legalább ordinális
+    \item
+      Alacsonyabb mintaelemszámnál is jó
+    \item
+      Jól kezeli ha sok azonos rangú elem van
+    \end{itemize}
+  \end{itemize}
+\item
+  Korreláció null hipotézis tesztje
+
+  \begin{itemize}
+  \item
+    Kritikus értéknél az r-t t-értékké transzformáljuk
+  \item
+    Szabadságfok: n-2
+  \item
+    Excelben nem annyira egyszerű kiszámítani a korrelációs
+    együtthatóhoz tartozó p-értéket, ezért ezen az órán ettől
+    eltekintünk és a korrelációs együttható, mint két folytonos változó
+    közötti kapcsolat erősségét és irányát kifejező mutató értelmezésére
+    koncentrálunk
+  \end{itemize}
+\item
+  \textbf{Korrelációs mátrix}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Több változó között egyszerre mutatja meg a korrelációs
+    együtthatókat táblázat formájában
+  \end{itemize}
+\item
+  Korrelációs együttható négyzete a \textbf{determinisztikus együttható
+  (R\textsuperscript{2})}
+
+  \begin{itemize}
+  \item
+    Egyik változó mekkora részt magyaráz a másik változóból
+  \item
+    A variance mekkora részét magyarázza meg
+  \item
+    Regressziónál fontos mutató
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{lineuxe1ris-regressziuxf3}{%
+\chapter{Lineáris regresszió}\label{lineuxe1ris-regressziuxf3}}
+
+\hypertarget{egyszerux171-lineuxe1ris-regressziuxf3}{%
+\section{Egyszerű lineáris
+regresszió}\label{egyszerux171-lineuxe1ris-regressziuxf3}}
+
+\begin{itemize}
+\item
+  Legsokrétűbb statisztikai próba
+\item
+  A legtöbb más statisztikai próbát regresszióként is lehet értelmezni
+\item
+  Célja: a kimeneti változó értékeinek predikciója egy vagy több
+  prediktor változó által
+\item
+  Adat = model + error
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Lineáris regresszió esetében a modellünk egy egyenes vonal
+  \end{itemize}
+\item
+  Azt a lineáris modellt akarjuk megtalálni, ami legjobban illeszkedik
+  az adatokra, ahol legkisebb a hiba
+\end{itemize}
+
+\hypertarget{lineuxe1ris-modell-paramuxe9terei}{%
+\subsection{Lineáris modell
+paraméterei}\label{lineuxe1ris-modell-paramuxe9terei}}
+
+\begin{itemize}
+\item
+  Másnéven regressziós \textbf{együtthatók (regression coefficients)}
+\item
+  \textbf{Meredekség (slope):} egy egységnyi változás a prediktor
+  változóban (x tengely) mekkora változást okoz a kimeneti változóban (y
+  tengely)
+
+  \begin{itemize}
+  \item
+    Ha pozitív érték, akkor pozitív kapcsolat van a két változó között
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Ha a prediktor változónk értéke nő a kimeneti változó értéke is nő
+    \end{itemize}
+  \item
+    Ha negatív érték, akkor negatív kapcsolat
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Ha a prediktor változónk értéke nő, a kimeneti változónk értéke
+      csökken
+    \end{itemize}
+  \item
+    Jele: b1
+  \end{itemize}
+\item
+  \textbf{Intercept:} ha a prediktor változó értéke 0, mekkora a
+  kimeneti változó értéke, azaz milyen y értéknél metszi a vonal az y
+  tengelyt
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Jele: b0
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{lineuxe1ris-modell-illeszkeduxe9suxe9nek-a-vizsguxe1lata}{%
+\subsection{Lineáris modell illeszkedésének a
+vizsgálata}\label{lineuxe1ris-modell-illeszkeduxe9suxe9nek-a-vizsguxe1lata}}
+
+\begin{itemize}
+\item
+  Hogyan találjuk meg azt a lineáris modellt, ami legjobban illeszkedik
+  az adatokra?
+
+  \begin{itemize}
+  \item
+    A \textbf{legkisebb négyzetek módszere (method of least squares)}
+
+    \begin{itemize}
+    \item
+      Meghatározásához ugyanazt a módszert használhatjuk, mint amikor az
+      átlagot használtuk, mint modellt
+    \item
+      Megnézzük a modell által prediktált értékek és a valós értékek
+      közötti különbséget: a reziduálisokat (residuals)
+    \item
+      Itt is négyzetre emeljük a reziduálisok majd összeadjuk őket (sum
+      of squared differences, SS)
+    \item
+      Ezután minden lehetséges vonalra (lineáris regressziós modellre)
+      kiszámíthatnánk őket és ahol az SS a legkisebb az a modell
+      illeszkedik a legjobban az adatokra
+    \item
+      Azonban még a legjobban illeszkedő modell is magyarázhatja rosszul
+      az adatokat!
+    \end{itemize}
+  \item
+    Ahhoz, hogy ezt megvizsgálájuk a legegyszerűbb modell
+    illeszkedéséhez hasonlítjuk a regressziós modellunk illeszkedését:
+    az átlaghoz
+
+    \begin{itemize}
+    \item
+      Az átlag azonban minden adatpontra ugyanazt az értéket fogja
+      prediktálni
+
+      \begin{itemize}
+      \item
+        Például: mennyire számít a marketingre szánt összeg egy film
+        összbevételénél?
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Ha 1 dollárt költünk a marketingre akkor is ugyanazt a
+          bevétlet prediktálja, mintha 200000\$ költüttünk volna rá
+        \end{itemize}
+      \end{itemize}
+    \item
+      Az átlag modellnél a hibát összesítve megkapjuk a \textbf{teljes
+      négyzetösszeget (total sum of squares, SS\textsubscript{T})}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Ez a teljes, mert ez a legegyszerűbb modell
+      \end{itemize}
+    \item
+      Kiszámítjuk a \textbf{négyzetre emelt reziduálisok összegét} a
+      regressziós modellnél is \textbf{(residual sum of squares,
+      SS\textsubscript{R})}
+    \item
+      Ahhoz, hogy megtudjuk a regressziós modellünk mennyivel jobban
+      magyarázza az adatokat, mint az átlag modellunk a kettőt kivonjuk
+      egymásból: SS\textsubscript{T} - SS\textsubscript{R} =
+      \textbf{SS\textsubscript{M} (model sum of squares)}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Ha az SS\textsubscript{M} nagy, a regressziós modell sokkal
+        jobban magyarázza az adatokat, mint az átlag
+      \end{itemize}
+    \item
+      Megnézhetjük, hogy arányosan mennyivel javul a modellünk az
+      átlaghoz képest, ha egy prediktor változót is belerakunk
+
+      \begin{itemize}
+      \item
+        A kettőt elosztva egymással megkapjuk a \textbf{determinisztikus
+        együtthatót R\textsuperscript{2}}
+
+        \begin{itemize}
+        \tightlist
+        \item
+          SS\textsubscript{M} / SS\textsubscript{T}
+        \end{itemize}
+      \item
+        Megmutatja a regressziós modellünk által megmagyarázott
+        variancia arányát a kimeneti változónkban, a teljes varianciához
+        képest
+      \item
+        Ha megszorozzuk 100-al százalékot kapunk
+      \item
+        A kimeneti változóban lévő varianciának hány százalékát
+        magyarázza meg a modell
+      \item
+        Ha ennek a négyzetgyökét vesszük, akkor megkapjuk a Pearson
+        korrelációs együtthatót!
+      \end{itemize}
+    \item
+      Az F-teszttel is megvizsgálhatjuk a modellünk illeszkedését
+
+      \begin{itemize}
+      \item
+        \textbf{F teszt statisztika}: szisztematikus variancia / nem
+        szisztematikus variancia
+
+        \begin{itemize}
+        \tightlist
+        \item
+          A modell okozta javulás (SS\textsubscript{M}) / a modell és a
+          megfigyel adatok között lévő különbség (SS\textsubscript{R})
+        \end{itemize}
+      \item
+        Másszóval az F teszt statisztika megmondja, hogy a modell
+        mennyire javítja a becslésünk pontosságát a modellben található
+        pontatlansághoz képest
+      \item
+        Itt nem a négyzetes különbségek összegével, hanem átlagával
+        dolgozunk
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Így nem függ a megfigyelések számától
+        \end{itemize}
+      \item
+        Mean squares for the model (MSS)
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Szabadságfok: prediktor változók száma
+        \end{itemize}
+      \item
+        Residuals mean square (MS\textsubscript{R})
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Szabadságfok: megfigyelések száma - béta együtthatók száma
+          (meredség + intercept = 2)
+        \end{itemize}
+      \item
+        Jó modellnél 1-nél nagyobb az F arány
+      \item
+        p-értéket vagy konfidencia intervallumot is ki tudunk hozzá
+        számolni
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{prediktor-vuxe1ltozuxf3k-szignifikanciuxe1juxe1nak-vizsguxe1lata}{%
+\subsection{Prediktor változók szignifikanciájának
+vizsgálata}\label{prediktor-vuxe1ltozuxf3k-szignifikanciuxe1juxe1nak-vizsguxe1lata}}
+
+\begin{itemize}
+\item
+  Nemcsak a teljes modell teljesítményét kell megvizsgálnunk, hanem az
+  egyes paramétereknek a szignifikanciáját is
+\item
+  A béta megmutatja, hogy a prediktorban való egy egységnyi változás
+  mekkora változást okoz a kimeneti változóban
+
+  \begin{itemize}
+  \item
+    Ha a modell rossz, azt várjuk el, hogy ez nulla legyen
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Pont, mint az átlagnál!
+    \end{itemize}
+  \end{itemize}
+\item
+  A nullhipotézis a paraméterek esetén az lesz, h a paraméter nem
+  különbözik a nullától
+\item
+  A kritikus érték pedig a paraméter tényleges értéke
+\item
+  Ezekre gyakorlatilag egy egymintás t-próbát fogunk végezni
+
+  \begin{itemize}
+  \tightlist
+  \item
+    t = béta / SE
+  \end{itemize}
+\item
+  Az intercept esetén, hogy különbözik-e a nullától az érték.
+\item
+  A slope esetén, hogy a dőlésszöge különbözik-e a nullától.
+\end{itemize}
+
+\hypertarget{lineuxe1ris-regressziuxf3-elux151feltuxe9telei}{%
+\section{Lineáris regresszió
+előfeltételei}\label{lineuxe1ris-regressziuxf3-elux151feltuxe9telei}}
+
+\begin{itemize}
+\item
+  A kimeneti változó folytonos azaz legalább intervallum mérési szintű
+\item
+  Prediktor típusok: folytonos vagy kategorikus is lehet
+\item
+  Nem zéró variancia: a kimeneti változó és prediktor értékeiben van
+  variabilitás
+\item
+  A megfigyelések egymástól függetlenek
+\item
+  A reziduálisok eloszlása normális (a prediktor eloszlásának nem kell
+  normálisnak lennie!)
+
+  \begin{itemize}
+  \item
+    Vizuálisan:~
+
+    \begin{itemize}
+    \item
+      \textbf{QQ plot}
+
+      \begin{itemize}
+      \item
+        A pontok maradjanak az átló közelében
+
+        \begin{itemize}
+        \item
+          Az esetek 5\%-a lehet 2 szóráson kívül
+        \item
+          Az esetek 1\%-a lehet 2.5 szóráson kívül
+        \item
+          Az esetek 0.1\%-a lehet 3 szóráson kívül
+        \end{itemize}
+      \end{itemize}
+    \item
+      \textbf{Residual vs fitted values}
+
+      \begin{itemize}
+      \item
+        Residuális értékek vannak az y tengelyen
+      \item
+        Modell értékek az x tengelyen
+      \item
+        Ha a vonal görbül, nem lineáris kapcsolat
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  Az értékek
+
+  \begin{itemize}
+  \item
+    68\%-a egy szóráson belül van
+  \item
+    95\%-a két szóráson belül van
+  \item
+    99.7\%-a három szóráson belül van
+  \end{itemize}
+\item
+  Ehhez kapcsolódik, hogy a modellben nincsen sok jelentős kiugró érték
+  (outlier), ami torzítja a modellünket
+\item
+  Azt várjuk, hogy a lineáris regresszió minden mérési szinten
+  ugyanannyira jó predikciót tudjon adni. Azaz, ugyanolyan hatékony
+  legyen akkor, ha a buszmegállóban 3 ember van, mint akkor, ha 20
+\item
+  Ezt a reziduálisok elemzésével tudjuk ellenőrizni
+\item
+  Ekkor azt mondjuk, hogy a modellünk homoszkedasztikus, azaz a
+  reziduálisok mértéke független a prediktor értékétől.
+\item
+  Ellentéte a heteroszkedaszticitás, ami azt jelenti, hogy pl. a kisebb
+  prediktált értékekhez tartozó reziduálisok kisebbek, mint a nagyobb
+  prediktált értékekhez tartozó reziduálisok
+\item
+  Vizsgálata vizuálisan zajlik
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tölcsér alak azt jelenti hogy sérül a heteroszkedaszticitás feltétle
+  \end{itemize}
+\item
+  Kiugró értékek szűrése
+
+  \begin{itemize}
+  \item
+    Vizuálisan
+
+    \begin{itemize}
+    \item
+      Távol esnek a többi értéktől
+    \item
+      Magukhoz húzzák a regressziós egyenest
+    \end{itemize}
+  \item
+    Statisztikai módszerekkel
+
+    \begin{itemize}
+    \item
+      Cook's distance
+    \item
+      Ha 1-nél nagyobb erős torzító hatása van az adatpontnak
+    \end{itemize}
+  \item
+    Mit tegyünk ha vannak outlierek?
+
+    \begin{itemize}
+    \item
+      Csak akkor zárjuk ki ha adathibából származnak
+    \item
+      Különben overfitting veszélye fennáll
+    \end{itemize}
+  \item
+    Nagy elemszánál nem olyan nagy a hatásuk!
+  \end{itemize}
+
+  \hypertarget{tuxf6bbszuxf6ruxf6s-lineuxe1ris-regressziuxf3}{%
+  \section{Többszörös lineáris
+  regresszió}\label{tuxf6bbszuxf6ruxf6s-lineuxe1ris-regressziuxf3}}
+
+  \begin{itemize}
+  \item
+    További tényezőkről is gondolhatjuk, hogy javítani fognak a
+    modellünkön
+
+    \begin{itemize}
+    \item
+      Egy bizonyos pont után, ha ezeket a prediktor változókat
+      hozzáadjuk a modellhez, nem fog a hiba szignifikánsan csökkenni
+    \item
+      Ez az overfitting
+    \item
+      Eredménye: a modell nem lesz generalizálható
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{kuxe9t-csoport-uxe1tlaguxe1nak-uxf6sszehasonluxedtuxe1sa}{%
+\chapter{Két csoport átlagának
+összehasonlítása}\label{kuxe9t-csoport-uxe1tlaguxe1nak-uxf6sszehasonluxedtuxe1sa}}
+
+\begin{itemize}
+\item
+  Két csoportot szeretnénk összehasonlítani ahelyett, hogy változók
+  közötti összefüggés erősségét vizsgálnánl
+\item
+  Általában kísérleti elrendezésnél használjuk
+
+  \begin{itemize}
+  \item
+    Itt a kísérleti elrendezés lehetővé teszi, hogy ok-okozati
+    összefüggést állítsunk fel
+  \item
+    Kétféle módon gyűjthetünk adatokat
+
+    \begin{itemize}
+    \item
+      Különböző embereket véletlenszerűen kísérleti csoportokba
+      sorolhatunk
+
+      \begin{itemize}
+      \item
+        Minden ember csak egy csoportba kerül
+      \item
+        \textbf{Független méréses elrendezés}
+      \end{itemize}
+    \item
+      Minden résztvevő végigmegy az összes kísérleti manipuláción
+
+      \begin{itemize}
+      \item
+        \textbf{Többszörös méréses elrendezés}
+      \item
+        Előnye lehet, hogy a személyek közötti esetleges torzító
+        tényezők hatását kontrollálni tudjuk
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Ezzel szenzitívebb lesz a mérésünk
+        \end{itemize}
+      \end{itemize}
+    \item
+      A kettőt egyszerre is alkalmazhatjuk
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \textbf{Kevert elrendezés}
+      \end{itemize}
+    \item
+      A kísérleti elrendezéstől függ, hogy milyen statisztikai elemzési
+      módszert kell használnunk!
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Hiszen ismételt mérések esetén a csoportok nem lesznek
+        függetlenek egymástól
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{a-t-pruxf3ba-tuxedpusai}{%
+\section{A t-próba típusai}\label{a-t-pruxf3ba-tuxedpusai}}
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+\hypertarget{a-t-pruxf3ba-logikuxe1ja}{%
+\section{A t-próba logikája}\label{a-t-pruxf3ba-logikuxe1ja}}
+
+\begin{itemize}
+\item
+  Két mintát veszünk, ahol a mintáink lehetőleg csak az átlalunk
+  vizsgált független változó mentén különböznek szisztematikusan
+
+  \begin{itemize}
+  \item
+    Pl: A) csoport tagjai részt vettek egy képzésen b) csoport tagjai
+    nem vettek rész a képzésen (kontroll csoport)
+
+    \begin{itemize}
+    \item
+      Célunk, hogy a csoport tagjai lehetőleg minden másban hasonlóak
+      legyenek
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Ne legyen olyan esetleges torzító faktor (például A) csoportba
+        csak magas IQ-val rendelkező személyek vannak), ami torzíthatja
+        a vizsgált hatást (a képzés hatására jobb pontot érnek-e el a
+        személyek egy teszten)
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  A null hipotézis alatt azt várjuk el, hogy a két minta átlagai között
+  nem lesz különbség, a csoportok átlagainak különbsége a függő
+  változóban a nulla körül helyezkedik el
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ebben az esetben a két minta feltételezhetően ugyanabból a
+    populációból származik
+  \end{itemize}
+\item
+  A megfigyelt minták átlagainak különbségét ahhoz a hipotetikus
+  különbség értékhez hasonlítjuk, amit akkor várnánk el, ha nincs hatás
+  (tehát a null hipotézis igaz)
+\item
+  A standard hibát használjuk arra, hogy megvizsgáljuk a minta átlagok
+  közti variabilitást
+
+  \begin{itemize}
+  \item
+    Ha a standard hiba kicsi akkor várhatóan a minta átlagok hasonlóak
+    lesznek
+  \item
+    Ha a standard hiba nagy akkor várhatóan nagy különbségek is
+    előfordulhatnak a minta átlagok között
+  \item
+    Még akkor is, ha ugyanabból a populációból származnak
+  \end{itemize}
+\item
+  Ha a megfigyelt minta átlagok közti különbség nagyobb, mint amit
+  elvárnánk a standard hiba alapján, ha a null hipotézis igaz, akkor
+  feltételezhetjük:
+
+  \begin{itemize}
+  \item
+    A valóságban nincs hatás, a két minta átlag ugyanabból a
+    populációból származik, csak atipikus egyedei annak
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Másszóval: távol helyezkednek el a populáció átlagtól
+    \end{itemize}
+  \item
+    A valóságban van hatás, a null hipotézist elvetjük, a két minta
+    valójában két különböző populációból származik, amelyeknek tipikus
+    tagjai
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Másszóval a minta átlagok közel vannak a populációk átlagához,
+      amiből származnak
+    \end{itemize}
+  \end{itemize}
+\item
+  Minél nagyobb a hatás és minél kisebb a standard hiba, annál
+  biztosabbak vagyunk benne, hogy a hatás valóban létezik
+\end{itemize}
+
+\hypertarget{t-pruxf3ba-mint-stasztikai-modell}{%
+\section{t-próba, mint stasztikai
+modell}\label{t-pruxf3ba-mint-stasztikai-modell}}
+
+\begin{itemize}
+\item
+  Egy teszt statisztikára gondolhatunk úgy is, mint a variancia, amit
+  megmagyaráz a modellunk elosztva a varianciával, amit nem magyaráz meg
+  a modellünk
+
+  \begin{itemize}
+  \tightlist
+  \item
+    hatás / hiba
+  \end{itemize}
+\item
+  t-próba esetében a statisztikai modell a két csoport átlagainak a
+  különbsége
+\item
+  A hiba mutatónk a standard hiba
+
+  \begin{itemize}
+  \item
+    Megmutatja mennyire fluktuálnak a minta átlagok a mintevételezési
+    hibának következtében
+  \item
+    Ezt is az átlagok különbségére számoljuk ki
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{t-pruxf3ba-elux151feltuxe9telei}{%
+\section{t-próba előfeltételei}\label{t-pruxf3ba-elux151feltuxe9telei}}
+
+\begin{itemize}
+\item
+  A változók legalább intervallum skálájúak
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ez az előfeltétele, hogy átlagot tudjunk számolni
+  \end{itemize}
+\item
+  A mintavételei eloszlás (sampling distribution) normáls eloszlást
+  követ
+
+  \begin{itemize}
+  \item
+    A mintavételi eloszlást nem tudjuk közvetlenül megvizsgálni ezért
+    azt nézzük meg, hogy a változók eloszlása normál eloszlást követ-e
+
+    \begin{itemize}
+    \item
+      A centrális határeloszlás elve miatt feltételezzük
+
+      \begin{itemize}
+      \item
+        ha a változónk eloszlása normális a mintavételi eloszlás is
+        normális lesz
+      \item
+        Illetve sok megfigyelés esetén a mintavételezési eloszlás úgyis
+        a normálishoz közelít
+      \end{itemize}
+    \end{itemize}
+  \item
+    Páros t-próba esetén a két csoport értékeinek a különbsége kell
+    normál eloszlást kövessen!
+  \end{itemize}
+\item
+  Független mintás t-próba
+
+  \begin{itemize}
+  \item
+    Az előfeltételeket tesztelni kell mielőtt a parametrikus Student
+    t-próbát alkalmazhatnánk
+  \item
+    Az előző feltételeken felül:
+
+    \begin{itemize}
+    \item
+      A különböző csoportokból származó értékek függetlenek egymástól
+    \item
+      Szórás homogenitás: a két csoport szórása hasonló
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{t-pruxf3ba-eredmuxe9nyeinek-uxe1bruxe1zoluxe1sa}{%
+\section{t-próba eredményeinek
+ábrázolása}\label{t-pruxf3ba-eredmuxe9nyeinek-uxe1bruxe1zoluxe1sa}}
+
+\begin{itemize}
+\item
+  Hegedű ábrával (violin plot)
+\item
+  Barchart-tal
+\item
+  Ne feledkezzünk meg az error bar-ról!
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ez általában a standard hiba (SE)
+  \end{itemize}
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{hivatkozuxe1sok}{%
+\chapter*{Hivatkozások}\label{hivatkozuxe1sok}}
+\addcontentsline{toc}{chapter}{Hivatkozások}
+
+\markboth{Hivatkozások}{Hivatkozások}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+
+
+\end{document}

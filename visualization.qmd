@@ -1,0 +1,91 @@
+# Adatvizualizáció
+
+-   Példa adatvizualizáció fontosságára: John Snow és a londoni kolera járvány
+
+-   Szerepe:
+
+    -   Az adatok ellenőrzése
+
+        -   Hasonló középértékekkel és szórásokkal rendelkező nyers adatok nagyon más értékeket vehetnek fel
+
+        -   Segít megtalálni hibákat is az adatokban
+
+    -   Egy történet elmesélése
+
+        -   az adatok közti összefüggés feltárása
+
+-   DE a vizualizáció nem szabad megtévesztő legyen!
+
+## A jó adatvizualizáció ismérvei
+
+-   Az ábra minden részének legyen információ értéke
+
+    -   Felesleges vagy redundáns elemek ne kerüljenek rá, mert elterelik a figyelmet a lényegről és megzavarják az értelmezést
+
+    -   Olyan elemek jelenjenek meg csak az ábrán, amelyek nem törölhetők információ veszteség nélkül
+
+    -   Lásd:
+
+        -   adat/tinta arány
+
+        -   Ábra szemét
+
+-   Legjobb megmutatni az egyéni adatpontokat is amennyiben ez lehetséges
+
+    -   Az összesítés torzíthatja az eredményeket
+
+-   Használd ki az ábránál a teret, de figyelj rá, hogy közben ne torzítsd az adatokat
+
+    -   Különböző ábrázolási módok nagyon más történetet tudnak elmesélni
+
+    -   Példa: szerepeljen-e a nulla érték az y tengelyen vagy ne
+
+-   Figyelj az emberi percepció limitációira
+
+    -   Színvakság
+
+        -   Használj színvak barát színeket
+
+    -   Pie chart
+
+        -   Az embereknek ennél a vizualizációs módszernél nagyon nehéz az arányokat helyesen értelmezni!
+
+        -   Ne használjuk!
+
+## Gyakori adatvizualizációs megoldások
+
+### Doboz ábra (boxplot)
+
+-   A helyzetmutatókat általában egy **boxplot** segítségével vizualizáljuk
+
+-   Ahol a doboz felső határsa a 75-ik percentilist, az alsó határa a 25-ik percentilist jelöli
+
+    -   A két vonal közötti rész az IQR
+
+-   A kettő közti vonal a doboz felénél az 50-ik percentilist jelöli
+
+    -   Másnéven medián
+
+-   A dobozból kijövő függőleges vonalak a 75-ik és a 25-ik percentileseken kívül eső, de még nem outlier értékeket mutatják
+
+    -   Ezen kívül pöttyökkel tudjuk jelölni azokat az egyes adatpontokat, amelyek outlier értéknek számítanak
+
+## Hogyan szúrjunk ki megtévesztő vizualalizációs elemeket?
+
+-   Segít-e az ábra megérteni az adatokat, vagy inkább csak összezavar?
+
+-   Figyelmesen nézd meg az ábrán a tengelyek nevét és léptékét!
+
+-   Nézd meg, hogy a tengelyek a nulláról indulnak-e! 
+
+-   Nézd meg, hogy a különböző csoportokat bemutató ábrázolások egyenlő arányban változnak-e egymással
+
+-   Nem hagytak-e ki adatpontot az ábráról?
+
+-   Összevontak-e kategóriákat indokolatlanul?
+
+-   Szerepelnek-e olyan adatcsoportok az ábrán, amelyek önkényesen lettek kiválasztva?
+
+-   Példák rossz ábrákra
+
+    -   <https://venngage.com/blog/misleading-graphs/>

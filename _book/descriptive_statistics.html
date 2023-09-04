@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 4&nbsp; Leíró statisztika</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./visualization.html" rel="next">
+<link href="./data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#értékek-eloszlása" id="toc-értékek-eloszlása" class="nav-link active" data-scroll-target="#értékek-eloszlása"><span class="toc-section-number">4.1</span>  Értékek eloszlása</a></li>
+  <li><a href="#statisztikai-modellek" id="toc-statisztikai-modellek" class="nav-link" data-scroll-target="#statisztikai-modellek"><span class="toc-section-number">4.2</span>  Statisztikai modellek</a>
+  <ul class="collapse">
+  <li><a href="#a-legegyszerűbb-statisztika-modell-az-átlag" id="toc-a-legegyszerűbb-statisztika-modell-az-átlag" class="nav-link" data-scroll-target="#a-legegyszerűbb-statisztika-modell-az-átlag"><span class="toc-section-number">4.2.1</span>  A legegyszerűbb statisztika modell, az átlag</a></li>
+  <li><a href="#modell-illeszkedésének-a-vizsgálata" id="toc-modell-illeszkedésének-a-vizsgálata" class="nav-link" data-scroll-target="#modell-illeszkedésének-a-vizsgálata"><span class="toc-section-number">4.2.2</span>  Modell illeszkedésének a vizsgálata</a></li>
+  <li><a href="#mitől-jó-egy-statisztikai-modell" id="toc-mitől-jó-egy-statisztikai-modell" class="nav-link" data-scroll-target="#mitől-jó-egy-statisztikai-modell"><span class="toc-section-number">4.2.3</span>  Mitől jó egy statisztikai modell?</a></li>
+  </ul></li>
+  <li><a href="#összesítő-statisztikák" id="toc-összesítő-statisztikák" class="nav-link" data-scroll-target="#összesítő-statisztikák"><span class="toc-section-number">4.3</span>  Összesítő statisztikák</a>
+  <ul class="collapse">
+  <li><a href="#középértékek" id="toc-középértékek" class="nav-link" data-scroll-target="#középértékek"><span class="toc-section-number">4.3.1</span>  Középértékek</a></li>
+  <li><a href="#szélsőértékek" id="toc-szélsőértékek" class="nav-link" data-scroll-target="#szélsőértékek"><span class="toc-section-number">4.3.2</span>  Szélsőértékek</a></li>
+  <li><a href="#helyzetmutatók" id="toc-helyzetmutatók" class="nav-link" data-scroll-target="#helyzetmutatók"><span class="toc-section-number">4.3.3</span>  Helyzetmutatók</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<ul>
+<li><p>Célja a minta összefoglalása</p>
+<ul>
+<li>Gyakoriságok, százalékok, csoport átlagok és szórások, stb. által</li>
+</ul></li>
+<li><p>Az adatokkal való munka során az adatok valamilyen formában történő <strong>összesítését</strong> végezzük</p></li>
+<li><p>Erre azért van szükség, mert az emberek nem képesek a nyers adatokból jól következtetéseket levonni</p></li>
+<li><p>A folyamat során elkerülhetetlenül elveszik valamennyi információ, ám lehetőségünk nyílik átlátni a részletek mögött rejlő összefüggéséket és általánosítani azokból</p></li>
+<li><p>Az adatösszesítésnek többféle módja lehet</p>
+<ul>
+<li><p>Ez függ a vizsgált kérdéstől</p></li>
+<li><p>És az adatok milyenségétől (például az egyes változók típusától)</p></li>
+</ul></li>
+</ul>
+<section id="értékek-eloszlása" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="értékek-eloszlása"><span class="header-section-number">4.1</span> Értékek eloszlása</h2>
+<ul>
+<li><p>Az adatok leírásának egyik módja az <strong>eloszlás</strong>uk vizsgálata</p>
+<ul>
+<li>Ez alapján meg tudjuk mondani, hogy mely értékek gyakoriak és melyek ritkák az adattáblánkban</li>
+</ul></li>
+<li><p>Az eloszlás megmondja, hogyan oszlik meg az adat a különböző lehetséges értékek között</p>
+<ul>
+<li>Például: diszkrét változó esetén hányan választották az egyes lehetséges opciókat</li>
+</ul></li>
+<li><p>Az egyik gyakran vizsgált eloszlás fajta a <strong>gyakorisági eloszlás</strong></p>
+<ul>
+<li><p>A gyakorisági eloszlás megmondja, hogy egy változó lehetséges értékei milyen gyakran fordulnak elő a mintánkban</p></li>
+<li><p>Diszkrét változó gyakorisági eloszlása</p>
+<ul>
+<li><p>Példa</p>
+<ul>
+<li>Példa…</li>
+</ul></li>
+<li><p>Ez a táblázat az adatok abszolút frekvenciáját mutatja meg</p></li>
+<li><p>Ahhoz, hogy meg tudjuk mondani a gyakoriságok között különbség valóban lényeges-e hasznos lehet megtekinteni a relatív frekvenciájukat (sűrűségüket)</p></li>
+<li><p>Ehhez minden lehetséges értékhez el kell osztani az abszolút gyakoriságot a változóban található összes érték számával</p></li>
+</ul></li>
+<li><p>Hogyan ábrázoljuk a gyakoriságot?</p>
+<ul>
+<li><p>Dotplot</p>
+<ul>
+<li><p>Minden értéket egy pötty jelöl</p></li>
+<li><p>Az x tengely az értéktartomány</p></li>
+<li><p>Az y tengely a gyakoriság</p></li>
+<li><p>Folytonos változónál az összesítés során az értéktartományt különböző méretű “vödrökre” osztjuk</p></li>
+<li><p>Meghatározzuk a vödrök szélességét (binwidth)</p></li>
+<li><p>És az ebbe az értéktartományba eső értékek gyakoriságát számoljuk meg és ábrázoljuk</p></li>
+</ul></li>
+<li><p>A hisztogram hasonló, mint a dotplot</p>
+<ul>
+<li>De az egyes értékek nem jelennek meg külön, így sok adat gyakoriságát egyszerre tudjuk ábrázolni</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Kumulatív gyakorisági eloszlás</strong></p>
+<ul>
+<li><p>Azon értékek gyakorisága amelyek akkor vagy kevesebbek, mint az adott határérték, amit vizsgálunk</p></li>
+<li><p>Kiszámolásához összeadjuk a hátárétrék gyakoriságát és az összes nála kisebb érték gyakoriságát</p></li>
+<li><p>Értéke soha nem csökkenhet</p></li>
+<li><p>példa</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="statisztikai-modellek" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="statisztikai-modellek"><span class="header-section-number">4.2</span> Statisztikai modellek</h2>
+<ul>
+<li><p>Leegyszerüsített reprezentációja az adatoknak</p></li>
+<li><p>Leírja az adatok struktúráját</p></li>
+<li><p>Mindig van benne hiba faktor, kihagy részleteket</p></li>
+<li><p><em>“All models are wrong but some are useful”</em> (George Box)</p></li>
+<li><p>A statisztikai modellre gondolhatunk úgy is, mint egy elméletre, amely leírja hogyan keletkeztek az adatok</p></li>
+<li><p>Célunk: olyan modellt alkossunk, ami hatékonyan és pontosan írja le az adatok keletkezésének a módját</p>
+<ul>
+<li><p>Másszóval, fontos, hogy a modell jól illeszkedjen az adatokra</p>
+<ul>
+<li>Minél jobban illeszkedik a modell az adatokhoz (a valósághoz), annál megbízhatóbbak a modell által létrehozott predikciók</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tökéletesen reprezentálni a valóságot</p>
+<ul>
+<li><p>lesz hiba a modell által prediktált értékek és az egyes megfigyelések között</p></li>
+<li><p>Adat = modell + hiba</p>
+<ul>
+<li><p><strong>Modell:</strong> az értékek, amit az elméletünk alapján elvárunk</p></li>
+<li><p><strong>Hiba:</strong> a modell által prediktált értékek és a valós adatpontok közötti különbség</p></li>
+</ul></li>
+</ul>
+<section id="a-legegyszerűbb-statisztika-modell-az-átlag" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="a-legegyszerűbb-statisztika-modell-az-átlag"><span class="header-section-number">4.2.1</span> A legegyszerűbb statisztika modell, az átlag</h3>
+<ul>
+<li><p>Minden megfigyelésre ugyanazt az értéket prediktálja</p></li>
+<li><p>Példa</p>
+<ul>
+<li><p>Vizsgálhatjuk például, hogy a statisztika tanároknak hány barátja van</p></li>
+<li><p>Tegyük fel, hogy 5 tanárt kérdezünk meg</p></li>
+<li><p>Az átlag: (1 + 2 + 3 + 3 + 4)/5 = 2.6</p></li>
+<li><p>Ebből is látszik, hogy az átlag egy statisztikai modell, hiszen egy hipotetikus érték, nem megfigyelhető a valóságban</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="modell-illeszkedésének-a-vizsgálata" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">4.2.2</span> Modell illeszkedésének a vizsgálata</h3>
+<ul>
+<li><p>Hogyan tudjuk megvizsgálni, hogy mennyire jól illeszkedik az átlag, mint modell, az adatokra?</p>
+<ul>
+<li><p>Ahhoz, hogy eldöntsük a modell jól írja-e le az adatokat, megnézhetjük a megfigyelt adatok és a modell értékei közötti különbséget</p></li>
+<li><p>Ezen értékek közötti eltérés a modell hibája</p></li>
+<li><p>Például annál a kutatónál, akinek egy barátja van, a modell 2.6 barátot prediktál (ez volt az átlag), a modell hibája, azaz az eltérés, így megfigyelt értél - prediktált érték = -1.6</p></li>
+<li><p>Ebben az esetben a modell felül becsüli a kutató népszerűségét!</p></li>
+<li><p>Hogyan összesítsük az egyes eltéréseket, hogy meg tudjuk határozni a modellünk pontosságát?</p>
+<ul>
+<li><p>Például <strong>összeadhatjuk őket (sum of errors)</strong></p>
+<ul>
+<li><p>Ebben az esetben azt látjuk, hogy az eltérések összege 0</p></li>
+<li><p>Ez alapján arra következtethetnénk, hogy az átlag tökéletesen reprezentálja az adatokat, azonban az ábrára ránézve láthatjuk, hogy ez nem így van</p>
+<ul>
+<li><p>az egyes értékek és a modell által prediktált értékek között van különbség</p>
+<ul>
+<li>Még egy ok az ábrázolás fontossága mellett!</li>
+</ul></li>
+</ul></li>
+<li><p>A negatív és a pozitív előjelű eltérések kiegyenlítették egymást</p></li>
+</ul></li>
+<li><p>Ezt elkerülendő <strong>négyzetre emelhetjük az eltéréseket az összeadás előtt (sum of squared errors)</strong></p>
+<ul>
+<li><p>Így minden eltérés előjele pozitív lesz</p></li>
+<li><p>A példánkban a négyzetes eltérések összege 5.20</p></li>
+<li><p>Most azonban abba a problémába ütközünk, hogy a modell pontosságának mérője függ a mintánk méretétől</p></li>
+<li><p>Minél több megfigyelésünk van, annál nagyobb lesz a modell hiba</p></li>
+</ul></li>
+<li><p>Ezt elkerülhetjük úgy, hogy összeadás helyett a <strong>négyzetes eltérések átlagát vesszük (mean of squared errors)</strong></p>
+<ul>
+<li><p>Ehhez elosztjuk a négyzetes eltérések összegét a megfigyelések számával</p></li>
+<li><p>Így azonban csak a mintánkban lévő átlagos hibát számszerüsítjük</p></li>
+<li><p>Azonban célunk, hogy a mintában lévő hibából a populációban található hibát becsüljük meg</p></li>
+<li><p>Ehhez a minta mérete helyett a szabadságfokkal kell elosztanunk a négyzetes eltérések összegét</p></li>
+<li><p>Jelen esetben ez n - 1</p></li>
+</ul></li>
+<li><p>Ezt nevezzük <strong>varianciának</strong></p>
+<ul>
+<li><p>Átlagos négyzetes eltérés az átlagtól</p></li>
+<li><p>A varianciával a probléma, hogy a mértékegysége az adatok skálájának négyzete</p></li>
+<li><p>A példánkban 1.3</p>
+<ul>
+<li>Négyzetes barátok száma nehezen értelmezhető!</li>
+</ul></li>
+</ul></li>
+<li><p>Ezt elkerülhetjük úgy, hogy a variancia gyökét vesszük, ez a <strong>szórás</strong></p>
+<ul>
+<li><p>Így a modell hibájának mérője ugyanazt a skálát használja, mint a megfigyeléseink</p></li>
+<li><p>Az átlaghoz képest kis szórás azt mutatja, hogy a modellunk jól illeszkedik az adatokra</p>
+<ul>
+<li>A megfigyelések közel vannak az átlaghoz</li>
+</ul></li>
+<li><p>Példa</p>
+<ul>
+<li><p>Megkérhetjük a hallgatókat, hogy egy 5-ös skálán értékeljék az egyes statisztika oktatókat</p></li>
+<li><p>A mérést elvégezhetjük 5 egymást követő órán</p></li>
+<li><p>Az ábrán két oktatónak öt óráján mért összesített értékelései láthatók</p></li>
+<li><p>Ha az átlagot használjuk, mint statisztikai modellt, mind a két oktatónál ugyanazt az átlagot kapjuk</p></li>
+<li><p>Mégis látható, hogy az egyik oktatónál a modell jobban illeszkedik az adatokhoz, tehát az átlag pontos reprezentációja az adatoknak</p>
+<ul>
+<li>Ezt mutatja, hogy a szórás 0.55 az átlaghoz mérten kicsi</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="mitől-jó-egy-statisztikai-modell" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="mitől-jó-egy-statisztikai-modell"><span class="header-section-number">4.2.3</span> Mitől jó egy statisztikai modell?</h3>
+<ul>
+<li><p>1) kicsi a hiba</p>
+<ul>
+<li><p>Mitől lehet nagy a hiba?</p>
+<ul>
+<li><p>Rossz a modell</p>
+<ul>
+<li><p>Kimaradt egy fontos prediktor változó</p></li>
+<li><p>A prediktor változó hatásának irányát rosszul adtuk meg</p>
+<ul>
+<li>Pl: azt feltételezi a modell minél idősebb valaki annál alacsonyabb gyerekek körében</li>
+</ul></li>
+<li><p>Az adatok vizualizációja fontos, hogy jól specifikált modellt tudjunk építeni</p></li>
+</ul></li>
+<li><p>Mérés hiba/zaj/adatokban lévő variancia miatt</p>
+<ul>
+<li><p>Vagy a mérőeszköz nem elég pontos</p></li>
+<li><p>Vagy egyébb faktorok is befolyásolják a megfigyelt mérésekben lévő varianciát, amikről nem tudunk vagy nem tudjuk mérni</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>2) jól generalizálható</p>
+<ul>
+<li>ha új adatokra illesztjük a modellt, azokat is jól fogja prediktálni</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="összesítő-statisztikák" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="összesítő-statisztikák"><span class="header-section-number">4.3</span> Összesítő statisztikák</h2>
+<ul>
+<li><p><strong>Gyakoriság (frequency):</strong> a megfigyelések száma (db). Pl. az előadást megnéző hallgatók száma.</p></li>
+<li><p><strong>Összeg (summary):</strong> egy változó összes értékének összeadásával keletkező érték. Pl. covid megbetegedések száma.</p></li>
+<li><p><strong>Arány (proportion):</strong> a megfigyelések száma az összes megfigyeléshez képest (Pl. 54 % vagy 0.54 vagy .54). pl. biciklisek aránya az összes közlekedőhöz képest az Andrássy úton</p></li>
+</ul>
+<section id="középértékek" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="középértékek"><span class="header-section-number">4.3.1</span> Középértékek</h3>
+<ul>
+<li><p><strong>Matematikai átlag (mean, average):</strong> Az értékek összege elosztva az értékek számával</p>
+<ul>
+<li><p>Általában folytonos változóknál vagy nagy granilaritással rendelkező ordinális változónál használjuk</p></li>
+<li><p>Akkor jó használni, ha a változónk eloszlása szimmetrikus</p></li>
+<li><p>Ha nagy kiugró értékek vannak az átlag torzíthat</p>
+<ul>
+<li><p>Az átlag a négyzetes hibák összegét csökkenti</p></li>
+<li><p>A hibák négyzetre emelésénél a kiugró értékeknél exponenciálisan nő a hiba</p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Medián (median):</strong> A nagyság szerint sorba rendezett értékek közül a középső. Ha páros számú érték van, akkor általában a középső kettő átlaga</p>
+<ul>
+<li><p>Ordinális változónál használjuk</p></li>
+<li><p>Akkor jó használni, ha ferde az eloszlás vagy vannak outlierek</p>
+<ul>
+<li><p>A hibák abszolút értékének összegét csökkenti</p></li>
+<li><p>Ezért kevésbé érzékeny, nincs négyzetre emelés</p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Módusz (mode):</strong> A leggyakrabban előforduló érték</p>
+<ul>
+<li>Nominális változónál használjuk</li>
+</ul></li>
+</ul>
+</section>
+<section id="szélsőértékek" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="szélsőértékek"><span class="header-section-number">4.3.2</span> Szélsőértékek</h3>
+<ul>
+<li><p><strong>Minimum:</strong> a legkisebb érték</p></li>
+<li><p><strong>Maximum:</strong> a legnagyobb érték</p></li>
+<li><p><strong>Kiugró értékek (outlier):</strong> olyan érték, ami a többitől távol esik</p>
+<ul>
+<li><p>Azt, hogy milyen vágási ponttól számít egy érték outliernek sokszor nem könnyen határozható meg.</p></li>
+<li><p>Függhet az elmélettől vagy az adott szakterületen használt konvenciók is megszabhatják</p></li>
+<li><p>Az outlierek nagy torzító hatással vannak az átlagra</p>
+<ul>
+<li><p>Érdemes ezért megvizsgálni a változónk eloszlását, mielőtt úgy döntünk, hogy az átlag alapján kívánjuk összesíteni az adatainkat</p>
+<ul>
+<li>Lehet, hogy torzítani fog = nem jól reprezentálja az adatokat</li>
+</ul></li>
+</ul></li>
+<li><p>Kevésbé torzítják a mediánt</p></li>
+<li><p>Nem torzítják a móduszt</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="helyzetmutatók" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="helyzetmutatók"><span class="header-section-number">4.3.3</span> Helyzetmutatók</h3>
+<ul>
+<li><p>Kvantilisek: vágási pontok, amelyek mentén a sorba rendezett adatokat meghatározott számú részre bonthatjuk</p></li>
+<li><p>Pl. kvartilisek: Az adatokat négy egyenlő részre osztó három pont (ld. még decilis, percentilis)</p></li>
+<li><p>Interkvartilis tartomány (IQR): A felső (75%) alsó (25%) kvartilis és az alsó kvartilis különbsége, az adatok középső 50%-a&nbsp;</p>
+<ul>
+<li>Általában ordinális adatok összesítésénél szoktuk használni</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./visualization.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

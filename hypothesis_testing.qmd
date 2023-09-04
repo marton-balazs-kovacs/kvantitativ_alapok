@@ -1,0 +1,220 @@
+# Null szignifikancia hipotézis tesztelés
+
+-   Következtetéses statisztika célja a populációra való következtetés a minta alapján
+
+-   Több statisztikai hipotézis tesztelő keretrendszer is létezik
+
+    -   **frekventista:**
+
+        -   A hipotézis állandó (vagy igaz vagy nem) és az adatok véletlenszerűek
+
+        -   Frekventista inferencia az adatok előfordulásának valószínűségére fókuszál a hipotézis fényében
+
+        -   A frekventista módszerek közül legtöbbször a **null hipotézis szignifikancia tesztelést (NHST)** használják a kutatók
+
+    -   **Bayesiánus:**
+
+        -   a hipotézis valószínűségéről is el tud mondani valamit az előzetes tudásunk és az adatok fényében
+
+        -   gyakran használt hipotézis tesztelő módszere a **Bayes factor**
+
+            -   két hipotézis valószínűségének az arányát fejezi ki az adatok fényében
+
+            -   az érdeklődőknek további olvasmányok:
+
+                -   <https://alexanderetz.com/2015/08/09/understanding-bayes-visualization-of-bf/>
+
+                -   <https://www.sciencedirect.com/science/article/abs/pii/S0022249615000607>
+
+                -   <https://link.springer.com/article/10.3758/s13423-017-1343-3>
+
+## Null hipotézis szignifikancia tesztelés
+
+### Lépései
+
+-   Megfogalmazunk egy **alternatív hipotézist**
+
+    -   A hipotézisünknek lehet iránya **(egyoldalú hipotézis tesztelés)**
+
+        -   Pozitív vagy negatív kapcsolatot várunk el
+
+        -   Egy oldalú hipotézis tesztelésnek is nevezik
+
+    -   Vagy lehet **kétoldalú hipotézis teszt**
+
+        -   Ebben az esetben az alternatív hipotézisünk csak azt várja el, hogy a lesz lesz különbség a vizsgált változók között, de az nem mondjuk meg milyen irányú különbséget várunk el
+
+    -   Azt, hogy melyik hipotézist alkalmazzuk az elmélet (előzetes tudásunk) határozza meg
+
+-   Megfogalmazzuk a **null hipotézist**
+
+    -   Egyoldalú hipotézis esetén a null hipotézis feltételezi, hogy az alternatív által prediktált iránnyal ellenkező előjelű különbséget kapunk vagy nem lesz különbség
+    -   Feltételezzük, hog a null hipotézis igaz!
+
+-   A hipotézis tesztelésére alkalmas adatokat gyűjtünk
+
+-   Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az adatokra
+
+    -   Célunk: az alternatív hipotézis mellett szóló evidencia számszerüsítése az adatokban található variancia ellenében
+
+    -   A modell illesztése során kiszámoljuk a teszt statisztikát
+
+-   Kiszámoljuk a **teszt statisztikát**
+
+    -   A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás mértetének mutatója az adatokban található variancia fényében
+
+-   Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél extrémebb teszt statisztikát, ha a null hipotézis igaz
+
+    -   Ehhez egy valószínűségi eloszlást használunk, ami megmutatja, hogy a null hipotézis alatt, milyen valószínűségeket várnánk el az egyes teszt statisztika értékekhez
+
+    -   Ehhez általában egy elméleti eloszlást használnuk, ami illik a vizsgált teszt statisztikához
+
+        -   Például t tesztnél a teszt statisztika a t érték, és t-eloszlást használnuk
+
+    -   Az így kiszámolt valószínűség a **p-érték**
+
+-   Értelmezzük az eredmények **statisztikai szignifikanciáját**
+
+    -   A p-értéket fogjuk használni arra, hogy eldöntsük elég meglepőek-e az adataink ahhoz, hogy elvessük a null hipotézist
+
+    -   Ehhez egy **döntési kritériumot** kell használnunk, amit a **szignifikancia küszöbérték**, azaz **alpha** fog számszerűsíteni
+
+    -   Fontos megjegyezni, hogy nem tudhatjuk, hogy a döntés, hogy elvetjük a null hipozétist helyes vagy helytelen döntés-e egy adott esetben!
+
+        -   Vagy egyik vagy a másik nem rendelhetünk mellé valószínűséget!
+
+    -   Így egyedül azt tudjuk megmondani, hogyha ilyen vagy ennél extrémebb adatokat kaptunk hosszútávon, ha végtelenszer megismételjük a kísérletet és ugyanezt a döntési kritériumot (alphat) használjuk, akkor az esetek hány százalékában fogunk hibásan dönteni
+
+### Szignifikancia küszöb
+
+-   Nincs objektíven helyes küszöbérték!
+
+-   Hagyományosan a szignifikancia küszöb 0.05
+
+    -   Az alpha = 0.05 azt mondja meg, hogyha végtelenszer megismételjük a kutatást hosszútávon 5% az esélye annak, hogy egyes fajú hibát követünk el
+
+    -   Ez azonban csak tradíció kérdése
+
+    -   Pár éve megjelent két cikk is, ami a szignifikancia küszöb újragondolására bíztat
+
+        -   Az egyik amellett érvel, hogy hozzunk érveket amellett, hogy melyik szignifikancia küszöböt választjuk
+
+            -   Ez azonban nehéz feladat
+
+        -   A másik amellett érvel, hogy használjunk egy konzervatívabb küszöbértéket alapértelmezettként, ami legyen 0.005
+
+            -   Emögött az a feltételezés áll, hogy a 0.05-ös küszöbérték mellett a nullhipotézissel szembeni evidencia gyenge
+
+### Mit értünk helyes döntés alatt?
+
+-   Négy lehetséges kimenetel létezik:
+
+    -   Elvetjük a nullhipotézist, amikor az valóban hamis
+
+    -   Nem vetjük el a nullhipotézist, amikor valójában igaz
+
+    -   Elvetjük a nullhipotézist, pedig az valójában igaz **(egyes fajú hiba)**
+
+    -   Nem vetjük el a nullhipotézist, amikor az valójában hamis (**kettes fajú hiba)**
+
+```{=html}
+<!-- -->
+```
+-   A kettes fajú hiba előfordulásának gyakoriságát a béta küszöbértékkel tudjuk kontrollálni
+
+    -   Általában 0.2 azaz 20%
+
+-   Ha az adataink kellő mértékben valószínűtlenek a null hipotézis fényében, akkor elvetjük azt és az alternatív hipotézist megtartjuk
+
+-   Ha nem elég valószínűtlenek az adatok, akkor nem tudjuk elvetni a nullhipotézist
+
+    -   Ebben az esetben nem tudhatjuk, hogy a populációban valóban nem létezik a hatás vagy csak nem volt elég érzékeny a mérőeszközünk a detektálására!
+
+### Többszörös tesztelés
+
+-   Ha többször teszteljük ugyanazokat az adatokat a p érték devalválódik
+
+-   Nem az egyes tesztekre kell kontrollálni a hibát, hanem a tesztek egész családjára
+
+    -   Ezt nevezzük family wise error rate-nek
+
+-   Ezt különböző statisztikai módszerekkel tudjuk kontrollálni
+
+    -   A legalapvetőbb a Bonferroni korrekció ahol elosztjuk az alphát a tesztek számával
+
+-   Részben ez magyarázza, hogy miért nem lehet az NHST alatt többszörösen tesztelni: azaz megnézni az eredményt újabb adatokat gyűjteni majd megint tesztelni
+
+-   Hosszutávon a p érték biztosan szignifikáns lesz
+
+    -   Mert a nagy elemszám miatt a szórás annyira kicsire csökken, hogy kis különbséget is szignifikánsnak fogunk találni
+
+## Hatásnagyságok
+
+-   A statisztikai szignifikancia nem feltétlenül jelent valós szignifikanciát
+
+    -   Példa: egy szívritmus szabályozó gyógyszer hatékonyságának vizsgálatánál kaphatunk szignifikáns különbséget, amikor összehasonlítjuk azon résztvevők szívritmusát akik kaptak az új gyógyszerből azokéval, akik csak placebót kaptak
+
+        -   ettől függetlenül, ha a gyógyszer klinikailag nem értelmezhető módon csökkenti a szívritmus gyakoriságát (mondjuk egy gyógynövényből készült tea hatékonyságával ér fel) a gyógyszercég nem fog pénzt költeni az új gyógyszer piacra dobására
+
+-   A **hatásméret (effect size)** annak a számszerűsített mutatója, mennyire erős egy összefüggés, vagy mennyire nagy a különbség két csoport között
+
+-   Vannak **nyers hatásméret mutatók**
+
+    -   Amik ugyanazt a skálát használják, mint az adatok
+
+    -   Különböző skálákon mért hatásméretek így nem összehasonlíthatók
+
+    -   Azonban a hatás valós szignifikanciájának értelmezése könnyebb velük!
+
+-   És **standardizált hatásméret mutatók**
+
+    -   Lehetővé teszi az összehasonlítást!
+
+        -   Lásd: metaanalízis
+
+    -   Két család:
+
+        -   Csoportok közötti különbségekre
+
+            -   Cohen's d
+
+        -   Változók közötti összefüggésre
+
+            -   Korreláció, odds ratio, risk ratio
+
+## Mintaméret és annak becslése
+
+-   **Mintaméret:** az egymástól független megfigyelések száma
+
+-   Befolyásolja a statisztikai erőt: annak valószínűsége, hogy megtaláljuk a hatást, amennyiben az a valóságban is létezik
+
+    -   A kettes fajú hiba inverze
+
+-   Negatív eredmények esetében fontos a **statisztikai erő**
+
+    -   Különben nem tudjuk megmondani hogy valóban nem létezik a hatás vagy csak nem volt elég nagy a mintánk, hogy egy ekkora hatást észleljünk (nem volt elég érzékeny a mérésünk)
+
+-   A szükséges **mintaméret becslést** az NHST alatt a priori mintaméret becsléssel végezzük
+
+    -   Az a priori azt jelenti, hogy csak akkor van értelme a mintaméret becslésnek, ha az az adatok gyűjtése és a statisztikai teszt elvégzése előtt történt
+
+        -   Ezután vagy megtaláltuk a hatást vagy nem, a kérdés el van döntve
+
+        -   Olyan a post hoc mintaméret becslés mintha azután próbálnánk meg kiszámolni, hogy mennyi üzemanyag kell egy repülőbe ahhoz, hogy átrepüljünk vele az óceán felett, miután már megtörtént a repülés. A gép vagy lezuhant vagy nem
+
+    -   Ehhez kell az elvárt hatásméret, a kívánt statisztikai erő, a szignifikancia küszöb, a kutatási elrendezés
+
+    -   Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk, hogy észleljük
+
+    -   Az elvárt hatásméret megbecslésére számos módszer van
+
+        -   Használhatunk pilot kutatást
+
+        -   Támaszkodhatunk a szakirodalomban előzetesen talált hatásméretekre
+
+            -   Azonban itt lehetséges, hogy a publikált hatásméretek torzítanak!
+
+        -   Elméleti alapon is meghatározhatjuk a számunkra releváns legkisebb hatást
+
+            -   **smallest effect size of interest (SESOI)**
+            -   melyik az a legkisebb hatás, ami számunkra még érdekes lehet

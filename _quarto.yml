@@ -1,0 +1,35 @@
+project:
+  type: book
+
+book:
+  title: "Kvantitatív Alapok"
+  author: "Kovács Márton"
+  date: "8/27/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - scientific_method.qmd
+    - data.qmd
+    - descriptive_statistics.qmd
+    - visualization.qmd
+    - inferential_statistics.qmd
+    - hypothesis_testing.qmd
+    - correlation.qmd
+    - regression.qmd
+    - comparing_means.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+execute:
+  freeze: auto
+
+

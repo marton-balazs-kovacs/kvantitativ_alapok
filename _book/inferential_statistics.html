@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 6&nbsp; Következtetéses statisztika</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./hypothesis_testing.html" rel="next">
+<link href="./visualization.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#mintavételezés" id="toc-mintavételezés" class="nav-link active" data-scroll-target="#mintavételezés"><span class="toc-section-number">6.1</span>  Mintavételezés</a>
+  <ul class="collapse">
+  <li><a href="#standard-hiba" id="toc-standard-hiba" class="nav-link" data-scroll-target="#standard-hiba"><span class="toc-section-number">6.1.1</span>  Standard hiba</a></li>
+  <li><a href="#centrális-határeloszlás-elve" id="toc-centrális-határeloszlás-elve" class="nav-link" data-scroll-target="#centrális-határeloszlás-elve"><span class="toc-section-number">6.1.2</span>  Centrális határeloszlás elve</a></li>
+  </ul></li>
+  <li><a href="#konfidencia-intervallum" id="toc-konfidencia-intervallum" class="nav-link" data-scroll-target="#konfidencia-intervallum"><span class="toc-section-number">6.2</span>  Konfidencia intervallum</a>
+  <ul class="collapse">
+  <li><a href="#helyes-értelmezése" id="toc-helyes-értelmezése" class="nav-link" data-scroll-target="#helyes-értelmezése"><span class="toc-section-number">6.2.1</span>  Helyes értelmezése</a></li>
+  <li><a href="#kiszámítása" id="toc-kiszámítása" class="nav-link" data-scroll-target="#kiszámítása"><span class="toc-section-number">6.2.2</span>  Kiszámítása</a></li>
+  <li><a href="#vizuális-ábrázolása" id="toc-vizuális-ábrázolása" class="nav-link" data-scroll-target="#vizuális-ábrázolása"><span class="toc-section-number">6.2.3</span>  Vizuális ábrázolása</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<ul>
+<li><p>Sokszor amikor egy kérdést vizsgálunk nem tudjuk az egész populációt megmérni</p>
+<ul>
+<li><strong>Populáció:</strong> egy meghatározott csoport összes lehetséges tagja</li>
+</ul></li>
+<li><p>A statisztikát használjuk arra, hogy egy minta alapján következtetéseket vonjunk le az egész populációra</p>
+<ul>
+<li><strong>Minta:</strong> a populációból kiválasztott és megfigyelt egyedek részhalmaza</li>
+</ul></li>
+</ul>
+<section id="mintavételezés" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="mintavételezés"><span class="header-section-number">6.1</span> Mintavételezés</h2>
+<ul>
+<li><p>A minta kiválasztásának módja fontos, mert ezzel tudjuk biztosítani, hogy a minta jól reprezentálja a populációnkat</p>
+<ul>
+<li>valószínűségi mintavételezés: minta jól reprezentálja a populációt, ha a populáció minden tagjának egyenlő esélye van a mintánkba való bekerülésre</li>
+<li>kvóta: a populáció néhány ismert jellemzője alapján válogatunk be meghatározott számú résztvevőt&nbsp; (pl. 50-50% nő és férfi)</li>
+<li>kényelmi: az vesz részt a kutatásban, akit éppen elérünk</li>
+</ul></li>
+<li><p>A mintavételezés előnyei és nehézségei</p>
+<ul>
+<li><p>előnyei</p>
+<ul>
+<li><p>máshogy nem tudunk információhoz jutni az egész populációra vonatkozóan</p></li>
+<li><p>tudunk becsléseket tenni&nbsp; a populáció jellemzőire (“valódi” átlag, szórás, eloszlás, stb.)</p></li>
+<li><p>ha ismerjük a hátulütőket, tudjuk kommunikálni a bizonytalanságot is</p></li>
+</ul></li>
+<li><p>nehézségei</p>
+<ul>
+<li><p>a minta soha nem tökéletes reprezentációja a populációnak, azaz mindig valamennyire torzított</p></li>
+<li><p>a kisebb minták könnyebben torzítottak, mint a nagyobbak</p></li>
+<li><p>nem lehet pontosan tudni, hogy a minta elég jól reprezentálja-e a populációt</p></li>
+<li><p>lehet, hogy a minta alapján téves következtetésre jutunk a populációra vonatkozóan</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="standard-hiba" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="standard-hiba"><span class="header-section-number">6.1.1</span> Standard hiba</h3>
+<ul>
+<li><p>Attól függetlenül, hogy milyen nagy elővigyázatossággal választottuk ki a mintánkat, a minta különbözni fog a populációtól</p>
+<ul>
+<li><p>Ez a <strong>mintavételezési hiba (sampling variation)</strong></p>
+<ul>
+<li>Abból következik, hogy a populáció összes egyedéből véletlenszerűen választunk ki egyedeket a mintánkba</li>
+</ul></li>
+</ul></li>
+<li><p>Ha többször veszünk mintát egy adott populációból hosszútávon elvárható, hogy a mintáink átlagai leggyakrabban a populáció átlag körül fognak csoportosulni</p>
+<ul>
+<li><p>A minta átlagok eloszlását a <strong>mintavételi eloszlásnak (sampling distribution)</strong> hívjuk</p>
+<ul>
+<li><p>A mintaátlagok gyakorisági eloszlása</p></li>
+<li><p>Ha a minta átlagok átlagát vennénk a populáció átlagot kapnánk meg</p></li>
+</ul></li>
+<li><p>A minta átlagok populáció átlag körüli szóródását a standard hibával írjuk le</p>
+<ul>
+<li>Máshogyan: Azt a bizonytalanságot fejezi ki, amiben a populációátlagtól eltérhet a mintaátlagtól</li>
+</ul></li>
+<li><p>Pontosabb nevén az <strong>átlag standard hibája (standard error of the mean)</strong>.</p></li>
+<li><p>Kiszámolásához a minta szórását elosztjuk az elemszám négyzetgyökével</p></li>
+<li><p>A standard hiba alapján a mérésünk minősége a populációban található variabilitástól és a mintánk méretétől függ</p>
+<ul>
+<li><p>Mivel csak a minta méretre van ráhatásunk ennek növelésével javíthatjuk a mérőeszközünk pontosságát</p></li>
+<li><p>Minél nagyobb a mintaméret, annál biztosabbak lehetünk abban, hogy a populációátlagot jól közelítjük</p>
+<ul>
+<li><p>Azonban nem csak a minta mérete számít, hanem a mintavételezés módja is</p>
+<ul>
+<li><p>Akármilyen nagy a mintánk, ha annak tagjai nem jól írják le a populációt mert a minta szisztematikusan torzít</p></li>
+<li><p>Ezért szoktak kutatók általában random mintavételezésre törekedni</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Általában ezt szokták az ábrákon megjeleníteni <strong>hibasávként (error bar)</strong></p></li>
+<li><p>Ha a hibasávok nem fednek át, akkor arra következtethetünk, hogy a populációban lévő különbség valódi</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="centrális-határeloszlás-elve" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="centrális-határeloszlás-elve"><span class="header-section-number">6.1.2</span> Centrális határeloszlás elve</h3>
+<ul>
+<li><p><strong>Central limit theorem (CHE)</strong></p></li>
+<li><p>A mintaméret növekedésével a mintaátlagok eloszlása közelít a normális eloszláshoz.</p></li>
+<li><p>Ez akkor is igaz, ha az egyes mintákban lévő eloszlások értéke nem normális!</p></li>
+<li><p>Demonstráció: <a href="https://istats.shinyapps.io/sampdist_cont/" class="uri">https://istats.shinyapps.io/sampdist_cont/</a></p></li>
+<li><p>A CHE miatt használhatjuk a legtöbb statisztikai módszert ami normális eloszlást feltételez</p></li>
+</ul>
+</section>
+</section>
+<section id="konfidencia-intervallum" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="konfidencia-intervallum"><span class="header-section-number">6.2</span> Konfidencia intervallum</h2>
+<ul>
+<li><p>Ahogy már korábban említettük a minta átlagát használjuk arra, hogy megbecsüljük a populáció átlagot</p>
+<ul>
+<li>Ezzel az adatokból levont következtetést <strong>általánosítsuk (generalization)</strong> a mintánkon túlra</li>
+</ul></li>
+<li><p>Láttuk, hogy különböző mintavételelezések különböző minta átlagokat adnak és a standard hibát használhatjuk arra, hogy meghatározzuk mekkora a mintaátlagok varianciája a populáció átlag körül</p></li>
+<li><p>Azt, hogy a minta átlag mennyire jól becsüli meg a populáció értéket úgy is eldönthetjük, hogy kiválasztunk egy értéktartományt, amelybe a populáció átlag feltehetően beleesik</p>
+<ul>
+<li>Ezt az értéktartományt nevezzük <strong>konfidencia intervallum</strong>nak</li>
+</ul></li>
+<li><p>Minél szélesebb a konfidencia intervallumunk annál bizonytalanabbak vagyunk abban, hogy a minta átlag jó reprezentációja-e a populáció átlagnak</p></li>
+</ul>
+<section id="helyes-értelmezése" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="helyes-értelmezése"><span class="header-section-number">6.2.1</span> Helyes értelmezése</h3>
+<ul>
+<li><p>A konfidencia intervallumot gyakran félreértik a kutatók</p>
+<ul>
+<li>Talán még a p értéknél is gyakrabban!</li>
+</ul></li>
+<li><p>Egy 95%-os konfidencia intervallum nem azt jelenti, hogy 95% az esélye annak, hogy a populáció átlaga beleesik-e az intervallumba!</p>
+<ul>
+<li><p>A populáció átlag egy fix érték, így egyes esetekben vagy beleesik vagy nem</p></li>
+<li><p>Nem tudunk valószínűséget rendelni mellé</p></li>
+</ul></li>
+<li><p>A helyes értelmezésnél ugyanazt a logikát kell követnünk, mint a hipotézis tesztelésnél: hosszútávon milyen valószínűséggel fogunk helyes döntést hozni</p>
+<ul>
+<li><p>hosszútávon a konfidencia intervallum az esetek 95%-ában fogja tartalmazni a populáció átlagot&nbsp;</p></li>
+<li><p>ha végtelenszer megismételjük a mintavételt és kiszámoljuk a minta átlagot és a hozzá tartozó konfidencia intervallumot, akkor az esetek 95%-ában a kapott konfidencia intervallumok magukba fogják foglalni a populáció átlagot</p></li>
+<li><p>Azt azonban nem tudhatjuk, hogy az éppen általunk gyűjtött mintához kiszámolt konfidencia intervallum tartalmazza-e a populáció átlagot vagy sem</p></li>
+<li><p>Másszóval: 95%-os konfidencia intervallum mellett az esetek 5%-ban tévedünk, ha feltételezzük, hogy az adott konfidencia intervallum valóban magába foglalja a populáció átlagot</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="kiszámítása" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="kiszámítása"><span class="header-section-number">6.2.2</span> Kiszámítása</h3>
+<ul>
+<li><p>A konfidencia intervallumot a z értékek segítségével számoljuk ki</p></li>
+<li><p>Egy normál eloszlásnál ahol az átlag 0 és a szórás 1 a z értékek 95%-a a -1.96 és a +1.96-os z értékek közé fog esni</p></li>
+<li><p>Alsó határa a konfidencia intervallumnak: minta átlag - (1.96 * standard hiba)</p></li>
+<li><p>Felső határa a konfidencia intervallumnak: minta átlag + (1.96 * standard hiba)</p></li>
+<li><p>A mintánk átlaga mindig a konfidencia intervallum közepe</p></li>
+<li><p>A konfidencia intervallum mérete függ a standard hiba méretétől</p></li>
+<li><p>Ha kicsi a minta a t eloszlást használva kell kiszámítani a konfidencia intervallumot</p></li>
+</ul>
+</section>
+<section id="vizuális-ábrázolása" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="vizuális-ábrázolása"><span class="header-section-number">6.2.3</span> Vizuális ábrázolása</h3>
+<ul>
+<li><p>Konfidencia intervallumok vizuális ábrázolása</p>
+<ul>
+<li><p>Általában a konfidencia intervallumot használjuk ábrákon az átlag körüli hiba mértékének vizualizására</p></li>
+<li><p>Ha két átlaghoz tartozó konfidencia intervallumok átfednek, akkor feltételezhetjük, hogy a két minta átlaga ugyanabból a populációból származik</p>
+<ul>
+<li>Lásd t-próba</li>
+</ul></li>
+<li><p>Ha nem fednek át</p>
+<ul>
+<li><p>1) vagy különböző populációból származnak</p></li>
+<li><p>2) vagy ugyanabból a populációból származnak de az egyik konfidencia intervallum nem tartalmazza a populáció átlagot</p>
+<ul>
+<li>Ez az esetek 5%-ában fordul csak elő 95%-os konfidencia intervallum mellett, ezért valószínűleg a 1) opció mellett döntünk</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./visualization.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./hypothesis_testing.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

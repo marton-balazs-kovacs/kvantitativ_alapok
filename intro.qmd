@@ -1,0 +1,17 @@
+# Bevezetés
+
+A kvantitatív elemzés nem az adatoknál kezdődik. Az eddigi oktatói tapasztalataim alapján amikor egy hallgató elakad egy önálló elemzési feladat során az nem azért van mert helytelenül magolta be az éppen alkalmazott statisztikai teszt előfeltételeit, vagy mert nem tudja a standard hiba képletét. Ezekre a kérdésekre egy gyors Google kereséssel könnyen meg lehet találni a választ.
+
+-   Hanem mert nem látja át az empirikus tudományos módszer egészét, annak lépéseit és összefüggéseit
+
+    -   Nincs jól megfogalmazott hipotézis
+
+    -   Nem feltett kutatási kérdés megválaszolásához szükséges mérőeszközöket használtak
+
+    -   Nem látják át a rosszul strukturált adattáblát
+
+    -   Nem értik a frekventista hipotézis tesztelés működését
+
+    -   És csak ezután jön, hogy nem értik milyen statisztikai eljárást kell alkalmazni és azt hogyan
+
+    -   Ezzel a lépéssel kapcsolatban én is gyakran teszek fel kérdéseket kollégáknak és az internetnek (és bíztatok mindenkit, hogy tegyen ugyanígy)

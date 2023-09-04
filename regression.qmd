@@ -1,0 +1,215 @@
+# Lineáris regresszió
+
+## Egyszerű lineáris regresszió
+
+-   Legsokrétűbb statisztikai próba
+
+-   A legtöbb más statisztikai próbát regresszióként is lehet értelmezni
+
+-   Célja: a kimeneti változó értékeinek predikciója egy vagy több prediktor változó által
+
+-   Adat = model + error
+
+    -   Lineáris regresszió esetében a modellünk egy egyenes vonal
+
+-   Azt a lineáris modellt akarjuk megtalálni, ami legjobban illeszkedik az adatokra, ahol legkisebb a hiba
+
+### Lineáris modell paraméterei
+
+-   Másnéven regressziós **együtthatók (regression coefficients)**
+
+-   **Meredekség (slope):** egy egységnyi változás a prediktor változóban (x tengely) mekkora változást okoz a kimeneti változóban (y tengely)
+
+    -   Ha pozitív érték, akkor pozitív kapcsolat van a két változó között
+
+        -   Ha a prediktor változónk értéke nő a kimeneti változó értéke is nő
+
+    -   Ha negatív érték, akkor negatív kapcsolat
+
+        -   Ha a prediktor változónk értéke nő, a kimeneti változónk értéke csökken
+
+    -   Jele: b1
+
+-   **Intercept:** ha a prediktor változó értéke 0, mekkora a kimeneti változó értéke, azaz milyen y értéknél metszi a vonal az y tengelyt
+
+    -   Jele: b0
+
+### Lineáris modell illeszkedésének a vizsgálata
+
+-   Hogyan találjuk meg azt a lineáris modellt, ami legjobban illeszkedik az adatokra?
+
+    -   A **legkisebb négyzetek módszere (method of least squares)**
+
+        -   Meghatározásához ugyanazt a módszert használhatjuk, mint amikor az átlagot használtuk, mint modellt
+
+        -   Megnézzük a modell által prediktált értékek és a valós értékek közötti különbséget: a reziduálisokat (residuals)
+
+        -   Itt is négyzetre emeljük a reziduálisok majd összeadjuk őket (sum of squared differences, SS)
+
+        -   Ezután minden lehetséges vonalra (lineáris regressziós modellre) kiszámíthatnánk őket és ahol az SS a legkisebb az a modell illeszkedik a legjobban az adatokra
+
+        -   Azonban még a legjobban illeszkedő modell is magyarázhatja rosszul az adatokat!
+
+    -   Ahhoz, hogy ezt megvizsgálájuk a legegyszerűbb modell illeszkedéséhez hasonlítjuk a regressziós modellunk illeszkedését: az átlaghoz
+
+        -   Az átlag azonban minden adatpontra ugyanazt az értéket fogja prediktálni
+
+            -   Például: mennyire számít a marketingre szánt összeg egy film összbevételénél?
+
+                -   Ha 1 dollárt költünk a marketingre akkor is ugyanazt a bevétlet prediktálja, mintha 200000\$ költüttünk volna rá
+
+        -   Az átlag modellnél a hibát összesítve megkapjuk a **teljes négyzetösszeget (total sum of squares, SS~T~)**
+
+            -   Ez a teljes, mert ez a legegyszerűbb modell
+
+        -   Kiszámítjuk a **négyzetre emelt reziduálisok összegét** a regressziós modellnél is **(residual sum of squares, SS~R~)**
+
+        -   Ahhoz, hogy megtudjuk a regressziós modellünk mennyivel jobban magyarázza az adatokat, mint az átlag modellunk a kettőt kivonjuk egymásból: SS~T~ - SS~R~ = **SS~M~ (model sum of squares)**
+
+            -   Ha az SS~M~ nagy, a regressziós modell sokkal jobban magyarázza az adatokat, mint az átlag
+
+        -   Megnézhetjük, hogy arányosan mennyivel javul a modellünk az átlaghoz képest, ha egy prediktor változót is belerakunk
+
+            -   A kettőt elosztva egymással megkapjuk a **determinisztikus együtthatót R^2^**
+
+                -   SS~M~ / SS~T~
+
+            -   Megmutatja a regressziós modellünk által megmagyarázott variancia arányát a kimeneti változónkban, a teljes varianciához képest
+
+            -   Ha megszorozzuk 100-al százalékot kapunk
+
+            -   A kimeneti változóban lévő varianciának hány százalékát magyarázza meg a modell
+
+            -   Ha ennek a négyzetgyökét vesszük, akkor megkapjuk a Pearson korrelációs együtthatót!
+
+        -   Az F-teszttel is megvizsgálhatjuk a modellünk illeszkedését
+
+            -   **F teszt statisztika**: szisztematikus variancia / nem szisztematikus variancia
+
+                -   A modell okozta javulás (SS~M~) / a modell és a megfigyel adatok között lévő különbség (SS~R~)
+
+            -   Másszóval az F teszt statisztika megmondja, hogy a modell mennyire javítja a becslésünk pontosságát a modellben található pontatlansághoz képest
+
+            -   Itt nem a négyzetes különbségek összegével, hanem átlagával dolgozunk
+
+                -   Így nem függ a megfigyelések számától
+
+            -   Mean squares for the model (MSS)
+
+                -   Szabadságfok: prediktor változók száma
+
+            -   Residuals mean square (MS~R~)
+
+                -   Szabadságfok: megfigyelések száma - béta együtthatók száma (meredség + intercept = 2)
+
+            -   Jó modellnél 1-nél nagyobb az F arány
+
+            -   p-értéket vagy konfidencia intervallumot is ki tudunk hozzá számolni
+
+### Prediktor változók szignifikanciájának vizsgálata
+
+-   Nemcsak a teljes modell teljesítményét kell megvizsgálnunk, hanem az egyes paramétereknek a szignifikanciáját is
+
+-   A béta megmutatja, hogy a prediktorban való egy egységnyi változás mekkora változást okoz a kimeneti változóban
+
+    -   Ha a modell rossz, azt várjuk el, hogy ez nulla legyen
+
+        -   Pont, mint az átlagnál!
+
+-   A nullhipotézis a paraméterek esetén az lesz, h a paraméter nem különbözik a nullától
+
+-   A kritikus érték pedig a paraméter tényleges értéke
+
+-   Ezekre gyakorlatilag egy egymintás t-próbát fogunk végezni
+
+    -   t = béta / SE
+
+-   Az intercept esetén, hogy különbözik-e a nullától az érték.
+
+-   A slope esetén, hogy a dőlésszöge különbözik-e a nullától.
+
+## Lineáris regresszió előfeltételei
+
+-   A kimeneti változó folytonos azaz legalább intervallum mérési szintű
+
+-   Prediktor típusok: folytonos vagy kategorikus is lehet
+
+-   Nem zéró variancia: a kimeneti változó és prediktor értékeiben van variabilitás
+
+-   A megfigyelések egymástól függetlenek
+
+-   A reziduálisok eloszlása normális (a prediktor eloszlásának nem kell normálisnak lennie!)
+
+    -   Vizuálisan: 
+
+        -   **QQ plot**
+
+            -   A pontok maradjanak az átló közelében
+
+                -   Az esetek 5%-a lehet 2 szóráson kívül
+
+                -   Az esetek 1%-a lehet 2.5 szóráson kívül
+
+                -   Az esetek 0.1%-a lehet 3 szóráson kívül
+
+        -   **Residual vs fitted values**
+
+            -   Residuális értékek vannak az y tengelyen
+
+            -   Modell értékek az x tengelyen
+
+            -   Ha a vonal görbül, nem lineáris kapcsolat
+
+-   Az értékek
+
+    -   68%-a egy szóráson belül van
+
+    -   95%-a két szóráson belül van
+
+    -   99.7%-a három szóráson belül van
+
+-   Ehhez kapcsolódik, hogy a modellben nincsen sok jelentős kiugró érték (outlier), ami torzítja a modellünket
+
+-   Azt várjuk, hogy a lineáris regresszió minden mérési szinten ugyanannyira jó predikciót tudjon adni. Azaz, ugyanolyan hatékony legyen akkor, ha a buszmegállóban 3 ember van, mint akkor, ha 20
+
+-   Ezt a reziduálisok elemzésével tudjuk ellenőrizni
+
+-   Ekkor azt mondjuk, hogy a modellünk homoszkedasztikus, azaz a reziduálisok mértéke független a prediktor értékétől.
+
+-   Ellentéte a heteroszkedaszticitás, ami azt jelenti, hogy pl. a kisebb prediktált értékekhez tartozó reziduálisok kisebbek, mint a nagyobb prediktált értékekhez tartozó reziduálisok
+
+-   Vizsgálata vizuálisan zajlik
+
+    -   Tölcsér alak azt jelenti hogy sérül a heteroszkedaszticitás feltétle
+
+-   Kiugró értékek szűrése
+
+    -   Vizuálisan
+
+        -   Távol esnek a többi értéktől
+
+        -   Magukhoz húzzák a regressziós egyenest
+
+    -   Statisztikai módszerekkel
+
+        -   Cook's distance
+
+        -   Ha 1-nél nagyobb erős torzító hatása van az adatpontnak
+
+    -   Mit tegyünk ha vannak outlierek?
+
+        -   Csak akkor zárjuk ki ha adathibából származnak
+
+        -   Különben overfitting veszélye fennáll
+
+    -   Nagy elemszánál nem olyan nagy a hatásuk!
+
+    ## Többszörös lineáris regresszió
+
+    -   További tényezőkről is gondolhatjuk, hogy javítani fognak a modellünkön
+
+        -   Egy bizonyos pont után, ha ezeket a prediktor változókat hozzáadjuk a modellhez, nem fog a hiba szignifikánsan csökkenni
+
+        -   Ez az overfitting
+
+        -   Eredménye: a modell nem lesz generalizálható

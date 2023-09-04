@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kvantitatív Alapok - 3&nbsp; Adat</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./descriptive_statistics.html" rel="next">
+<link href="./scientific_method.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Kvantitatív Alapok</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Előszó</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Hivatkozások</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#mi-az-adat" id="toc-mi-az-adat" class="nav-link active" data-scroll-target="#mi-az-adat"><span class="toc-section-number">3.1</span>  Mi az adat?</a></li>
+  <li><a href="#hogyan-keletkeznek-az-adatok" id="toc-hogyan-keletkeznek-az-adatok" class="nav-link" data-scroll-target="#hogyan-keletkeznek-az-adatok"><span class="toc-section-number">3.2</span>  Hogyan keletkeznek az adatok?</a>
+  <ul class="collapse">
+  <li><a href="#mit-mérünk" id="toc-mit-mérünk" class="nav-link" data-scroll-target="#mit-mérünk"><span class="toc-section-number">3.2.1</span>  Mit mérünk?</a></li>
+  <li><a href="#milyen-pontossággal-mérünk" id="toc-milyen-pontossággal-mérünk" class="nav-link" data-scroll-target="#milyen-pontossággal-mérünk"><span class="toc-section-number">3.2.2</span>  Milyen pontossággal mérünk?</a></li>
+  <li><a href="#a-változók-mérési-szintjei" id="toc-a-változók-mérési-szintjei" class="nav-link" data-scroll-target="#a-változók-mérési-szintjei"><span class="toc-section-number">3.2.3</span>  A változók mérési szintjei</a></li>
+  <li><a href="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" id="toc-mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="nav-link" data-scroll-target="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="toc-section-number">3.2.4</span>  Mérési skálák hatása a statisztikai tesztek előfeltételeire</a></li>
+  </ul></li>
+  <li><a href="#hogyan-struktúráljuk-az-adatokat" id="toc-hogyan-struktúráljuk-az-adatokat" class="nav-link" data-scroll-target="#hogyan-struktúráljuk-az-adatokat"><span class="toc-section-number">3.3</span>  Hogyan struktúráljuk az adatokat?</a>
+  <ul class="collapse">
+  <li><a href="#milyen-egy-jó-adattábla" id="toc-milyen-egy-jó-adattábla" class="nav-link" data-scroll-target="#milyen-egy-jó-adattábla"><span class="toc-section-number">3.3.1</span>  Milyen egy jó adattábla?</a></li>
+  </ul></li>
+  <li><a href="#hogyan-dolgozzunk-az-adatokkal" id="toc-hogyan-dolgozzunk-az-adatokkal" class="nav-link" data-scroll-target="#hogyan-dolgozzunk-az-adatokkal"><span class="toc-section-number">3.4</span>  Hogyan dolgozzunk az adatokkal?</a></li>
+  <li><a href="#adatkezelési-hibák" id="toc-adatkezelési-hibák" class="nav-link" data-scroll-target="#adatkezelési-hibák"><span class="toc-section-number">3.5</span>  Adatkezelési hibák</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="mi-az-adat" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="mi-az-adat"><span class="header-section-number">3.1</span> Mi az adat?</h2>
+<ul>
+<li><p>Az <strong>adat változók összessége</strong>, amelyek valamilyen <strong>mérés</strong> eredményét rögzítik</p>
+<ul>
+<li><p><strong>Az adat, angolul data többesszám, egyesszámban datum</strong></p>
+<ul>
+<li><strong>Tehát data are és nem data is!</strong></li>
+</ul></li>
+</ul></li>
+<li><p>Sokszor gondolunk az adatra, mint egy adott, önmagában létező dologra. Ezzel szemben, az adat egy dolog mérés által létrejött reprezentációja</p>
+<ul>
+<li><p>Tehát a mérés módja befolyásolja az adatok jelentését és minőségét</p></li>
+<li><p>Illetve a mérés befolyásolja az adatokból levont következtetéseket is</p></li>
+<li><p>Ismerhetünk akárhány statisztikai trükköt az adatok tisztítására, transzformálására, összesítésére, ha azok zajos, torzított, hibás mérésből származnak az adatokból statisztika útján levont következtetések is torzítani fognak</p></li>
+<li><p>Ezért fontos már a kutatás megtervezésekor nagyon odafigyelni <strong>mit</strong> mérünk és <strong>milyen pontosságal</strong> tudjuk mérni.</p></li>
+<li><p>Az adatok létrejöttével a kutatásmódszertan foglalkozik</p></li>
+<li><p>Példa:</p>
+<ul>
+<li>1999-ben a Mars Climate Orbiter a Mars atmoszférájába lépve darabokra hullott, mert az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat</li>
+</ul></li>
+<li><p>További olvasmányok:</p>
+<ul>
+<li><p><a href="https://www.psychologicalscience.org/observer/measurement-matters" class="uri">https://www.psychologicalscience.org/observer/measurement-matters</a></p></li>
+<li><p><a href="https://journals.sagepub.com/doi/full/10.1177/2515245920952393" class="uri">https://journals.sagepub.com/doi/full/10.1177/2515245920952393</a></p></li>
+</ul></li>
+</ul></li>
+<li><p>Minden változónak legalább két különböző értéke kell legyen, hogy változónak nevezzük, különben egy konstans lenne</p></li>
+<li><p>A változóknak különböző típusai lehetnek, annak fényében milyen mérés eredményeit rögzítik</p></li>
+</ul>
+</section>
+<section id="hogyan-keletkeznek-az-adatok" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="hogyan-keletkeznek-az-adatok"><span class="header-section-number">3.2</span> Hogyan keletkeznek az adatok?</h2>
+<section id="mit-mérünk" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="mit-mérünk"><span class="header-section-number">3.2.1</span> Mit mérünk?</h3>
+<ul>
+<li><p>Elméleti konstruktumok vagy valós fizikai tulajdonságok</p>
+<ul>
+<li><p>Sok esetben, főleg a viselkedéses közgazdaságtanban nem fizikai tulajdonságokat mérünk, hanem közvetlenül meg nem figyelhető élméleti <strong>konstruktumokat</strong></p>
+<ul>
+<li>Pl: boldogság</li>
+</ul></li>
+</ul></li>
+<li><p>Az elméleti konstruktumok mérésénél fontos, hogy hogyan <strong>operacionalizáljuk</strong> azok mérését</p>
+<ul>
+<li>Boldogság: mosolyok száma egy nap alatt vagy önbevallásos kérdőív 1-től 7-ig terjedő skáláján adott pontok</li>
+</ul></li>
+<li><p><strong>Validitás (érvényesség)</strong></p>
+<ul>
+<li><p>Azt mutatja meg, hogy mennyire mérjük azt, amit valójában mérni akarunk</p></li>
+<li><p>Többféle validitás mutató is van</p>
+<ul>
+<li><p><strong>Látszatérvényesség</strong></p>
+<ul>
+<li><p>Első ránézésre úgy tűnik-e, hogy a mérőeszközünk azt méri, amit mérni akarunk</p></li>
+<li><p>Pl: vérnyomást a nyelv pirossága mentén szeretném megmérni valószínűleg a mérőeszközöm nem érvény adatokat fog adni</p></li>
+</ul></li>
+<li><p><strong>Konstruktum validitás</strong></p>
+<ul>
+<li><p>Két része van:</p>
+<ul>
+<li><p><strong>Konvergens validitás</strong></p>
+<ul>
+<li><p>A mérőeszköz mérései pozitív együttjárást mutatnak ugyanazt a konstruktumot vizsgáló más mérőeszközök méréseivel</p>
+<ul>
+<li>Pl: boldogságot vizsgálom kérdőíves és interjú módszerrel is, az eredmények között pozitív kapcsolatot várok el</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Divergens validitás</strong></p>
+<ul>
+<li>A mérőeszköz mérései és más mérőeszközök mérései között valóban nincs kapcsolat, ha elméleti szinten nem feltételezünk kapcsolatot a két vizsgált konstruktum között</li>
+</ul></li>
+</ul></li>
+<li><p>Új mérőeszköz fejlesztése esetén általában már validált, a szakmában elfogadott mérőeszközökhöz hasonlítunk</p></li>
+</ul></li>
+<li><p><strong>Prediktív validitás</strong></p>
+<ul>
+<li><p>A mérőeszközünk mérései alapján előre tudunk jelezni más, a mért dologgal összefüggő egyéb kimeneteleket</p>
+<ul>
+<li>Pl: ha feltételezzük, hogy a figyelmetlenség összefügg a pénzszórással, akkor azt várjuk, hogy aki a figyelmetlenségi kérdőíven magas pontszámot ér el, átlagosan jobban fogja szórni a pénzt a hétköznapokban</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="milyen-pontossággal-mérünk" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="milyen-pontossággal-mérünk"><span class="header-section-number">3.2.2</span> Milyen pontossággal mérünk?</h3>
+<ul>
+<li><p>Minden mérésben van mérési hiba</p></li>
+<li><p>Általában ezt akarjuk csökkenteni</p></li>
+<li><p>Megtehetjük:</p>
+<ul>
+<li><p>Mérőeszköz minőségének javításával</p></li>
+<li><p>Még több méréssel</p></li>
+</ul></li>
+<li><p><strong>Megbízhatóság (reliabilitás)</strong></p>
+<ul>
+<li><p>Azt mutatja meg, hogy mennyire pontosan, konzisztensen mér a merőeszközünk</p></li>
+<li><p>Teszt-retesz megbízhatóság</p>
+<ul>
+<li>Ha többször megismételjük a mérést, mennyire járnak együtt a mérések eredményei</li>
+</ul></li>
+<li><p>Megbízhatóság fontos, ha össze akarunk több mérést hasonlítani</p>
+<ul>
+<li><p>Két változó közötti kapcsolat nem lehet erősebb, mint egy változó és önmaga közötti kapcsolat (másnéven a változó megbízhatósága)</p></li>
+<li><p>Nem megbízható mérés nem tud erős statisztikai összefüggésben lenni egy másik méréssel</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="a-változók-mérési-szintjei" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="a-változók-mérési-szintjei"><span class="header-section-number">3.2.3</span> A változók mérési szintjei</h3>
+<ul>
+<li><p>Hogyan viszonyulnak egymáshoz a változó értékei</p></li>
+<li><p>Folytonos vagy diszkrét változók</p>
+<ul>
+<li><p><strong>Folytonos:</strong> bármilyen értéket felvehet egy bizonyos értéktartományban</p></li>
+<li><p><strong>Diszkrét:</strong> csak bizonyos értékeket vehet fel</p></li>
+</ul></li>
+<li><p>Négy szempont alapján térhetnek el:</p>
+<ul>
+<li><p><strong>Egyediség:</strong> a változó minden értéke egyedi jelentéssel rendelkezik</p></li>
+<li><p><strong>Sorbarendezhetőség:</strong> sorba rendezhetők-e a változó értékei valamilyen szempont alapján</p></li>
+<li><p><strong>Egyenlő távolság:</strong> az egyes értékek közötti távolság a skála minden pontján egyenlő</p>
+<ul>
+<li>1cm és 2cm között ugyanakkora a távolság, mint 12cm és 13cm között</li>
+</ul></li>
+<li><p><strong>Abszolút nulla pont:</strong> van-e a skálának abszolút nulla pontja.</p>
+<ul>
+<li>Például súly vagy magasság</li>
+</ul></li>
+</ul></li>
+<li><p>Ezek alapján a következő mérési szintekről beszélhetünk:</p>
+<ul>
+<li><p><strong>Nominális skála</strong></p>
+<ul>
+<li><p>A skálának minden tagja egy egyedi értéket jelöl</p></li>
+<li><p>A skálában lévő számok kvalitatív értékek címkézésére vannak</p></li>
+<li><p>Nem rakhatók nagyságrendileg sorrendbe, nincs nulla pontjuk, a köztük lévő távolság értelmezhetetlen</p></li>
+<li><p>Matematikai módszerek: összehasonlíthatók</p></li>
+<li><p>Statisztikai módszerek: módusz</p></li>
+<li><p>Diszkrét</p></li>
+<li><p>Legtöbbször az adattáblában egész számokkal vagy szöveggel jelöljük</p>
+<ul>
+<li>Az egész számok csak jelző címkeként szolgálnak, algebrai műveletek nem végezhetők rajtuk</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Ordinális skála</strong></p>
+<ul>
+<li><p>Értékei egyediek és sorbarendezhetők</p></li>
+<li><p>De az értékek közötti távolság értelmezhetetlen</p></li>
+<li><p>Pl: fájdalom mérésére szolgáló skála</p>
+<ul>
+<li>A Likert-típusú skálánál például elmondható, hogy a “Teljesen egyetértek” pozitívabb, mint az “Inkább egyetértek”, de a kettő közti távolság nem kvantifikálható. Ezért nem tudunk Likert-típusú skáláknál átlagot számolni.</li>
+</ul></li>
+<li><p>Matematikai módszerek: megnézhetjük, hogy az egyik érték nagyobb-e a másiknál</p></li>
+<li><p>Statisztikai módszerek: medián</p></li>
+<li><p>Diszkrét</p></li>
+<li><p>Az adattáblában általában egész számokkal jelöljük őket</p></li>
+</ul></li>
+<li><p><strong>Intervallum skála</strong></p>
+<ul>
+<li><p>Az ordinális skálánál több, amennyiben a felvehető értékek közötti távolság állandó</p></li>
+<li><p>Pl: hőfok Celsiusban</p></li>
+<li><p>Matematikai módszerek: összeadhatjuk vagy kivonhatjuk</p></li>
+<li><p>Statisztikai módszerek: átlag</p></li>
+<li><p>Folytonos</p></li>
+<li><p>Az adattáblában egyész számokkal vagy valós számokkal jelöljük őket</p></li>
+</ul></li>
+<li><p>&nbsp;<strong>Arány skála</strong></p>
+<ul>
+<li><p>Az interval skálán felül van értelmezhető abszolút 0 pontja.</p></li>
+<li><p>Pl: Súly és magasság</p></li>
+<li><p>Matematikai módszerek: szorozhatjuk vagy oszthatjuk</p></li>
+<li><p>Statisztikai módszerek: átlag</p></li>
+<li><p>Folytonos</p></li>
+<li><p>Az adattáblában egyész számokkal vagy valós számokkal jelöljük őket</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="header-section-number">3.2.4</span> Mérési skálák hatása a statisztikai tesztek előfeltételeire</h3>
+<ul>
+<li><p>A változók mérési szintjei meghatározzák, hogy milyen matematikai/statisztikai módszereket alkalmazhatunk rajtuk és így végül milyen kérdéseket tudunk általuk megválaszolni</p></li>
+<li><p>A változók mérési szintjei együtt járnak a mérési skálák <strong>granularitás</strong>ával</p>
+<ul>
+<li>Granularitás: változó szintjeinek száma, azaz hány lehetséges értéket tud felvenni a változó</li>
+</ul></li>
+<li><p>Például a fájdalmat mérhetjük úgy, hogy:</p>
+<ul>
+<li><p>Vizuális analóg skálánál a végpontok vannak megadva (nincs fájdalom - legerősebb elképzelhető fájdalom) közte 1-100-ig bejelölhetik a résztvevők az átélt fájdalmuk</p></li>
+<li><p>Likert-típusú skálán is mérhetjük, aminek három szintje van és mindegyik szinthez egy leíró címke tartozik (1 - egyáltalán nem fáj, 2- közepesen fáj, 3 - nagyon fáj)</p></li>
+<li><p>Numerikus skálán is mérhetjük, aminek 11 szintje (0 - 10) van az első ötödik és tizedik szinteken leíró címkével</p></li>
+</ul></li>
+<li><p>Ha egy skála granularitása kicsi (&lt;12) vagy minden szintjéhez címke tartozik, nem kezelhetjük intervallum skálaként</p>
+<ul>
+<li>Tehát nem számolhatunk átlagot</li>
+</ul></li>
+<li><p>Mérési skálák granularitását növelhetjük az itemek számával</p>
+<ul>
+<li><p>Pl: Több 7 fokú válasz skálás kérdéssel mérjük ugyanazt a konstruktumot</p>
+<ul>
+<li>A válaszokat összesítjük (például összeadás vagy átlagolás útján)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="hogyan-struktúráljuk-az-adatokat" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="hogyan-struktúráljuk-az-adatokat"><span class="header-section-number">3.3</span> Hogyan struktúráljuk az adatokat?</h2>
+<ul>
+<li><p>Az adatok különböző formátumban léteznek</p>
+<ul>
+<li>Kérdőíves felmérések adatai, orvosi MRI képek, banki tranzakciók lenyomatai, twitter megosztások száma, egy adott időszakban megjelent publicisztikák</li>
+</ul></li>
+<li><p>A nyers adatok kinyerése és tisztítása teszi ki általában az adatelemzői munka nagy részét a statisztikai elemzéshez képest</p></li>
+<li><p>Az egyszerűség kedvéért az órán adattáblákkal fogunk dolgozni</p></li>
+<li><p>Az <strong>adattábla</strong> változók és megfigyelések összessége</p>
+<ul>
+<li><p><strong>Adatpont (data point)</strong>: egy mérésből származó érték, pl. egy ember egy válasza egy kérdésre</p>
+<ul>
+<li>cellák</li>
+</ul></li>
+<li><p><strong>Megfigyelés (observation)</strong>: ugyanannak a megfigyelési egységnek (pl. egy ember) az összes adatpontja (pl. összes kérdésre adott válasza)</p>
+<ul>
+<li>sorok</li>
+</ul></li>
+<li><p><strong>Változó (variable)</strong>: több megfigyelési egységnek az ugyanarra a mérésre adott értékei</p>
+<ul>
+<li>Oszlopok</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="milyen-egy-jó-adattábla" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="milyen-egy-jó-adattábla"><span class="header-section-number">3.3.1</span> Milyen egy jó adattábla?</h3>
+<ul>
+<li><p>“négyzetes”: a sorok és oszlopok következetes módon megfigyeléseket és változókat jelentenek</p></li>
+<li><p>A változónevek emberi és gépi olvasásra is alkalmasak</p>
+<ul>
+<li>minél rövidebb, a változónevek mindig angolul, ékezetek nélkül, szóközök nélkül legyenek írva, legyen egyértelmű jelentésük, pl. education, bdi_1, bdi_sum</li>
+</ul></li>
+<li><p>Változónevek egy táblán belül következetesen legyenek használva</p>
+<ul>
+<li><p>Lásd: snake_case vagy camelCase</p></li>
+<li><p>Azonos információ egységek azonos helyen legyenek elszeparálva</p>
+<ul>
+<li><p>question_01_item_01, question_01_item_02</p></li>
+<li><p>És nem: question01_item_01, question_01_item02</p></li>
+</ul></li>
+</ul></li>
+<li><p>A címkék szó szerint szerepelnek, és nem kódolva (pl. a kategorikus adatokhoz)</p>
+<ul>
+<li>“férfi”, és nem 1)</li>
+</ul></li>
+<li><p>A változó egy információt tartalmaz a megfigyelésről</p>
+<ul>
+<li>“Férfi 18-29” az két információ</li>
+</ul></li>
+<li><p>Minden információ explicit adat (és nem formázási mód vagy komment)</p></li>
+<li><p>A hiányzó adat hiányzó cella, nem pedig pl. -999</p></li>
+<li><p>Minden megfigyelési egységnek (pl. résztvevő) egyedi azonosítója van</p></li>
+<li><p>Van hozzá “kódkönyv” (code book vagy data dictionary)</p>
+<ul>
+<li><p>Ez szintén legyen ember és gépi olvasásra alkalmas</p></li>
+<li><p>Információ az adatok formátumáról (pl. adattábla x sorral és y változóval)</p></li>
+<li><p>Változók jelentése, mértékegysége, típusa, a változó hogyan lett kiszámítva</p></li>
+<li><p>Információ az adatgyűjtés módszeréről</p></li>
+</ul></li>
+<li><p>Változón belül az értékek konzisztensen azonos típusúak és jelölésűek legyenek</p>
+<ul>
+<li>Rossz példa: férfi, Férfi, nő, female</li>
+</ul></li>
+<li><p>Figyeljünk a kis és nagybetűkre!</p></li>
+<li><p>Számozási sorrendnél használjunk vezető 0-át</p>
+<ul>
+<li><p>Pl: 01, 02, 03, 11, 12</p></li>
+<li><p>És nem: 1, 11, 12, 2, 3</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="hogyan-dolgozzunk-az-adatokkal" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="hogyan-dolgozzunk-az-adatokkal"><span class="header-section-number">3.4</span> Hogyan dolgozzunk az adatokkal?</h2>
+<ul>
+<li><p>Adatrendezés alapelvei</p>
+<ul>
+<li><p>Nem törlünk ki adatokat</p></li>
+<li><p>Adatállomány feldolgozottsági szintjei szerinti felosztás</p>
+<ul>
+<li><p><strong>Source:</strong> forrás adatok, ahogy a mérőeszközünk visszaadja az adatokat bármilyen beavatkozás nélkül, sokszor tartalmaz olyan adatokat, amelyek a résztvevők beazonosítását lehetővé teszik</p>
+<ul>
+<li>a forrás adatok nyílt hozzáférésű megosztása ebben az esetben tilos</li>
+</ul></li>
+<li><p><strong>Raw:</strong> nyers adatok, lényeges beavatkozás nem történt az adatfájlon, változó nevek lettek standardizálva, fájl formátuma lett megváltoztatva, a beazonosítást lehetővé tevő változók lettek maszkolva vagy kitörölve</p></li>
+<li><p><strong>Processed:</strong> feldolgozott adatok, az adatszűrés és szükséges transzformációk után</p></li>
+</ul></li>
+<li><p>Nem módosítjuk az eredeti állományt, legfeljebb a másolato(ka)t</p></li>
+<li><p>Ha lehet, készítsünk adatkezelési tervet (data management plan)</p>
+<ul>
+<li><p>Sok pénzügyi támogató elvárja már!</p></li>
+<li><p>Biztosíthatjuk vele, hogy nem követünk el adatkezelési hibákat</p></li>
+<li><p>Hogyan készítsünk jó adatkezelési tervet?</p>
+<ul>
+<li><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525" class="uri">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="adatkezelési-hibák" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="adatkezelési-hibák"><span class="header-section-number">3.5</span> Adatkezelési hibák</h2>
+<ul>
+<li><p>Általában arról hallunk a médiában, ha egy kutatót adahamisítással lepleznek le</p></li>
+<li><p>Kevesebb szó esik az adatkezelési hibákról, pedig feltételezhetően ezek sokkal gyakrabban fordulnak elő</p></li>
+<li><p>Az adatkezelési hibákat sokszor akaratlanul követik el a kutatók</p></li>
+<li><p>Az adatkezelési hibáknak lehetnek súlyos következményei</p>
+<ul>
+<li>megváltoztathatják például az adatokből levont köveztetéseket</li>
+</ul></li>
+<li><p>Reinhart &amp; Rogoff (2010) közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja</p>
+<ul>
+<li><p>Eredményeik az USA költségvetési tervébe is bekerült</p></li>
+<li><p>Később kiderült, hogy nem jelölték ki az összes adatsort az elemzés során, így a vizsgált adatoknak csak egy része került elemzésre</p></li>
+<li><p>Az újraelemzés az eredeti követeztetéseket invalidálta</p></li>
+</ul></li>
+<li><p>Az adatkezelési hibák nagy része az emberi hibából (human error) fakad</p>
+<ul>
+<li>Kognitív kapacitásaink végesek, elfáradunk, nyomás alatt rosszabbul teljesítünk, stb.</li>
+</ul></li>
+<li><p>Ezért fontos olyan adatkezelési rendszert kiépíteni, amely ezen hibák előfordulási valószínűségét csökkenti</p></li>
+<li><p>További olvasmányok:</p>
+<ul>
+<li><p><a href="https://journals.sagepub.com/doi/full/10.1177/25152459211045930" class="uri">https://journals.sagepub.com/doi/full/10.1177/25152459211045930</a></p></li>
+<li><p><a href="https://www.nber.org/papers/w15639" class="uri">https://www.nber.org/papers/w15639</a></p></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./scientific_method.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./descriptive_statistics.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

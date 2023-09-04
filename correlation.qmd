@@ -1,0 +1,59 @@
+# Két folytonos változó közti összefüggés
+
+-   Statisztikai próbája a **korreláció**
+
+-   Teszt értéke a **korrelációs együttható** **(r)**
+
+    -   skálafüggetlen 
+
+    -   -1 és 1 közötti értéket vehet fel a korreláció irányának függvényében
+
+-   Lineáris összefüggést feltételez a két változó között
+
+    -   Pozitív: egyik változó nő a másik is nő
+
+    -   Negatív: egyik változó nő a másik csökken
+
+-   Összefüggés erősségeként lehet értelmezni az r nagyságát
+
+    -   Minél nagyobb annál erősebb az összefüggés
+
+-   3 típusa van
+
+    -   **Pearson korreláció:**
+
+        -   Legalább intervallum típusú változók
+
+        -   Változók eloszlása normál eloszlást követ
+
+    -   **Spearman rang korreláció:**
+
+        -   Legalább ordinális típusú változók
+
+    -   **Kendall tau:**
+
+        -   Legalább ordinális
+
+        -   Alacsonyabb mintaelemszámnál is jó
+
+        -   Jól kezeli ha sok azonos rangú elem van
+
+-   Korreláció null hipotézis tesztje
+
+    -   Kritikus értéknél az r-t t-értékké transzformáljuk
+
+    -   Szabadságfok: n-2
+
+    -   Excelben nem annyira egyszerű kiszámítani a korrelációs együtthatóhoz tartozó p-értéket, ezért ezen az órán ettől eltekintünk és a korrelációs együttható, mint két folytonos változó közötti kapcsolat erősségét és irányát kifejező mutató értelmezésére koncentrálunk
+
+-   **Korrelációs mátrix**
+
+    -   Több változó között egyszerre mutatja meg a korrelációs együtthatókat táblázat formájában
+
+-   Korrelációs együttható négyzete a **determinisztikus együttható (R^2^)**
+
+    -   Egyik változó mekkora részt magyaráz a másik változóból
+
+    -   A variance mekkora részét magyarázza meg
+
+    -   Regressziónál fontos mutató

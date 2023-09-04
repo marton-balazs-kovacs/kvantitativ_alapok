@@ -1,0 +1,363 @@
+# Adat
+
+## Mi az adat?
+
+-   Az **adat változók összessége**, amelyek valamilyen **mérés** eredményét rögzítik
+
+    -   **Az adat, angolul data többesszám, egyesszámban datum**
+
+        -   **Tehát data are és nem data is!**
+
+-   Sokszor gondolunk az adatra, mint egy adott, önmagában létező dologra. Ezzel szemben, az adat egy dolog mérés által létrejött reprezentációja
+
+    -   Tehát a mérés módja befolyásolja az adatok jelentését és minőségét
+
+    -   Illetve a mérés befolyásolja az adatokból levont következtetéseket is
+
+    -   Ismerhetünk akárhány statisztikai trükköt az adatok tisztítására, transzformálására, összesítésére, ha azok zajos, torzított, hibás mérésből származnak az adatokból statisztika útján levont következtetések is torzítani fognak
+
+    -   Ezért fontos már a kutatás megtervezésekor nagyon odafigyelni **mit** mérünk és **milyen pontosságal** tudjuk mérni.
+
+    -   Az adatok létrejöttével a kutatásmódszertan foglalkozik
+
+    -   Példa:
+
+        -   1999-ben a Mars Climate Orbiter a Mars atmoszférájába lépve darabokra hullott, mert az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat
+
+    -   További olvasmányok:
+
+        -   <https://www.psychologicalscience.org/observer/measurement-matters>
+
+        -   <https://journals.sagepub.com/doi/full/10.1177/2515245920952393>
+
+-   Minden változónak legalább két különböző értéke kell legyen, hogy változónak nevezzük, különben egy konstans lenne
+
+-   A változóknak különböző típusai lehetnek, annak fényében milyen mérés eredményeit rögzítik
+
+## Hogyan keletkeznek az adatok?
+
+### Mit mérünk?
+
+-   Elméleti konstruktumok vagy valós fizikai tulajdonságok
+
+    -   Sok esetben, főleg a viselkedéses közgazdaságtanban nem fizikai tulajdonságokat mérünk, hanem közvetlenül meg nem figyelhető élméleti **konstruktumokat**
+
+        -   Pl: boldogság
+
+-   Az elméleti konstruktumok mérésénél fontos, hogy hogyan **operacionalizáljuk** azok mérését
+
+    -   Boldogság: mosolyok száma egy nap alatt vagy önbevallásos kérdőív 1-től 7-ig terjedő skáláján adott pontok
+
+-   **Validitás (érvényesség)**
+
+    -   Azt mutatja meg, hogy mennyire mérjük azt, amit valójában mérni akarunk
+
+    -   Többféle validitás mutató is van
+
+        -   **Látszatérvényesség**
+
+            -   Első ránézésre úgy tűnik-e, hogy a mérőeszközünk azt méri, amit mérni akarunk
+
+            -   Pl: vérnyomást a nyelv pirossága mentén szeretném megmérni valószínűleg a mérőeszközöm nem érvény adatokat fog adni
+
+        -   **Konstruktum validitás**
+
+            -   Két része van:
+
+                -   **Konvergens validitás**
+
+                    -   A mérőeszköz mérései pozitív együttjárást mutatnak ugyanazt a konstruktumot vizsgáló más mérőeszközök méréseivel
+
+                        -   Pl: boldogságot vizsgálom kérdőíves és interjú módszerrel is, az eredmények között pozitív kapcsolatot várok el
+
+                -   **Divergens validitás**
+
+                    -   A mérőeszköz mérései és más mérőeszközök mérései között valóban nincs kapcsolat, ha elméleti szinten nem feltételezünk kapcsolatot a két vizsgált konstruktum között
+
+            -   Új mérőeszköz fejlesztése esetén általában már validált, a szakmában elfogadott mérőeszközökhöz hasonlítunk
+
+        -   **Prediktív validitás**
+
+            -   A mérőeszközünk mérései alapján előre tudunk jelezni más, a mért dologgal összefüggő egyéb kimeneteleket
+
+                -   Pl: ha feltételezzük, hogy a figyelmetlenség összefügg a pénzszórással, akkor azt várjuk, hogy aki a figyelmetlenségi kérdőíven magas pontszámot ér el, átlagosan jobban fogja szórni a pénzt a hétköznapokban
+
+### Milyen pontossággal mérünk?
+
+-   Minden mérésben van mérési hiba
+
+-   Általában ezt akarjuk csökkenteni
+
+-   Megtehetjük:
+
+    -   Mérőeszköz minőségének javításával
+
+    -   Még több méréssel
+
+-   **Megbízhatóság (reliabilitás)**
+
+    -   Azt mutatja meg, hogy mennyire pontosan, konzisztensen mér a merőeszközünk
+
+    -   Teszt-retesz megbízhatóság
+
+        -   Ha többször megismételjük a mérést, mennyire járnak együtt a mérések eredményei
+
+    -   Megbízhatóság fontos, ha össze akarunk több mérést hasonlítani
+
+        -   Két változó közötti kapcsolat nem lehet erősebb, mint egy változó és önmaga közötti kapcsolat (másnéven a változó megbízhatósága)
+
+        -   Nem megbízható mérés nem tud erős statisztikai összefüggésben lenni egy másik méréssel
+
+### A változók mérési szintjei
+
+-   Hogyan viszonyulnak egymáshoz a változó értékei
+
+-   Folytonos vagy diszkrét változók
+
+    -   **Folytonos:** bármilyen értéket felvehet egy bizonyos értéktartományban
+
+    -   **Diszkrét:** csak bizonyos értékeket vehet fel
+
+-   Négy szempont alapján térhetnek el:
+
+    -   **Egyediség:** a változó minden értéke egyedi jelentéssel rendelkezik
+
+    -   **Sorbarendezhetőség:** sorba rendezhetők-e a változó értékei valamilyen szempont alapján
+
+    -   **Egyenlő távolság:** az egyes értékek közötti távolság a skála minden pontján egyenlő
+
+        -   1cm és 2cm között ugyanakkora a távolság, mint 12cm és 13cm között
+
+    -   **Abszolút nulla pont:** van-e a skálának abszolút nulla pontja.
+
+        -   Például súly vagy magasság
+
+-   Ezek alapján a következő mérési szintekről beszélhetünk:
+
+    -   **Nominális skála**
+
+        -   A skálának minden tagja egy egyedi értéket jelöl
+
+        -   A skálában lévő számok kvalitatív értékek címkézésére vannak
+
+        -   Nem rakhatók nagyságrendileg sorrendbe, nincs nulla pontjuk, a köztük lévő távolság értelmezhetetlen
+
+        -   Matematikai módszerek: összehasonlíthatók
+
+        -   Statisztikai módszerek: módusz
+
+        -   Diszkrét
+
+        -   Legtöbbször az adattáblában egész számokkal vagy szöveggel jelöljük
+
+            -   Az egész számok csak jelző címkeként szolgálnak, algebrai műveletek nem végezhetők rajtuk
+
+    -   **Ordinális skála**
+
+        -   Értékei egyediek és sorbarendezhetők
+
+        -   De az értékek közötti távolság értelmezhetetlen
+
+        -   Pl: fájdalom mérésére szolgáló skála
+
+            -   A Likert-típusú skálánál például elmondható, hogy a "Teljesen egyetértek" pozitívabb, mint az "Inkább egyetértek", de a kettő közti távolság nem kvantifikálható. Ezért nem tudunk Likert-típusú skáláknál átlagot számolni.
+
+        -   Matematikai módszerek: megnézhetjük, hogy az egyik érték nagyobb-e a másiknál
+
+        -   Statisztikai módszerek: medián
+
+        -   Diszkrét
+
+        -   Az adattáblában általában egész számokkal jelöljük őket
+
+    -   **Intervallum skála**
+
+        -   Az ordinális skálánál több, amennyiben a felvehető értékek közötti távolság állandó
+
+        -   Pl: hőfok Celsiusban
+
+        -   Matematikai módszerek: összeadhatjuk vagy kivonhatjuk
+
+        -   Statisztikai módszerek: átlag
+
+        -   Folytonos
+
+        -   Az adattáblában egyész számokkal vagy valós számokkal jelöljük őket
+
+    -    **Arány skála**
+
+        -   Az interval skálán felül van értelmezhető abszolút 0 pontja.
+
+        -   Pl: Súly és magasság
+
+        -   Matematikai módszerek: szorozhatjuk vagy oszthatjuk
+
+        -   Statisztikai módszerek: átlag
+
+        -   Folytonos
+
+        -   Az adattáblában egyész számokkal vagy valós számokkal jelöljük őket
+
+### Mérési skálák hatása a statisztikai tesztek előfeltételeire
+
+-   A változók mérési szintjei meghatározzák, hogy milyen matematikai/statisztikai módszereket alkalmazhatunk rajtuk és így végül milyen kérdéseket tudunk általuk megválaszolni
+
+-   A változók mérési szintjei együtt járnak a mérési skálák **granularitás**ával
+
+    -   Granularitás: változó szintjeinek száma, azaz hány lehetséges értéket tud felvenni a változó
+
+-   Például a fájdalmat mérhetjük úgy, hogy:
+
+    -   Vizuális analóg skálánál a végpontok vannak megadva (nincs fájdalom - legerősebb elképzelhető fájdalom) közte 1-100-ig bejelölhetik a résztvevők az átélt fájdalmuk
+
+    -   Likert-típusú skálán is mérhetjük, aminek három szintje van és mindegyik szinthez egy leíró címke tartozik (1 - egyáltalán nem fáj, 2- közepesen fáj, 3 - nagyon fáj)
+
+    -   Numerikus skálán is mérhetjük, aminek 11 szintje (0 - 10) van az első ötödik és tizedik szinteken leíró címkével
+
+-   Ha egy skála granularitása kicsi (\<12) vagy minden szintjéhez címke tartozik, nem kezelhetjük intervallum skálaként
+
+    -   Tehát nem számolhatunk átlagot
+
+-   Mérési skálák granularitását növelhetjük az itemek számával
+
+    -   Pl: Több 7 fokú válasz skálás kérdéssel mérjük ugyanazt a konstruktumot
+
+        -   A válaszokat összesítjük (például összeadás vagy átlagolás útján)
+
+## Hogyan struktúráljuk az adatokat?
+
+-   Az adatok különböző formátumban léteznek
+
+    -   Kérdőíves felmérések adatai, orvosi MRI képek, banki tranzakciók lenyomatai, twitter megosztások száma, egy adott időszakban megjelent publicisztikák
+
+-   A nyers adatok kinyerése és tisztítása teszi ki általában az adatelemzői munka nagy részét a statisztikai elemzéshez képest
+
+-   Az egyszerűség kedvéért az órán adattáblákkal fogunk dolgozni
+
+-   Az **adattábla** változók és megfigyelések összessége
+
+    -   **Adatpont (data point)**: egy mérésből származó érték, pl. egy ember egy válasza egy kérdésre
+
+        -   cellák
+
+    -   **Megfigyelés (observation)**: ugyanannak a megfigyelési egységnek (pl. egy ember) az összes adatpontja (pl. összes kérdésre adott válasza)
+
+        -   sorok
+
+    -   **Változó (variable)**: több megfigyelési egységnek az ugyanarra a mérésre adott értékei
+
+        -   Oszlopok
+
+### Milyen egy jó adattábla?
+
+-   "négyzetes": a sorok és oszlopok következetes módon megfigyeléseket és változókat jelentenek
+
+-   A változónevek emberi és gépi olvasásra is alkalmasak
+
+    -   minél rövidebb, a változónevek mindig angolul, ékezetek nélkül, szóközök nélkül legyenek írva, legyen egyértelmű jelentésük, pl. education, bdi_1, bdi_sum
+
+-   Változónevek egy táblán belül következetesen legyenek használva
+
+    -   Lásd: snake_case vagy camelCase
+
+    -   Azonos információ egységek azonos helyen legyenek elszeparálva
+
+        -   question_01_item_01, question_01_item_02
+
+        -   És nem: question01_item_01, question_01_item02
+
+-   A címkék szó szerint szerepelnek, és nem kódolva (pl. a kategorikus adatokhoz)
+
+    -   "férfi", és nem 1)
+
+-   A változó egy információt tartalmaz a megfigyelésről
+
+    -   "Férfi 18-29" az két információ
+
+-   Minden információ explicit adat (és nem formázási mód vagy komment)
+
+-   A hiányzó adat hiányzó cella, nem pedig pl. -999
+
+-   Minden megfigyelési egységnek (pl. résztvevő) egyedi azonosítója van
+
+-   Van hozzá "kódkönyv" (code book vagy data dictionary)
+
+    -   Ez szintén legyen ember és gépi olvasásra alkalmas
+
+    -   Információ az adatok formátumáról (pl. adattábla x sorral és y változóval)
+
+    -   Változók jelentése, mértékegysége, típusa, a változó hogyan lett kiszámítva
+
+    -   Információ az adatgyűjtés módszeréről
+
+-   Változón belül az értékek konzisztensen azonos típusúak és jelölésűek legyenek
+
+    -   Rossz példa: férfi, Férfi, nő, female
+
+-   Figyeljünk a kis és nagybetűkre!
+
+-   Számozási sorrendnél használjunk vezető 0-át
+
+    -   Pl: 01, 02, 03, 11, 12
+
+    -   És nem: 1, 11, 12, 2, 3
+
+## Hogyan dolgozzunk az adatokkal?
+
+-   Adatrendezés alapelvei
+
+    -   Nem törlünk ki adatokat
+
+    -   Adatállomány feldolgozottsági szintjei szerinti felosztás
+
+        -   **Source:** forrás adatok, ahogy a mérőeszközünk visszaadja az adatokat bármilyen beavatkozás nélkül, sokszor tartalmaz olyan adatokat, amelyek a résztvevők beazonosítását lehetővé teszik
+
+            -   a forrás adatok nyílt hozzáférésű megosztása ebben az esetben tilos
+
+        -   **Raw:** nyers adatok, lényeges beavatkozás nem történt az adatfájlon, változó nevek lettek standardizálva, fájl formátuma lett megváltoztatva, a beazonosítást lehetővé tevő változók lettek maszkolva vagy kitörölve
+
+        -   **Processed:** feldolgozott adatok, az adatszűrés és szükséges transzformációk után
+
+    -   Nem módosítjuk az eredeti állományt, legfeljebb a másolato(ka)t
+
+    -   Ha lehet, készítsünk adatkezelési tervet (data management plan)
+
+        -   Sok pénzügyi támogató elvárja már!
+
+        -   Biztosíthatjuk vele, hogy nem követünk el adatkezelési hibákat
+
+        -   Hogyan készítsünk jó adatkezelési tervet?
+
+            -   <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525>
+
+## Adatkezelési hibák
+
+-   Általában arról hallunk a médiában, ha egy kutatót adahamisítással lepleznek le
+
+-   Kevesebb szó esik az adatkezelési hibákról, pedig feltételezhetően ezek sokkal gyakrabban fordulnak elő
+
+-   Az adatkezelési hibákat sokszor akaratlanul követik el a kutatók
+
+-   Az adatkezelési hibáknak lehetnek súlyos következményei
+
+    -   megváltoztathatják például az adatokből levont köveztetéseket
+
+-   Reinhart & Rogoff (2010) közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja
+
+    -   Eredményeik az USA költségvetési tervébe is bekerült
+
+    -   Később kiderült, hogy nem jelölték ki az összes adatsort az elemzés során, így a vizsgált adatoknak csak egy része került elemzésre
+
+    -   Az újraelemzés az eredeti követeztetéseket invalidálta
+
+-   Az adatkezelési hibák nagy része az emberi hibából (human error) fakad
+
+    -   Kognitív kapacitásaink végesek, elfáradunk, nyomás alatt rosszabbul teljesítünk, stb.
+
+-   Ezért fontos olyan adatkezelési rendszert kiépíteni, amely ezen hibák előfordulási valószínűségét csökkenti
+
+-   További olvasmányok:
+
+    -   <https://journals.sagepub.com/doi/full/10.1177/25152459211045930>
+
+    -   <https://www.nber.org/papers/w15639>

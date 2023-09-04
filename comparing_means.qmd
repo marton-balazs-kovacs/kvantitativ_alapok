@@ -1,0 +1,123 @@
+# Két csoport átlagának összehasonlítása
+
+-   Két csoportot szeretnénk összehasonlítani ahelyett, hogy változók közötti összefüggés erősségét vizsgálnánl
+
+-   Általában kísérleti elrendezésnél használjuk
+
+    -   Itt a kísérleti elrendezés lehetővé teszi, hogy ok-okozati összefüggést állítsunk fel
+
+    -   Kétféle módon gyűjthetünk adatokat
+
+        -   Különböző embereket véletlenszerűen kísérleti csoportokba sorolhatunk
+
+            -   Minden ember csak egy csoportba kerül
+
+            -   **Független méréses elrendezés**
+
+        -   Minden résztvevő végigmegy az összes kísérleti manipuláción
+
+            -   **Többszörös méréses elrendezés**
+
+            -   Előnye lehet, hogy a személyek közötti esetleges torzító tényezők hatását kontrollálni tudjuk
+
+                -   Ezzel szenzitívebb lesz a mérésünk
+
+        -   A kettőt egyszerre is alkalmazhatjuk
+
+            -   **Kevert elrendezés**
+
+        -   A kísérleti elrendezéstől függ, hogy milyen statisztikai elemzési módszert kell használnunk!
+
+            -   Hiszen ismételt mérések esetén a csoportok nem lesznek függetlenek egymástól
+
+## A t-próba típusai
+
+-   
+
+## A t-próba logikája
+
+-   Két mintát veszünk, ahol a mintáink lehetőleg csak az átlalunk vizsgált független változó mentén különböznek szisztematikusan
+
+    -   Pl: A) csoport tagjai részt vettek egy képzésen b) csoport tagjai nem vettek rész a képzésen (kontroll csoport)
+
+        -   Célunk, hogy a csoport tagjai lehetőleg minden másban hasonlóak legyenek
+
+            -   Ne legyen olyan esetleges torzító faktor (például A) csoportba csak magas IQ-val rendelkező személyek vannak), ami torzíthatja a vizsgált hatást (a képzés hatására jobb pontot érnek-e el a személyek egy teszten)
+
+-   A null hipotézis alatt azt várjuk el, hogy a két minta átlagai között nem lesz különbség, a csoportok átlagainak különbsége a függő változóban a nulla körül helyezkedik el
+
+    -   Ebben az esetben a két minta feltételezhetően ugyanabból a populációból származik
+
+-   A megfigyelt minták átlagainak különbségét ahhoz a hipotetikus különbség értékhez hasonlítjuk, amit akkor várnánk el, ha nincs hatás (tehát a null hipotézis igaz)
+
+-   A standard hibát használjuk arra, hogy megvizsgáljuk a minta átlagok közti variabilitást
+
+    -   Ha a standard hiba kicsi akkor várhatóan a minta átlagok hasonlóak lesznek
+
+    -   Ha a standard hiba nagy akkor várhatóan nagy különbségek is előfordulhatnak a minta átlagok között
+
+    -   Még akkor is, ha ugyanabból a populációból származnak
+
+-   Ha a megfigyelt minta átlagok közti különbség nagyobb, mint amit elvárnánk a standard hiba alapján, ha a null hipotézis igaz, akkor feltételezhetjük:
+
+    -   A valóságban nincs hatás, a két minta átlag ugyanabból a populációból származik, csak atipikus egyedei annak
+
+        -   Másszóval: távol helyezkednek el a populáció átlagtól
+
+    -   A valóságban van hatás, a null hipotézist elvetjük, a két minta valójában két különböző populációból származik, amelyeknek tipikus tagjai
+
+        -   Másszóval a minta átlagok közel vannak a populációk átlagához, amiből származnak
+
+-   Minél nagyobb a hatás és minél kisebb a standard hiba, annál biztosabbak vagyunk benne, hogy a hatás valóban létezik
+
+## t-próba, mint stasztikai modell
+
+-   Egy teszt statisztikára gondolhatunk úgy is, mint a variancia, amit megmagyaráz a modellunk elosztva a varianciával, amit nem magyaráz meg a modellünk
+
+    -   hatás / hiba
+
+-   t-próba esetében a statisztikai modell a két csoport átlagainak a különbsége
+
+-   A hiba mutatónk a standard hiba
+
+    -   Megmutatja mennyire fluktuálnak a minta átlagok a mintevételezési hibának következtében
+
+    -   Ezt is az átlagok különbségére számoljuk ki
+
+## t-próba előfeltételei
+
+-   A változók legalább intervallum skálájúak
+
+    -   Ez az előfeltétele, hogy átlagot tudjunk számolni
+
+-   A mintavételei eloszlás (sampling distribution) normáls eloszlást követ
+
+    -   A mintavételi eloszlást nem tudjuk közvetlenül megvizsgálni ezért azt nézzük meg, hogy a változók eloszlása normál eloszlást követ-e
+
+        -   A centrális határeloszlás elve miatt feltételezzük
+
+            -   ha a változónk eloszlása normális a mintavételi eloszlás is normális lesz
+
+            -   Illetve sok megfigyelés esetén a mintavételezési eloszlás úgyis a normálishoz közelít
+
+    -   Páros t-próba esetén a két csoport értékeinek a különbsége kell normál eloszlást kövessen!
+
+-   Független mintás t-próba
+
+    -   Az előfeltételeket tesztelni kell mielőtt a parametrikus Student t-próbát alkalmazhatnánk
+
+    -   Az előző feltételeken felül:
+
+        -   A különböző csoportokból származó értékek függetlenek egymástól
+
+        -   Szórás homogenitás: a két csoport szórása hasonló
+
+## t-próba eredményeinek ábrázolása
+
+-   Hegedű ábrával (violin plot)
+
+-   Barchart-tal
+
+-   Ne feledkezzünk meg az error bar-ról!
+
+    -   Ez általában a standard hiba (SE)

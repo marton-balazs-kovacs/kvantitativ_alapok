@@ -1,0 +1,159 @@
+# Következtetéses statisztika
+
+-   Sokszor amikor egy kérdést vizsgálunk nem tudjuk az egész populációt megmérni
+
+    -   **Populáció:** egy meghatározott csoport összes lehetséges tagja
+
+-   A statisztikát használjuk arra, hogy egy minta alapján következtetéseket vonjunk le az egész populációra
+
+    -   **Minta:** a populációból kiválasztott és megfigyelt egyedek részhalmaza
+
+## Mintavételezés
+
+-   A minta kiválasztásának módja fontos, mert ezzel tudjuk biztosítani, hogy a minta jól reprezentálja a populációnkat
+
+    -   valószínűségi mintavételezés: minta jól reprezentálja a populációt, ha a populáció minden tagjának egyenlő esélye van a mintánkba való bekerülésre
+    -   kvóta: a populáció néhány ismert jellemzője alapján válogatunk be meghatározott számú résztvevőt  (pl. 50-50% nő és férfi)
+    -   kényelmi: az vesz részt a kutatásban, akit éppen elérünk
+
+-   A mintavételezés előnyei és nehézségei
+
+    -   előnyei
+
+        -   máshogy nem tudunk információhoz jutni az egész populációra vonatkozóan
+
+        -   tudunk becsléseket tenni  a populáció jellemzőire ("valódi" átlag, szórás, eloszlás, stb.)
+
+        -   ha ismerjük a hátulütőket, tudjuk kommunikálni a bizonytalanságot is
+
+    -   nehézségei
+
+        -   a minta soha nem tökéletes reprezentációja a populációnak, azaz mindig valamennyire torzított
+
+        -   a kisebb minták könnyebben torzítottak, mint a nagyobbak
+
+        -   nem lehet pontosan tudni, hogy a minta elég jól reprezentálja-e a populációt
+
+        -   lehet, hogy a minta alapján téves következtetésre jutunk a populációra vonatkozóan
+
+### Standard hiba
+
+-   Attól függetlenül, hogy milyen nagy elővigyázatossággal választottuk ki a mintánkat, a minta különbözni fog a populációtól
+
+    -   Ez a **mintavételezési hiba (sampling variation)**
+
+        -   Abból következik, hogy a populáció összes egyedéből véletlenszerűen választunk ki egyedeket a mintánkba
+
+-   Ha többször veszünk mintát egy adott populációból hosszútávon elvárható, hogy a mintáink átlagai leggyakrabban a populáció átlag körül fognak csoportosulni
+
+    -   A minta átlagok eloszlását a **mintavételi eloszlásnak (sampling distribution)** hívjuk
+
+        -   A mintaátlagok gyakorisági eloszlása
+
+        -   Ha a minta átlagok átlagát vennénk a populáció átlagot kapnánk meg
+
+    -   A minta átlagok populáció átlag körüli szóródását a standard hibával írjuk le
+
+        -   Máshogyan: Azt a bizonytalanságot fejezi ki, amiben a populációátlagtól eltérhet a mintaátlagtól
+
+    -   Pontosabb nevén az **átlag standard hibája (standard error of the mean)**.
+
+    -   Kiszámolásához a minta szórását elosztjuk az elemszám négyzetgyökével
+
+    -   A standard hiba alapján a mérésünk minősége a populációban található variabilitástól és a mintánk méretétől függ
+
+        -   Mivel csak a minta méretre van ráhatásunk ennek növelésével javíthatjuk a mérőeszközünk pontosságát
+
+        -   Minél nagyobb a mintaméret, annál biztosabbak lehetünk abban, hogy a populációátlagot jól közelítjük
+
+            -   Azonban nem csak a minta mérete számít, hanem a mintavételezés módja is
+
+                -   Akármilyen nagy a mintánk, ha annak tagjai nem jól írják le a populációt mert a minta szisztematikusan torzít
+
+                -   Ezért szoktak kutatók általában random mintavételezésre törekedni
+
+    -   Általában ezt szokták az ábrákon megjeleníteni **hibasávként (error bar)**
+
+    -   Ha a hibasávok nem fednek át, akkor arra következtethetünk, hogy a populációban lévő különbség valódi
+
+### Centrális határeloszlás elve
+
+-   **Central limit theorem (CHE)**
+
+-   A mintaméret növekedésével a mintaátlagok eloszlása közelít a normális eloszláshoz.
+
+-   Ez akkor is igaz, ha az egyes mintákban lévő eloszlások értéke nem normális!
+
+-   Demonstráció: <https://istats.shinyapps.io/sampdist_cont/>
+
+-   A CHE miatt használhatjuk a legtöbb statisztikai módszert ami normális eloszlást feltételez
+
+## Konfidencia intervallum
+
+-   Ahogy már korábban említettük a minta átlagát használjuk arra, hogy megbecsüljük a populáció átlagot
+
+    -   Ezzel az adatokból levont következtetést **általánosítsuk (generalization)** a mintánkon túlra
+
+-   Láttuk, hogy különböző mintavételelezések különböző minta átlagokat adnak és a standard hibát használhatjuk arra, hogy meghatározzuk mekkora a mintaátlagok varianciája a populáció átlag körül
+
+-   Azt, hogy a minta átlag mennyire jól becsüli meg a populáció értéket úgy is eldönthetjük, hogy kiválasztunk egy értéktartományt, amelybe a populáció átlag feltehetően beleesik
+
+    -   Ezt az értéktartományt nevezzük **konfidencia intervallum**nak
+
+-   Minél szélesebb a konfidencia intervallumunk annál bizonytalanabbak vagyunk abban, hogy a minta átlag jó reprezentációja-e a populáció átlagnak
+
+### Helyes értelmezése
+
+-   A konfidencia intervallumot gyakran félreértik a kutatók
+
+    -   Talán még a p értéknél is gyakrabban!
+
+-   Egy 95%-os konfidencia intervallum nem azt jelenti, hogy 95% az esélye annak, hogy a populáció átlaga beleesik-e az intervallumba!
+
+    -   A populáció átlag egy fix érték, így egyes esetekben vagy beleesik vagy nem
+
+    -   Nem tudunk valószínűséget rendelni mellé
+
+-   A helyes értelmezésnél ugyanazt a logikát kell követnünk, mint a hipotézis tesztelésnél: hosszútávon milyen valószínűséggel fogunk helyes döntést hozni
+
+    -   hosszútávon a konfidencia intervallum az esetek 95%-ában fogja tartalmazni a populáció átlagot 
+
+    -   ha végtelenszer megismételjük a mintavételt és kiszámoljuk a minta átlagot és a hozzá tartozó konfidencia intervallumot, akkor az esetek 95%-ában a kapott konfidencia intervallumok magukba fogják foglalni a populáció átlagot
+
+    -   Azt azonban nem tudhatjuk, hogy az éppen általunk gyűjtött mintához kiszámolt konfidencia intervallum tartalmazza-e a populáció átlagot vagy sem
+
+    -   Másszóval: 95%-os konfidencia intervallum mellett az esetek 5%-ban tévedünk, ha feltételezzük, hogy az adott konfidencia intervallum valóban magába foglalja a populáció átlagot
+
+### Kiszámítása
+
+-   A konfidencia intervallumot a z értékek segítségével számoljuk ki
+
+-   Egy normál eloszlásnál ahol az átlag 0 és a szórás 1 a z értékek 95%-a a -1.96 és a +1.96-os z értékek közé fog esni
+
+-   Alsó határa a konfidencia intervallumnak: minta átlag - (1.96 \* standard hiba)
+
+-   Felső határa a konfidencia intervallumnak: minta átlag + (1.96 \* standard hiba)
+
+-   A mintánk átlaga mindig a konfidencia intervallum közepe
+
+-   A konfidencia intervallum mérete függ a standard hiba méretétől
+
+-   Ha kicsi a minta a t eloszlást használva kell kiszámítani a konfidencia intervallumot
+
+### Vizuális ábrázolása
+
+-   Konfidencia intervallumok vizuális ábrázolása
+
+    -   Általában a konfidencia intervallumot használjuk ábrákon az átlag körüli hiba mértékének vizualizására
+
+    -   Ha két átlaghoz tartozó konfidencia intervallumok átfednek, akkor feltételezhetjük, hogy a két minta átlaga ugyanabból a populációból származik
+
+        -   Lásd t-próba
+
+    -   Ha nem fednek át
+
+        -   1\) vagy különböző populációból származnak
+
+        -   2\) vagy ugyanabból a populációból származnak de az egyik konfidencia intervallum nem tartalmazza a populáció átlagot
+
+            -   Ez az esetek 5%-ában fordul csak elő 95%-os konfidencia intervallum mellett, ezért valószínűleg a 1) opció mellett döntünk
