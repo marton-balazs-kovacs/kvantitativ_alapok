@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kvantitatív Alapok - 3&nbsp; Adat</title>
+<title>Kvantitatív Alapok - 2&nbsp; Adat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -107,62 +126,56 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./scientific_method.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing_means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,20 +194,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#mi-az-adat" id="toc-mi-az-adat" class="nav-link active" data-scroll-target="#mi-az-adat"><span class="header-section-number">3.1</span> Mi az adat?</a></li>
-  <li><a href="#hogyan-keletkeznek-az-adatok" id="toc-hogyan-keletkeznek-az-adatok" class="nav-link" data-scroll-target="#hogyan-keletkeznek-az-adatok"><span class="header-section-number">3.2</span> Hogyan keletkeznek az adatok?</a>
+  <li><a href="#mi-az-adat" id="toc-mi-az-adat" class="nav-link active" data-scroll-target="#mi-az-adat"><span class="header-section-number">2.1</span> Mi az adat?</a></li>
+  <li><a href="#hogyan-keletkeznek-az-adatok" id="toc-hogyan-keletkeznek-az-adatok" class="nav-link" data-scroll-target="#hogyan-keletkeznek-az-adatok"><span class="header-section-number">2.2</span> Hogyan keletkeznek az adatok?</a>
   <ul class="collapse">
-  <li><a href="#mit-mérünk" id="toc-mit-mérünk" class="nav-link" data-scroll-target="#mit-mérünk"><span class="header-section-number">3.2.1</span> Mit mérünk?</a></li>
-  <li><a href="#milyen-pontossággal-mérünk" id="toc-milyen-pontossággal-mérünk" class="nav-link" data-scroll-target="#milyen-pontossággal-mérünk"><span class="header-section-number">3.2.2</span> Milyen pontossággal mérünk?</a></li>
-  <li><a href="#a-változók-mérési-szintjei" id="toc-a-változók-mérési-szintjei" class="nav-link" data-scroll-target="#a-változók-mérési-szintjei"><span class="header-section-number">3.2.3</span> A változók mérési szintjei</a></li>
-  <li><a href="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" id="toc-mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="nav-link" data-scroll-target="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="header-section-number">3.2.4</span> Mérési skálák hatása a statisztikai tesztek előfeltételeire</a></li>
+  <li><a href="#mit-mérünk" id="toc-mit-mérünk" class="nav-link" data-scroll-target="#mit-mérünk"><span class="header-section-number">2.2.1</span> Mit mérünk?</a></li>
+  <li><a href="#milyen-pontossággal-mérünk" id="toc-milyen-pontossággal-mérünk" class="nav-link" data-scroll-target="#milyen-pontossággal-mérünk"><span class="header-section-number">2.2.2</span> Milyen pontossággal mérünk?</a></li>
+  <li><a href="#a-változók-mérési-szintjei" id="toc-a-változók-mérési-szintjei" class="nav-link" data-scroll-target="#a-változók-mérési-szintjei"><span class="header-section-number">2.2.3</span> A változók mérési szintjei</a></li>
+  <li><a href="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" id="toc-mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="nav-link" data-scroll-target="#mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="header-section-number">2.2.4</span> Mérési skálák hatása a statisztikai tesztek előfeltételeire</a></li>
   </ul></li>
-  <li><a href="#hogyan-struktúráljuk-az-adatokat" id="toc-hogyan-struktúráljuk-az-adatokat" class="nav-link" data-scroll-target="#hogyan-struktúráljuk-az-adatokat"><span class="header-section-number">3.3</span> Hogyan struktúráljuk az adatokat?</a>
+  <li><a href="#hogyan-struktúráljuk-az-adatokat" id="toc-hogyan-struktúráljuk-az-adatokat" class="nav-link" data-scroll-target="#hogyan-struktúráljuk-az-adatokat"><span class="header-section-number">2.3</span> Hogyan struktúráljuk az adatokat?</a>
   <ul class="collapse">
-  <li><a href="#milyen-egy-jó-adattábla" id="toc-milyen-egy-jó-adattábla" class="nav-link" data-scroll-target="#milyen-egy-jó-adattábla"><span class="header-section-number">3.3.1</span> Milyen egy jó adattábla?</a></li>
+  <li><a href="#milyen-egy-jó-adattábla" id="toc-milyen-egy-jó-adattábla" class="nav-link" data-scroll-target="#milyen-egy-jó-adattábla"><span class="header-section-number">2.3.1</span> Milyen egy jó adattábla?</a></li>
   </ul></li>
-  <li><a href="#hogyan-dolgozzunk-az-adatokkal" id="toc-hogyan-dolgozzunk-az-adatokkal" class="nav-link" data-scroll-target="#hogyan-dolgozzunk-az-adatokkal"><span class="header-section-number">3.4</span> Hogyan dolgozzunk az adatokkal?</a></li>
-  <li><a href="#adatkezelési-hibák" id="toc-adatkezelési-hibák" class="nav-link" data-scroll-target="#adatkezelési-hibák"><span class="header-section-number">3.5</span> Adatkezelési hibák</a></li>
+  <li><a href="#hogyan-dolgozzunk-az-adatokkal" id="toc-hogyan-dolgozzunk-az-adatokkal" class="nav-link" data-scroll-target="#hogyan-dolgozzunk-az-adatokkal"><span class="header-section-number">2.4</span> Hogyan dolgozzunk az adatokkal?</a></li>
+  <li><a href="#adatkezelési-hibák" id="toc-adatkezelési-hibák" class="nav-link" data-scroll-target="#adatkezelési-hibák"><span class="header-section-number">2.5</span> Adatkezelési hibák</a></li>
   </ul>
 </nav>
     </div>
@@ -203,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></h1>
 </div>
 
 
@@ -218,8 +231,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="mi-az-adat" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="mi-az-adat"><span class="header-section-number">3.1</span> Mi az adat?</h2>
+<section id="mi-az-adat" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="mi-az-adat"><span class="header-section-number">2.1</span> Mi az adat?</h2>
 <ul>
 <li><p>Az <strong>adat változók összessége</strong>, amelyek valamilyen <strong>mérés</strong> eredményét rögzítik</p>
 <ul>
@@ -235,24 +248,31 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Ismerhetünk akárhány statisztikai trükköt az adatok tisztítására, transzformálására, összesítésére, ha azok zajos, torzított, hibás mérésből származnak az adatokból statisztika útján levont következtetések is torzítani fognak</p></li>
 <li><p>Ezért fontos már a kutatás megtervezésekor nagyon odafigyelni <strong>mit</strong> mérünk és <strong>milyen pontosságal</strong> tudjuk mérni.</p></li>
 <li><p>Az adatok létrejöttével a kutatásmódszertan foglalkozik</p></li>
-<li><p>Példa:</p>
-<ul>
-<li>1999-ben a Mars Climate Orbiter a Mars atmoszférájába lépve darabokra hullott, mert az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat</li>
-</ul></li>
+<li><p>Lásd: <a href="#fig-orbiter">Figure&nbsp;<span>2.1</span></a></p></li>
 <li><p>További olvasmányok:</p>
 <ul>
-<li><p><a href="https://www.psychologicalscience.org/observer/measurement-matters" class="uri">https://www.psychologicalscience.org/observer/measurement-matters</a></p></li>
-<li><p><a href="https://journals.sagepub.com/doi/full/10.1177/2515245920952393" class="uri">https://journals.sagepub.com/doi/full/10.1177/2515245920952393</a></p></li>
+<li><p><span class="citation" data-cites="fried_measurement_2018">Fried and Flake (<a href="references.html#ref-fried_measurement_2018" role="doc-biblioref">2018</a>)</span></p></li>
+<li><p><span class="citation" data-cites="flake2020measurement">Flake and Fried (<a href="references.html#ref-flake2020measurement" role="doc-biblioref">2020</a>)</span></p></li>
 </ul></li>
 </ul></li>
 <li><p>Minden változónak legalább két különböző értéke kell legyen, hogy változónak nevezzük, különben egy konstans lenne</p></li>
 <li><p>A változóknak különböző típusai lehetnek, annak fényében milyen mérés eredményeit rögzítik</p></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-orbiter" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/data/orbiter.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.1: Mars Climate Orbiter 1999-ben a Mars atmoszférájába lépve darabokra hullott, mert két modulja közt a kommunikáció kudarcot vallot. Ennek oka, hogy az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat. Forrás: http://www.vitalstatistics.info/uploads/mars%20climate%20orbiter.jpg</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="hogyan-keletkeznek-az-adatok" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="hogyan-keletkeznek-az-adatok"><span class="header-section-number">3.2</span> Hogyan keletkeznek az adatok?</h2>
-<section id="mit-mérünk" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="mit-mérünk"><span class="header-section-number">3.2.1</span> Mit mérünk?</h3>
+<section id="hogyan-keletkeznek-az-adatok" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="hogyan-keletkeznek-az-adatok"><span class="header-section-number">2.2</span> Hogyan keletkeznek az adatok?</h2>
+<section id="mit-mérünk" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="mit-mérünk"><span class="header-section-number">2.2.1</span> Mit mérünk?</h3>
 <ul>
 <li><p>Elméleti konstruktumok vagy valós fizikai tulajdonságok</p>
 <ul>
@@ -304,8 +324,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="milyen-pontossággal-mérünk" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="milyen-pontossággal-mérünk"><span class="header-section-number">3.2.2</span> Milyen pontossággal mérünk?</h3>
+<section id="milyen-pontossággal-mérünk" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="milyen-pontossággal-mérünk"><span class="header-section-number">2.2.2</span> Milyen pontossággal mérünk?</h3>
 <ul>
 <li><p>Minden mérésben van mérési hiba</p></li>
 <li><p>Általában ezt akarjuk csökkenteni</p></li>
@@ -329,8 +349,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="a-változók-mérési-szintjei" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="a-változók-mérési-szintjei"><span class="header-section-number">3.2.3</span> A változók mérési szintjei</h3>
+<section id="a-változók-mérési-szintjei" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="a-változók-mérési-szintjei"><span class="header-section-number">2.2.3</span> A változók mérési szintjei</h3>
 <ul>
 <li><p>Hogyan viszonyulnak egymáshoz a változó értékei</p></li>
 <li><p>Folytonos vagy diszkrét változók</p>
@@ -400,8 +420,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="header-section-number">3.2.4</span> Mérési skálák hatása a statisztikai tesztek előfeltételeire</h3>
+<section id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="mérési-skálák-hatása-a-statisztikai-tesztek-előfeltételeire"><span class="header-section-number">2.2.4</span> Mérési skálák hatása a statisztikai tesztek előfeltételeire</h3>
 <ul>
 <li><p>A változók mérési szintjei meghatározzák, hogy milyen matematikai/statisztikai módszereket alkalmazhatunk rajtuk és így végül milyen kérdéseket tudunk általuk megválaszolni</p></li>
 <li><p>A változók mérési szintjei együtt járnak a mérési skálák <strong>granularitás</strong>ával</p>
@@ -428,8 +448,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="hogyan-struktúráljuk-az-adatokat" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="hogyan-struktúráljuk-az-adatokat"><span class="header-section-number">3.3</span> Hogyan struktúráljuk az adatokat?</h2>
+<section id="hogyan-struktúráljuk-az-adatokat" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="hogyan-struktúráljuk-az-adatokat"><span class="header-section-number">2.3</span> Hogyan struktúráljuk az adatokat?</h2>
 <ul>
 <li><p>Az adatok különböző formátumban léteznek</p>
 <ul>
@@ -453,8 +473,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="milyen-egy-jó-adattábla" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="milyen-egy-jó-adattábla"><span class="header-section-number">3.3.1</span> Milyen egy jó adattábla?</h3>
+<section id="milyen-egy-jó-adattábla" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="milyen-egy-jó-adattábla"><span class="header-section-number">2.3.1</span> Milyen egy jó adattábla?</h3>
 <ul>
 <li><p>“négyzetes”: a sorok és oszlopok következetes módon megfigyeléseket és változókat jelentenek</p></li>
 <li><p>A változónevek emberi és gépi olvasásra is alkalmasak</p>
@@ -481,7 +501,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Minden információ explicit adat (és nem formázási mód vagy komment)</p></li>
 <li><p>A hiányzó adat hiányzó cella, nem pedig pl. -999</p></li>
 <li><p>Minden megfigyelési egységnek (pl. résztvevő) egyedi azonosítója van</p></li>
-<li><p>Van hozzá “kódkönyv” (code book vagy data dictionary)</p>
+<li><p>Van hozzá <strong>“kódkönyv” (code book vagy data dictionary)</strong></p>
 <ul>
 <li><p>Ez szintén legyen ember és gépi olvasásra alkalmas</p></li>
 <li><p>Információ az adatok formátumáról (pl. adattábla x sorral és y változóval)</p></li>
@@ -501,8 +521,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="hogyan-dolgozzunk-az-adatokkal" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="hogyan-dolgozzunk-az-adatokkal"><span class="header-section-number">3.4</span> Hogyan dolgozzunk az adatokkal?</h2>
+<section id="hogyan-dolgozzunk-az-adatokkal" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="hogyan-dolgozzunk-az-adatokkal"><span class="header-section-number">2.4</span> Hogyan dolgozzunk az adatokkal?</h2>
 <ul>
 <li><p>Adatrendezés alapelvei</p>
 <ul>
@@ -523,23 +543,23 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Biztosíthatjuk vele, hogy nem követünk el adatkezelési hibákat</p></li>
 <li><p>Hogyan készítsünk jó adatkezelési tervet?</p>
 <ul>
-<li><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525" class="uri">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525</a></li>
+<li>Lásd: <span class="citation" data-cites="michener_ten_2015">Michener (<a href="references.html#ref-michener_ten_2015" role="doc-biblioref">2015</a>)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="adatkezelési-hibák" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="adatkezelési-hibák"><span class="header-section-number">3.5</span> Adatkezelési hibák</h2>
+<section id="adatkezelési-hibák" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="adatkezelési-hibák"><span class="header-section-number">2.5</span> Adatkezelési hibák</h2>
 <ul>
 <li><p>Általában arról hallunk a médiában, ha egy kutatót adahamisítással lepleznek le</p></li>
 <li><p>Kevesebb szó esik az adatkezelési hibákról, pedig feltételezhetően ezek sokkal gyakrabban fordulnak elő</p></li>
 <li><p>Az adatkezelési hibákat sokszor akaratlanul követik el a kutatók</p></li>
 <li><p>Az adatkezelési hibáknak lehetnek súlyos következményei</p>
 <ul>
-<li>megváltoztathatják például az adatokből levont köveztetéseket</li>
+<li>Megváltoztathatják például az adatokből levont köveztetéseket</li>
 </ul></li>
-<li><p>Reinhart &amp; Rogoff (2010) közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja</p>
+<li><p><span class="citation" data-cites="reinhart2010growth">Reinhart and Rogoff (<a href="references.html#ref-reinhart2010growth" role="doc-biblioref">2010</a>)</span> közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja</p>
 <ul>
 <li><p>Eredményeik az USA költségvetési tervébe is bekerült</p></li>
 <li><p>Később kiderült, hogy nem jelölték ki az összes adatsort az elemzés során, így a vizsgált adatoknak csak egy része került elemzésre</p></li>
@@ -552,12 +572,28 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Ezért fontos olyan adatkezelési rendszert kiépíteni, amely ezen hibák előfordulási valószínűségét csökkenti</p></li>
 <li><p>További olvasmányok:</p>
 <ul>
-<li><p><a href="https://journals.sagepub.com/doi/full/10.1177/25152459211045930" class="uri">https://journals.sagepub.com/doi/full/10.1177/25152459211045930</a></p></li>
-<li><p><a href="https://www.nber.org/papers/w15639" class="uri">https://www.nber.org/papers/w15639</a></p></li>
+<li><span class="citation" data-cites="kovacs_role_2021">Kovacs, Hoekstra, and Aczel (<a href="references.html#ref-kovacs_role_2021" role="doc-biblioref">2021</a>)</span></li>
 </ul></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-flake2020measurement" class="csl-entry" role="listitem">
+Flake, Jessica Kay, and Eiko I Fried. 2020. <span>“Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 3 (4): 456–65.
+</div>
+<div id="ref-fried_measurement_2018" class="csl-entry" role="listitem">
+Fried, Eiko I., and Jessica K. Flake. 2018. <span>“Measurement Matters.”</span> <em>APS Observer</em> 31.
+</div>
+<div id="ref-kovacs_role_2021" class="csl-entry" role="listitem">
+Kovacs, Marton, Rink Hoekstra, and Balazs Aczel. 2021. <span>“The Role of Human Fallibility in Psychological Research: A Survey of Mistakes in Data Management.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 4 (4): 25152459211045930.
+</div>
+<div id="ref-michener_ten_2015" class="csl-entry" role="listitem">
+Michener, William K. 2015. <span>“Ten Simple Rules for Creating a Good Data Management Plan.”</span> <em>PLoS Computational Biology</em> 11 (10): e1004525.
+</div>
+<div id="ref-reinhart2010growth" class="csl-entry" role="listitem">
+Reinhart, Carmen M, and Kenneth S Rogoff. 2010. <span>“Growth in a Time of Debt.”</span> <em>American Economic Review</em> 100 (2): 573–78.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -797,12 +833,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./scientific_method.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./descriptive_statistics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kvantitatív Alapok - 2&nbsp; Tudományos módszer</title>
+<title>Kvantitatív Alapok - 1&nbsp; Tudományos módszer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +50,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./data.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./scientific_method.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./scientific_method.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -107,62 +126,56 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./scientific_method.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing_means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,9 +194,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-tudomány-célja" id="toc-a-tudomány-célja" class="nav-link active" data-scroll-target="#a-tudomány-célja"><span class="header-section-number">2.1</span> A tudomány célja</a></li>
-  <li><a href="#az-empirikus-tudományos-folyamat-lépései" id="toc-az-empirikus-tudományos-folyamat-lépései" class="nav-link" data-scroll-target="#az-empirikus-tudományos-folyamat-lépései"><span class="header-section-number">2.2</span> Az empirikus tudományos folyamat lépései</a></li>
-  <li><a href="#a-statisztika-szerepe-a-tudományban" id="toc-a-statisztika-szerepe-a-tudományban" class="nav-link" data-scroll-target="#a-statisztika-szerepe-a-tudományban"><span class="header-section-number">2.3</span> A statisztika szerepe a tudományban</a></li>
+  <li><a href="#a-tudomány-célja" id="toc-a-tudomány-célja" class="nav-link active" data-scroll-target="#a-tudomány-célja"><span class="header-section-number">1.1</span> A tudomány célja</a></li>
+  <li><a href="#az-empirikus-tudományos-folyamat-lépései" id="toc-az-empirikus-tudományos-folyamat-lépései" class="nav-link" data-scroll-target="#az-empirikus-tudományos-folyamat-lépései"><span class="header-section-number">1.2</span> Az empirikus tudományos folyamat lépései</a></li>
+  <li><a href="#a-statisztika-szerepe-a-tudományban" id="toc-a-statisztika-szerepe-a-tudományban" class="nav-link" data-scroll-target="#a-statisztika-szerepe-a-tudományban"><span class="header-section-number">1.3</span> A statisztika szerepe a tudományban</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></h1>
 </div>
 
 
@@ -207,8 +220,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="a-tudomány-célja" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="a-tudomány-célja"><span class="header-section-number">2.1</span> A tudomány célja</h2>
+<section id="a-tudomány-célja" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="a-tudomány-célja"><span class="header-section-number">1.1</span> A tudomány célja</h2>
 <ul>
 <li><p>A tudomány célja, hogy általános magyarázotokkal szolgáljon a minket körülvevő világról</p></li>
 <li><p>A tudományos magyarázatok leegyszerüsített formában <strong>írják le</strong> a valóságot</p></li>
@@ -227,8 +240,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="az-empirikus-tudományos-folyamat-lépései" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="az-empirikus-tudományos-folyamat-lépései"><span class="header-section-number">2.2</span> Az empirikus tudományos folyamat lépései</h2>
+<section id="az-empirikus-tudományos-folyamat-lépései" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="az-empirikus-tudományos-folyamat-lépései"><span class="header-section-number">1.2</span> Az empirikus tudományos folyamat lépései</h2>
 <ol type="1">
 <li><p>Általános kérdésfelvetés</p>
 <ul>
@@ -274,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Van pár általános szempont, amelyeket módszertantól függetlenül figyelembe kell vennünk és amelyek befolyásolják az eredményekből levontható következtetéseket</p>
 <ul>
 <li><p>Minta felépítése és mintaméret</p></li>
-<li><p>Mérőeszköz és annak pontossága, megbízhatósága, és granularitása</p></li>
+<li><p>Mérőeszköz és annak pontossága, megbízhatósága, validitása és granularitása</p></li>
 </ul></li>
 <li><p>Ahhoz hogy oksági viszonyt feltételezzünk két jelenség közt nem feletkezhetünk meg az adatgyűjtés módjáról</p></li>
 <li><p>Megfigyeléses vizsgálatoknál nem tudjuk biztosan kijelenteni hogy két változó között oksági viszony van</p>
@@ -339,8 +352,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ol>
 </section>
-<section id="a-statisztika-szerepe-a-tudományban" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="a-statisztika-szerepe-a-tudományban"><span class="header-section-number">2.3</span> A statisztika szerepe a tudományban</h2>
+<section id="a-statisztika-szerepe-a-tudományban" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="a-statisztika-szerepe-a-tudományban"><span class="header-section-number">1.3</span> A statisztika szerepe a tudományban</h2>
 <ul>
 <li><p>A komplex valóság egyszerüsített leírása, ami egyúttal azt is elmondja mennyire lehetünk bizonytalanok ebben a tudásban</p></li>
 <li><p>Miért van szükség a statisztikára?</p>
@@ -379,16 +392,24 @@ ul.task-list li input[type="checkbox"] {
 <li>Hanem evidenciát tud felmutatni egy hipotézis mellett az eddigi megfigyelések fényében, de a bizonytalanságot nem tudjuk nullára csökkenteni</li>
 </ul></li>
 </ul></li>
-</ul>
-<p>A statisztika a kompromisszomkról szól</p>
+<li><p>A statisztika a kompromisszomkról szól</p>
 <ul>
 <li><p>Nincs egyetlen objektív módszer a statisztikában</p></li>
+<li><p>A kutató egy kutatás megtervezése során rengeteg olyan döntési helyzettel találkozik, ahol nincs objektíven helyes döntés</p></li>
+<li><p>Azt, hogy melyik útat választja azonban komoly hatással lehet a kutatásból levont következtetésekre</p>
+<ul>
+<li><p>A döntési pontokat sokszor a kutatói szabadságfok fogalmával írjuk le</p>
+<ul>
+<li>Lásd: <span class="citation" data-cites="wicherts_degrees_2016">Wicherts et al. (<a href="references.html#ref-wicherts_degrees_2016" role="doc-biblioref">2016</a>)</span></li>
+</ul></li>
+</ul></li>
 <li><p>Mindig a vizsgált kérdés, az adatgyűjtést és elemzést korlátozó tényezők függvényében kell megtalálnunk a legmeggyőzőbb elemzési utat</p>
 <ul>
 <li><p>Ahhoz, hogy a választott elemzési út ténylegesen meggyőző legyen transzparensen közölnünk kell analitikus döntéséinket és a mellette szóló érveket</p></li>
 <li><p>Ez az alapfeltétele az analitikus megismételhetőségnek: más kutató ugyanazokat az adatokat vizsgálva megegyező analatikus úton ugyanarra az eredményre érkezik</p>
 <ul>
 <li>Ez sajnos ma a tudományban nem magától értetődő!</li>
+<li>Lásd: <span class="citation" data-cites="hardwicke_analytic_2021">Hardwicke et al. (<a href="references.html#ref-hardwicke_analytic_2021" role="doc-biblioref">2021</a>)</span></li>
 </ul></li>
 </ul></li>
 <li><p>Több valid elemzési út is lehet ugyanannak a kérdésnek a vizsgálatára</p>
@@ -396,14 +417,18 @@ ul.task-list li input[type="checkbox"] {
 <li><p>A szakmai közösség feladata ezeknek a felülbírálata</p></li>
 <li><p>Lásd: multi analyst kutatások</p></li>
 </ul></li>
-<li><p>A tudomány iteratív módon lépésenként épül fel</p>
-<ul>
-<li><p>Lehetséges, hogy a ma még megbízhatónak számító elemzési utat új eredmények fényében elvetjük</p></li>
-<li><p>És ezzel nincs baj!</p></li>
 </ul></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-hardwicke_analytic_2021" class="csl-entry" role="listitem">
+Hardwicke, Tom E., Manuel Bohn, Kyle MacDonald, Emily Hembacher, Michèle B. Nuijten, Benjamin N. Peloquin, Benjamin E. DeMayo, Bria Long, Erica J. Yoon, and Michael C. Frank. 2021. <span>“Analytic Reproducibility in Articles Receiving Open Data Badges at the Journal <span>Psychological</span> <span>Science</span>: <span>An</span> Observational Study.”</span> <em>Royal Society Open Science</em> 8 (1): 201494.
+</div>
+<div id="ref-wicherts_degrees_2016" class="csl-entry" role="listitem">
+Wicherts, Jelte M., Coosje LS Veldkamp, Hilde EM Augusteijn, Marjan Bakker, Robbie Van Aert, and Marcel ALM Van Assen. 2016. <span>“Degrees of Freedom in Planning, Running, Analyzing, and Reporting Psychological Studies: <span>A</span> Checklist to Avoid p-Hacking.”</span> <em>Frontiers in Psychology</em>, 1832.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -642,13 +667,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></span>
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Előszó</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

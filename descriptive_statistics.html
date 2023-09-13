@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kvantitatív Alapok - 4&nbsp; Leíró statisztika</title>
+<title>Kvantitatív Alapok - 3&nbsp; Leíró statisztika</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive_statistics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./descriptive_statistics.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -107,62 +126,56 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./scientific_method.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comparing_means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,18 +194,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#értékek-eloszlása" id="toc-értékek-eloszlása" class="nav-link active" data-scroll-target="#értékek-eloszlása"><span class="header-section-number">4.1</span> Értékek eloszlása</a></li>
-  <li><a href="#statisztikai-modellek" id="toc-statisztikai-modellek" class="nav-link" data-scroll-target="#statisztikai-modellek"><span class="header-section-number">4.2</span> Statisztikai modellek</a>
+  <li><a href="#értékek-eloszlása" id="toc-értékek-eloszlása" class="nav-link active" data-scroll-target="#értékek-eloszlása"><span class="header-section-number">3.1</span> Értékek eloszlása</a>
   <ul class="collapse">
-  <li><a href="#a-legegyszerűbb-statisztika-modell-az-átlag" id="toc-a-legegyszerűbb-statisztika-modell-az-átlag" class="nav-link" data-scroll-target="#a-legegyszerűbb-statisztika-modell-az-átlag"><span class="header-section-number">4.2.1</span> A legegyszerűbb statisztika modell, az átlag</a></li>
-  <li><a href="#modell-illeszkedésének-a-vizsgálata" id="toc-modell-illeszkedésének-a-vizsgálata" class="nav-link" data-scroll-target="#modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">4.2.2</span> Modell illeszkedésének a vizsgálata</a></li>
-  <li><a href="#mitől-jó-egy-statisztikai-modell" id="toc-mitől-jó-egy-statisztikai-modell" class="nav-link" data-scroll-target="#mitől-jó-egy-statisztikai-modell"><span class="header-section-number">4.2.3</span> Mitől jó egy statisztikai modell?</a></li>
+  <li><a href="#gyakorisági-eloszlás" id="toc-gyakorisági-eloszlás" class="nav-link" data-scroll-target="#gyakorisági-eloszlás"><span class="header-section-number">3.1.1</span> Gyakorisági eloszlás</a></li>
   </ul></li>
-  <li><a href="#összesítő-statisztikák" id="toc-összesítő-statisztikák" class="nav-link" data-scroll-target="#összesítő-statisztikák"><span class="header-section-number">4.3</span> Összesítő statisztikák</a>
+  <li><a href="#statisztikai-modellek" id="toc-statisztikai-modellek" class="nav-link" data-scroll-target="#statisztikai-modellek"><span class="header-section-number">3.2</span> Statisztikai modellek</a>
   <ul class="collapse">
-  <li><a href="#középértékek" id="toc-középértékek" class="nav-link" data-scroll-target="#középértékek"><span class="header-section-number">4.3.1</span> Középértékek</a></li>
-  <li><a href="#szélsőértékek" id="toc-szélsőértékek" class="nav-link" data-scroll-target="#szélsőértékek"><span class="header-section-number">4.3.2</span> Szélsőértékek</a></li>
-  <li><a href="#helyzetmutatók" id="toc-helyzetmutatók" class="nav-link" data-scroll-target="#helyzetmutatók"><span class="header-section-number">4.3.3</span> Helyzetmutatók</a></li>
+  <li><a href="#a-legegyszerűbb-statisztika-modell-az-átlag" id="toc-a-legegyszerűbb-statisztika-modell-az-átlag" class="nav-link" data-scroll-target="#a-legegyszerűbb-statisztika-modell-az-átlag"><span class="header-section-number">3.2.1</span> A legegyszerűbb statisztika modell, az átlag</a></li>
+  <li><a href="#modell-illeszkedésének-a-vizsgálata" id="toc-modell-illeszkedésének-a-vizsgálata" class="nav-link" data-scroll-target="#modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">3.2.2</span> Modell illeszkedésének a vizsgálata</a></li>
+  <li><a href="#mitől-jó-egy-statisztikai-modell" id="toc-mitől-jó-egy-statisztikai-modell" class="nav-link" data-scroll-target="#mitől-jó-egy-statisztikai-modell"><span class="header-section-number">3.2.3</span> Mitől jó egy statisztikai modell?</a></li>
+  </ul></li>
+  <li><a href="#összesítő-statisztikák" id="toc-összesítő-statisztikák" class="nav-link" data-scroll-target="#összesítő-statisztikák"><span class="header-section-number">3.3</span> Összesítő statisztikák</a>
+  <ul class="collapse">
+  <li><a href="#középértékek" id="toc-középértékek" class="nav-link" data-scroll-target="#középértékek"><span class="header-section-number">3.3.1</span> Középértékek</a></li>
+  <li><a href="#szélsőértékek" id="toc-szélsőértékek" class="nav-link" data-scroll-target="#szélsőértékek"><span class="header-section-number">3.3.2</span> Szélsőértékek</a></li>
+  <li><a href="#helyzetmutatók" id="toc-helyzetmutatók" class="nav-link" data-scroll-target="#helyzetmutatók"><span class="header-section-number">3.3.3</span> Helyzetmutatók</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -202,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></h1>
 </div>
 
 
@@ -218,10 +234,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <ul>
-<li><p>Célja a minta összefoglalása</p>
+<li><p>Az órán a statisztikának két fő ágával foglalkozunk, a leíró és a követeztetéses statisztikával</p></li>
+<li><p>A leíró statisztikának a célja a minta összefoglalása</p>
 <ul>
 <li>Gyakoriságok, százalékok, csoport átlagok és szórások, stb. által</li>
 </ul></li>
+<li><p>A következtetéses statisztika célja a minta alapján következtetéseket tenni a populációra</p></li>
 <li><p>Az adatokkal való munka során az adatok valamilyen formában történő <strong>összesítését</strong> végezzük</p></li>
 <li><p>Erre azért van szükség, mert az emberek nem képesek a nyers adatokból jól következtetéseket levonni</p></li>
 <li><p>A folyamat során elkerülhetetlenül elveszik valamennyi információ, ám lehetőségünk nyílik átlátni a részletek mögött rejlő összefüggéséket és általánosítani azokból</p></li>
@@ -231,8 +249,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>És az adatok milyenségétől (például az egyes változók típusától)</p></li>
 </ul></li>
 </ul>
-<section id="értékek-eloszlása" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="értékek-eloszlása"><span class="header-section-number">4.1</span> Értékek eloszlása</h2>
+<section id="értékek-eloszlása" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="értékek-eloszlása"><span class="header-section-number">3.1</span> Értékek eloszlása</h2>
 <ul>
 <li><p>Az adatok leírásának egyik módja az <strong>eloszlás</strong>uk vizsgálata</p>
 <ul>
@@ -242,16 +260,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Például: diszkrét változó esetén hányan választották az egyes lehetséges opciókat</li>
 </ul></li>
-<li><p>Az egyik gyakran vizsgált eloszlás fajta a <strong>gyakorisági eloszlás</strong></p>
+</ul>
+<section id="gyakorisági-eloszlás" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="gyakorisági-eloszlás"><span class="header-section-number">3.1.1</span> Gyakorisági eloszlás</h3>
 <ul>
 <li><p>A gyakorisági eloszlás megmondja, hogy egy változó lehetséges értékei milyen gyakran fordulnak elő a mintánkban</p></li>
 <li><p>Diszkrét változó gyakorisági eloszlása</p>
 <ul>
-<li><p>Példa</p>
-<ul>
-<li>Példa…</li>
-</ul></li>
-<li><p>Ez a táblázat az adatok abszolút frekvenciáját mutatja meg</p></li>
+<li><p>Az adatok abszolút gyakoriságát egy összesítő táblázatba is foglalhatjuk</p></li>
 <li><p>Ahhoz, hogy meg tudjuk mondani a gyakoriságok között különbség valóban lényeges-e hasznos lehet megtekinteni a relatív frekvenciájukat (sűrűségüket)</p></li>
 <li><p>Ehhez minden lehetséges értékhez el kell osztani az abszolút gyakoriságot a változóban található összes érték számával</p></li>
 </ul></li>
@@ -271,22 +287,89 @@ ul.task-list li input[type="checkbox"] {
 <li>De az egyes értékek nem jelennek meg külön, így sok adat gyakoriságát egyszerre tudjuk ábrázolni</li>
 </ul></li>
 </ul></li>
+</ul>
+<section id="a-normál-eloszlás" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="a-normál-eloszlás"><span class="header-section-number">3.1.1.1</span> A normál eloszlás</h4>
+<ul>
+<li><p>A megfigyelt adatokban lévő változók eloszlását empirikus eloszlásnak nevezzük</p></li>
+<li><p>Azonban vannak nevezetes elméleti eloszlások, amelyknek a paramétereit már ismerjük (például a normál eloszlás)</p></li>
+<li><p>Mivel ezen eloszlások paramétereit ismerjük, sokszor ezeket az eloszlásokat használjuk fel arra, hogy következtetéseket vonjunk le a populációra a mintánk alapján</p></li>
+<li><p>Ennek előfeltétele azonban, hogy a mintánkban lévő empirikus eloszlások kellőképp hasonlítsanak a nevezetes eloszlásokhoz</p></li>
+<li><p>Az elméleti normál eloszlásnak paraméterei</p>
+<ul>
+<li><p>Egy csúcsa van, az átlagnál, ami 0</p></li>
+<li><p>A szórása, ami az adatpontok átlag körüli szóródását jelöli 1</p>
+<ul>
+<li>Lásd: <a href="#fig-std">Figure&nbsp;<span>3.1</span></a> (<span class="citation" data-cites="field_discovering_2017">Field, Miles, and Field (<a href="references.html#ref-field_discovering_2017" role="doc-biblioref">2017</a>)</span>)</li>
 </ul></li>
-<li><p><strong>Kumulatív gyakorisági eloszlás</strong></p>
+<li><p>Az eloszlás szimmetrikus</p>
+<ul>
+<li>Az ettől való eltérést a ferdeséggel és csúcsossággal jelöljük</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-std" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/std.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Az ábrán két gyakorisági eloszlás látható amelyeknek átlaga megegyezik, de szórásuk különböző. <span class="citation" data-cites="field_discovering_2017">Field, Miles, and Field (<a href="references.html#ref-field_discovering_2017" role="doc-biblioref">2017</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ferdeség-és-csúcsosság" class="level4" data-number="3.1.1.2">
+<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="ferdeség-és-csúcsosság"><span class="header-section-number">3.1.1.2</span> Ferdeség és csúcsosság</h4>
+<ul>
+<li><p>Az elméleti normál eloszlás ferdesége 0</p></li>
+<li><p>Az ettől való eltérés lehet pozitív és negatív irányú attól függően, hogy az eloszlás az X tengely mentén melyik irányba tolódik el</p></li>
+<li><p>Ha a változónk ferdesége nagyobb 0-nál, akkor az eloszlás nem szimmetrikus, tehát eltér az elméleti normál eloszlástól</p></li>
+<li><p>Lásd: <a href="#fig-skewness">Figure&nbsp;<span>3.2</span></a></p></li>
+<li><p>Az elméleti normál eloszlás csúcsossága 0</p></li>
+<li><p>Az empirikus eloszlásunk ehhez képest lehet csúcsos vagy lapos</p></li>
+<li><p>Lásd: <a href="#fig-kurtosis">Figure&nbsp;<span>3.3</span></a></p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-skewness" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/skewness.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Az ábrán két gyakorisági eloszlás látható különböző ferdeséggel. Hajdú Nándor ábrája.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/kurtosis.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Az ábrán két gyakorisági eloszlás látható különböző csúcsossággal. Hajdú Nándor ábrája.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="kumulatív-gyakorisági-eloszlás" class="level4" data-number="3.1.1.3">
+<h4 data-number="3.1.1.3" class="anchored" data-anchor-id="kumulatív-gyakorisági-eloszlás"><span class="header-section-number">3.1.1.3</span> Kumulatív gyakorisági eloszlás</h4>
 <ul>
 <li><p>Azon értékek gyakorisága amelyek akkor vagy kevesebbek, mint az adott határérték, amit vizsgálunk</p></li>
 <li><p>Kiszámolásához összeadjuk a hátárétrék gyakoriságát és az összes nála kisebb érték gyakoriságát</p></li>
 <li><p>Értéke soha nem csökkenhet</p></li>
-<li><p>példa</p></li>
-</ul></li>
 </ul>
 </section>
-<section id="statisztikai-modellek" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="statisztikai-modellek"><span class="header-section-number">4.2</span> Statisztikai modellek</h2>
+</section>
+</section>
+<section id="statisztikai-modellek" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="statisztikai-modellek"><span class="header-section-number">3.2</span> Statisztikai modellek</h2>
 <ul>
 <li><p>Leegyszerüsített reprezentációja az adatoknak</p></li>
 <li><p>Leírja az adatok struktúráját</p></li>
-<li><p>Mindig van benne hiba faktor, kihagy részleteket</p></li>
+<li><p>Mindig van benne hiba faktor, kihagy részleteket</p>
+<ul>
+<li>Lásd: <a href="#fig-bridge">Figure&nbsp;<span>3.4</span></a> (<span class="citation" data-cites="field_discovering_2017">Field, Miles, and Field (<a href="references.html#ref-field_discovering_2017" role="doc-biblioref">2017</a>)</span>)</li>
+</ul></li>
 <li><p><em>“All models are wrong but some are useful”</em> (George Box)</p></li>
 <li><p>A statisztikai modellre gondolhatunk úgy is, mint egy elméletre, amely leírja hogyan keletkeztek az adatok</p></li>
 <li><p>Célunk: olyan modellt alkossunk, ami hatékonyan és pontosan írja le az adatok keletkezésének a módját</p>
@@ -296,18 +379,28 @@ ul.task-list li input[type="checkbox"] {
 <li>Minél jobban illeszkedik a modell az adatokhoz (a valósághoz), annál megbízhatóbbak a modell által létrehozott predikciók</li>
 </ul></li>
 </ul></li>
-</ul>
-<p>Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tökéletesen reprezentálni a valóságot</p>
+<li><p>Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tökéletesen reprezentálni a valóságot</p>
 <ul>
-<li><p>lesz hiba a modell által prediktált értékek és az egyes megfigyelések között</p></li>
+<li>Lesz hiba a modell által prediktált értékek és az egyes megfigyelések között</li>
+</ul></li>
 <li><p>Adat = modell + hiba</p>
 <ul>
 <li><p><strong>Modell:</strong> az értékek, amit az elméletünk alapján elvárunk</p></li>
 <li><p><strong>Hiba:</strong> a modell által prediktált értékek és a valós adatpontok közötti különbség</p></li>
 </ul></li>
 </ul>
-<section id="a-legegyszerűbb-statisztika-modell-az-átlag" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="a-legegyszerűbb-statisztika-modell-az-átlag"><span class="header-section-number">4.2.1</span> A legegyszerűbb statisztika modell, az átlag</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-bridge" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/bridge.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Az építészetben is használnak modelleket arra, hogy bizonyos események bekövetkezését prediktálják általuk. Az ábrán több különböző modellt láthatunk egy hídra. A modell minél pontosabban írja le a valóságot annál jobb predikciókat lehet általa tenni arra, hogy a megépített híd megbírja-e majd az átmenő forgalmat.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="a-legegyszerűbb-statisztika-modell-az-átlag" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="a-legegyszerűbb-statisztika-modell-az-átlag"><span class="header-section-number">3.2.1</span> A legegyszerűbb statisztika modell, az átlag</h3>
 <ul>
 <li><p>Minden megfigyelésre ugyanazt az értéket prediktálja</p></li>
 <li><p>Példa</p>
@@ -316,11 +409,22 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Tegyük fel, hogy 5 tanárt kérdezünk meg</p></li>
 <li><p>Az átlag: (1 + 2 + 3 + 3 + 4)/5 = 2.6</p></li>
 <li><p>Ebből is látszik, hogy az átlag egy statisztikai modell, hiszen egy hipotetikus érték, nem megfigyelhető a valóságban</p></li>
+<li><p>Lásd: <a href="#fig-mean">Figure&nbsp;<span>3.5</span></a> (<span class="citation" data-cites="field_discovering_2017">Field, Miles, and Field (<a href="references.html#ref-field_discovering_2017" role="doc-biblioref">2017</a>)</span>)</p></li>
 </ul></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-mean" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/mean.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: Az ábrán az öt megkérdezett statisztika oktatóhoz tartozó adatok láthatók és az átlag. Az X tengely az egyes statisztika oktatókat jelöli, míg az Y tengely az oktatók barátainak a számát. Az X tengellyel párhuzamos vonal az átlag. Az átlag által prediktált értékek és a valós értékek közti különbséget a szaggatott vonalak jelölik. Ez a hiba.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="modell-illeszkedésének-a-vizsgálata" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">4.2.2</span> Modell illeszkedésének a vizsgálata</h3>
+<section id="modell-illeszkedésének-a-vizsgálata" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="modell-illeszkedésének-a-vizsgálata"><span class="header-section-number">3.2.2</span> Modell illeszkedésének a vizsgálata</h3>
 <ul>
 <li><p>Hogyan tudjuk megvizsgálni, hogy mennyire jól illeszkedik az átlag, mint modell, az adatokra?</p>
 <ul>
@@ -382,15 +486,26 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Mégis látható, hogy az egyik oktatónál a modell jobban illeszkedik az adatokhoz, tehát az átlag pontos reprezentációja az adatoknak</p>
 <ul>
 <li>Ezt mutatja, hogy a szórás 0.55 az átlaghoz mérten kicsi</li>
+<li>Lásd: <a href="#fig-std_comparison">Figure&nbsp;<span>3.6</span></a> (<span class="citation" data-cites="field_discovering_2017">Field, Miles, and Field (<a href="references.html#ref-field_discovering_2017" role="doc-biblioref">2017</a>)</span>)</li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-std_comparison" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/std_comparison.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Az ábrán két oktató 5 órán keresztül mért teljesítménye látható. Az X tengelyen az órák láthatók, míg az Y tengelyen a teljesítményük. Az első oktatónak a teljesítménye az 5 órán keresztül konzisztensebb volt, mint a második oktatónak. Az átlag teljesítményük azonban azonos.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="mitől-jó-egy-statisztikai-modell" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="mitől-jó-egy-statisztikai-modell"><span class="header-section-number">4.2.3</span> Mitől jó egy statisztikai modell?</h3>
+<section id="mitől-jó-egy-statisztikai-modell" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="mitől-jó-egy-statisztikai-modell"><span class="header-section-number">3.2.3</span> Mitől jó egy statisztikai modell?</h3>
 <ul>
 <li><p>1) kicsi a hiba</p>
 <ul>
@@ -416,18 +531,29 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>ha új adatokra illesztjük a modellt, azokat is jól fogja prediktálni</li>
 </ul></li>
+<li><p>Lásd: <a href="#fig-good_model">Figure&nbsp;<span>3.7</span></a> (<span class="citation" data-cites="poldrack_statistical_2018">Poldrack (<a href="references.html#ref-poldrack_statistical_2018" role="doc-biblioref">2018</a>)</span>)</p></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-good_model" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/good_model.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.7: Az ábrán 3 különböző modell illeszkedést láthatunk. Az A ábrán jól illeszkedik a lineáris modell az adatokra és az adatokban lévő variancia kicsi. A B ábrán szintén lineáris összefüggést láthatunk, ám a modell hibája nagyobb, mint az A ábrán, az adatokban lévő nagy variancia miatt. A C ábrán egy lineáris modellt illesztettünk az adatokra, ám az adatok nem lineáris összefüggésről árulkodnak. A modell így rosszul illeszkedik.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="összesítő-statisztikák" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="összesítő-statisztikák"><span class="header-section-number">4.3</span> Összesítő statisztikák</h2>
+<section id="összesítő-statisztikák" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="összesítő-statisztikák"><span class="header-section-number">3.3</span> Összesítő statisztikák</h2>
 <ul>
 <li><p><strong>Gyakoriság (frequency):</strong> a megfigyelések száma (db). Pl. az előadást megnéző hallgatók száma.</p></li>
 <li><p><strong>Összeg (summary):</strong> egy változó összes értékének összeadásával keletkező érték. Pl. covid megbetegedések száma.</p></li>
 <li><p><strong>Arány (proportion):</strong> a megfigyelések száma az összes megfigyeléshez képest (Pl. 54 % vagy 0.54 vagy .54). pl. biciklisek aránya az összes közlekedőhöz képest az Andrássy úton</p></li>
 </ul>
-<section id="középértékek" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="középértékek"><span class="header-section-number">4.3.1</span> Középértékek</h3>
+<section id="középértékek" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="középértékek"><span class="header-section-number">3.3.1</span> Középértékek</h3>
 <ul>
 <li><p><strong>Matematikai átlag (mean, average):</strong> Az értékek összege elosztva az értékek számával</p>
 <ul>
@@ -446,6 +572,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>A hibák abszolút értékének összegét csökkenti</p></li>
 <li><p>Ezért kevésbé érzékeny, nincs négyzetre emelés</p></li>
+<li><p>Folytonos változó értékeit rang transzformálhatjuk, ha a kiugró értékek torzítanak</p>
+<ul>
+<li><p>Rang transzformáció esetén különböző módszerek vannak arra, hogy milyen értékeket adjunk a sorba álltítás során két megegyező értéknek</p>
+<ul>
+<li><p>Például vehetjük a rangsorrend átlagát</p></li>
+<li><p>Ebben az esetben mind a két hatodik helyre kerülő érték 6.5-ös rang értéket vesz fel</p></li>
+<li><p>Lásd: <a href="#fig-rank">Figure&nbsp;<span>3.8</span></a></p></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><p><strong>Módusz (mode):</strong> A leggyakrabban előforduló érték</p>
@@ -453,9 +588,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Nominális változónál használjuk</li>
 </ul></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-rank" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/descriptive_statistics/rank.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.8: A felső ábrán a folytonos változó eloeszlása látható rang transzformáció előtt. A kék vonal az átlagot a piros a mediánt jelöli. Az alsó ábrán ugyanaz az eloszlás látható rang transzformáció után. Ebben az esetben az átlag és a medián megegyeznek. Nagy Tamás ábrája.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="szélsőértékek" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="szélsőértékek"><span class="header-section-number">4.3.2</span> Szélsőértékek</h3>
+<section id="szélsőértékek" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="szélsőértékek"><span class="header-section-number">3.3.2</span> Szélsőértékek</h3>
 <ul>
 <li><p><strong>Minimum:</strong> a legkisebb érték</p></li>
 <li><p><strong>Maximum:</strong> a legnagyobb érték</p></li>
@@ -475,18 +620,26 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="helyzetmutatók" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="helyzetmutatók"><span class="header-section-number">4.3.3</span> Helyzetmutatók</h3>
+<section id="helyzetmutatók" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="helyzetmutatók"><span class="header-section-number">3.3.3</span> Helyzetmutatók</h3>
 <ul>
-<li><p>Kvantilisek: vágási pontok, amelyek mentén a sorba rendezett adatokat meghatározott számú részre bonthatjuk</p></li>
-<li><p>Pl. kvartilisek: Az adatokat négy egyenlő részre osztó három pont (ld. még decilis, percentilis)</p></li>
-<li><p>Interkvartilis tartomány (IQR): A felső (75%) alsó (25%) kvartilis és az alsó kvartilis különbsége, az adatok középső 50%-a&nbsp;</p>
+<li><p><strong>Kvantilisek:</strong> vágási pontok, amelyek mentén a sorba rendezett adatokat meghatározott számú részre bonthatjuk</p></li>
+<li><p><strong>Kvartilisek:</strong> Az adatokat négy egyenlő részre osztó három pont (ld. még decilis, percentilis)</p></li>
+<li><p><strong>Interkvartilis tartomány (IQR)</strong>: A felső (75%) alsó (25%) kvartilis és az alsó kvartilis különbsége, az adatok középső 50%-a&nbsp;</p>
 <ul>
 <li>Általában ordinális adatok összesítésénél szoktuk használni</li>
 </ul></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-field_discovering_2017" class="csl-entry" role="listitem">
+Field, Andy, Jeremy Miles, and Zoe Field. 2017. <em>Discovering Statistics Using <span>R</span></em>. W. Ross MacDonald School Resource Services Library.
+</div>
+<div id="ref-poldrack_statistical_2018" class="csl-entry" role="listitem">
+Poldrack, Russell A. 2018. <span>“Statistical Thinking for the 21st Century.”</span>
+</div>
+</div>
 </section>
 </section>
 
@@ -727,12 +880,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./visualization.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
