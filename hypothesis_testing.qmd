@@ -1,4 +1,4 @@
-# Null szignifikancia hipotézis tesztelés
+# Null hipotézis szignifikancia tesztelés
 
 -   Következtetéses statisztika célja a populációra való következtetés a minta alapján
 
@@ -384,7 +384,7 @@ knitr::include_graphics(here::here("figures", "hypothesis_testing", "samplesize.
 
 -   A szignifikancia küszöbhöz közeli nem szignifikáns p-értékeket sokszor marginálisan szignifikáns értékeknek nevezik, vagy szignifikáns tendenciáról beszélnek
 
--   @rosnow1989definition híres mondása: \"Surely God loves the .06 nearly as much as the .05\" (p. 1277)
+-   @rosnow1989definition híres mondása: "Surely God loves the .06 nearly as much as the .05" (p. 1277)
 
 -   Az, hogy az alpha értékhez közelítő p-érték annak a jele, hogy a hatás igaz lehet, csak akkor áll fent, ha a hatás jelen van a populációban, míg ha nincs jelen, a p-értékek uniform eloszláslást követnek. Így körkörös érvelésbe kerülünk: a választ, magával a válasszal indokoljuk. 
 
@@ -394,7 +394,7 @@ knitr::include_graphics(here::here("figures", "hypothesis_testing", "samplesize.
 
 -   A kutatók sokszor evidenciaként tekintenek a p-értékre.
 
--   Az is motiválhatja a kutatókat arra, hogy ilyen p-értékek esetén, próbáljanak értelmezésükben \"közeledni\" a szignifikáns p-értékhez, hogy az NHST keretben nemszignifikáns p-érték esetén nem lehet levonni semmilyen következtetést, így kutatásuk inkonkluzív marad.
+-   Az is motiválhatja a kutatókat arra, hogy ilyen p-értékek esetén, próbáljanak értelmezésükben "közeledni" a szignifikáns p-értékhez, hogy az NHST keretben nemszignifikáns p-érték esetén nem lehet levonni semmilyen következtetést, így kutatásuk inkonkluzív marad.
 
 ### Ha nagy a p értékem akkor igaz, hogy nem létezik a hatás?
 
@@ -404,7 +404,7 @@ knitr::include_graphics(here::here("figures", "hypothesis_testing", "samplesize.
 
 -   Többféle téves értelmezést találtunk az esetek 72%-ában
 
-    -   Abban is volt különbség, hogy a mintára (⅔) (\"Nem volt különbség a résztvevők között a intervenciós és a kontroll csoportban\") vagy a populációra (⅓) (\"Nem volt hatása az intervenciónak\") fogalmazták meg az állítást, hogy nincs jelen a hatás az eredményük alapján
+    -   Abban is volt különbség, hogy a mintára (⅔) ("Nem volt különbség a résztvevők között a intervenciós és a kontroll csoportban") vagy a populációra (⅓) ("Nem volt hatása az intervenciónak") fogalmazták meg az állítást, hogy nincs jelen a hatás az eredményük alapján
 
 -   Ha nem szignifikáns eredményt kapunk, akkor nem tudhatjuk, hogy csak nem volt elég érzékeny a mérőeszközünk, vagy valóban nem létezik a hatás. Így csak annyit mondhatunk, hogy nem utasíthatjuk el a null hipotézist.
 
