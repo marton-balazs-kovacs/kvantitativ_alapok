@@ -20,19 +20,23 @@
 
     -   Az adatok létrejöttével a kutatásmódszertan foglalkozik
 
-    -   Példa:
-
-        -   1999-ben a Mars Climate Orbiter a Mars atmoszférájába lépve darabokra hullott, mert az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat
+    -   Lásd: @fig-orbiter
 
     -   További olvasmányok:
 
-        -   <https://www.psychologicalscience.org/observer/measurement-matters>
+        -   @fried_measurement_2018
 
-        -   <https://journals.sagepub.com/doi/full/10.1177/2515245920952393>
+        -   @flake2020measurement
 
 -   Minden változónak legalább két különböző értéke kell legyen, hogy változónak nevezzük, különben egy konstans lenne
 
 -   A változóknak különböző típusai lehetnek, annak fényében milyen mérés eredményeit rögzítik
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "50%"}
+#| label: fig-orbiter
+#| fig-cap: "Mars Climate Orbiter 1999-ben a Mars atmoszférájába lépve darabokra hullott, mert két modulja közt a kommunikáció kudarcot vallot. Ennek oka, hogy az egyik modulja angolszász mértékegységeket használt, míg a másik metrikusat. Forrás: http://www.vitalstatistics.info/uploads/mars%20climate%20orbiter.jpg"
+knitr::include_graphics(here::here("figures", "data", "orbiter.jpg"))
+```
 
 ## Hogyan keletkeznek az adatok?
 
@@ -280,7 +284,7 @@
 
 -   Minden megfigyelési egységnek (pl. résztvevő) egyedi azonosítója van
 
--   Van hozzá "kódkönyv" (code book vagy data dictionary)
+-   Van hozzá **"kódkönyv" (code book vagy data dictionary)**
 
     -   Ez szintén legyen ember és gépi olvasásra alkalmas
 
@@ -328,7 +332,7 @@
 
         -   Hogyan készítsünk jó adatkezelési tervet?
 
-            -   <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004525>
+            -   Lásd: @michener_ten_2015
 
 ## Adatkezelési hibák
 
@@ -340,9 +344,9 @@
 
 -   Az adatkezelési hibáknak lehetnek súlyos következményei
 
-    -   megváltoztathatják például az adatokből levont köveztetéseket
+    -   Megváltoztathatják például az adatokből levont köveztetéseket
 
--   Reinhart & Rogoff (2010) közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja
+-   @reinhart2010growth közgazdászok például a kimutatták, hogy egy állam valós gazdasági növekedése lelassul, ha az államtartozás a GDP 90%-át meghaladja
 
     -   Eredményeik az USA költségvetési tervébe is bekerült
 
@@ -358,6 +362,4 @@
 
 -   További olvasmányok:
 
-    -   <https://journals.sagepub.com/doi/full/10.1177/25152459211045930>
-
-    -   <https://www.nber.org/papers/w15639>
+    -   @kovacs_role_2021

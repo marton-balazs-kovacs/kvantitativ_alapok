@@ -32,7 +32,13 @@
 
 ## A t-próba típusai
 
--   
+-   Egymintás t-próba
+
+-   Független mintás t-próba
+
+-   Páros mintás t-próba
+
+    -   Egy egymintás t-próbaként is lehet értelmezni, ahol a két összefüggő csoport különbségét hasonlítjuk a 0-hoz
 
 ## A t-próba logikája
 

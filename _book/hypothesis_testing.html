@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kvantitatív Alapok - 7&nbsp; Null szignifikancia hipotézis tesztelés</title>
+<title>Kvantitatív Alapok - 6&nbsp; Null szignifikancia hipotézis tesztelés</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -70,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -100,52 +119,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bevezetés</span></a>
+  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./scientific_method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tudományos módszer</span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Adat</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Adat</span></a>
+  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Leíró statisztika</span></a>
+  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Adatvizualizáció</span></a>
+  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inferential_statistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></a>
+  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hypothesis_testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></a>
+  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lineáris regresszió</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
+  <a href="./comparing_means.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Két csoport átlagának összehasonlítása</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -162,15 +176,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#null-hipotézis-szignifikancia-tesztelés" id="toc-null-hipotézis-szignifikancia-tesztelés" class="nav-link active" data-scroll-target="#null-hipotézis-szignifikancia-tesztelés"><span class="toc-section-number">7.1</span>  Null hipotézis szignifikancia tesztelés</a>
+  <li><a href="#null-hipotézis-szignifikancia-tesztelés" id="toc-null-hipotézis-szignifikancia-tesztelés" class="nav-link active" data-scroll-target="#null-hipotézis-szignifikancia-tesztelés"><span class="toc-section-number">6.1</span>  Null hipotézis szignifikancia tesztelés</a>
   <ul class="collapse">
-  <li><a href="#lépései" id="toc-lépései" class="nav-link" data-scroll-target="#lépései"><span class="toc-section-number">7.1.1</span>  Lépései</a></li>
-  <li><a href="#szignifikancia-küszöb" id="toc-szignifikancia-küszöb" class="nav-link" data-scroll-target="#szignifikancia-küszöb"><span class="toc-section-number">7.1.2</span>  Szignifikancia küszöb</a></li>
-  <li><a href="#mit-értünk-helyes-döntés-alatt" id="toc-mit-értünk-helyes-döntés-alatt" class="nav-link" data-scroll-target="#mit-értünk-helyes-döntés-alatt"><span class="toc-section-number">7.1.3</span>  Mit értünk helyes döntés alatt?</a></li>
-  <li><a href="#többszörös-tesztelés" id="toc-többszörös-tesztelés" class="nav-link" data-scroll-target="#többszörös-tesztelés"><span class="toc-section-number">7.1.4</span>  Többszörös tesztelés</a></li>
+  <li><a href="#lépései" id="toc-lépései" class="nav-link" data-scroll-target="#lépései"><span class="toc-section-number">6.1.1</span>  Lépései</a></li>
+  <li><a href="#szignifikancia-küszöb" id="toc-szignifikancia-küszöb" class="nav-link" data-scroll-target="#szignifikancia-küszöb"><span class="toc-section-number">6.1.2</span>  Szignifikancia küszöb</a></li>
+  <li><a href="#mit-értünk-helyes-döntés-alatt" id="toc-mit-értünk-helyes-döntés-alatt" class="nav-link" data-scroll-target="#mit-értünk-helyes-döntés-alatt"><span class="toc-section-number">6.1.3</span>  Mit értünk helyes döntés alatt?</a></li>
+  <li><a href="#többszörös-tesztelés" id="toc-többszörös-tesztelés" class="nav-link" data-scroll-target="#többszörös-tesztelés"><span class="toc-section-number">6.1.4</span>  Többszörös tesztelés</a></li>
   </ul></li>
-  <li><a href="#hatásnagyságok" id="toc-hatásnagyságok" class="nav-link" data-scroll-target="#hatásnagyságok"><span class="toc-section-number">7.2</span>  Hatásnagyságok</a></li>
-  <li><a href="#mintaméret-és-annak-becslése" id="toc-mintaméret-és-annak-becslése" class="nav-link" data-scroll-target="#mintaméret-és-annak-becslése"><span class="toc-section-number">7.3</span>  Mintaméret és annak becslése</a></li>
+  <li><a href="#hatásnagyságok" id="toc-hatásnagyságok" class="nav-link" data-scroll-target="#hatásnagyságok"><span class="toc-section-number">6.2</span>  Hatásnagyságok</a></li>
+  <li><a href="#mintaméret-és-annak-becslése" id="toc-mintaméret-és-annak-becslése" class="nav-link" data-scroll-target="#mintaméret-és-annak-becslése"><span class="toc-section-number">6.3</span>  Mintaméret és annak becslése</a></li>
+  <li><a href="#a-null-hipotézis-szignifikancia-tesztelés-gyakori-félreértései-és-a-mögöttük-álló-okok" id="toc-a-null-hipotézis-szignifikancia-tesztelés-gyakori-félreértései-és-a-mögöttük-álló-okok" class="nav-link" data-scroll-target="#a-null-hipotézis-szignifikancia-tesztelés-gyakori-félreértései-és-a-mögöttük-álló-okok"><span class="toc-section-number">6.4</span>  A null-hipotézis szignifikancia tesztelés gyakori félreértései és a mögöttük álló okok</a>
+  <ul class="collapse">
+  <li><a href="#mennyire-valószínű-hogy-igaz-az-alternatív-hipotézisünk-ha-a-p-érték-kicsi" id="toc-mennyire-valószínű-hogy-igaz-az-alternatív-hipotézisünk-ha-a-p-érték-kicsi" class="nav-link" data-scroll-target="#mennyire-valószínű-hogy-igaz-az-alternatív-hipotézisünk-ha-a-p-érték-kicsi"><span class="toc-section-number">6.4.1</span>  Mennyire valószínű, hogy igaz az alternatív hipotézisünk, ha a p-érték kicsi?</a></li>
+  <li><a href="#ha-a-kutatásomban-kiszámolt-teszt-statisztikához-tartozó-p-érték-nagyon-kicsi-akkor-a-talált-hatás-nagyobb-mintha-nagyon-nagy-lenne-a-p-érték" id="toc-ha-a-kutatásomban-kiszámolt-teszt-statisztikához-tartozó-p-érték-nagyon-kicsi-akkor-a-talált-hatás-nagyobb-mintha-nagyon-nagy-lenne-a-p-érték" class="nav-link" data-scroll-target="#ha-a-kutatásomban-kiszámolt-teszt-statisztikához-tartozó-p-érték-nagyon-kicsi-akkor-a-talált-hatás-nagyobb-mintha-nagyon-nagy-lenne-a-p-érték"><span class="toc-section-number">6.4.2</span>  Ha a kutatásomban kiszámolt teszt statisztikához tartozó p érték nagyon kicsi akkor a talált hatás nagyobb, mintha nagyon nagy lenne a p-érték?</a></li>
+  <li><a href="#ha-kicsi-p-ertek-miatt-elvetem-a-nullhipotézist-akkor-mennyire-lehetek-biztos-abban-mekkora-az-evidencia-hogy-az-alternatív-hipotézis-igaz" id="toc-ha-kicsi-p-ertek-miatt-elvetem-a-nullhipotézist-akkor-mennyire-lehetek-biztos-abban-mekkora-az-evidencia-hogy-az-alternatív-hipotézis-igaz" class="nav-link" data-scroll-target="#ha-kicsi-p-ertek-miatt-elvetem-a-nullhipotézist-akkor-mennyire-lehetek-biztos-abban-mekkora-az-evidencia-hogy-az-alternatív-hipotézis-igaz"><span class="toc-section-number">6.4.3</span>  Ha kicsi p ertek miatt elvetem a nullhipotézist, akkor mennyire lehetek biztos abban (mekkora az evidencia) hogy az alternatív hipotézis igaz?</a></li>
+  <li><a href="#ha-a-p-értékünk-éppen-a-szignifikancia-küszöb-felett-van-p-0.06-akkor-mondhatjuk-hogy-marginálisan-szignifikáns-eredményeket-kaptunk" id="toc-ha-a-p-értékünk-éppen-a-szignifikancia-küszöb-felett-van-p-0.06-akkor-mondhatjuk-hogy-marginálisan-szignifikáns-eredményeket-kaptunk" class="nav-link" data-scroll-target="#ha-a-p-értékünk-éppen-a-szignifikancia-küszöb-felett-van-p-0.06-akkor-mondhatjuk-hogy-marginálisan-szignifikáns-eredményeket-kaptunk"><span class="toc-section-number">6.4.4</span>  Ha a p-értékünk éppen a szignifikancia küszöb felett van (p = 0.06) akkor mondhatjuk, hogy marginálisan szignifikáns eredményeket kaptunk?</a></li>
+  <li><a href="#ha-nagy-a-p-értékem-akkor-igaz-hogy-nem-létezik-a-hatás" id="toc-ha-nagy-a-p-értékem-akkor-igaz-hogy-nem-létezik-a-hatás" class="nav-link" data-scroll-target="#ha-nagy-a-p-értékem-akkor-igaz-hogy-nem-létezik-a-hatás"><span class="toc-section-number">6.4.5</span>  Ha nagy a p értékem akkor igaz, hogy nem létezik a hatás?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Null szignifikancia hipotézis tesztelés</span></h1>
 </div>
 
 
@@ -220,21 +242,30 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="null-hipotézis-szignifikancia-tesztelés" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="null-hipotézis-szignifikancia-tesztelés"><span class="header-section-number">7.1</span> Null hipotézis szignifikancia tesztelés</h2>
-<section id="lépései" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="lépései"><span class="header-section-number">7.1.1</span> Lépései</h3>
+<section id="null-hipotézis-szignifikancia-tesztelés" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="null-hipotézis-szignifikancia-tesztelés"><span class="header-section-number">6.1</span> Null hipotézis szignifikancia tesztelés</h2>
 <ul>
+<li><p>A fejezet során a példa kutatásunkban a statisztika oktatók IQ-ját fogjuk vizsgálni</p></li>
+<li><p>Előzetes kutatáskból tudjuk, hogy a populációban az átlago IQ 100 amelyhez egy 15-ös szórás tartozik</p></li>
+</ul>
+<section id="lépései" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="lépései"><span class="header-section-number">6.1.1</span> Lépései</h3>
+<ol type="1">
 <li><p>Megfogalmazunk egy <strong>alternatív hipotézist</strong></p>
 <ul>
 <li><p>A hipotézisünknek lehet iránya <strong>(egyoldalú hipotézis tesztelés)</strong></p>
 <ul>
 <li><p>Pozitív vagy negatív kapcsolatot várunk el</p></li>
 <li><p>Egy oldalú hipotézis tesztelésnek is nevezik</p></li>
+<li><p><em>Például: A statisztika oktatók IQ-ja magasabb, mint 100</em></p></li>
 </ul></li>
 <li><p>Vagy lehet <strong>kétoldalú hipotézis teszt</strong></p>
 <ul>
 <li>Ebben az esetben az alternatív hipotézisünk csak azt várja el, hogy a lesz lesz különbség a vizsgált változók között, de az nem mondjuk meg milyen irányú különbséget várunk el</li>
+<li><em>Például: A statisztika oktatók IQ-ja különbözik 100-tól</em>
+<ul>
+<li>100 alatti és 100 feletti értékeket is elvárunk</li>
+</ul></li>
 </ul></li>
 <li><p>Azt, hogy melyik hipotézist alkalmazzuk az elmélet (előzetes tudásunk) határozza meg</p></li>
 </ul></li>
@@ -242,16 +273,44 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Egyoldalú hipotézis esetén a null hipotézis feltételezi, hogy az alternatív által prediktált iránnyal ellenkező előjelű különbséget kapunk vagy nem lesz különbség</li>
 <li>Feltételezzük, hog a null hipotézis igaz!</li>
+<li><em>Például: A statisztika oktatók IQ-ja kisebb vagy egyenlő 100-al</em>
+<ul>
+<li>Abban az esetben ez a nullhipotézis, hogyha egy irányú alternatív hipotézisünk van</li>
 </ul></li>
-<li><p>A hipotézis tesztelésére alkalmas adatokat gyűjtünk</p></li>
+</ul></li>
+<li><p>A hipotézis tesztelésére alkalmas adatokat gyűjtünk</p>
+<ul>
+<li><p><em>Például: IQ tesztet töltetünk ki statisztika oktatókkal</em></p>
+<ul>
+<li><p>Tegyük fel, hogy az adatgyűjtés után a mintánkat így írhatjuk le:</p>
+<ul>
+<li><p>30 résztvevő (N = 30)</p></li>
+<li><p>IQ átlag (M) = 118.5</p></li>
+<li><p>IQ variancia (SD2) = 42.25</p></li>
+<li><p>IQ szórás (SD) = 6.5</p></li>
+</ul></li>
+</ul></li>
+<li><p>Kérdés: Ez a véletlen műve vagy tényleg magasabb a statisztika oktatók IQ-ja, mint az átlagé?</p></li>
+</ul></li>
 <li><p>Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az adatokra</p>
 <ul>
 <li><p>Célunk: az alternatív hipotézis mellett szóló evidencia számszerüsítése az adatokban található variancia ellenében</p></li>
+<li><p><em>Példa: Kiszámolhatjuk az átlagot a statisztika oktatók IQ pontszámaira</em></p></li>
 <li><p>A modell illesztése során kiszámoljuk a teszt statisztikát</p></li>
 </ul></li>
 <li><p>Kiszámoljuk a <strong>teszt statisztikát</strong></p>
 <ul>
-<li>A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás mértetének mutatója az adatokban található variancia fényében</li>
+<li>A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás mértetének mutatója az adatokban található variancia fényében
+<ul>
+<li><p>tehát teszt statisztika = modell által megmagyarázott variancia / modell által meg nem magyarázott variancia</p></li>
+<li><p>máshogy, teszt statisztika = hatás / hiba</p></li>
+<li><p>Minél nagyobb a teszt statisztika annál nagyobb a modell által megmagyarázott variancia a hibához képest</p></li>
+</ul></li>
+<li><em>Példa: Amikor a minta átlagot hasonlítjuk a populáció átlaghoz, akkor egymintás t-próbát lehet alkalmazni, aminek teszt statisztikája a t érték</em>
+<ul>
+<li><p>t érték = (M<sub>minta</sub> - M<sub>populáció</sub>) / SD / SQRT(N)</p></li>
+<li><p><em>Példa: t-statisztika: 118-100/1.19 = 15.13</em></p></li>
+</ul></li>
 </ul></li>
 <li><p>Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél extrémebb teszt statisztikát, ha a null hipotézis igaz</p>
 <ul>
@@ -261,21 +320,44 @@ ul.task-list li input[type="checkbox"] {
 <li>Például t tesztnél a teszt statisztika a t érték, és t-eloszlást használnuk</li>
 </ul></li>
 <li><p>Az így kiszámolt valószínűség a <strong>p-érték</strong></p></li>
+<li><p>A folyamatot ábrázolva a <a href="#fig-nhst">Figure&nbsp;<span>6.1</span></a> ábrán láthatod (<span class="citation" data-cites="pernet2015null">Pernet (<a href="references.html#ref-pernet2015null" role="doc-biblioref">2015</a>)</span>)</p></li>
+<li><p><em>Példa: A t értékünk 15.13 volt és a szabadságfok n-1 = 29, így a p érték kisebb, mint .00001 lesz</em></p></li>
 </ul></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-nhst" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hypothesis_testing/nhst.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: Az ábra X tengelyén a t értékek láthatók, míg az Y tengelyen a hozzájuk tartozó valószínűség. A piros eloszlás az a valószínűségi eloszlás, amit akkor várnánk el, ha a null hipotézis igaz lenne.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
 <li><p>Értelmezzük az eredmények <strong>statisztikai szignifikanciáját</strong></p>
 <ul>
 <li><p>A p-értéket fogjuk használni arra, hogy eldöntsük elég meglepőek-e az adataink ahhoz, hogy elvessük a null hipotézist</p></li>
-<li><p>Ehhez egy <strong>döntési kritériumot</strong> kell használnunk, amit a <strong>szignifikancia küszöbérték</strong>, azaz <strong>alpha</strong> fog számszerűsíteni</p></li>
+<li><p>Ehhez egy <strong>döntési kritériumot</strong> kell használnunk, amit a <strong>szignifikancia küszöbérték</strong></p>
+<ul>
+<li>Az ehhez tartozó valószínáségi görbe alatti terület az <strong>alpha</strong></li>
+</ul></li>
 <li><p>Fontos megjegyezni, hogy nem tudhatjuk, hogy a döntés, hogy elvetjük a null hipozétist helyes vagy helytelen döntés-e egy adott esetben!</p>
 <ul>
 <li>Vagy egyik vagy a másik nem rendelhetünk mellé valószínűséget!</li>
 </ul></li>
 <li><p>Így egyedül azt tudjuk megmondani, hogyha ilyen vagy ennél extrémebb adatokat kaptunk hosszútávon, ha végtelenszer megismételjük a kísérletet és ugyanezt a döntési kritériumot (alphat) használjuk, akkor az esetek hány százalékában fogunk hibásan dönteni</p></li>
+<li><p>A <a href="#fig-nhst">Figure&nbsp;<span>6.1</span></a> ábrán egy oldalú teszthez tartozó szignifikancia régiót láthatunk, amit az alpha jelöl, a hozzá tartozó kritkikus érték, azaz a szignifikancia küszöb pedig t = 1.69-nél van</p>
+<ul>
+<li><p>Ha kétoldalú hipotézis tesztet csinálnánk az alpha-t elosztanánk kettővel 0.05/2=0.025 és a null hipotézishez tartozó eloszlás mindkét végén jelölnénk</p></li>
+<li><p>Így a kritikus t értékünk is megváltozna, illetve kettő lenne belőle, egy negatív és egy pozitív</p></li>
 </ul></li>
-</ul>
+<li><p><em>Példa: A kapott p érték kisebb, mint a szignifikancia küszöb így elvetjük a null</em> <em>hipotézist, ami szerint a statisztika oktatók IQ-ja egyenlő vagy kisebb 100-nál</em></p></li>
+</ul></li>
+</ol>
 </section>
-<section id="szignifikancia-küszöb" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="szignifikancia-küszöb"><span class="header-section-number">7.1.2</span> Szignifikancia küszöb</h3>
+<section id="szignifikancia-küszöb" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="szignifikancia-küszöb"><span class="header-section-number">6.1.2</span> Szignifikancia küszöb</h3>
 <ul>
 <li><p>Nincs objektíven helyes küszöbérték!</p></li>
 <li><p>Hagyományosan a szignifikancia küszöb 0.05</p>
@@ -296,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="mit-értünk-helyes-döntés-alatt" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="mit-értünk-helyes-döntés-alatt"><span class="header-section-number">7.1.3</span> Mit értünk helyes döntés alatt?</h3>
+<section id="mit-értünk-helyes-döntés-alatt" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="mit-értünk-helyes-döntés-alatt"><span class="header-section-number">6.1.3</span> Mit értünk helyes döntés alatt?</h3>
 <ul>
 <li><p>Négy lehetséges kimenetel létezik:</p>
 <ul>
@@ -306,9 +388,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Elvetjük a nullhipotézist, pedig az valójában igaz <strong>(egyes fajú hiba)</strong></p></li>
 <li><p>Nem vetjük el a nullhipotézist, amikor az valójában hamis (<strong>kettes fajú hiba)</strong></p></li>
 </ul></li>
-</ul>
-<!-- -->
-<ul>
 <li><p>A kettes fajú hiba előfordulásának gyakoriságát a béta küszöbértékkel tudjuk kontrollálni</p>
 <ul>
 <li>Általában 0.2 azaz 20%</li>
@@ -320,8 +399,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="többszörös-tesztelés" class="level3" data-number="7.1.4">
-<h3 data-number="7.1.4" class="anchored" data-anchor-id="többszörös-tesztelés"><span class="header-section-number">7.1.4</span> Többszörös tesztelés</h3>
+<section id="többszörös-tesztelés" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="többszörös-tesztelés"><span class="header-section-number">6.1.4</span> Többszörös tesztelés</h3>
 <ul>
 <li><p>Ha többször teszteljük ugyanazokat az adatokat a p érték devalválódik</p></li>
 <li><p>Nem az egyes tesztekre kell kontrollálni a hibát, hanem a tesztek egész családjára</p>
@@ -340,8 +419,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="hatásnagyságok" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="hatásnagyságok"><span class="header-section-number">7.2</span> Hatásnagyságok</h2>
+<section id="hatásnagyságok" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="hatásnagyságok"><span class="header-section-number">6.2</span> Hatásnagyságok</h2>
 <ul>
 <li><p>A statisztikai szignifikancia nem feltétlenül jelent valós szignifikanciát</p>
 <ul>
@@ -356,6 +435,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Amik ugyanazt a skálát használják, mint az adatok</p></li>
 <li><p>Különböző skálákon mért hatásméretek így nem összehasonlíthatók</p></li>
 <li><p>Azonban a hatás valós szignifikanciájának értelmezése könnyebb velük!</p></li>
+<li><p><em>Példa: A minta átlagunk 118.5 volt, így a nyers hatásmérték 118.5-100=<strong>18.5</strong></em></p></li>
 </ul></li>
 <li><p>És <strong>standardizált hatásméret mutatók</strong></p>
 <ul>
@@ -368,6 +448,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Csoportok közötti különbségekre</p>
 <ul>
 <li>Cohen’s d</li>
+<li><em>Példa: A nyers hatásmértéket elosztjuk a szórással, tehát a standardizált hatásnagysága a statisztika oktatók IQ-ja és az átlag IQ közti különbségnek Cohen’s d = <strong>2.84</strong></em></li>
 </ul></li>
 <li><p>Változók közötti összefüggésre</p>
 <ul>
@@ -377,8 +458,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="mintaméret-és-annak-becslése" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="mintaméret-és-annak-becslése"><span class="header-section-number">7.3</span> Mintaméret és annak becslése</h2>
+<section id="mintaméret-és-annak-becslése" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="mintaméret-és-annak-becslése"><span class="header-section-number">6.3</span> Mintaméret és annak becslése</h2>
 <ul>
 <li><p><strong>Mintaméret:</strong> az egymástól független megfigyelések száma</p></li>
 <li><p>Befolyásolja a statisztikai erőt: annak valószínűsége, hogy megtaláljuk a hatást, amennyiben az a valóságban is létezik</p>
@@ -397,7 +478,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Olyan a post hoc mintaméret becslés mintha azután próbálnánk meg kiszámolni, hogy mennyi üzemanyag kell egy repülőbe ahhoz, hogy átrepüljünk vele az óceán felett, miután már megtörtént a repülés. A gép vagy lezuhant vagy nem</p></li>
 </ul></li>
 <li><p>Ehhez kell az elvárt hatásméret, a kívánt statisztikai erő, a szignifikancia küszöb, a kutatási elrendezés</p></li>
-<li><p>Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk, hogy észleljük</p></li>
+<li><p>Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk, hogy észleljük</p>
+<ul>
+<li>Lásd: <a href="#fig-samplesize">Figure&nbsp;<span>6.2</span></a> (<span class="citation" data-cites="bakker2016researchers">Bakker et al. (<a href="references.html#ref-bakker2016researchers" role="doc-biblioref">2016</a>)</span>)</li>
+</ul></li>
 <li><p>Az elvárt hatásméret megbecslésére számos módszer van</p>
 <ul>
 <li><p>Használhatunk pilot kutatást</p></li>
@@ -413,8 +497,176 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-samplesize" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hypothesis_testing/samplesize.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: Az ábrán a statisztikai erő, a hatásnagyság és az elemszám közti összefüggés látható. Az X tengelyen az elemszám, az Y tengelyen pedig a statisztikai erő van ábrázolva. A különböző színű vonalak pedig különböző standardizált hatásméreteket jelölnek. Látható, hogy amennyiben kicsi a hatatásméret, akkor sokkal nagyobb elemszámra van szükség azonos statisztikai erő eléréséhez, mint nagy hatásméret esetén.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="a-null-hipotézis-szignifikancia-tesztelés-gyakori-félreértései-és-a-mögöttük-álló-okok" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="a-null-hipotézis-szignifikancia-tesztelés-gyakori-félreértései-és-a-mögöttük-álló-okok"><span class="header-section-number">6.4</span> A null-hipotézis szignifikancia tesztelés gyakori félreértései és a mögöttük álló okok</h2>
+<ul>
+<li><p>Az NHST használatával és értelmezésével kapcsolatban sok a félreértés a gyakorlott kutatók között is</p></li>
+<li><p>Ez nagyban hozzá tud járulni a tudományos eredmények replikálhatatlanságához és az így kialakult replikációs válsághoz</p></li>
+<li><p>A félreértéseknek többek közt statisztika történeti okai is vannak</p>
+<ul>
+<li><p>A módszer kidolgozása Ronald Fisher-hez és Jerzy Neyman-hoz illetve E. S. Pearson-hoz köthető</p></li>
+<li><p>Fisher nem értett egyet Neyman-Pearson-nal</p></li>
+<li><p>A köztük lévő vita időnként igen elmérgesedett</p></li>
+<li><p>A most használt NHST módszer a két megközelítés keveréke</p>
+<ul>
+<li>Valószínűleg egyik megközelítés képviselői sem értenének egyet vele!</li>
+</ul></li>
+</ul></li>
+<li><p>A következőben pár gyakori félreértelmezését fogjuk megvizsgálni az NHST logikának és feltárjuk a mögöttük álló okokat is</p></li>
+</ul>
+<section id="mennyire-valószínű-hogy-igaz-az-alternatív-hipotézisünk-ha-a-p-érték-kicsi" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="mennyire-valószínű-hogy-igaz-az-alternatív-hipotézisünk-ha-a-p-érték-kicsi"><span class="header-section-number">6.4.1</span> Mennyire valószínű, hogy igaz az alternatív hipotézisünk, ha a p-érték kicsi?</h3>
+<ul>
+<li><p>Olvashatjuk azt cikkekben, hogy mivel a p-érték a szignifikancia határ alatt volt, ezért valószínű hogy igaz az alternatív hipotézisünk.</p></li>
+<li><p>Ez azonban helytelen.</p></li>
+<li><p>Az NHST nem mond semmit a H0 vagy H1 valószínűségéről, hanem a kapott adatok valoszinusegevel foglalkozik (abbol a feltetelezesbol kiindulva, hogy a H0 igaz).</p></li>
+<li><p>Könnyű összekeverni annak a valószínűségét hogy mennyire valoszínűek a kapott adatok a hipotézis fényében P(D|H) azzal hogy mennyire valószínű a hipotézis a kapott adatok fényében P(H|P)</p></li>
+<li><p>Egy hipotézis vagy igaz vagy hamis</p>
+<ul>
+<li>Nem lehet egy obejktív valószínűséget rendelni egy hipotézishez az NHST alatt</li>
+</ul></li>
+<li><p>Fontos tudni, hogy nem felcserélhetők az állítások! Egy kondicionális valószínűség P(A|B) inverze nem feltetlenül egyenlő a kondicionális valosínűséggel P(B|A)</p>
+<ul>
+<li><p>Példa:</p>
+<ul>
+<li><p>Ha leharapta egy ember fejet egy cápa mennyire valószínű, hogy halott? 1</p></li>
+<li><p>Ha valaki halott, akkor mennyire valószínű hogy leharapta a fejét egy cápa? Nem tudjuk, ~0</p>
+<ul>
+<li>Ehhez el kell osztani az összes meghalt ember számát azokéval akik azért haltak meg mert leharapta a fejük egy cápa</li>
+</ul></li>
+<li><p><span class="citation" data-cites="dienes_understanding_2008">Dienes (<a href="references.html#ref-dienes_understanding_2008" role="doc-biblioref">2008</a>)</span></p></li>
+</ul></li>
+</ul></li>
+<li><p>Tanulság: mit mondhatunk el akkor ha a p értékünk kicsi? Annyit, hogy ha a null hipotézist igaznak vesszük akkor meglepő ilyen adatot kapni</p></li>
+</ul>
+</section>
+<section id="ha-a-kutatásomban-kiszámolt-teszt-statisztikához-tartozó-p-érték-nagyon-kicsi-akkor-a-talált-hatás-nagyobb-mintha-nagyon-nagy-lenne-a-p-érték" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="ha-a-kutatásomban-kiszámolt-teszt-statisztikához-tartozó-p-érték-nagyon-kicsi-akkor-a-talált-hatás-nagyobb-mintha-nagyon-nagy-lenne-a-p-érték"><span class="header-section-number">6.4.2</span> Ha a kutatásomban kiszámolt teszt statisztikához tartozó p érték nagyon kicsi akkor a talált hatás nagyobb, mintha nagyon nagy lenne a p-érték?</h3>
+<ul>
+<li><p>Nem</p></li>
+<li><p>A p érték hatásméret mutatóként való értelmezése gyakori a publikált irodalomban és Fisher korai írásainak téves értelmezésének következménye</p></li>
+<li><p>A p érték nagysága függ többek között a mintaméret nagyságától és a mérőeszköz pontosságától. Így ha a mintaméret nagy és/vagy a mérőeszköz pontos, akkor kis hatásméret mellett is kaphatunk kis p értéket és fordítva.</p></li>
+<li><p>Részben ebből következik, hogy a p-érték nagyságából nem következtethetünk a talált hatás fontosságára sem.</p>
+<ul>
+<li>Példa: Ha a vérnyomáscsökkentő klinikailag elhanyagolható mértékben csökkenti a vérnyomást, de a szignifikancia küszöböt átlépi a p értékünk, attol még nem fog egy gyógyszercég milliárdokat költeni a gyógyszer piacra dobására</li>
+</ul></li>
+</ul>
+</section>
+<section id="ha-kicsi-p-ertek-miatt-elvetem-a-nullhipotézist-akkor-mennyire-lehetek-biztos-abban-mekkora-az-evidencia-hogy-az-alternatív-hipotézis-igaz" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="ha-kicsi-p-ertek-miatt-elvetem-a-nullhipotézist-akkor-mennyire-lehetek-biztos-abban-mekkora-az-evidencia-hogy-az-alternatív-hipotézis-igaz"><span class="header-section-number">6.4.3</span> Ha kicsi p ertek miatt elvetem a nullhipotézist, akkor mennyire lehetek biztos abban (mekkora az evidencia) hogy az alternatív hipotézis igaz?</h3>
+<ul>
+<li><p>Nem következtethetünk a p-értékből az evidencia méretére</p></li>
+<li><p>Ahogy korábban is már említettük a p-érték nem a hipotézisre vonatkozik</p></li>
+<li><p>Ezen felül egy igen kicsi p-értéket nem értelmezhetjük úgy hogy több evidenciánk van arra, hogy igaz az alternativ hipotézis</p>
+<ul>
+<li>Ez a szakirodalomban sokszor úgy jelenik meg hogy: szignifikánsabb eredményt találtunk vagy a kapott eredmény nagyon szignifikáns</li>
+</ul></li>
+<li><p>Amennyiben a valóságban a nullhipotézis az igaz, a p-értékek eloszlása uniform eloszlást követ (x tengellyel párhuzamos az eloszlás)</p>
+<ul>
+<li><p>Tehát ugyanannyi nagyon kicsi p-értéket fogunk kapni mint nagyon nagyot hosszú távon</p></li>
+<li><p>Így egyetlen kutatásból kapott p-érték nagysaga alapjan semmit nem tudunk elmondani arrol, hogy mennyire valoszinu az adott hipotezis</p></li>
+</ul></li>
+<li><p>Amennyiben a valosagban az alternativ hipotezis az igaz, a p ertekek eloszlasa a szignifikancia kuszob korul fog csucsosodni de nagy p ertekek tovabbra is elofordulhatnak</p></li>
+<li><p>Reszben ez az eszrevetel inspiralta a p-curve hasznalatat</p>
+<ul>
+<li><p>A p curve azt mutatja meg hogy egy adott hatas vizsgalata soran milyen eloszlast kovetnek a kapott p ertekek</p></li>
+<li><p>A p curve hasznalata a gyakorlatban azonban sokszor ugyancsak felrevezeto lehet</p></li>
+<li><p>Egyik feltetele ugyanis, hogy a kutatok az osszes meres eredmenyet lekozlik, fuggetlenul attol, hogy szignifikans volt-e az eredmeny vagy nem</p></li>
+<li><p>Azonban az NHST rituale hasznalatanak egyik kovetkezmenye a fiok hatas</p>
+<ul>
+<li><p>A fiok hatas azt jelenti hogy a kutatok szelektiven kozlik kutatasi eredmenyeik, hajlamosabbak a szignifikans eredmenyeket lekozolni, a nem szignifikans eredmenyek azonban a fiokban maradnak</p></li>
+<li><p>Fontos azonban megjegyezni hogy az NHST ritualevel kapcsolatos felreertesek nem csak a kutatok koreben elterjedtek, hanem a tudomanyos folyoiratok szerkesztoi koreben is</p>
+<ul>
+<li>Így egyes lapok hajlamosabbak nem leközölni a nem szignifikáns eredmenyeket</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="ha-a-p-értékünk-éppen-a-szignifikancia-küszöb-felett-van-p-0.06-akkor-mondhatjuk-hogy-marginálisan-szignifikáns-eredményeket-kaptunk" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="ha-a-p-értékünk-éppen-a-szignifikancia-küszöb-felett-van-p-0.06-akkor-mondhatjuk-hogy-marginálisan-szignifikáns-eredményeket-kaptunk"><span class="header-section-number">6.4.4</span> Ha a p-értékünk éppen a szignifikancia küszöb felett van (p = 0.06) akkor mondhatjuk, hogy marginálisan szignifikáns eredményeket kaptunk?</h3>
+<ul>
+<li><p>Szintén a p-érték evidencia mutatóként való értelmezése vezet a következő gyakran elkövetett téves értelmezéshez: marginálisan szignifikáns p-érték</p></li>
+<li><p>A kutatók legtöbbször az arbitrális 0.05 szignifikancia küszöböt (alpha) hasznaljak</p></li>
+<li><p>A szignifikancia küszöbhöz közeli nem szignifikáns p-értékeket sokszor marginálisan szignifikáns értékeknek nevezik, vagy szignifikáns tendenciáról beszélnek</p></li>
+<li><p><span class="citation" data-cites="rosnow1989definition">Rosnow and Rosenthal (<a href="references.html#ref-rosnow1989definition" role="doc-biblioref">1989</a>)</span> híres mondása: "Surely God loves the .06 nearly as much as the .05" (p.&nbsp;1277)</p></li>
+<li><p>Az, hogy az alpha értékhez közelítő p-érték annak a jele, hogy a hatás igaz lehet, csak akkor áll fent, ha a hatás jelen van a populációban, míg ha nincs jelen, a p-értékek uniform eloszláslást követnek. Így körkörös érvelésbe kerülünk: a választ, magával a válasszal indokoljuk.&nbsp;</p></li>
+<li><p>Újfent, a p-érték alapján az NHST keretben egy dichotóm döntést hozunk, egyetlen szerepe, hogy általa lássuk, hogy az általunk meghatározott hibahatáron belül vagy kívül esnek az adataink.</p></li>
+<li><p>1985 és 2016 között 7 pszichológiai tudományos területen vizsgálta <span class="citation" data-cites="olsson2019prevalence">Olsson-Collentine, Van Assen, and Hartgerink (<a href="references.html#ref-olsson2019prevalence" role="doc-biblioref">2019</a>)</span> a 0.05 és 0.1 közötti publikált p-értékeket, ezek közül csaknem 40 %-ot marginálisan szignifikánsként közöltek</p></li>
+<li><p>A kutatók sokszor evidenciaként tekintenek a p-értékre.</p></li>
+<li><p>Az is motiválhatja a kutatókat arra, hogy ilyen p-értékek esetén, próbáljanak értelmezésükben "közeledni" a szignifikáns p-értékhez, hogy az NHST keretben nemszignifikáns p-érték esetén nem lehet levonni semmilyen következtetést, így kutatásuk inkonkluzív marad.</p></li>
+</ul>
+</section>
+<section id="ha-nagy-a-p-értékem-akkor-igaz-hogy-nem-létezik-a-hatás" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="ha-nagy-a-p-értékem-akkor-igaz-hogy-nem-létezik-a-hatás"><span class="header-section-number">6.4.5</span> Ha nagy a p értékem akkor igaz, hogy nem létezik a hatás?</h3>
+<ul>
+<li><p>Mostanra talán már látható, hogy miért nem a válasz a kérdésre</p></li>
+<li><p>Egyik kutatásunkban azt vizsgáltuk hogyan értelmezik a kutatók a nem szignifikáns eredményeiket vezető pszichológiai lapokban es az esetek mekkora részében jelent ez tenyleg evidenciát a nullhipotézis mellett <span class="citation" data-cites="aczel2018quantifying">Aczel et al. (<a href="references.html#ref-aczel2018quantifying" role="doc-biblioref">2018</a>)</span></p></li>
+<li><p>Többféle téves értelmezést találtunk az esetek 72%-ában</p>
+<ul>
+<li>Abban is volt különbség, hogy a mintára (⅔) ("Nem volt különbség a résztvevők között a intervenciós és a kontroll csoportban") vagy a populációra (⅓) ("Nem volt hatása az intervenciónak") fogalmazták meg az állítást, hogy nincs jelen a hatás az eredményük alapján</li>
+</ul></li>
+<li><p>Ha nem szignifikáns eredményt kapunk, akkor nem tudhatjuk, hogy csak nem volt elég érzékeny a mérőeszközünk, vagy valóban nem létezik a hatás. Így csak annyit mondhatunk, hogy nem utasíthatjuk el a null hipotézist.</p></li>
+<li><p>Ahogy mar tobbszor emlitettuk a frekventista statisztikai megkozelitessel nem tudjuk meghatarozni, hogy mennyi evidenciank van egy adott hipotezis mellett</p></li>
+<li><p>Ehhez egy masik statisztikai megkozelitest a Bayesianus megkozelitest alkalmaztuk</p></li>
+<li><p>Ezen iskolan belul az egyik gyakran hasznalt mutato a bayes factor ami megmutatja, hogy mennyire valoszinu a nullhipotezis az alternativ hipotezissel szemben</p></li>
+<li><p>A bayes faktort relativ evidenciakent tudjuk ertelmezni</p></li>
+<li><p>Ez azt jelenti, hogy egy kettes BF azt jelenti, hogy a ketszer valoszinubb az alternativ hipotezis, mint a null hipotezis</p></li>
+<li><p>Bar relativ evidenciakent ertelmezehto a bf megis a kutatok szeretnek dontest hozni, ezert konvenciokat alakitottak ki, hogy hanyas bayes faktor jelent eleg jo evidenciat az egyik vagy a masik hipotezis mellett</p>
+<ul>
+<li>A peldaban a harmas bf-t lathatjuk, mint hatart</li>
+</ul></li>
+<li><p>A bf masik jo tulajdonsaga, hogy meg tudja mondani azt is ha az adatok fenyeben nincs eleg bizonyitekunk arra, hogy a null vagy az alternativ hipotezis mellett dontsunk, ilyenkor az eredmenyek inkonkluzivak</p>
+<ul>
+<li><p>Tovabbi adatokat gyűjthetnek</p></li>
+<li><p>Az NHST logika szerint nem szignifikans eredmenynel nem tudjuk megmondani, hogy valoban nem letezik a hatas vagy csak nem eleg erzekeny a meroeszkozunk vagy nem eleg adatot gyujtottunk</p>
+<ul>
+<li><p>Tovabba az ujboli teszteles ujabb adatok gyujtese utan torzitja az NHST alatt az eredmenyeink</p>
+<ul>
+<li>Ilyenkor az alpha szintet korrigalnunk kell</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>A teszt statisztikak es a hozzajuk tartozo szabadsagi fokok alapjan ki tudtuk szamolni a bf-et a nemszignifikans hatasokhoz</p>
+<ul>
+<li><p>Azt talaltuk hogy sok esetben amikor a kutato azt mondta a p ertek alapjan, hogy nincs hatas valojaban az eredmenyei inkonkluzivak voltak</p></li>
+<li><p>Egyes esetekben pedig az alternativ hipotezist tamogattak</p></li>
+</ul></li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-aczel2018quantifying" class="csl-entry" role="doc-biblioentry">
+Aczel, Balazs, Bence Palfi, Aba Szollosi, Marton Kovacs, Barnabas Szaszi, Peter Szecsi, Mark Zrubka, Quentin F Gronau, Don van den Bergh, and Eric-Jan Wagenmakers. 2018. <span>“Quantifying Support for the Null Hypothesis in Psychology: An Empirical Investigation.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 1 (3): 357–66.
+</div>
+<div id="ref-bakker2016researchers" class="csl-entry" role="doc-biblioentry">
+Bakker, Marjan, Chris HJ Hartgerink, Jelte M Wicherts, and Han LJ van der Maas. 2016. <span>“Researchers’ Intuitions about Power in Psychological Research.”</span> <em>Psychological Science</em> 27 (8): 1069–77.
+</div>
+<div id="ref-dienes_understanding_2008" class="csl-entry" role="doc-biblioentry">
+Dienes, Zoltan. 2008. <em>Understanding Psychology as a Science: <span>An</span> Introduction to Scientific and Statistical Inference</em>. Springer.
+</div>
+<div id="ref-olsson2019prevalence" class="csl-entry" role="doc-biblioentry">
+Olsson-Collentine, Anton, Marcel ALM Van Assen, and Chris HJ Hartgerink. 2019. <span>“The Prevalence of Marginally Significant Results in Psychology over Time.”</span> <em>Psychological Science</em> 30 (4): 576–86.
+</div>
+<div id="ref-pernet2015null" class="csl-entry" role="doc-biblioentry">
+Pernet, Cyril. 2015. <span>“Null Hypothesis Significance Testing: A Short Tutorial.”</span> <em>F1000Research</em> 4.
+</div>
+<div id="ref-rosnow1989definition" class="csl-entry" role="doc-biblioentry">
+Rosnow, Ralph L, and Robert Rosenthal. 1989. <span>“Definition and Interpretation of Interaction Effects.”</span> <em>Psychological Bulletin</em> 105 (1): 143.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -554,12 +806,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./inferential_statistics.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Következtetéses statisztika</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./correlation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Két folytonos változó közti összefüggés</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

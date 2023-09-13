@@ -1,8 +1,12 @@
 # Leíró statisztika
 
--   Célja a minta összefoglalása
+-   Az órán a statisztikának két fő ágával foglalkozunk, a leíró és a követeztetéses statisztikával
+
+-   A leíró statisztikának a célja a minta összefoglalása
 
     -   Gyakoriságok, százalékok, csoport átlagok és szórások, stb. által
+
+-   A következtetéses statisztika célja a minta alapján következtetéseket tenni a populációra
 
 -   Az adatokkal való munka során az adatok valamilyen formában történő **összesítését** végezzük
 
@@ -26,51 +30,101 @@
 
     -   Például: diszkrét változó esetén hányan választották az egyes lehetséges opciókat
 
--   Az egyik gyakran vizsgált eloszlás fajta a **gyakorisági eloszlás**
+### Gyakorisági eloszlás
 
-    -   A gyakorisági eloszlás megmondja, hogy egy változó lehetséges értékei milyen gyakran fordulnak elő a mintánkban
+-   A gyakorisági eloszlás megmondja, hogy egy változó lehetséges értékei milyen gyakran fordulnak elő a mintánkban
 
-    -   Diszkrét változó gyakorisági eloszlása
+-   Diszkrét változó gyakorisági eloszlása
 
-        -   Példa
+    -   Az adatok abszolút gyakoriságát egy összesítő táblázatba is foglalhatjuk
 
-            -   Példa...
+    -   Ahhoz, hogy meg tudjuk mondani a gyakoriságok között különbség valóban lényeges-e hasznos lehet megtekinteni a relatív frekvenciájukat (sűrűségüket)
 
-        -   Ez a táblázat az adatok abszolút frekvenciáját mutatja meg
+    -   Ehhez minden lehetséges értékhez el kell osztani az abszolút gyakoriságot a változóban található összes érték számával
 
-        -   Ahhoz, hogy meg tudjuk mondani a gyakoriságok között különbség valóban lényeges-e hasznos lehet megtekinteni a relatív frekvenciájukat (sűrűségüket)
+-   Hogyan ábrázoljuk a gyakoriságot?
 
-        -   Ehhez minden lehetséges értékhez el kell osztani az abszolút gyakoriságot a változóban található összes érték számával
+    -   Dotplot
 
-    -   Hogyan ábrázoljuk a gyakoriságot?
+        -   Minden értéket egy pötty jelöl
 
-        -   Dotplot
+        -   Az x tengely az értéktartomány
 
-            -   Minden értéket egy pötty jelöl
+        -   Az y tengely a gyakoriság
 
-            -   Az x tengely az értéktartomány
+        -   Folytonos változónál az összesítés során az értéktartományt különböző méretű "vödrökre" osztjuk
 
-            -   Az y tengely a gyakoriság
+        -   Meghatározzuk a vödrök szélességét (binwidth)
 
-            -   Folytonos változónál az összesítés során az értéktartományt különböző méretű "vödrökre" osztjuk
+        -   És az ebbe az értéktartományba eső értékek gyakoriságát számoljuk meg és ábrázoljuk
 
-            -   Meghatározzuk a vödrök szélességét (binwidth)
+    -   A hisztogram hasonló, mint a dotplot
 
-            -   És az ebbe az értéktartományba eső értékek gyakoriságát számoljuk meg és ábrázoljuk
+        -   De az egyes értékek nem jelennek meg külön, így sok adat gyakoriságát egyszerre tudjuk ábrázolni
 
-        -   A hisztogram hasonló, mint a dotplot
+#### A normál eloszlás
 
-            -   De az egyes értékek nem jelennek meg külön, így sok adat gyakoriságát egyszerre tudjuk ábrázolni
+-   A megfigyelt adatokban lévő változók eloszlását empirikus eloszlásnak nevezzük
 
--   **Kumulatív gyakorisági eloszlás**
+-   Azonban vannak nevezetes elméleti eloszlások, amelyknek a paramétereit már ismerjük (például a normál eloszlás)
 
-    -   Azon értékek gyakorisága amelyek akkor vagy kevesebbek, mint az adott határérték, amit vizsgálunk
+-   Mivel ezen eloszlások paramétereit ismerjük, sokszor ezeket az eloszlásokat használjuk fel arra, hogy következtetéseket vonjunk le a populációra a mintánk alapján
 
-    -   Kiszámolásához összeadjuk a hátárétrék gyakoriságát és az összes nála kisebb érték gyakoriságát
+-   Ennek előfeltétele azonban, hogy a mintánkban lévő empirikus eloszlások kellőképp hasonlítsanak a nevezetes eloszlásokhoz
 
-    -   Értéke soha nem csökkenhet
+-   Az elméleti normál eloszlásnak paraméterei
 
-    -   példa
+    -   Egy csúcsa van, az átlagnál, ami 0
+
+    -   A szórása, ami az adatpontok átlag körüli szóródását jelöli 1
+
+        -   Lásd: @fig-std (@field_discovering_2017)
+
+    -   Az eloszlás szimmetrikus
+
+        -   Az ettől való eltérést a ferdeséggel és csúcsossággal jelöljük
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-std
+#| fig-cap: " Az ábrán két gyakorisági eloszlás látható amelyeknek átlaga megegyezik, de szórásuk különböző. @field_discovering_2017"
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "std.png"))
+```
+
+#### Ferdeség és csúcsosság
+
+-   Az elméleti normál eloszlás ferdesége 0
+
+-   Az ettől való eltérés lehet pozitív és negatív irányú attól függően, hogy az eloszlás az X tengely mentén melyik irányba tolódik el
+
+-   Ha a változónk ferdesége nagyobb 0-nál, akkor az eloszlás nem szimmetrikus, tehát eltér az elméleti normál eloszlástól
+
+-   Lásd: @fig-skewness
+
+-   Az elméleti normál eloszlás csúcsossága 0
+
+-   Az empirikus eloszlásunk ehhez képest lehet csúcsos vagy lapos
+
+-   Lásd: @fig-kurtosis
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-skewness
+#| fig-cap: " Az ábrán két gyakorisági eloszlás látható különböző ferdeséggel. Hajdú Nándor ábrája."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "skewness.png"))
+```
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-kurtosis
+#| fig-cap: "Az ábrán két gyakorisági eloszlás látható különböző csúcsossággal. Hajdú Nándor ábrája."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "kurtosis.png"))
+```
+
+#### Kumulatív gyakorisági eloszlás
+
+-   Azon értékek gyakorisága amelyek akkor vagy kevesebbek, mint az adott határérték, amit vizsgálunk
+
+-   Kiszámolásához összeadjuk a hátárétrék gyakoriságát és az összes nála kisebb érték gyakoriságát
+
+-   Értéke soha nem csökkenhet
 
 ## Statisztikai modellek
 
@@ -79,6 +133,8 @@
 -   Leírja az adatok struktúráját
 
 -   Mindig van benne hiba faktor, kihagy részleteket
+
+    -   Lásd: @fig-bridge (@field_discovering_2017)
 
 -   *"All models are wrong but some are useful"* (George Box)
 
@@ -90,15 +146,21 @@
 
         -   Minél jobban illeszkedik a modell az adatokhoz (a valósághoz), annál megbízhatóbbak a modell által létrehozott predikciók
 
-Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tökéletesen reprezentálni a valóságot
+-   Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tökéletesen reprezentálni a valóságot
 
--   lesz hiba a modell által prediktált értékek és az egyes megfigyelések között
+    -   Lesz hiba a modell által prediktált értékek és az egyes megfigyelések között
 
 -   Adat = modell + hiba
 
     -   **Modell:** az értékek, amit az elméletünk alapján elvárunk
 
     -   **Hiba:** a modell által prediktált értékek és a valós adatpontok közötti különbség
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-bridge
+#| fig-cap: "Az építészetben is használnak modelleket arra, hogy bizonyos események bekövetkezését prediktálják általuk. Az ábrán több különböző modellt láthatunk egy hídra. A modell minél pontosabban írja le a valóságot annál jobb predikciókat lehet általa tenni arra, hogy a megépített híd megbírja-e majd az átmenő forgalmat."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "bridge.png"))
+```
 
 ### A legegyszerűbb statisztika modell, az átlag
 
@@ -113,6 +175,14 @@ Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tök
     -   Az átlag: (1 + 2 + 3 + 3 + 4)/5 = 2.6
 
     -   Ebből is látszik, hogy az átlag egy statisztikai modell, hiszen egy hipotetikus érték, nem megfigyelhető a valóságban
+
+    -   Lásd: @fig-mean (@field_discovering_2017)
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-mean
+#| fig-cap: "Az ábrán az öt megkérdezett statisztika oktatóhoz tartozó adatok láthatók és az átlag. Az X tengely az egyes statisztika oktatókat jelöli, míg az Y tengely az oktatók barátainak a számát. Az X tengellyel párhuzamos vonal az átlag. Az átlag által prediktált értékek és a valós értékek közti különbséget a szaggatott vonalak jelölik. Ez a hiba."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "mean.png"))
+```
 
 ### Modell illeszkedésének a vizsgálata
 
@@ -193,6 +263,13 @@ Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tök
                 -   Mégis látható, hogy az egyik oktatónál a modell jobban illeszkedik az adatokhoz, tehát az átlag pontos reprezentációja az adatoknak
 
                     -   Ezt mutatja, hogy a szórás 0.55 az átlaghoz mérten kicsi
+                    -   Lásd: @fig-std_comparison (@field_discovering_2017)
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-std_comparison
+#| fig-cap: " Az ábrán két oktató 5 órán keresztül mért teljesítménye látható. Az X tengelyen az órák láthatók, míg az Y tengelyen a teljesítményük. Az első oktatónak a teljesítménye az 5 órán keresztül konzisztensebb volt, mint a második oktatónak. Az átlag teljesítményük azonban azonos."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "std_comparison.png"))
+```
 
 ### Mitől jó egy statisztikai modell?
 
@@ -219,6 +296,14 @@ Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tök
 -   2\) jól generalizálható
 
     -   ha új adatokra illesztjük a modellt, azokat is jól fogja prediktálni
+
+-   Lásd: @fig-good_model (@poldrack_statistical_2018)
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-good_model
+#| fig-cap: " Az ábrán 3 különböző modell illeszkedést láthatunk. Az A ábrán jól illeszkedik a lineáris modell az adatokra és az adatokban lévő variancia kicsi. A B ábrán szintén lineáris összefüggést láthatunk, ám a modell hibája nagyobb, mint az A ábrán, az adatokban lévő nagy variancia miatt. A C ábrán egy lineáris modellt illesztettünk az adatokra, ám az adatok nem lineáris összefüggésről árulkodnak. A modell így rosszul illeszkedik."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "good_model.png"))
+```
 
 ## Összesítő statisztikák
 
@@ -252,9 +337,25 @@ Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tök
 
         -   Ezért kevésbé érzékeny, nincs négyzetre emelés
 
+        -   Folytonos változó értékeit rang transzformálhatjuk, ha a kiugró értékek torzítanak
+
+            -   Rang transzformáció esetén különböző módszerek vannak arra, hogy milyen értékeket adjunk a sorba álltítás során két megegyező értéknek
+
+                -   Például vehetjük a rangsorrend átlagát
+
+                -   Ebben az esetben mind a két hatodik helyre kerülő érték 6.5-ös rang értéket vesz fel
+
+                -   Lásd: @fig-rank
+
 -   **Módusz (mode):** A leggyakrabban előforduló érték
 
     -   Nominális változónál használjuk
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-rank
+#| fig-cap: "A felső ábrán a folytonos változó eloeszlása látható rang transzformáció előtt. A kék vonal az átlagot a piros a mediánt jelöli. Az alsó ábrán ugyanaz az eloszlás látható rang transzformáció után. Ebben az esetben az átlag és a medián megegyeznek. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "descriptive_statistics", "rank.png"))
+```
 
 ### Szélsőértékek
 
@@ -280,10 +381,10 @@ Mivel minden modell a valóság leegyszerüsítése, így az soha nem fogja tök
 
 ### Helyzetmutatók
 
--   Kvantilisek: vágási pontok, amelyek mentén a sorba rendezett adatokat meghatározott számú részre bonthatjuk
+-   **Kvantilisek:** vágási pontok, amelyek mentén a sorba rendezett adatokat meghatározott számú részre bonthatjuk
 
--   Pl. kvartilisek: Az adatokat négy egyenlő részre osztó három pont (ld. még decilis, percentilis)
+-   **Kvartilisek:** Az adatokat négy egyenlő részre osztó három pont (ld. még decilis, percentilis)
 
--   Interkvartilis tartomány (IQR): A felső (75%) alsó (25%) kvartilis és az alsó kvartilis különbsége, az adatok középső 50%-a 
+-   **Interkvartilis tartomány (IQR)**: A felső (75%) alsó (25%) kvartilis és az alsó kvartilis különbsége, az adatok középső 50%-a 
 
     -   Általában ordinális adatok összesítésénél szoktuk használni

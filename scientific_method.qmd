@@ -82,7 +82,7 @@
 
         -   Minta felépítése és mintaméret
 
-        -   Mérőeszköz és annak pontossága, megbízhatósága, és granularitása
+        -   Mérőeszköz és annak pontossága, megbízhatósága, validitása és granularitása
 
     -   Ahhoz hogy oksági viszonyt feltételezzünk két jelenség közt nem feletkezhetünk meg az adatgyűjtés módjáról
 
@@ -199,26 +199,29 @@
 
         -   Hanem evidenciát tud felmutatni egy hipotézis mellett az eddigi megfigyelések fényében, de a bizonytalanságot nem tudjuk nullára csökkenteni
 
-A statisztika a kompromisszomkról szól
+-   A statisztika a kompromisszomkról szól
 
--   Nincs egyetlen objektív módszer a statisztikában
+    -   Nincs egyetlen objektív módszer a statisztikában
 
--   Mindig a vizsgált kérdés, az adatgyűjtést és elemzést korlátozó tényezők függvényében kell megtalálnunk a legmeggyőzőbb elemzési utat
+    -   A kutató egy kutatás megtervezése során rengeteg olyan döntési helyzettel találkozik, ahol nincs objektíven helyes döntés
 
-    -   Ahhoz, hogy a választott elemzési út ténylegesen meggyőző legyen transzparensen közölnünk kell analitikus döntéséinket és a mellette szóló érveket
+    -   Azt, hogy melyik útat választja azonban komoly hatással lehet a kutatásból levont következtetésekre
 
-    -   Ez az alapfeltétele az analitikus megismételhetőségnek: más kutató ugyanazokat az adatokat vizsgálva megegyező analatikus úton ugyanarra az eredményre érkezik
+        -   A döntési pontokat sokszor a kutatói szabadságfok fogalmával írjuk le
 
-        -   Ez sajnos ma a tudományban nem magától értetődő!
+            -   Lásd: @wicherts_degrees_2016
 
--   Több valid elemzési út is lehet ugyanannak a kérdésnek a vizsgálatára
+    -   Mindig a vizsgált kérdés, az adatgyűjtést és elemzést korlátozó tényezők függvényében kell megtalálnunk a legmeggyőzőbb elemzési utat
 
-    -   A szakmai közösség feladata ezeknek a felülbírálata
+        -   Ahhoz, hogy a választott elemzési út ténylegesen meggyőző legyen transzparensen közölnünk kell analitikus döntéséinket és a mellette szóló érveket
 
-    -   Lásd: multi analyst kutatások
+        -   Ez az alapfeltétele az analitikus megismételhetőségnek: más kutató ugyanazokat az adatokat vizsgálva megegyező analatikus úton ugyanarra az eredményre érkezik
 
--   A tudomány iteratív módon lépésenként épül fel
+            -   Ez sajnos ma a tudományban nem magától értetődő!
+            -   Lásd: @hardwicke_analytic_2021
 
-    -   Lehetséges, hogy a ma még megbízhatónak számító elemzési utat új eredmények fényében elvetjük
+    -   Több valid elemzési út is lehet ugyanannak a kérdésnek a vizsgálatára
 
-    -   És ezzel nincs baj!
+        -   A szakmai közösség feladata ezeknek a felülbírálata
+
+        -   Lásd: multi analyst kutatások

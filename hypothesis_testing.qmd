@@ -30,9 +30,13 @@
 
 ## Null hipotézis szignifikancia tesztelés
 
+-   A fejezet során a példa kutatásunkban a statisztika oktatók IQ-ját fogjuk vizsgálni
+
+-   Előzetes kutatáskból tudjuk, hogy a populációban az átlago IQ 100 amelyhez egy 15-ös szórás tartozik
+
 ### Lépései
 
--   Megfogalmazunk egy **alternatív hipotézist**
+1.  Megfogalmazunk egy **alternatív hipotézist**
 
     -   A hipotézisünknek lehet iránya **(egyoldalú hipotézis tesztelés)**
 
@@ -40,30 +44,61 @@
 
         -   Egy oldalú hipotézis tesztelésnek is nevezik
 
+        -   *Például: A statisztika oktatók IQ-ja magasabb, mint 100*
+
     -   Vagy lehet **kétoldalú hipotézis teszt**
 
         -   Ebben az esetben az alternatív hipotézisünk csak azt várja el, hogy a lesz lesz különbség a vizsgált változók között, de az nem mondjuk meg milyen irányú különbséget várunk el
+        -   *Például: A statisztika oktatók IQ-ja különbözik 100-tól*
+            -   100 alatti és 100 feletti értékeket is elvárunk
 
     -   Azt, hogy melyik hipotézist alkalmazzuk az elmélet (előzetes tudásunk) határozza meg
 
--   Megfogalmazzuk a **null hipotézist**
+2.  Megfogalmazzuk a **null hipotézist**
 
     -   Egyoldalú hipotézis esetén a null hipotézis feltételezi, hogy az alternatív által prediktált iránnyal ellenkező előjelű különbséget kapunk vagy nem lesz különbség
     -   Feltételezzük, hog a null hipotézis igaz!
+    -   *Például: A statisztika oktatók IQ-ja kisebb vagy egyenlő 100-al*
+        -   Abban az esetben ez a nullhipotézis, hogyha egy irányú alternatív hipotézisünk van
 
--   A hipotézis tesztelésére alkalmas adatokat gyűjtünk
+3.  A hipotézis tesztelésére alkalmas adatokat gyűjtünk
 
--   Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az adatokra
+    -   *Például: IQ tesztet töltetünk ki statisztika oktatókkal*
+
+        -   Tegyük fel, hogy az adatgyűjtés után a mintánkat így írhatjuk le:
+
+            -   30 résztvevő (N = 30)
+
+            -   IQ átlag (M) = 118.5
+
+            -   IQ variancia (SD2) = 42.25
+
+            -   IQ szórás (SD) = 6.5
+
+    -   Kérdés: Ez a véletlen műve vagy tényleg magasabb a statisztika oktatók IQ-ja, mint az átlagé?
+
+4.  Az alternatív hipotézisünket leíró statisztikai modellt illesztjük az adatokra
 
     -   Célunk: az alternatív hipotézis mellett szóló evidencia számszerüsítése az adatokban található variancia ellenében
 
+    -   *Példa: Kiszámolhatjuk az átlagot a statisztika oktatók IQ pontszámaira*
+
     -   A modell illesztése során kiszámoljuk a teszt statisztikát
 
--   Kiszámoljuk a **teszt statisztikát**
+5.  Kiszámoljuk a **teszt statisztikát**
 
     -   A teszt statisztikára gondolhatunk úgy, mint a vizsgált hatás mértetének mutatója az adatokban található variancia fényében
+        -   tehát teszt statisztika = modell által megmagyarázott variancia / modell által meg nem magyarázott variancia
 
--   Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél extrémebb teszt statisztikát, ha a null hipotézis igaz
+        -   máshogy, teszt statisztika = hatás / hiba
+
+        -   Minél nagyobb a teszt statisztika annál nagyobb a modell által megmagyarázott variancia a hibához képest
+    -   *Példa: Amikor a minta átlagot hasonlítjuk a populáció átlaghoz, akkor egymintás t-próbát lehet alkalmazni, aminek teszt statisztikája a t érték*
+        -   t érték = (M~minta~ - M~populáció~) / SD / SQRT(N)
+
+        -   *Példa: t-statisztika: 118-100/1.19 = 15.13*
+
+6.  Megvizsgáljuk, hogy milyen valószínűséggel kapnánk ilyen vagy ennél extrémebb teszt statisztikát, ha a null hipotézis igaz
 
     -   Ehhez egy valószínűségi eloszlást használunk, ami megmutatja, hogy a null hipotézis alatt, milyen valószínűségeket várnánk el az egyes teszt statisztika értékekhez
 
@@ -73,17 +108,37 @@
 
     -   Az így kiszámolt valószínűség a **p-érték**
 
--   Értelmezzük az eredmények **statisztikai szignifikanciáját**
+    -   A folyamatot ábrázolva a @fig-nhst ábrán láthatod (@pernet2015null)
+
+    -   *Példa: A t értékünk 15.13 volt és a szabadságfok n-1 = 29, így a p érték kisebb, mint .00001 lesz*
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-nhst
+#| fig-cap: "Az ábra X tengelyén a t értékek láthatók, míg az Y tengelyen a hozzájuk tartozó valószínűség. A piros eloszlás az a valószínűségi eloszlás, amit akkor várnánk el, ha a null hipotézis igaz lenne."
+knitr::include_graphics(here::here("figures", "hypothesis_testing", "nhst.png"))
+```
+
+7.  Értelmezzük az eredmények **statisztikai szignifikanciáját**
 
     -   A p-értéket fogjuk használni arra, hogy eldöntsük elég meglepőek-e az adataink ahhoz, hogy elvessük a null hipotézist
 
-    -   Ehhez egy **döntési kritériumot** kell használnunk, amit a **szignifikancia küszöbérték**, azaz **alpha** fog számszerűsíteni
+    -   Ehhez egy **döntési kritériumot** kell használnunk, amit a **szignifikancia küszöbérték**
+
+        -   Az ehhez tartozó valószínáségi görbe alatti terület az **alpha**
 
     -   Fontos megjegyezni, hogy nem tudhatjuk, hogy a döntés, hogy elvetjük a null hipozétist helyes vagy helytelen döntés-e egy adott esetben!
 
         -   Vagy egyik vagy a másik nem rendelhetünk mellé valószínűséget!
 
     -   Így egyedül azt tudjuk megmondani, hogyha ilyen vagy ennél extrémebb adatokat kaptunk hosszútávon, ha végtelenszer megismételjük a kísérletet és ugyanezt a döntési kritériumot (alphat) használjuk, akkor az esetek hány százalékában fogunk hibásan dönteni
+
+    -   A @fig-nhst ábrán egy oldalú teszthez tartozó szignifikancia régiót láthatunk, amit az alpha jelöl, a hozzá tartozó kritkikus érték, azaz a szignifikancia küszöb pedig t = 1.69-nél van
+
+        -   Ha kétoldalú hipotézis tesztet csinálnánk az alpha-t elosztanánk kettővel 0.05/2=0.025 és a null hipotézishez tartozó eloszlás mindkét végén jelölnénk
+
+        -   Így a kritikus t értékünk is megváltozna, illetve kettő lenne belőle, egy negatív és egy pozitív
+
+    -   *Példa: A kapott p érték kisebb, mint a szignifikancia küszöb így elvetjük a null* *hipotézist, ami szerint a statisztika oktatók IQ-ja egyenlő vagy kisebb 100-nál*
 
 ### Szignifikancia küszöb
 
@@ -117,9 +172,6 @@
 
     -   Nem vetjük el a nullhipotézist, amikor az valójában hamis (**kettes fajú hiba)**
 
-```{=html}
-<!-- -->
-```
 -   A kettes fajú hiba előfordulásának gyakoriságát a béta küszöbértékkel tudjuk kontrollálni
 
     -   Általában 0.2 azaz 20%
@@ -166,6 +218,8 @@
 
     -   Azonban a hatás valós szignifikanciájának értelmezése könnyebb velük!
 
+    -   *Példa: A minta átlagunk 118.5 volt, így a nyers hatásmérték 118.5-100=**18.5***
+
 -   És **standardizált hatásméret mutatók**
 
     -   Lehetővé teszi az összehasonlítást!
@@ -177,6 +231,7 @@
         -   Csoportok közötti különbségekre
 
             -   Cohen's d
+            -   *Példa: A nyers hatásmértéket elosztjuk a szórással, tehát a standardizált hatásnagysága a statisztika oktatók IQ-ja és az átlag IQ közti különbségnek Cohen's d = **2.84***
 
         -   Változók közötti összefüggésre
 
@@ -206,6 +261,8 @@
 
     -   Minél kisebb az elvárt hatás annál nagyobb mintára lesz szükségünk, hogy észleljük
 
+        -   Lásd: @fig-samplesize (@bakker2016researchers)
+
     -   Az elvárt hatásméret megbecslésére számos módszer van
 
         -   Használhatunk pilot kutatást
@@ -218,3 +275,165 @@
 
             -   **smallest effect size of interest (SESOI)**
             -   melyik az a legkisebb hatás, ami számunkra még érdekes lehet
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-samplesize
+#| fig-cap: "Az ábrán a statisztikai erő, a hatásnagyság és az elemszám közti összefüggés látható. Az X tengelyen az elemszám, az Y tengelyen pedig a statisztikai erő van ábrázolva. A különböző színű vonalak pedig különböző standardizált hatásméreteket jelölnek. Látható, hogy amennyiben kicsi a hatatásméret, akkor sokkal nagyobb elemszámra van szükség azonos statisztikai erő eléréséhez, mint nagy hatásméret esetén."
+knitr::include_graphics(here::here("figures", "hypothesis_testing", "samplesize.png"))
+```
+
+## A null-hipotézis szignifikancia tesztelés gyakori félreértései és a mögöttük álló okok
+
+-   Az NHST használatával és értelmezésével kapcsolatban sok a félreértés a gyakorlott kutatók között is
+
+-   Ez nagyban hozzá tud járulni a tudományos eredmények replikálhatatlanságához és az így kialakult replikációs válsághoz
+
+-   A félreértéseknek többek közt statisztika történeti okai is vannak
+
+    -   A módszer kidolgozása Ronald Fisher-hez és Jerzy Neyman-hoz illetve E. S. Pearson-hoz köthető
+
+    -   Fisher nem értett egyet Neyman-Pearson-nal
+
+    -   A köztük lévő vita időnként igen elmérgesedett
+
+    -   A most használt NHST módszer a két megközelítés keveréke
+
+        -   Valószínűleg egyik megközelítés képviselői sem értenének egyet vele!
+
+-   A következőben pár gyakori félreértelmezését fogjuk megvizsgálni az NHST logikának és feltárjuk a mögöttük álló okokat is
+
+### Mennyire valószínű, hogy igaz az alternatív hipotézisünk, ha a p-érték kicsi?
+
+-   Olvashatjuk azt cikkekben, hogy mivel a p-érték a szignifikancia határ alatt volt, ezért valószínű hogy igaz az alternatív hipotézisünk.
+
+-   Ez azonban helytelen.
+
+-   Az NHST nem mond semmit a H0 vagy H1 valószínűségéről, hanem a kapott adatok valoszinusegevel foglalkozik (abbol a feltetelezesbol kiindulva, hogy a H0 igaz).
+
+-   Könnyű összekeverni annak a valószínűségét hogy mennyire valoszínűek a kapott adatok a hipotézis fényében P(D\|H) azzal hogy mennyire valószínű a hipotézis a kapott adatok fényében P(H\|P)
+
+-   Egy hipotézis vagy igaz vagy hamis
+
+    -   Nem lehet egy obejktív valószínűséget rendelni egy hipotézishez az NHST alatt
+
+-   Fontos tudni, hogy nem felcserélhetők az állítások! Egy kondicionális valószínűség P(A\|B) inverze nem feltetlenül egyenlő a kondicionális valosínűséggel P(B\|A)
+
+    -   Példa:
+
+        -   Ha leharapta egy ember fejet egy cápa mennyire valószínű, hogy halott? 1
+
+        -   Ha valaki halott, akkor mennyire valószínű hogy leharapta a fejét egy cápa? Nem tudjuk, \~0
+
+            -   Ehhez el kell osztani az összes meghalt ember számát azokéval akik azért haltak meg mert leharapta a fejük egy cápa
+
+        -   @dienes_understanding_2008
+
+-   Tanulság: mit mondhatunk el akkor ha a p értékünk kicsi? Annyit, hogy ha a null hipotézist igaznak vesszük akkor meglepő ilyen adatot kapni
+
+### Ha a kutatásomban kiszámolt teszt statisztikához tartozó p érték nagyon kicsi akkor a talált hatás nagyobb, mintha nagyon nagy lenne a p-érték?
+
+-   Nem
+
+-   A p érték hatásméret mutatóként való értelmezése gyakori a publikált irodalomban és Fisher korai írásainak téves értelmezésének következménye
+
+-   A p érték nagysága függ többek között a mintaméret nagyságától és a mérőeszköz pontosságától. Így ha a mintaméret nagy és/vagy a mérőeszköz pontos, akkor kis hatásméret mellett is kaphatunk kis p értéket és fordítva.
+
+-   Részben ebből következik, hogy a p-érték nagyságából nem következtethetünk a talált hatás fontosságára sem.
+
+    -   Példa: Ha a vérnyomáscsökkentő klinikailag elhanyagolható mértékben csökkenti a vérnyomást, de a szignifikancia küszöböt átlépi a p értékünk, attol még nem fog egy gyógyszercég milliárdokat költeni a gyógyszer piacra dobására
+
+### Ha kicsi p ertek miatt elvetem a nullhipotézist, akkor mennyire lehetek biztos abban (mekkora az evidencia) hogy az alternatív hipotézis igaz?
+
+-   Nem következtethetünk a p-értékből az evidencia méretére
+
+-   Ahogy korábban is már említettük a p-érték nem a hipotézisre vonatkozik
+
+-   Ezen felül egy igen kicsi p-értéket nem értelmezhetjük úgy hogy több evidenciánk van arra, hogy igaz az alternativ hipotézis
+
+    -   Ez a szakirodalomban sokszor úgy jelenik meg hogy: szignifikánsabb eredményt találtunk vagy a kapott eredmény nagyon szignifikáns
+
+-   Amennyiben a valóságban a nullhipotézis az igaz, a p-értékek eloszlása uniform eloszlást követ (x tengellyel párhuzamos az eloszlás)
+
+    -   Tehát ugyanannyi nagyon kicsi p-értéket fogunk kapni mint nagyon nagyot hosszú távon
+
+    -   Így egyetlen kutatásból kapott p-érték nagysaga alapjan semmit nem tudunk elmondani arrol, hogy mennyire valoszinu az adott hipotezis
+
+-   Amennyiben a valosagban az alternativ hipotezis az igaz, a p ertekek eloszlasa a szignifikancia kuszob korul fog csucsosodni de nagy p ertekek tovabbra is elofordulhatnak
+
+-   Reszben ez az eszrevetel inspiralta a p-curve hasznalatat
+
+    -   A p curve azt mutatja meg hogy egy adott hatas vizsgalata soran milyen eloszlast kovetnek a kapott p ertekek
+
+    -   A p curve hasznalata a gyakorlatban azonban sokszor ugyancsak felrevezeto lehet
+
+    -   Egyik feltetele ugyanis, hogy a kutatok az osszes meres eredmenyet lekozlik, fuggetlenul attol, hogy szignifikans volt-e az eredmeny vagy nem
+
+    -   Azonban az NHST rituale hasznalatanak egyik kovetkezmenye a fiok hatas
+
+        -   A fiok hatas azt jelenti hogy a kutatok szelektiven kozlik kutatasi eredmenyeik, hajlamosabbak a szignifikans eredmenyeket lekozolni, a nem szignifikans eredmenyek azonban a fiokban maradnak
+
+        -   Fontos azonban megjegyezni hogy az NHST ritualevel kapcsolatos felreertesek nem csak a kutatok koreben elterjedtek, hanem a tudomanyos folyoiratok szerkesztoi koreben is
+
+            -   Így egyes lapok hajlamosabbak nem leközölni a nem szignifikáns eredmenyeket
+
+### Ha a p-értékünk éppen a szignifikancia küszöb felett van (p = 0.06) akkor mondhatjuk, hogy marginálisan szignifikáns eredményeket kaptunk?
+
+-   Szintén a p-érték evidencia mutatóként való értelmezése vezet a következő gyakran elkövetett téves értelmezéshez: marginálisan szignifikáns p-érték
+
+-   A kutatók legtöbbször az arbitrális 0.05 szignifikancia küszöböt (alpha) hasznaljak
+
+-   A szignifikancia küszöbhöz közeli nem szignifikáns p-értékeket sokszor marginálisan szignifikáns értékeknek nevezik, vagy szignifikáns tendenciáról beszélnek
+
+-   @rosnow1989definition híres mondása: \"Surely God loves the .06 nearly as much as the .05\" (p. 1277)
+
+-   Az, hogy az alpha értékhez közelítő p-érték annak a jele, hogy a hatás igaz lehet, csak akkor áll fent, ha a hatás jelen van a populációban, míg ha nincs jelen, a p-értékek uniform eloszláslást követnek. Így körkörös érvelésbe kerülünk: a választ, magával a válasszal indokoljuk. 
+
+-   Újfent, a p-érték alapján az NHST keretben egy dichotóm döntést hozunk, egyetlen szerepe, hogy általa lássuk, hogy az általunk meghatározott hibahatáron belül vagy kívül esnek az adataink.
+
+-   1985 és 2016 között 7 pszichológiai tudományos területen vizsgálta @olsson2019prevalence a 0.05 és 0.1 közötti publikált p-értékeket, ezek közül csaknem 40 %-ot marginálisan szignifikánsként közöltek
+
+-   A kutatók sokszor evidenciaként tekintenek a p-értékre.
+
+-   Az is motiválhatja a kutatókat arra, hogy ilyen p-értékek esetén, próbáljanak értelmezésükben \"közeledni\" a szignifikáns p-értékhez, hogy az NHST keretben nemszignifikáns p-érték esetén nem lehet levonni semmilyen következtetést, így kutatásuk inkonkluzív marad.
+
+### Ha nagy a p értékem akkor igaz, hogy nem létezik a hatás?
+
+-   Mostanra talán már látható, hogy miért nem a válasz a kérdésre
+
+-   Egyik kutatásunkban azt vizsgáltuk hogyan értelmezik a kutatók a nem szignifikáns eredményeiket vezető pszichológiai lapokban es az esetek mekkora részében jelent ez tenyleg evidenciát a nullhipotézis mellett @aczel2018quantifying
+
+-   Többféle téves értelmezést találtunk az esetek 72%-ában
+
+    -   Abban is volt különbség, hogy a mintára (⅔) (\"Nem volt különbség a résztvevők között a intervenciós és a kontroll csoportban\") vagy a populációra (⅓) (\"Nem volt hatása az intervenciónak\") fogalmazták meg az állítást, hogy nincs jelen a hatás az eredményük alapján
+
+-   Ha nem szignifikáns eredményt kapunk, akkor nem tudhatjuk, hogy csak nem volt elég érzékeny a mérőeszközünk, vagy valóban nem létezik a hatás. Így csak annyit mondhatunk, hogy nem utasíthatjuk el a null hipotézist.
+
+-   Ahogy mar tobbszor emlitettuk a frekventista statisztikai megkozelitessel nem tudjuk meghatarozni, hogy mennyi evidenciank van egy adott hipotezis mellett
+
+-   Ehhez egy masik statisztikai megkozelitest a Bayesianus megkozelitest alkalmaztuk
+
+-   Ezen iskolan belul az egyik gyakran hasznalt mutato a bayes factor ami megmutatja, hogy mennyire valoszinu a nullhipotezis az alternativ hipotezissel szemben
+
+-   A bayes faktort relativ evidenciakent tudjuk ertelmezni
+
+-   Ez azt jelenti, hogy egy kettes BF azt jelenti, hogy a ketszer valoszinubb az alternativ hipotezis, mint a null hipotezis
+
+-   Bar relativ evidenciakent ertelmezehto a bf megis a kutatok szeretnek dontest hozni, ezert konvenciokat alakitottak ki, hogy hanyas bayes faktor jelent eleg jo evidenciat az egyik vagy a masik hipotezis mellett
+
+    -   A peldaban a harmas bf-t lathatjuk, mint hatart
+
+-   A bf masik jo tulajdonsaga, hogy meg tudja mondani azt is ha az adatok fenyeben nincs eleg bizonyitekunk arra, hogy a null vagy az alternativ hipotezis mellett dontsunk, ilyenkor az eredmenyek inkonkluzivak
+
+    -   Tovabbi adatokat gyűjthetnek
+
+    -   Az NHST logika szerint nem szignifikans eredmenynel nem tudjuk megmondani, hogy valoban nem letezik a hatas vagy csak nem eleg erzekeny a meroeszkozunk vagy nem eleg adatot gyujtottunk
+
+        -   Tovabba az ujboli teszteles ujabb adatok gyujtese utan torzitja az NHST alatt az eredmenyeink
+
+            -   Ilyenkor az alpha szintet korrigalnunk kell
+
+-   A teszt statisztikak es a hozzajuk tartozo szabadsagi fokok alapjan ki tudtuk szamolni a bf-et a nemszignifikans hatasokhoz
+
+    -   Azt talaltuk hogy sok esetben amikor a kutato azt mondta a p ertek alapjan, hogy nincs hatas valojaban az eredmenyei inkonkluzivak voltak
+
+    -   Egyes esetekben pedig az alternativ hipotezist tamogattak

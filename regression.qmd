@@ -6,11 +6,13 @@
 
 -   A legtöbb más statisztikai próbát regresszióként is lehet értelmezni
 
--   Célja: a kimeneti változó értékeinek predikciója egy vagy több prediktor változó által
+-   Célja: a kimeneti változó értékeinek predikciója egy (vagy több) prediktor változó által
 
 -   Adat = model + error
 
     -   Lineáris regresszió esetében a modellünk egy egyenes vonal
+    -   A modell a bemeneti változó függvényében ad előrejelzést
+    -   Ha ismerjük a prediktor értékét, akkor meg tudjuk mondani mi lesz a kimeneti változó értéke
 
 -   Azt a lineáris modellt akarjuk megtalálni, ami legjobban illeszkedik az adatokra, ahol legkisebb a hiba
 
@@ -20,6 +22,8 @@
 
 -   **Meredekség (slope):** egy egységnyi változás a prediktor változóban (x tengely) mekkora változást okoz a kimeneti változóban (y tengely)
 
+    -   Az egyenes dőlésszöge
+
     -   Ha pozitív érték, akkor pozitív kapcsolat van a két változó között
 
         -   Ha a prediktor változónk értéke nő a kimeneti változó értéke is nő
@@ -28,83 +32,114 @@
 
         -   Ha a prediktor változónk értéke nő, a kimeneti változónk értéke csökken
 
-    -   Jele: b1
+    -   Jele: b~1~
 
 -   **Intercept:** ha a prediktor változó értéke 0, mekkora a kimeneti változó értéke, azaz milyen y értéknél metszi a vonal az y tengelyt
 
-    -   Jele: b0
+    -   Jele: b~0~
+
+-   **Hibatag:** a modell által meg nem magyarázott variancia
+
+    -   Az adatoponttól a lineáris regressziós egyenesig húzott szaggatott vonal
 
 ### Lineáris modell illeszkedésének a vizsgálata
 
 -   Hogyan találjuk meg azt a lineáris modellt, ami legjobban illeszkedik az adatokra?
 
-    -   A **legkisebb négyzetek módszere (method of least squares)**
+#### A **legkisebb négyzetek módszere (method of least squares)**
 
-        -   Meghatározásához ugyanazt a módszert használhatjuk, mint amikor az átlagot használtuk, mint modellt
+-   Meghatározásához ugyanazt a módszert használhatjuk, mint amikor az *átlag modellnél* használtunk
 
-        -   Megnézzük a modell által prediktált értékek és a valós értékek közötti különbséget: a reziduálisokat (residuals)
+-   Megnézzük a modell által prediktált értékek és a valós értékek közötti különbséget: a **reziduálisokat (residuals)**
 
-        -   Itt is négyzetre emeljük a reziduálisok majd összeadjuk őket (sum of squared differences, SS)
+-   Itt is négyzetre emeljük a reziduálisok majd összeadjuk őket (sum of squared differences, SS)
 
-        -   Ezután minden lehetséges vonalra (lineáris regressziós modellre) kiszámíthatnánk őket és ahol az SS a legkisebb az a modell illeszkedik a legjobban az adatokra
+-   Ezután minden lehetséges vonalra (lineáris regressziós modellre) kiszámíthatnánk őket és ahol az SS a legkisebb az a modell illeszkedik a legjobban az adatokra
 
-        -   Azonban még a legjobban illeszkedő modell is magyarázhatja rosszul az adatokat!
+-   Azonban még a legjobban illeszkedő modell is magyarázhatja rosszul az adatokat!
 
-    -   Ahhoz, hogy ezt megvizsgálájuk a legegyszerűbb modell illeszkedéséhez hasonlítjuk a regressziós modellunk illeszkedését: az átlaghoz
+#### A null modell
 
-        -   Az átlag azonban minden adatpontra ugyanazt az értéket fogja prediktálni
+-   Ahhoz, hogy ezt megvizsgálájuk a **legegyszerűbb (null) modell** illeszkedéséhez hasonlítjuk a regressziós modellunk illeszkedését: az átlaghoz
 
-            -   Például: mennyire számít a marketingre szánt összeg egy film összbevételénél?
+    -   Az átlag azonban minden adatpontra ugyanazt az értéket fogja prediktálni
 
-                -   Ha 1 dollárt költünk a marketingre akkor is ugyanazt a bevétlet prediktálja, mintha 200000\$ költüttünk volna rá
+        -   Például: mennyire számít a marketingre szánt összeg egy film összbevételénél?
 
-        -   Az átlag modellnél a hibát összesítve megkapjuk a **teljes négyzetösszeget (total sum of squares, SS~T~)**
+            -   Ha 1 dollárt költünk a marketingre akkor is ugyanazt a bevétlet prediktálja, mintha 200000\$ költüttünk volna rá
 
-            -   Ez a teljes, mert ez a legegyszerűbb modell
+    -   Az átlag modellnél a hibát összesítve megkapjuk a **teljes négyzetösszeget (total sum of squares, SS~T~)**
 
-        -   Kiszámítjuk a **négyzetre emelt reziduálisok összegét** a regressziós modellnél is **(residual sum of squares, SS~R~)**
+        -   Miért az átlag a legegyszerűbb modell?
+            -   Bármelyik másik értéket választjuk a legegyszerűbb modellhez, a hibák négyzetösszege (sum of squared residuals) minden esetben nagyobb lesz, mintha az átlag értékét választanánk
 
-        -   Ahhoz, hogy megtudjuk a regressziós modellünk mennyivel jobban magyarázza az adatokat, mint az átlag modellunk a kettőt kivonjuk egymásból: SS~T~ - SS~R~ = **SS~M~ (model sum of squares)**
+#### Regressziós modell összehasonlítása a null modellel
 
-            -   Ha az SS~M~ nagy, a regressziós modell sokkal jobban magyarázza az adatokat, mint az átlag
+-   Kiszámítjuk a **négyzetre emelt reziduálisok összegét** a regressziós modellnél is **(residual sum of squares, SS~R~)**
 
-        -   Megnézhetjük, hogy arányosan mennyivel javul a modellünk az átlaghoz képest, ha egy prediktor változót is belerakunk
+-   Ahhoz, hogy megtudjuk a regressziós modellünk mennyivel jobban magyarázza az adatokat, mint az átlag modellunk a kettőt kivonjuk egymásból: SS~T~ - SS~R~ = **SS~M~ (model sum of squares)**
 
-            -   A kettőt elosztva egymással megkapjuk a **determinisztikus együtthatót R^2^**
+    -   Úgy tudunk javítani a modellünkön, ha közelebb kerülnek a modell által prediktált értékek az egyes adatpontokhoz (lásd: @fig-ssm)
 
-                -   SS~M~ / SS~T~
+        -   Így csökken a modell által prediktált értékek és az adatok közti különbség, tehát a reziduálisok nagysága
 
-            -   Megmutatja a regressziós modellünk által megmagyarázott variancia arányát a kimeneti változónkban, a teljes varianciához képest
+    -   Ha az SS~M~ nagy, a regressziós modell sokkal jobban magyarázza az adatokat, mint az átlag
 
-            -   Ha megszorozzuk 100-al százalékot kapunk
+    -   A fennmaradó variancia (amit a modell nem tud megmagyarázni) a **megmagyarázatlan variancia**
 
-            -   A kimeneti változóban lévő varianciának hány százalékát magyarázza meg a modell
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-ssm
+#| fig-cap: " A bal oldalon lévő ábrán látható statisztikai modell (piros vonal) az átlag. A fekete pontok az egyes adatpontokat ábrázolják. Az átlaghoz tartozó modell négyzetes hibáinak összege 9.05. Ezzel szemben a jobb oldalon a statisztikai modell egy lineáris regressziós egyenes. Ennek a hiba értéke kisebb, 5.43. Tehát a lineáris regressziós modell jobban illeszkedik az adatokra. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "regression", "ssm.png"))
+```
 
-            -   Ha ennek a négyzetgyökét vesszük, akkor megkapjuk a Pearson korrelációs együtthatót!
+-   Megnézhetjük, hogy arányosan mennyivel javul a modellünk az átlaghoz képest, ha egy prediktor változót is belerakunk
 
-        -   Az F-teszttel is megvizsgálhatjuk a modellünk illeszkedését
+    -   A kettőt elosztva egymással és kivonva egyből megkapjuk a **determinisztikus együtthatót R^2^**
 
-            -   **F teszt statisztika**: szisztematikus variancia / nem szisztematikus variancia
+        -   1 - SS~M~ / SS~T~
 
-                -   A modell okozta javulás (SS~M~) / a modell és a megfigyel adatok között lévő különbség (SS~R~)
+    -   Megmutatja a regressziós modellünk által megmagyarázott variancia arányát a kimeneti változónkban, a teljes varianciához képest (lásd: @fig-rsquare)
 
-            -   Másszóval az F teszt statisztika megmondja, hogy a modell mennyire javítja a becslésünk pontosságát a modellben található pontatlansághoz képest
+    -   0 és 1 közötti értéket vehet fel
 
-            -   Itt nem a négyzetes különbségek összegével, hanem átlagával dolgozunk
+    -   Minél nagyobb az érték a modellünk az adatokban található variancia annál nagyobb százalékát magyarázza meg, tehát annál jobb
 
-                -   Így nem függ a megfigyelések számától
+    -   Ha megszorozzuk 100-al százalékot kapunk
 
-            -   Mean squares for the model (MSS)
+    -   A kimeneti változóban lévő varianciának hány százalékát magyarázza meg a modell
 
-                -   Szabadságfok: prediktor változók száma
+    -   Ha ennek a négyzetgyökét vesszük, akkor megkapjuk a Pearson korrelációs együtthatót!
 
-            -   Residuals mean square (MS~R~)
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-rsquare
+#| fig-cap: " A felső a függőleges szaggatott vonalok a regressziós modell által meg nem magyarázott varianciát mutatják. Az alsó ábrán a szaggatott vonalak pedig a teljes varianciát, azaz az átlag és a megfigyelt értékek közötti különbséget. Ha a kettőt elosztjuk egymással és kivonjuk egyből, akkor megkapjuk a determinisztikus együtthatót. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "regression", "rsquare.png"))
+```
 
-                -   Szabadságfok: megfigyelések száma - béta együtthatók száma (meredség + intercept = 2)
+-   Az F-teszttel is megvizsgálhatjuk a modellünk illeszkedését
 
-            -   Jó modellnél 1-nél nagyobb az F arány
+    -   **F teszt statisztika**: szisztematikus variancia / nem szisztematikus variancia
 
-            -   p-értéket vagy konfidencia intervallumot is ki tudunk hozzá számolni
+        -   A modell okozta javulás (SS~M~) / a modell és a megfigyel adatok között lévő különbség (SS~R~)
+
+    -   Másszóval az F teszt statisztika megmondja, hogy a modell mennyire javítja a becslésünk pontosságát a modellben található pontatlansághoz képest
+
+    -   Itt nem a négyzetes különbségek összegével, hanem átlagával dolgozunk
+
+        -   Így nem függ a megfigyelések számától
+
+    -   Mean squares for the model (MSS)
+
+        -   Szabadságfok: prediktor változók száma
+
+    -   Residuals mean square (MS~R~)
+
+        -   Szabadságfok: megfigyelések száma - béta együtthatók száma (meredség + intercept = 2)
+
+    -   Jó modellnél 1-nél nagyobb az F arány
+
+    -   p-értéket vagy konfidencia intervallumot is ki tudunk hozzá számolni
 
 ### Prediktor változók szignifikanciájának vizsgálata
 
@@ -152,6 +187,8 @@
 
                 -   Az esetek 0.1%-a lehet 3 szóráson kívül
 
+            -   A @fig-qq ábrán egy olyan QQ plot látható, ami azt mutatja, hogy a vizsgált regressziós modell esetében a reziduálisok eloszlása eltér a normálistól
+
         -   **Residual vs fitted values**
 
             -   Residuális értékek vannak az y tengelyen
@@ -159,6 +196,12 @@
             -   Modell értékek az x tengelyen
 
             -   Ha a vonal görbül, nem lineáris kapcsolat
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-qq
+#| fig-cap: "Ha a reziduálisok eloszlása a normális eloszlást követné, akkor az áblán látható adatpontok a szaggatott vonal mentén helyezkednének el. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "regression", "qq.png"))
+```
 
 -   Az értékek
 
@@ -180,9 +223,25 @@
 
 -   Vizsgálata vizuálisan zajlik
 
-    -   Tölcsér alak azt jelenti hogy sérül a heteroszkedaszticitás feltétle
+    -   Tölcsér alak azt jelenti hogy sérül a heteroszkedaszticitás feltétle (lásd: @fig-heteroscedasticity)
+
+-   A kimeneti vagy prediktor változók transzformálása segíthet a reziduálisok homoszkedaszticitásának sérülése során. Ilyen lehet például a természetes logaritmikus transzformáció
+
+    -   Ilyenkor figyelnünk kell az eredmények értelmezésére, hiszen a változók transzformálásával az is megváltozik
+
+        -   Ha a prediktornak vesszük természetes logarimtusát: 1%-os változás a prediktor változóban a kimeneti változó 0.01\*B~1~ változásához vezet
+
+        -   Ha a prediktornak és a kimeneti változónak is a természetes logaritmusát vesszük: 1%-os változás a prediktor változóban B~1~%-os változáshoz vezet a kimeneti változóban
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-heteroscedasticity
+#| fig-cap: "A reziduálisok vizsgálata során az X tengelyen a modell által prediktált értékeket az Y tengelyen a standardizált reziduálisokkal szemben ábrázoljuk. Véletlen szóródást várunk el az adatokban az X tengely összes értékéhez. Az ábrán a tölcsér alakzat heteroszkedaszticitásra utal, tehát a reziduálisok függnek a prediktor értékeitől. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "regression", "heteroscedasticity.png"))
+```
 
 -   Kiugró értékek szűrése
+
+    -   A kiugró értékek "magukhoz húzzák" a regressziós egyenest (lásd: @fig-outlier)
 
     -   Vizuálisan
 
@@ -204,12 +263,18 @@
 
     -   Nagy elemszánál nem olyan nagy a hatásuk!
 
-    ## Többszörös lineáris regresszió
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-outlier
+#| fig-cap: "Az ábrán az outlierek torzító hatása látható a regressziós modellre. A jobb felső sarokban a többi adatponttól távol egy kiugró érték látható, ez húzza magához a pirossal jelölt regressziós modellt. Nagy Tamás ábrája."
+knitr::include_graphics(here::here("figures", "regression", "rsquare.png"))
+```
 
-    -   További tényezőkről is gondolhatjuk, hogy javítani fognak a modellünkön
+## Többszörös lineáris regresszió
 
-        -   Egy bizonyos pont után, ha ezeket a prediktor változókat hozzáadjuk a modellhez, nem fog a hiba szignifikánsan csökkenni
+-   További tényezőkről is gondolhatjuk, hogy javítani fognak a modellünkön
 
-        -   Ez az overfitting
+    -   Egy bizonyos pont után, ha ezeket a prediktor változókat hozzáadjuk a modellhez, nem fog a hiba szignifikánsan csökkenni
 
-        -   Eredménye: a modell nem lesz generalizálható
+    -   Ez az overfitting
+
+    -   Eredménye: a modell nem lesz generalizálható

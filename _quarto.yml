@@ -7,7 +7,6 @@ book:
   date: "8/27/2023"
   chapters:
     - index.qmd
-    - intro.qmd
     - scientific_method.qmd
     - data.qmd
     - descriptive_statistics.qmd

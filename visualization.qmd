@@ -2,6 +2,18 @@
 
 -   Példa adatvizualizáció fontosságára: John Snow és a londoni kolera járvány
 
+    -   John Snow ábrázolta London egyik utcájában a kolera megbetegedések megjelenésének a helyét
+
+    -   Előtte azt hitték, hogy a kolera levegő útján terjed
+
+    -   Az ábra alapján azonban kiderült, hogy a városi kutak mellett sűrűbbek a megbetegedések
+
+    -   Ebből John Snow arra következtetett, hogy a kútba kerülő szennyvíz útján terjed a kolera
+
+    -   Jó példa arra, hogy néha egyszerű adatvizualizáció útján is sokat tanulhatunk az adatokból, nem kell mindig bonyolult statisztikai eljárásokat használni
+
+    -   John Snow ábrája a @fig-snow látható
+
 -   Szerepe:
 
     -   Az adatok ellenőrzése
@@ -10,11 +22,19 @@
 
         -   Segít megtalálni hibákat is az adatokban
 
+        -   Például: Az adatokban lévő variancia, ahogy láthattuk nagyon különböző lehet ugyanolyan középértékek esetében
+
     -   Egy történet elmesélése
 
         -   az adatok közti összefüggés feltárása
 
 -   DE a vizualizáció nem szabad megtévesztő legyen!
+
+```{r, fig.align = 'center', echo=FALSE, out.width = "70%"}
+#| label: fig-snow
+#| fig-cap: " John Snow rajza London egyik utcájáról a kolera járvány idején. A pontok a kolerás megbetegedéseket jelölik, míg az X a kutakat jelöli."
+knitr::include_graphics(here::here("figures", "visualization", "snow.png"))
+```
 
 ## A jó adatvizualizáció ismérvei
 
@@ -28,7 +48,11 @@
 
         -   adat/tinta arány
 
+            -   Felesleges részek, amik törölhetők információ veszteség nélkül, ne legyenek az ábrán
+
         -   Ábra szemét
+
+            -   Olyan grafikai elem, ami nem segíti az adatokban lévő információ megértését
 
 -   Legjobb megmutatni az egyéni adatpontokat is amennyiben ez lehetséges
 
@@ -52,6 +76,8 @@
 
         -   Ne használjuk!
 
+        -   Főleg ne felesleges 3. dimenzióval...
+
 ## Gyakori adatvizualizációs megoldások
 
 ### Doboz ábra (boxplot)
@@ -70,6 +96,14 @@
 
     -   Ezen kívül pöttyökkel tudjuk jelölni azokat az egyes adatpontokat, amelyek outlier értéknek számítanak
 
+-   A boxplot néha elfedi a változó eloszlásának formáját
+
+    -   Például nem jelzi, ha az eloszlásunk két csúcsú (bimodális)
+
+    -   Ezzel szemben a ferdeség látszik rajta, az egyik kvartilis vizuálisan közelebb van a mediánhoz, mint a másik
+
+    -   Egy alternatív vizualizációs megoldás a violin plot (hegedű ábra)
+
 ## Hogyan szúrjunk ki megtévesztő vizualalizációs elemeket?
 
 -   Segít-e az ábra megérteni az adatokat, vagy inkább csak összezavar?
@@ -80,7 +114,15 @@
 
 -   Nézd meg, hogy a különböző csoportokat bemutató ábrázolások egyenlő arányban változnak-e egymással
 
+    -   A részek összege nem több mint 100%?
+
 -   Nem hagytak-e ki adatpontot az ábráról?
+
+    -   Nincsenek kontextusból kiragadott adatok?
+
+-   Nincsenek olyan vizuális megoldások amik az emberi percepció gyengeségeire építve próbálják az adatokban lévő arányokat torzítani?
+
+    -   Például: négyzetes terület nagyságát nehezebben tudjuk megbecsülni, mint egy oszlopét
 
 -   Összevontak-e kategóriákat indokolatlanul?
 

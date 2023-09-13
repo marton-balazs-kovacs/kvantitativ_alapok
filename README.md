@@ -6,5 +6,4 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Jegyzetek az NJE NNG Kvantitatív alapok nevű órájához. A jegyzeteken
-most is aktívan dolgozom.
+Jegyzetek az NJE NNG Kvantitatív alapok nevű órájához.
